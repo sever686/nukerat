@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Command queue panel. Search, host filter, detail split, and remove.
+命令队列面板。支持搜索、主机过滤、详情分栏和移除。
 
-## Directories
+## 目录
 
-- `/components`: Table, host filter, detail split, and the load/remove logic
+- `/components`：表格、主机过滤器、详情分栏以及加载/移除逻辑

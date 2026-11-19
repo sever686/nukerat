@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Per-extension SVG icons for the file explorer. `catalog.json` lists known extensions; the explorer maps filenames to these assets and falls back when no icon matches.
+文件资源管理器中按扩展名区分的 SVG 图标。`catalog.json` 列出了已知扩展名；资源管理器将文件名映射到这些资源，并在没有匹配图标时使用回退图标。

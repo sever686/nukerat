@@ -1,8 +1,8 @@
-# Overview
+# 概览
 
-Windows agent code in Nim. Loader is a thin stager; stageless adds SMB/TCP/HTTP/custom routines, indirect syscalls, and the full capability set.
+用 Nim 编写的 Windows 智能体代码。Loader 是轻量分段器；stageless 增加了 SMB/TCP/HTTP/自定义例程、间接系统调用以及完整的能力集。
 
-## Directories
+## 目录
 
-- `/loader`: First stage (`main.nim`, optional dllsafe entry)
-- `/stageless`: Full implant with Win32/NT helpers under `/utils/winapi`
+- `/loader`：第一阶段（`main.nim`，可选的 dllsafe 入口）
+- `/stageless`：完整植入体，Win32/NT 辅助位于 `/utils/winapi`

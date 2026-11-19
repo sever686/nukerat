@@ -1,14 +1,14 @@
-# Overview
+# 概览
 
-Main server logic.
+服务端主逻辑。
 
-## Directories
+## 目录
 
-- `/logic`: Raw logic of the team server routes (this is where the server entrypoint points)
-- `/middlewares`: JWT verification middlewares
-- `/routes`: Route entrypoints, the raw logic lives in `/logic`
-- `/schemas`: Client input validation schemas
-- `/utils`: Various logic, such as:
-    - IOC collection
-    - Help messages (armory, lolbins, etc)
-    - Logic around NukeScript validation
+- `/logic`：团队服务器路由的原始逻辑（服务端入口指向这里）
+- `/middlewares`：JWT 校验中间件
+- `/routes`：路由入口，原始逻辑位于 `/logic`
+- `/schemas`：客户端输入校验 schema
+- `/utils`：各种逻辑，例如：
+    - IOC 采集
+    - 帮助消息（军械库、lolbins 等）
+    - NukeScript 校验相关逻辑

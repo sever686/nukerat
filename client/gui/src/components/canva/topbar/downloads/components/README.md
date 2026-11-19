@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-UI and hooks for the downloads popover in the top bar. Tracks active and finished pulls via the shared downloads store and syncs with Electron while the panel is open.
+顶栏下载弹出层的 UI 与 hook。通过共享的下载 store 跟踪进行中和已完成的拉取任务，并在面板打开期间与 Electron 同步。

@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-File browser for a selected host.
+所选主机的文件浏览器。
 
-## Directories
+## 目录
 
-- `/components`: Folder tree, file list, preview, and the path/listing/download logic
+- `/components`：文件夹树、文件列表、预览，以及路径/列表/下载逻辑

@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-NukeScript syntax checks. Parses the script, checks the event bindings, then checks each command call. Shared arg checks live in `helpers.py`.
+NukeScript 语法检查。解析脚本、检查事件绑定，然后检查每个命令调用。共享的参数检查位于 `helpers.py`。
 
-## Directories
+## 目录
 
-- `/commands`: One validator per command (cmd, agent, db, network, etc.)
+- `/commands`：每个命令一个校验器（cmd、agent、db、network 等）

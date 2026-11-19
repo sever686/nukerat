@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Per-command help texts for the built-in terminal commands (usage, arguments, examples).
+内置终端命令的逐命令帮助文本（用法、参数、示例）。

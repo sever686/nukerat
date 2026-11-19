@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Raw lists map.py loads: top level domains and file extensions.
+map.py 加载的原始列表：顶级域名与文件扩展名。

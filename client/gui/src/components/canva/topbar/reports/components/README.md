@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Raw logic of the reports panel, the create form, and the HTML preview. Types are activity, hosts, and indicators of compromise (pdf, html, or json).
+报告面板的原始逻辑、创建表单和 HTML 预览。类型包括活动、主机和入侵指标（pdf、html 或 json）。

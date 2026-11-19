@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Build-time string obfuscation for the mac loader. `S()` decrypts literals based on the configured type (plain, XOR, or RC4); keys come from the same pattern used across mac implants.
+Mac loader 的构建期字符串混淆。`S()` 根据配置的类型（明文、XOR 或 RC4）解密字面量；密钥来自 mac 植入体通用的同一套模式。

@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-SOCKS socket table for the Linux stageless implant. `core.nim` connects, reads, writes, and closes TCP sockets by id.
+Linux stageless 植入体的 SOCKS socket 表。`core.nim` 按 id 连接、读取、写入和关闭 TCP socket。

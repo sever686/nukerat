@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Workspace panel for operator chat with a configured agent. Dockview shell, model filter, pasted workspace context, and usage requests to the team server.
+操作员与已配置智能体聊天的工作区面板。包括 Dockview 外壳、模型过滤器、粘贴的工作区上下文，以及发往团队服务器的用量请求。
 
-## Directories
+## 目录
 
-- `/components`: Chat history, input logic, split layout, and panel chrome
+- `/components`：聊天历史、输入逻辑、分栏布局以及面板框架

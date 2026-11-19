@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Entry routing for the Linux loader after prep. `start` runs preparations and dispatches on the configured channel. The HTTP path pulls and decrypts the next stage then hands it to the shared-library runner; custom is a no-op placeholder for alternate transports.
+Linux loader 准备工作之后的入口路由。`start` 执行准备工作并按配置的通道分发。HTTP 路径会拉取并解密下一阶段，然后交给共享库运行器；自定义路径是用于替代传输方式的空占位。

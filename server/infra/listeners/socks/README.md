@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-SOCKS and proxychains listener. `manage.py` starts the pproxy server and restores those rows from the database, `streams.py` is the beacon-backed connection, and `queue_bridge.py` is the queue the proxy uses to talk to the implant.
+SOCKS 与 proxychains 监听器。`manage.py` 启动 pproxy 服务器并从数据库恢复这些行，`streams.py` 是信标支撑的连接，`queue_bridge.py` 是代理用于与植入体通信的队列。

@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-HTTP client for the macOS loader when fetching the next stage. Builds GET requests from global URL settings (TLS skip-verify on HTTPS), normalizes the response into a small struct for the routine layer.
+macOS loader 获取下一阶段时使用的 HTTP 客户端。根据全局 URL 设置构建 GET 请求（HTTPS 时跳过 TLS 校验），并将响应规范化为例程层使用的小型结构体。

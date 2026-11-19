@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Screenshot snapshots. Reads `{host}.jpg` from `infra/tmp`, and long polls when the client already has that hash.
+截图快照。从 `infra/tmp` 读取 `{host}.jpg`，当客户端已持有该哈希时长轮询。

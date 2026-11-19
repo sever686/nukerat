@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Activity report HTML. Hosts, terminal commands, and credentials.
+活动报告 HTML。主机、终端命令和凭据。

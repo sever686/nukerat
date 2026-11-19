@@ -1,9 +1,9 @@
-# Overview
+# 概览
 
-SVG assets imported by the Canva panels. Nothing here runs at runtime beyond static URLs.
+Canva 面板导入的 SVG 资源。除静态 URL 外，这里的内容不会在运行时执行。
 
-## Directories
+## 目录
 
-- `/folders`: Per-extension file icons and `catalog.json` for the explorer tree
-- `/graphs`: Entrypoint and host icons for the graph workspace
-- `/sessions`: OS and root-session badges for the sessions table
+- `/folders`：按扩展名的文件图标，以及供资源管理器树使用的 `catalog.json`
+- `/graphs`：图谱工作区的入口点与主机图标
+- `/sessions`：会话表中使用的操作系统与 root 会话徽标

@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-React Flow graph for session relationships. Pulls graph data from the server, lays out nodes, and maps host OS strings to the graph icon set.
+用于会话关系的 React Flow 图谱。从服务端拉取图谱数据、布局节点，并将主机操作系统字符串映射到图谱图标集。

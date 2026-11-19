@@ -1,10 +1,10 @@
-# Overview
+# 概览
 
-All logic around listeners (file serve included). Listeners are the services exposed by the team server. `profile.py` is the shared endpoint path and response-header middleware.
+围绕监听器的全部逻辑（含文件服务）。监听器是团队服务器暴露的服务。`profile.py` 是共享端点路径与响应头中间件。
 
-## Directories
+## 目录
 
-- `/http`: HTTP listener the implants check in on
-- `/file_server`: file serve listener
-- `/socks`: SOCKS and proxychains listener
-- `/port_forward`: port forwarding listener
+- `/http`：植入体签入的 HTTP 监听器
+- `/file_server`：文件服务监听器
+- `/socks`：SOCKS 与 proxychains 监听器
+- `/port_forward`：端口转发监听器

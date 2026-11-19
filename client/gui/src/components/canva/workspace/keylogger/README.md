@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Keylogger entries for the workspace.
+工作区的键盘记录条目。
 
-## Directories
+## 目录
 
-- `/components`: Table, host filter, content split, and the load/remove logic
+- `/components`：表格、主机过滤器、内容分栏以及加载/移除逻辑

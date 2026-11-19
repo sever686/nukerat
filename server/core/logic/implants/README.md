@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Implant build entry. The request lands in `core.py`, `build.py` hands it to compilation. `utils.py` is just the server string and payload shape.
+植入体构建入口。请求落在 `core.py`，`build.py` 将其交给编译流程。`utils.py` 只包含服务端字符串与载荷形状。
 
-## Directories
+## 目录
 
-- `/steps`: Build steps
+- `/steps`：构建步骤

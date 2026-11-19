@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-TCP/UDP port scan task for the Linux implant. Parses port lists (top20, ranges, etc.), resolves the target, and returns open ports as text or JSON.
+Linux 植入体的 TCP/UDP 端口扫描任务。解析端口列表（top20、范围等）、解析目标，并以文本或 JSON 返回开放端口。

@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Reading `server.log` and `listeners.log`. Search, log type, category, and pagination.
+读取 `server.log` 和 `listeners.log`。搜索、日志类型、类别与分页。

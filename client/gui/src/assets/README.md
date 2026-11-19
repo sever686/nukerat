@@ -1,11 +1,11 @@
-# Overview
+# 概览
 
-Static assets for the client GUI. `logo.svg` is the mark used on the topbar, the about panel, and the empty canvas.
+客户端 GUI 的静态资源。`logo.svg` 是顶栏、关于面板和空画布上使用的标志。
 
-## Directories
+## 目录
 
-- `/fonts`: Mona Sans font files (the GUI loads Mona Sans and Mona Sans Mono from here)
-- `/icons`: SVG icons, such as:
-    - Session hosts
-    - Graph nodes (hosts and the entrypoint)
-    - File-type icons
+- `/fonts`：Mona Sans 字体文件（GUI 从这里加载 Mona Sans 和 Mona Sans Mono）
+- `/icons`：SVG 图标，例如：
+    - 会话主机
+    - 图谱节点（主机与入口点）
+    - 文件类型图标

@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Host and session fingerprinting before check-in. Collects OS build, edition labels, network channel hints, and related metadata used in beacon registration.
+签入前的主机与会话指纹采集。收集操作系统版本、版本标签、网络通道提示以及信标注册所用的相关元数据。

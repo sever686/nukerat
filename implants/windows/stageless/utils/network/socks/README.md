@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Thin SOCKS helpers on top of the stageless TCP stack. `core.nim` tracks socket fds and forwards connect, read, write, and close.
+构建在 stageless TCP 栈之上的轻量 SOCKS 辅助。`core.nim` 跟踪 socket fd，并转发 connect、read、write 和 close。

@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Raw logic of the sessions table (sort, filter, OS icons, delete, kill). The split is the session detail and note. The right-click menu and the filter bar live here too.
+会话表格的原始逻辑（排序、过滤、操作系统图标、删除、终止）。分栏为会话详情与备注。右键菜单和过滤栏也在这里。

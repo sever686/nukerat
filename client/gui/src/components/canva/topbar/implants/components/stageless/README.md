@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Form state and build logic for stageless implants. Sections cover general metadata, C2, preface, PE artifacts, and runtime options before the build bar calls the server.
+Stageless 植入体的表单状态与构建逻辑。分区涵盖通用元数据、C2、前言、PE 制品和运行时选项，最后由构建栏调用服务端。
 
-## Directories
+## 目录
 
-- `/fields`: Per-section form widgets (general, C2, preface, artifacts, runtime, etc.)
+- `/fields`：各分区的表单组件（通用、C2、前言、制品、运行时等）

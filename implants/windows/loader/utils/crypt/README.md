@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Loader-stage crypto for C2 traffic: AES-GCM in `transport.nim`, plus RC4/XOR helpers and the shared AES primitives the transport layer imports.
+Loader 阶段用于 C2 流量的加密：`transport.nim` 中的 AES-GCM，以及 RC4/XOR 辅助和传输层导入的共享 AES 原语。

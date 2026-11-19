@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Login check (user, password, secret) and the JWT that comes back.
+登录校验（用户、密码、secret）以及返回的 JWT。

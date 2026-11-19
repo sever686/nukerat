@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Files with the calls the NukeScript worker makes back into the team server: terminal commands (cmd, async_cmd), explorer (the NukeScript command name is folders), process list, screenshot, file server upload and delete, network (socks, port forward, remove, restart), and agent prompts. Each dispatch runs on the server loop.
+NukeScript worker 回调团队服务器的调用文件：终端命令（cmd、async_cmd）、资源管理器（NukeScript 命令名为 folders）、进程列表、截图、文件服务器上传与删除、网络（socks、端口转发、移除、重启）以及智能体提示。每次分派都运行在服务端循环上。

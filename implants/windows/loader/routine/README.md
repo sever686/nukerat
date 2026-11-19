@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Loader channel entry. `start.nim` runs prep, then picks HTTP or custom.
+Loader 通道入口。`start.nim` 执行准备工作，然后选择 HTTP 或自定义。

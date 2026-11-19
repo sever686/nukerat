@@ -1,8 +1,8 @@
-# Overview
+# 概览
 
-Stageless Windows networking: beacon HTTP, raw TCP, SMB named-pipe style relay, frame chunking, and relay packet encoding.
+Stageless Windows 网络：信标 HTTP、原始 TCP、SMB 命名管道风格中继、帧分块以及中继数据包编码。
 
-## Directories
+## 目录
 
-- `/portforward`: Port-forward over the implant channel
-- `/socks`: SOCKS proxy core
+- `/portforward`：经植入体通道的端口转发
+- `/socks`：SOCKS 代理核心

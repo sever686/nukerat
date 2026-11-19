@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Workspace-side credential CRUD and view panels. List selection, add/edit forms, read-only view, and hooks that tie the credentials context menu to live session data.
+工作区侧的凭据增删改查与查看面板。包括列表选择、添加/编辑表单、只读视图，以及将凭据上下文菜单与实时会话数据关联的 hook。

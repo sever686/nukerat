@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-TCP port-forward session table for Windows stageless. Tracks socket handles per connection id and delegates reads/writes to the SOCKS core under `/network/socks`.
+Windows stageless 的 TCP 端口转发会话表。按连接 id 跟踪 socket 句柄，并将读写委托给 `/network/socks` 下的 SOCKS 核心。

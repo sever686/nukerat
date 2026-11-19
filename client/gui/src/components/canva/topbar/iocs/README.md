@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Topbar panel for IOC entries. Search, filter by host, view, and remove.
+IOC 条目的顶栏面板。支持搜索、按主机过滤、查看和移除。
 
-## Directories
+## 目录
 
-- `/components`: The list, the host filter, the detail split, and the panel logic
+- `/components`：列表、主机过滤器、详情分栏以及面板逻辑

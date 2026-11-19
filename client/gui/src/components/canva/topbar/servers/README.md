@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Saved team server connections. Add, edit, remove, and the online check.
+已保存的团队服务器连接。支持添加、编辑、移除以及在线检查。
 
-## Directories
+## 目录
 
-- `/components`: Form and the connection logic
+- `/components`：表单与连接逻辑

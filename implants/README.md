@@ -1,9 +1,9 @@
-# Overview
+# 概览
 
-Agent source for each supported OS. Same split everywhere: a small loader and a full stageless implant.
+各受支持操作系统的智能体源码。各处结构一致：一个小型 loader 和一个完整的 stageless 植入体。
 
-## Directories
+## 目录
 
-- `/linux`: Linux implants (Nim)
-- `/mac`: macOS implants (Go)
-- `/windows`: Windows implants (Nim)
+- `/linux`：Linux 植入体（Nim）
+- `/mac`：macOS 植入体（Go）
+- `/windows`：Windows 植入体（Nim）

@@ -1,14 +1,14 @@
-# Overview
+# 概览
 
-Shared stageless plumbing for Linux: globals, task dispatch, crypto transport, and channel-specific network code.
+Linux 共享的 stageless 基础设施：全局变量、任务分发、加密传输以及各通道专用的网络代码。
 
-## Directories
+## 目录
 
-- `/actions`: Host prep and fingerprint
-- `/coffloader`: BOF-style COFF loader for Linux
-- `/crypt`: C2 encryption and cipher utils
-- `/general`: String formatters and beacon metadata JSON
-- `/libs`: Small stdlib shims (HTTP)
-- `/linapi`: POSIX helpers used across capabilities
-- `/network`: HTTP core, TCP, relay packets, socks, portforward
-- `/tasks`: Task registry, worker threads, output buffers
+- `/actions`：主机准备与指纹采集
+- `/coffloader`：面向 Linux 的 BOF 风格 COFF loader
+- `/crypt`：C2 加密与密码工具
+- `/general`：字符串格式化器与信标元数据 JSON
+- `/libs`：小型标准库垫片（HTTP）
+- `/linapi`：各能力共用的 POSIX 辅助
+- `/network`：HTTP 核心、TCP、中继数据包、socks、端口转发
+- `/tasks`：任务注册表、工作线程、输出缓冲区

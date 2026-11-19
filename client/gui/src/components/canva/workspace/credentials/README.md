@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Dock panel for credential vault entries. Split list and detail view with add, edit, remove, and refresh wired to the credentials API.
+凭据保险库条目的停靠面板。列表与详情分栏视图，添加、编辑、移除和刷新都接入凭据 API。
 
-## Directories
+## 目录
 
-- `/components`: Panel hook, split layout, view form, and context menu shell
+- `/components`：面板 hook、分栏布局、查看表单以及上下文菜单外壳

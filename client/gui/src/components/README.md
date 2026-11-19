@@ -1,8 +1,8 @@
-# Overview
+# 概览
 
-Shared React component tree for the GUI. Splits the main operator UI from reusable UI primitives.
+GUI 的共享 React 组件树。将主操作员 UI 与可复用的 UI 基础组件区分开。
 
-## Directories
+## 目录
 
-- `/canva`: Top bar, workspace tabs, empty state, and canva-specific helpers
-- `/ui`: Reusable controls, context menus, and small shared widgets
+- `/canva`：顶栏、工作区标签、空状态以及 Canva 专用辅助函数
+- `/ui`：可复用控件、上下文菜单和小型共享组件

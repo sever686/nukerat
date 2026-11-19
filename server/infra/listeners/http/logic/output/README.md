@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Logic that runs when the implant returns task output. `core.py` dispatches on the output type.
+植入体返回任务输出时运行的逻辑。`core.py` 根据输出类型分派。
 
-## Directories
+## 目录
 
-- `/capabilities`: one file per output type (terminal, explorer, process, keylogger, screenshot, socks)
+- `/capabilities`：每种输出类型一个文件（终端、资源管理器、进程、键盘记录、截图、socks）

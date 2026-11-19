@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-About panel. Shows the app version, Electron, Chromium, Node, and the platform, from the `app:getAboutInfo` call.
+关于面板。通过 `app:getAboutInfo` 调用显示应用版本、Electron、Chromium、Node 及平台信息。

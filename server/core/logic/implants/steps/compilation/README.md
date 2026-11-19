@@ -1,9 +1,9 @@
-# Overview
+# 概览
 
-Where the implant compile logic lives. `core.py` picks the format (exe, dll, shellcode, elf, so, app). Sandbox wrapping for the compiler is in `sandbox.py`, file reads in `blocking_io.py`.
+植入体编译逻辑所在。`core.py` 选择格式（exe、dll、shellcode、elf、so、app）。编译器的沙箱包装位于 `sandbox.py`，文件读取位于 `blocking_io.py`。
 
-## Directories
+## 目录
 
-- `/go`: Go compile path (the `app` format)
-- `/nim`: Nim compile path (exe, dll, shellcode, elf, so)
-- `/modules`: Extra pieces used by a compile, such as junkcode
+- `/go`：Go 编译路径（`app` 格式）
+- `/nim`：Nim 编译路径（exe、dll、shellcode、elf、so）
+- `/modules`：编译使用的额外部件，例如垃圾代码

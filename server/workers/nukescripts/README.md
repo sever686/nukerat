@@ -1,8 +1,8 @@
-# Overview
+# 概览
 
-The NukeScript worker. main.py is the entrypoint, and this is where the monitoring loop of the database for changes lives.
+NukeScript worker。main.py 是入口，数据库变更的监控循环就在这里。
 
-## Directories
+## 目录
 
-- `/logic`: Raw logic of the worker (scheduler, job pool, script parsing, sandbox)
-- `/utils`: Files with helper functions
+- `/logic`：worker 的原始逻辑（调度器、作业池、脚本解析、沙箱）
+- `/utils`：存放辅助函数的文件

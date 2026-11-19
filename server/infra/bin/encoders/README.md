@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Shellcode encoders the implant build calls (`sgn`, `supernova`). It runs the binary at `encoders/<name>/<name>`.
+植入体构建调用的 shellcode 编码器（`sgn`、`supernova`）。构建时运行 `encoders/<name>/<name>` 处的二进制。
 
-## Directories
+## 目录
 
-- `/sgn`: SGN, the polymorphic x86/x64 encoder (Rust source, built binary is `sgn`)
+- `/sgn`：SGN，多态 x86/x64 编码器（Rust 源码，构建产物为 `sgn`）

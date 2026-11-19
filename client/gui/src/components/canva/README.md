@@ -1,14 +1,14 @@
-# Overview
+# 概览
 
-Main client screen. Workspace tabs, shortcuts, and the floating panels are wired here.
+客户端主界面。工作区标签、快捷键和浮动面板都在此处衔接。
 
-## Directories
+## 目录
 
-- `/empty`: Empty workspace (logo and the right-click menu)
-- `/topbar`: Top bar, and the panels it opens (listeners, implants, logs, etc.)
-- `/utils`: Files with helper functions, such as:
-    - Host select
-    - Split panels
-    - Toasts
-    - UTC dates
-- `/workspace`: Docked windows (terminal, sessions, explorer, etc.)
+- `/empty`：空工作区（标志和右键菜单）
+- `/topbar`：顶栏及其打开的面板（监听器、植入体、日志等）
+- `/utils`：存放辅助函数的文件，例如：
+    - 主机选择
+    - 分栏面板
+    - Toast 提示
+    - UTC 日期
+- `/workspace`：停靠窗口（终端、会话、资源管理器等）

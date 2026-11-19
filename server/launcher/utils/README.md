@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Files with helper functions. This is where the operator key creation, server.conf handling, adding pip packages to the venv, database usage/export/import, the startup banner, and the server log setup live.
+辅助函数文件。操作员密钥创建、server.conf 处理、向 venv 添加 pip 包、数据库使用/导出/导入、启动横幅以及服务端日志设置都在这里。

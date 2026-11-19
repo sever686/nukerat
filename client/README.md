@@ -1,10 +1,10 @@
-# Overview
+# 概览
 
-Root of the client directory.
+客户端目录的根目录。
 
-## Directories
+## 目录
 
-- `/gui`:
-    - Electron main process
+- `/gui`：
+    - Electron 主进程
     - React UI
-    - App icons and bundled assets
+    - 应用图标与打包资源

@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Electron main process code for the desktop client. Window lifecycle, IPC handlers for config, downloads, and local files, plus CSP and the preload bridge to the renderer.
+桌面客户端的 Electron 主进程代码。窗口生命周期、用于配置/下载/本地文件的 IPC 处理器，以及 CSP 和指向渲染进程的预加载桥接。

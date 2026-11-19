@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Shared string and metadata helpers for macOS stageless. Digest and JSON utilities for task output, plus host facts (internal IP, hostname, etc.) through macapi.
+macOS stageless 的共享字符串与元数据辅助。为任务输出提供摘要和 JSON 工具，并通过 macapi 获取主机信息（内网 IP、主机名等）。

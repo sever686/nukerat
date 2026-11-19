@@ -1,8 +1,8 @@
-# Overview
+# 概览
 
-File serve listener. `manage.py` starts it, restores `file_server` rows from the database, and drops content folders that no longer have a listener.
+文件服务监听器。`manage.py` 启动它、从数据库恢复 `file_server` 行，并删除已无对应监听器的内容文件夹。
 
-## Directories
+## 目录
 
-- `/routes`: the app that serves the files
-- `/utils`: files with helper functions (path check, request log)
+- `/routes`：提供文件服务的应用
+- `/utils`：存放辅助函数的文件（路径检查、请求日志）

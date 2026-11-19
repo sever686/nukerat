@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Task queue for macOS stageless: in-memory registry, output snapshots, worker goroutines, and dispatch in `utils.go` that hands server commands to the capability layer.
+macOS stageless 的任务队列：`utils.go` 中的内存注册表、输出快照、工作 goroutine，以及将服务端命令交给能力层的分发。

@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Native commands a NukeScript can call (cmd, agent, db, credentials, file_server, network, etc.). The parser injects them into the script.
+NukeScript 可调用的原生命令（cmd、agent、db、credentials、file_server、network 等）。解析器会将它们注入脚本。

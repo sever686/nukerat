@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Junkcode generation. Builds filler Nim and writes it into a source tree when a size is set.
+垃圾代码生成。构建填充用的 Nim，并在设置了大小的情况下写入源码树。

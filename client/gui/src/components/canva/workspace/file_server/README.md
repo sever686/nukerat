@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-File-server workspace tied to listener tags. Browse, upload, download, rename, and delete files on the team server for a chosen target.
+与监听器标签绑定的文件服务器工作区。为所选目标浏览、上传、下载、重命名和删除团队服务器上的文件。
 
-## Directories
+## 目录
 
-- `/components`: Panel state, API calls, and context menu wiring
+- `/components`：面板状态、API 调用以及上下文菜单接线

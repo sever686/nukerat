@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Login, the stored server list, and the operator key parse. These run before the other team server calls. `auth.tsx` posts to `/auth/login`, `config.tsx` reads and writes the server list through Electron, and `key.tsx` parses the key.
+登录、已保存的服务器列表以及操作员密钥解析。这些在其他团队服务器调用之前运行。`auth.tsx` 向 `/auth/login` 发起 POST，`config.tsx` 通过 Electron 读写服务器列表，`key.tsx` 负责解析密钥。

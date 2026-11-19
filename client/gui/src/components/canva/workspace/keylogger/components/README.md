@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Keylogger panel pieces. The table, the host filter, the content split, the right-click shell, and the raw logic that loads and removes entries.
+键盘记录面板的各个部分。包括表格、主机过滤器、内容分栏、右键菜单外壳，以及加载和移除条目的原始逻辑。

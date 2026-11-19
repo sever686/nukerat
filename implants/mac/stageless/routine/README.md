@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Channel entry for the macOS stageless implant. `start.go` wires the task dispatch, runs prep, then picks HTTP, TCP, or custom.
+macOS stageless 植入体的通道入口。`start.go` 接入任务分发、执行准备工作，然后选择 HTTP、TCP 或自定义。
 
-## Directories
+## 目录
 
-- `/custom`: Relay HTTP client for the custom channel
+- `/custom`：自定义通道的中继 HTTP 客户端

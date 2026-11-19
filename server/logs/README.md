@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Server log files. This is where server.log and listeners.log are written. Up to the present moment the only file in the tree is .gitkeep.
+服务端日志文件。server.log 和 listeners.log 写入此处。截至目前，目录树中唯一的文件是 .gitkeep。

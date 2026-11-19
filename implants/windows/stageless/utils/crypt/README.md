@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-C2 crypto for Windows stageless. AES-GCM transport wrap/unwrap (`transport.nim`), plus RC4, XOR decode, and shared Rijndael helpers under `/utils` for keys and probes.
+Windows stageless 的 C2 加密。AES-GCM 传输封装/解包（`transport.nim`），以及 `/utils` 下用于密钥和探测的 RC4、XOR 解码与共享 Rijndael 辅助。
 
-## Directories
+## 目录
 
-- `/utils`: Block cipher modes and low-level AES primitives
+- `/utils`：分组密码模式与底层 AES 原语

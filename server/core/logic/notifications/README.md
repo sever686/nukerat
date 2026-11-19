@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-New host notifications. Long poll on the Host table, and it stops when the client disconnects.
+新主机通知。对 Host 表进行长轮询，客户端断开时停止。
 
-## Directories
+## 目录
 
-- `/custom`: Same loop for custom notifications
+- `/custom`：自定义通知的同类循环

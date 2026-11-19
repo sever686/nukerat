@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Font assets bundled with the GUI. Faces are registered from here in global styles.
+随 GUI 打包的字体资源。字体字面在全局样式中从这里注册。
 
-## Directories
+## 目录
 
-- `/mona_sans`: Mona Sans and Mona Sans Mono files used across the app
+- `/mona_sans`：应用中使用的 Mona Sans 与 Mona Sans Mono 文件

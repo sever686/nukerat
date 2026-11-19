@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Topbar panel for configured agents (custom HTTP or DeepSeek). This is where you create, edit, and delete them.
+用于已配置智能体（自定义 HTTP 或 DeepSeek）的顶栏面板。可在此创建、编辑和删除智能体。
 
-## Directories
+## 目录
 
-- `/components`: The form, and the raw logic for loading, saving, and removing agents
+- `/components`：表单，以及加载、保存和移除智能体的原始逻辑

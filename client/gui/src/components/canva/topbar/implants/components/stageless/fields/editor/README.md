@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Syntax-highlighted editors for implant preface and channel snippets (Nim and Go) inside the stageless builder.
+Stageless 构建器中用于植入体前言和通道片段的语法高亮编辑器（Nim 与 Go）。

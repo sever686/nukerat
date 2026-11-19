@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Raw logic for listener management in the top bar. Lists channel and file-server listeners, add/view panels, implant body templates, and save or restart requests against the API.
+顶栏中监听器管理的原始逻辑。列出通道与文件服务器监听器、添加/查看面板、植入体正文模板，以及针对 API 的保存或重启请求。

@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Just the small class-name merge helper and numeric input sanitizers shared by UI components.
+仅包含 UI 组件共享的小型类名合并辅助函数和数字输入净化器。

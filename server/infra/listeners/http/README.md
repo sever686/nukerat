@@ -1,10 +1,10 @@
-# Overview
+# 概览
 
-HTTP listener the implants check in on. `manage.py` starts the uvicorn servers and restores the listener rows from the database.
+植入体签入的 HTTP 监听器。`manage.py` 启动 uvicorn 服务器并从数据库恢复监听器行。
 
-## Directories
+## 目录
 
-- `/routes`: route entrypoints, the raw logic lives in `/logic`
-- `/logic`: raw logic of the implant check-in (input, output, new session)
-- `/schemas`: implant payload validation
-- `/utils`: files with helper functions (crypto, body templates, metadata, logging)
+- `/routes`：路由入口，原始逻辑位于 `/logic`
+- `/logic`：植入体签入的原始逻辑（输入、输出、新会话）
+- `/schemas`：植入体载荷校验
+- `/utils`：存放辅助函数的文件（加密、正文模板、元数据、日志）

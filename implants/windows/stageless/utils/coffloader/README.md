@@ -1,8 +1,8 @@
-# Overview
+# 概览
 
-In-process COFF/BOF loader for Windows. Validates the object, maps sections, resolves symbols, and runs the entry with optional BOF args.
+面向 Windows 的进程内 COFF/BOF 加载器。校验目标文件、映射节区、解析符号，并以可选的 BOF 参数运行入口。
 
-## Directories
+## 目录
 
-- `/lib`: Low-level COFF pieces (parse, relocations, memory, beacon I/O, etc.)
-- `loader.nim` / `nimcoff.nim`: Orchestration and exports used by execution capabilities
+- `/lib`：底层 COFF 组件（解析、重定位、内存、信标 I/O 等）
+- `loader.nim` / `nimcoff.nim`：执行类能力使用的编排与导出

@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Port-scan capability for the macOS stageless implant. Same shape as the other platforms: parse targets and port specs, scan with timeouts, cap output size.
+macOS stageless 植入体的端口扫描能力。与其他平台形状相同：解析目标与端口规格、带超时扫描、限制输出大小。

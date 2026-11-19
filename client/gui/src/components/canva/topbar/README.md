@@ -1,18 +1,18 @@
-# Overview
+# 概览
 
-Main menu bar for the Canva shell. Workspace tabs, shortcuts, and entries that float topbar panels (servers, listeners, implants, etc.) live here.
+Canva 外壳的主菜单栏。工作区标签、快捷键以及浮动顶栏面板（服务器、监听器、植入体等）的入口都在这里。
 
-## Directories
+## 目录
 
-- `/about`: About panel
-- `/agents`: LLM agent configuration
-- `/downloads`: Download activity control in the bar
-- `/implants`: Stageless and loader implant builders
-- `/iocs`: IOC list and filters
-- `/listeners`: Listener create and manage UI
-- `/logs`: Team server log viewer
-- `/network`: Port forwards and SOCKS UI
-- `/nukescripts`: NukeScript editor and validation UI
-- `/queue`: Command queue panel
-- `/reports`: Report create and view
-- `/servers`: Saved team server connections
+- `/about`：关于面板
+- `/agents`：LLM 智能体配置
+- `/downloads`：栏内的下载活动控制
+- `/implants`：Stageless 与 loader 植入体构建器
+- `/iocs`：IOC 列表与过滤器
+- `/listeners`：监听器创建与管理 UI
+- `/logs`：团队服务器日志查看器
+- `/network`：端口转发与 SOCKS UI
+- `/nukescripts`：NukeScript 编辑器与校验 UI
+- `/queue`：命令队列面板
+- `/reports`：报告创建与查看
+- `/servers`：已保存的团队服务器连接

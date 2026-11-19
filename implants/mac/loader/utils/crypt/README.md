@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-AES-GCM helpers for the macOS loader relay path: key decode, encrypt/decrypt with nonce+tag wire format, probe blobs, and MD5 fingerprints of configured keys.
+macOS loader 中继路径的 AES-GCM 辅助：密钥解码、使用 nonce+tag 线格式的加解密、探测 blob，以及配置密钥的 MD5 指纹。

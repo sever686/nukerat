@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Page-level wrappers used by `app.tsx`. Up to the present moment this is just the Canva page that renders the main operator shell.
+`app.tsx` 使用的页面级包装。截至目前，这里只有渲染主操作员外壳的 Canva 页面。

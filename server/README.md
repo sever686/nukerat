@@ -1,24 +1,24 @@
-# Overview
+# 概览
 
-Root of the team server directory.
+团队服务器目录的根目录。
 
-## Directories
+## 目录
 
-- `/core`:
-    - FastAPI route entry point
-    - Raw logic of all routes
-    - Middlewares
-    - Route schemas
-    - Mensagens de help
-- `/infra`:
-    - Binaries (armory, migration shellcodes)
-    - TLS certificates
-    - Database: file and shared connection layer
-    - All listener logic (listeners are the services exposed by the team server)
-    - Report files
-    - Temporary files directory
-    - Golang toolchain (for building binaries)
-- `/launcher`: Logic that runs before the server starts, including help-command handling
-- `/logs`: Server log files
-- `/venv`: Python virtual environment for the whole project
-- `/workers`: NukeScript worker, which runs on its own thread
+- `/core`：
+    - FastAPI 路由入口
+    - 所有路由的原始逻辑
+    - 中间件
+    - 路由 schema
+    - 帮助消息
+- `/infra`：
+    - 二进制文件（军械库、迁移 shellcode）
+    - TLS 证书
+    - 数据库：文件与共享连接层
+    - 所有监听器逻辑（监听器是团队服务器暴露的服务）
+    - 报告文件
+    - 临时文件目录
+    - Golang 工具链（用于构建二进制）
+- `/launcher`：服务端启动前运行的逻辑，包括帮助命令处理
+- `/logs`：服务端日志文件
+- `/venv`：整个项目的 Python 虚拟环境
+- `/workers`：NukeScript worker，运行在独立线程上

@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-File browser pieces. The folder tree, the file list, file preview, icon helpers, and the raw logic for paths, listing, and downloads.
+文件浏览器的各个部分。包括文件夹树、文件列表、文件预览、图标辅助函数，以及路径、列表和下载的原始逻辑。

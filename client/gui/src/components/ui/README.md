@@ -1,8 +1,8 @@
-# Overview
+# 概览
 
-Reusable controls and small shared widgets (buttons, dialogs, inputs, menus, etc.).
+可复用控件和小型共享组件（按钮、对话框、输入框、菜单等）。
 
-## Directories
+## 目录
 
-- `/click_menu`: Right-click menus for the workspace panels
-- `/lib`: Just the class-name merge helper and the numeric input sanitizers
+- `/click_menu`：工作区面板的右键菜单
+- `/lib`：仅包含类名合并辅助函数和数字输入净化器

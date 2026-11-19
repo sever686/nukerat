@@ -1,8 +1,8 @@
-# Overview
+# 概览
 
-Network transport shared by the Linux stageless beacon: HTTP client glue, framed TCP reads/writes, relay envelopes, and helpers the capabilities layer calls.
+Linux stageless 信标共享的网络传输：HTTP 客户端胶水、带帧的 TCP 读写、中继信封，以及能力层调用的辅助。
 
-## Directories
+## 目录
 
-- `/portforward`: TCP port-forward session table
-- `/socks`: SOCKS proxy core
+- `/portforward`：TCP 端口转发会话表
+- `/socks`：SOCKS 代理核心

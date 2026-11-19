@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Client disconnect watcher. Used by the long polls (sessions, screenshot, notifications, NukeScript output).
+客户端断开监视。供长轮询使用（会话、截图、通知、NukeScript 输出）。

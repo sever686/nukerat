@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Right-click menus for the workspace panels. Types, helper functions, and one bridge per panel (terminal, explorer, sessions, empty canvas, etc.), picked by the registry.
+工作区面板的右键菜单。类型、辅助函数，以及每个面板一个桥接（终端、资源管理器、会话、空画布等），由注册表选择。

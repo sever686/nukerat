@@ -1,13 +1,13 @@
-# Overview
+# 概览
 
-Infra is where everything that isn't related to the server's core logic lives, such as: armory binaries, listener logic, etc.
+Infra 存放与服务器核心逻辑无关的一切内容，例如：军械库二进制、监听器逻辑等。
 
-## Directories
+## 目录
 
-- `/bin`: Where the compiled armory binaries live
-- `/certs`: Where the TLS certificates live
-- `/database`: Folder for the sqlite DB file
-- `/general`:  Just the server log creation logic
-- `/listeners`: All logic around listeners (file serve included)
-- `/reports`: Where the report files live
-- `/tmp`: Folder the team server uses as a temporary directory
+- `/bin`：编译后的军械库二进制所在位置
+- `/certs`：TLS 证书所在位置
+- `/database`：sqlite 数据库文件所在文件夹
+- `/general`：仅包含服务端日志创建逻辑
+- `/listeners`：围绕监听器的全部逻辑（含文件服务）
+- `/reports`：报告文件所在位置
+- `/tmp`：团队服务器用作临时目录的文件夹

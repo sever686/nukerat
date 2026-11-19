@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Where the LOLBAS project copy that shipped with the lolbin help lives.
+随 lolbin 帮助一起提供的 LOLBAS 项目副本所在位置。
 
-## Directories
+## 目录
 
-- `/LOLBAS`: the LOLBAS project license, notice, and README
+- `/LOLBAS`：LOLBAS 项目的许可证、声明和 README

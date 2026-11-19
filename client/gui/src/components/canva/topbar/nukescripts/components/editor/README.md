@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-NukeScript source editor built on `react-simple-code-editor`. Custom highlighting for Python keywords, NukeScript builtins (`cmd`, `folders`, `agent`, etc.), and `event.*` tokens.
+基于 `react-simple-code-editor` 构建的 NukeScript 源码编辑器。为 Python 关键字、NukeScript 内置项（`cmd`、`folders`、`agent` 等）以及 `event.*` 标记提供自定义高亮。

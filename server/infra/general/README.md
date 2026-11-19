@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Just the server log creation logic. `create_log.py` sets up the rotating `server.log` and `listeners.log` handlers, plus the global exception handler.
+仅包含服务端日志创建逻辑。`create_log.py` 设置轮转的 `server.log` 与 `listeners.log` 处理器，以及全局异常处理器。

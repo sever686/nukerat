@@ -1,8 +1,8 @@
-# Overview
+# 概览
 
-Go compile path (the `app` format).
+Go 编译路径（`app` 格式）。
 
-## Directories
+## 目录
 
-- `/modes`: The build run (patch source, compile, return the bytes)
-- `/utils`: Files with helper functions (paths, placeholders, source prep, the go invocation)
+- `/modes`：构建运行（修补源码、编译、返回字节）
+- `/utils`：存放辅助函数的文件（路径、占位符、源码准备、go 调用）

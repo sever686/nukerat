@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Where the compiled armory binaries live. `armory.json` is the catalog (name, type, args, parse) the terminal reads when it runs them.
+编译后的军械库二进制所在位置。`armory.json` 是终端运行它们时读取的目录（名称、类型、参数、解析）。

@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Raw logic of the NukeScript debugger. This is where the poll loop, the log view, and the line formatting live.
+NukeScript 调试器的原始逻辑。轮询循环、日志视图和行格式化都在这里。

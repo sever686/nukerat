@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Code editors for the loader fields. Preface and channel highlight Nim or Go. Strings is Nim only (PE artifacts).
+Loader 字段的代码编辑器。前言和通道会高亮 Nim 或 Go。字符串仅支持 Nim（PE 制品）。

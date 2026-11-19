@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-NukeScript output long poll. Waits for new rows, then returns them.
+NukeScript 输出长轮询。等待新数据行，然后返回。

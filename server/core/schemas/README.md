@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Client input validation schemas, one file per area, matching the routes. `__exception__.py` is the validation error response the server entrypoint uses.
+客户端输入校验 schema，每个领域一个文件，与路由对应。`__exception__.py` 是服务端入口使用的校验错误响应。

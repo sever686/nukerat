@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-The `app` build run. Patches the source, compiles, and returns the bytes.
+`app` 构建运行。修补源码、编译并返回字节。

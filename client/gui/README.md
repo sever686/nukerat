@@ -1,9 +1,9 @@
-# Overview
+# 概览
 
-Desktop client. Electron shell around the React UI.
+桌面客户端。包裹 React UI 的 Electron 外壳。
 
-## Directories
+## 目录
 
-- `/electron`: Main process. Window lifecycle, IPC for config, downloads, and local files, CSP, and the preload bridge
-- `/public`: App icons for the window, the installer, and the page
-- `/src`: React source for the GUI
+- `/electron`：主进程。窗口生命周期、配置/下载/本地文件的 IPC、CSP 以及预加载桥接
+- `/public`：窗口、安装程序和页面所用的应用图标
+- `/src`：GUI 的 React 源码

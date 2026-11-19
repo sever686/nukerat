@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-AES-GCM transport for the Linux stageless implant, plus RC4 and XOR helpers.
+Linux stageless 植入体的 AES-GCM 传输，以及 RC4 和 XOR 辅助。
 
-## Directories
+## 目录
 
-- `/utils`: Block cipher modes and low-level AES primitives
+- `/utils`：分组密码模式与底层 AES 原语

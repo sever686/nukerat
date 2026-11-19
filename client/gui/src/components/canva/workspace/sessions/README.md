@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Main sessions workspace: sortable host table, search, detail split panel, delete and kill flows, and long-poll refresh.
+主会话工作区：可排序的主机表格、搜索、详情分栏面板、删除与终止流程，以及长轮询刷新。
 
-## Directories
+## 目录
 
-- `/components`: Table logic, macros, toolbar, and right-click menu hooks
+- `/components`：表格逻辑、宏、工具栏以及右键菜单 hook

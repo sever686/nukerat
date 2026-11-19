@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Darwin helpers for macOS stageless. Host info, paths, and the calls the capabilities use live here.
+macOS stageless 的 Darwin 辅助。主机信息、路径以及各能力使用的调用都在这里。

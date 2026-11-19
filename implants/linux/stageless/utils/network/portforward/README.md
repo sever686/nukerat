@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Port-forward session table for the Linux stageless implant. `core.nim` dials, reads, writes, and closes TCP by key, using the SOCKS helpers.
+Linux stageless 植入体的端口转发会话表。`core.nim` 使用 SOCKS 辅助按 key 拨号、读取、写入和关闭 TCP。

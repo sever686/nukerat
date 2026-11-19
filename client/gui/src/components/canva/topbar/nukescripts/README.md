@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-NukeScript panel. List, add, edit, enable, disable, and remove scripts.
+NukeScript 面板。支持列出、添加、编辑、启用、禁用和移除脚本。
 
-## Directories
+## 目录
 
-- `/components`: Raw logic of the panel, the editor split, and the error bar
+- `/components`：面板的原始逻辑、编辑器分栏以及错误栏

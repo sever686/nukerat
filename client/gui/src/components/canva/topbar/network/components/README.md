@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-All logic around network pivot connections in the top bar: list, add, view, and CRUD against the network API using live session data.
+顶栏中与网络枢轴连接相关的全部逻辑：使用实时会话数据，针对网络 API 进行列表、添加、查看以及增删改查。

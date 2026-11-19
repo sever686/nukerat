@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Execution tasks on Windows stageless: shellcode, .NET assemblies, BOF/COFF via nimcoff, and DLL loads. Shared decoding, UTF-16 packing for BOF args, and patch imports where needed.
+Windows stageless 的执行任务：shellcode、.NET 程序集、通过 nimcoff 执行 BOF/COFF 以及 DLL 加载。包含共享解码、BOF 参数的 UTF-16 打包，以及在需要处修补导入。

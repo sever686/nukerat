@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-This is where the GUI talks to the team server. Each module wraps `fetch` for a route family; shared HTTP error text lives in `http_status.ts`.
+这里是 GUI 与团队服务器通信的地方。每个模块为一类路由封装 `fetch`；共享的 HTTP 错误文本位于 `http_status.ts`。
 
-## Directories
+## 目录
 
-- `/system`: Login, stored server list, and key encode/decode helpers used before other calls
+- `/system`：登录、已保存的服务器列表，以及其他调用之前使用的密钥编解码辅助函数

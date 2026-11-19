@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Topbar panel to read team server logs for a chosen saved server. Split list and detail layout with loading and empty states when no server is selected.
+用于读取所选已保存服务器团队服务器日志的顶栏面板。采用列表与详情分栏布局，在未选择服务器时显示加载与空状态。
 
-## Directories
+## 目录
 
-- `/components`: Fetch and parse logic, filters, list rows, and split pane wiring
+- `/components`：获取与解析逻辑、过滤器、列表行以及分栏面板接线

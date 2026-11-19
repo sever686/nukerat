@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Raw logic of the agent chat. History and markdown, the model picker (also reused as a target select), and the settings split (system prompt and context) live here.
+智能体聊天的原始逻辑。历史记录与 markdown、模型选择器（也复用作目标选择），以及设置分栏（系统提示词与上下文）都在这里。

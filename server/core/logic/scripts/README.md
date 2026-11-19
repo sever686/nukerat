@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-NukeScript records (list, create, edit, delete, status). The syntax check runs before a script is saved or turned on.
+NukeScript 记录（列出、创建、编辑、删除、状态）。语法检查在脚本保存或启用之前运行。
 
-## Directories
+## 目录
 
-- `/validation`: NukeScript syntax checks
+- `/validation`：NukeScript 语法检查

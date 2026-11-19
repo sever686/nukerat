@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Polls the selected host for a JPEG and can save it. The other file is just the right-click shell.
+轮询所选主机的 JPEG 并可保存。另一个文件只是右键菜单外壳。

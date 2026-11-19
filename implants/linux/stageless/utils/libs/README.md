@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Vendored Nim standard-library shims used when the stageless build needs HTTP client code without pulling the full toolchain tree. Up to the present moment this is mainly `std_http.nim` (HTTP client).
+当 stageless 构建需要 HTTP 客户端代码而又不想引入完整工具链目录时使用的 Nim 标准库垫片。截至目前主要是 `std_http.nim`（HTTP 客户端）。

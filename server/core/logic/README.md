@@ -1,28 +1,28 @@
-# Overview
+# 概览
 
-Raw logic of the team server routes (this is where the server entrypoint points). Response wrapping lives in `conclude_logic.py`.
+团队服务器路由的原始逻辑（服务端入口指向这里）。响应包装位于 `conclude_logic.py`。
 
-## Directories
+## 目录
 
-- `/aes`: AES key creation
-- `/agents`: Agent records and the calls that talk to them (deepseek, custom, etc.)
-- `/auth`: Login check and JWT creation
-- `/credentials`: Credential records (list, create, edit, delete)
-- `/explorer`: Folder and file reads on a host
-- `/file_server`: Files sitting in a file server listener
-- `/implants`: Implant build logic
-- `/iocs`: IOC listing and removal
-- `/keylogger`: Keylogger records
-- `/listeners`: HTTP and file server listener logic
-- `/logs`: Reading `server.log` and `listeners.log`
-- `/network`: SOCKS and port forwarding
-- `/notifications`: New host notifications
-- `/ns_output`: NukeScript output long poll
-- `/process`: Process tree requests
-- `/queue`: Task queue listing
-- `/reports`: Report files (activity, hosts, ioc)
-- `/screenshot`: Screenshot snapshots from `infra/tmp`
-- `/scripts`: NukeScript records and syntax checks
-- `/sessions`: Host session listing and the relay graph
-- `/terminal`: Terminal command logic
-- `/utils`: Client disconnect watcher
+- `/aes`：AES 密钥创建
+- `/agents`：智能体记录以及与其通信的调用（deepseek、自定义等）
+- `/auth`：登录校验与 JWT 创建
+- `/credentials`：凭据记录（列出、创建、编辑、删除）
+- `/explorer`：主机上的文件夹与文件读取
+- `/file_server`：位于文件服务器监听器中的文件
+- `/implants`：植入体构建逻辑
+- `/iocs`：IOC 列出与移除
+- `/keylogger`：键盘记录记录
+- `/listeners`：HTTP 与文件服务器监听器逻辑
+- `/logs`：读取 `server.log` 和 `listeners.log`
+- `/network`：SOCKS 与端口转发
+- `/notifications`：新主机通知
+- `/ns_output`：NukeScript 输出长轮询
+- `/process`：进程树请求
+- `/queue`：任务队列列出
+- `/reports`：报告文件（活动、主机、ioc）
+- `/screenshot`：来自 `infra/tmp` 的截图快照
+- `/scripts`：NukeScript 记录与语法检查
+- `/sessions`：主机会话列出与中继图谱
+- `/terminal`：终端命令逻辑
+- `/utils`：客户端断开监视

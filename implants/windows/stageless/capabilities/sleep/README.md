@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Jittered beacon sleep for Windows stageless. `core.nim` is the basic path; Ekko and Zilean sit beside it.
+Windows stageless 带抖动的信标睡眠。`core.nim` 是基础路径；Ekko 和 Zilean 在其旁边。

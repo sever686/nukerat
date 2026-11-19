@@ -1,8 +1,8 @@
-# Overview
+# 概览
 
-Shared implant builder UI: base selector (stageless vs loader), build orchestration, and hooks into the implants API.
+共享的植入体构建器 UI：基础选择器（stageless 与 loader）、构建编排，以及植入体 API 的 hook。
 
-## Directories
+## 目录
 
-- `/loader`: Staged loader implant form and build config
-- `/stageless`: Stageless implant form and build config
+- `/loader`：分段式 loader 植入体表单与构建配置
+- `/stageless`：Stageless 植入体表单与构建配置

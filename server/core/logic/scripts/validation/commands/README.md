@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-One validator per NukeScript command (cmd, agent, db, network, credentials, file_server, etc.).
+每个 NukeScript 命令一个校验器（cmd、agent、db、network、credentials、file_server 等）。

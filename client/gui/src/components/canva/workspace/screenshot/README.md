@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Screenshot for a selected host.
+所选主机的截图。
 
-## Directories
+## 目录
 
-- `/components`: JPEG poll, save, and the right-click shell
+- `/components`：JPEG 轮询、保存以及右键菜单外壳

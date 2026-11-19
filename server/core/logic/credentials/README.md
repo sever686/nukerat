@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Credential records (list, create, edit, delete).
+凭据记录（列出、创建、编辑、删除）。

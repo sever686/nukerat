@@ -1,9 +1,9 @@
-# Overview
+# 概览
 
-Report files (activity, hosts, ioc), written as pdf, html, or json. Create, list, download, view, and delete live in `core.py`. Shared HTML and the files on disk live next to it.
+报告文件（活动、主机、ioc），以 pdf、html 或 json 写出。创建、列出、下载、查看和删除位于 `core.py`。共享 HTML 与磁盘上的文件在其旁边。
 
-## Directories
+## 目录
 
-- `/activity`: Activity report HTML (hosts, terminal commands, credentials)
-- `/hosts`: Hosts report HTML
-- `/ioc`: IOC report HTML (ips, domains, files, hashes)
+- `/activity`：活动报告 HTML（主机、终端命令、凭据）
+- `/hosts`：主机报告 HTML
+- `/ioc`：IOC 报告 HTML（ip、域名、文件、哈希）

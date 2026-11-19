@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Graph of entrypoints and sessions.
+入口点与会话图谱。
 
-## Directories
+## 目录
 
-- `/components`: Fetch, layout, and the OS icons
+- `/components`：获取、布局以及操作系统图标

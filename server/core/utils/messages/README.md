@@ -1,10 +1,10 @@
-# Overview
+# 概览
 
-Help message texts the terminal reads. armory.txt is the armory tool index. help for one command looks in `/tools`, then `/commands`, then `/lolbins`.
+终端读取的帮助消息文本。armory.txt 是军械库工具索引。某个命令的帮助会依次在 `/tools`、`/commands`、`/lolbins` 中查找。
 
-## Directories
+## 目录
 
-- `/commands`: per-command help for the built-in terminal commands
-- `/help`: the full command tables (default, linux, mac)
-- `/tools`: per-tool help for armory tools (bof, net, etc)
-- `/lolbins`: per-binary and per-category lolbin help texts
+- `/commands`：内置终端命令的逐命令帮助
+- `/help`：完整命令表（default、linux、mac）
+- `/tools`：军械库工具的逐工具帮助（bof、net 等）
+- `/lolbins`：逐二进制与逐类别的 lolbin 帮助文本

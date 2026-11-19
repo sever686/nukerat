@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Files with helper functions for the terminal, such as: armory install and update, lolbins expansion, argument schemas, bof packing, the download queue, help text, etc.
+终端的辅助函数文件，例如：军械库安装与更新、lolbins 展开、参数 schema、bof 打包、下载队列、帮助文本等。

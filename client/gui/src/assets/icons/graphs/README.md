@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-SVG host icons for the graphs workspace and session notifications (Windows, Linux, macOS, unknown, root variants, entrypoint, etc.).
+供图谱工作区和会话通知使用的 SVG 主机图标（Windows、Linux、macOS、未知、root 变体、入口点等）。

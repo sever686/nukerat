@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Custom-channel relay client for stageless. `relay.go` POSTs task payloads to the configured relay host and returns status plus body text.
+Stageless 的自定义通道中继客户端。`relay.go` 将任务载荷 POST 到配置的中继主机，并返回状态及响应体文本。

@@ -1,8 +1,8 @@
-# Overview
+# 概览
 
-IOC collection. Terminal command text and file server transfers get scanned here, then written to the IOC table. helpers.py is the write path (skips empty values and duplicates). core.py sends the body to the file server collector or the terminal collector.
+IOC 采集。终端命令文本和文件服务器传输在此扫描，然后写入 IOC 表。helpers.py 是写入路径（跳过空值和重复项）。core.py 将正文发送给文件服务器采集器或终端采集器。
 
-## Directories
+## 目录
 
-- `/endpoint`: where the collectors live (terminal commands, file server upload and download bytes)
-- `/knowledge`: TLD and file extension lists used to tell a domain from a filename
+- `/endpoint`：采集器所在位置（终端命令、文件服务器上传与下载字节）
+- `/knowledge`：用于区分域名与文件名的 TLD 与文件扩展名列表

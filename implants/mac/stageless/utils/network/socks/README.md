@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-SOCKS-style socket helpers for macOS stageless. `core.go` dials TCP by id and reads or writes relay traffic.
+macOS stageless 的 SOCKS 风格 socket 辅助。`core.go` 按 id 拨号 TCP，并读取或写入中继流量。

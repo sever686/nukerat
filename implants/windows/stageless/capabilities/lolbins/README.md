@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Runs payloads through LOLBin-style paths. Parses task JSON for bin path, args, and optional PID, resolves placeholders, and hands execution to the shared execution core.
+通过 LOLBin 风格路径运行载荷。解析任务 JSON 中的 bin 路径、参数及可选 PID，解析占位符，并将执行交给共享的执行核心。

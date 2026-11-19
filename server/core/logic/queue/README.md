@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Task queue listing. Search, host filter, pagination, and the terminal output that belongs to a row. Parameter text gets clipped before it goes out.
+任务队列列出。搜索、主机过滤、分页，以及属于某行的终端输出。参数文本在输出前会被截断。

@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Process list for a selected host.
+所选主机的进程列表。
 
-## Directories
+## 目录
 
-- `/components`: Table, filters, and the request logic
+- `/components`：表格、过滤器以及请求逻辑

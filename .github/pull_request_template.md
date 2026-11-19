@@ -1,27 +1,27 @@
-## Summary
+## 摘要
 
-A clear description of what this pull request changes and why.
+清晰描述本拉取请求做了哪些更改以及为什么。
 
-## Type of change
+## 更改类型
 
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Documentation
-- [ ] Other
+- [ ] 缺陷修复
+- [ ] 新功能
+- [ ] 文档
+- [ ] 其他
 
-## How to test
+## 如何测试
 
 1.
 2.
 3.
 
-## Related issue
+## 相关 Issue
 
-Link the issue this pull request closes, if any.
+链接本拉取请求要关闭的 Issue（如有）。
 
 Closes #
 
-## Checklist
+## 检查清单
 
-- [ ] The change was tested locally
-- [ ] Documentation was updated when needed
+- [ ] 更改已在本地测试
+- [ ] 必要时已更新文档

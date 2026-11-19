@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Raw logic of the NukeScript worker. This is where the database monitoring loop, the job pool, the script parsing, and the sandbox live.
+NukeScript worker 的原始逻辑。数据库监控循环、作业池、脚本解析和沙箱都在这里。
 
-## Directories
+## 目录
 
-- `/functions`: Native commands a script can call (cmd, agent, db, credentials, file_server, network, etc.)
+- `/functions`：脚本可调用的原生命令（cmd、agent、db、credentials、file_server、network 等）

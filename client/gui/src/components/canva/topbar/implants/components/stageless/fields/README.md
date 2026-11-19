@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Stageless form sections (general, runtime, c2, preface, custom channel, PE artifacts, etc.).
+Stageless 表单分区（通用、运行时、c2、前言、自定义通道、PE 制品等）。
 
-## Directories
+## 目录
 
-- `/editor`: Preface and channel editors (Nim or Go)
+- `/editor`：前言与通道编辑器（Nim 或 Go）

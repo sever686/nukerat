@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-IOC list, host filter, detail split, and the logic that loads and removes entries.
+IOC 列表、主机过滤器、详情分栏，以及加载和移除条目的逻辑。

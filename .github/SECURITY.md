@@ -1,8 +1,8 @@
-# Security Policy
+# 安全策略
 
-Along with stability, security is a priority for NukeRat. If you find a vulnerability, please feel free to report it in [Security Advisories](https://github.com/nukeratframework/nukerat/security/advisories/new).
+除稳定性之外，安全也是 NukeRat 的重点。如果你发现漏洞，欢迎通过 [Security Advisories](https://github.com/nukeratframework/nukerat/security/advisories/new) 进行报告。
 
-For a detailed report, we suggest:
+如需提供详细报告，我们建议包含：
 
-- A step by step explanation of the vulnerability
-- A screenshot or image (if applicable)
+- 对漏洞的逐步说明
+- 截图或图片（如适用）

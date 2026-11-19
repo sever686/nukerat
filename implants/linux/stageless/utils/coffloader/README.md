@@ -1,8 +1,8 @@
-# Overview
+# 概览
 
-In-process ELF/BOF loader for Linux. Validates the object, maps sections, resolves symbols, and runs the entry (default `go`) with optional BOF args.
+面向 Linux 的进程内 ELF/BOF 加载器。校验目标文件、映射节区、解析符号，并以可选的 BOF 参数运行入口（默认为 `go`）。
 
-## Directories
+## 目录
 
-- `/lib`: Low-level ELF pieces (parse, relocations, memory, beacon I/O, etc.)
-- `loader.nim` / `nimcoff.nim`: Orchestration and exports consumed by execution capabilities
+- `/lib`：底层 ELF 组件（解析、重定位、内存、信标 I/O 等）
+- `loader.nim` / `nimcoff.nim`：执行类能力所使用的编排与导出

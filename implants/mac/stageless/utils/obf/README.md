@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Build-time string obfuscation for macOS stageless. `S()` picks the scheme from the placeholder in `obf.go`.
+macOS stageless 的构建期字符串混淆。`S()` 根据 `obf.go` 中的占位符选择方案。

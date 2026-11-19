@@ -1,9 +1,9 @@
-# Overview
+# 概览
 
-Raw logic of the HTTP listener check-in. `core.py` logs the check-in and marks the host active, `actions.py` splits the payload into input, output, new session, task error, or kill.
+HTTP 监听器签入的原始逻辑。`core.py` 记录签入并将主机标记为活跃，`actions.py` 将载荷拆分为输入、输出、新会话、任务错误或终止。
 
-## Directories
+## 目录
 
-- `/input`: logic that runs when the implant asks for queued commands
-- `/output`: logic that runs when the implant returns task output
-- `/new`: logic that runs when a new session checks in
+- `/input`：植入体请求排队命令时运行的逻辑
+- `/output`：植入体返回任务输出时运行的逻辑
+- `/new`：新会话签入时运行的逻辑

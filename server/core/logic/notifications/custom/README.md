@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Same loop for custom notifications (title, type, description).
+自定义通知（标题、类型、描述）的同类循环。

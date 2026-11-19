@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Darwin helpers for the macOS loader: monotonic time and sleep, path constants, and staging logic that unpacks a `.app` zip or Mach-O payload and runs it.
+macOS loader 的 Darwin 辅助：单调时间与 sleep、路径常量，以及解包 `.app` zip 或 Mach-O 载荷并运行的 stage 逻辑。

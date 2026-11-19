@@ -1,8 +1,8 @@
-# Overview
+# 概览
 
-Where the compiled binaries live: the armory payloads, and the shellcode encoders the implant build calls.
+编译后二进制所在位置：军械库载荷，以及植入体构建所调用的 shellcode 编码器。
 
-## Directories
+## 目录
 
-- `/armory`: where the compiled armory binaries live
-- `/encoders`: shellcode encoders (the build runs `encoders/<name>/<name>`)
+- `/armory`：编译后的军械库二进制所在位置
+- `/encoders`：shellcode 编码器（构建时运行 `encoders/<name>/<name>`）

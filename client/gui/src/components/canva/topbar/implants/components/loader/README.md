@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Implant loader builder. Form state, section nav, the build bar, and the custom-channel templates live here.
+植入体 loader 构建器。表单状态、分区导航、构建栏以及自定义通道模板都在这里。
 
-## Directories
+## 目录
 
-- `/fields`: Section fields (general, stage, preface, PE artifacts, runtime) and the code editors
+- `/fields`：分区字段（通用、stage、前言、PE 制品、运行时）以及代码编辑器

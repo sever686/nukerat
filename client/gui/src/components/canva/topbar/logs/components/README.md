@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Log list, filters, detail split, and the fetch logic for the team server log viewer.
+团队服务器日志查看器的日志列表、过滤器、详情分栏以及获取逻辑。

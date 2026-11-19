@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Content handlers for queued commands. `custom.py` picks the handler (bof, shellcode, migrate, donut, dll, upload, etc.), `get_content.py` is where the file bytes are read and encoded, and `actions.py` marks a terminate task completed.
+排队命令的内容处理器。`custom.py` 选择处理器（bof、shellcode、migrate、donut、dll、upload 等），`get_content.py` 读取并编码文件字节，`actions.py` 将终止任务标记为已完成。

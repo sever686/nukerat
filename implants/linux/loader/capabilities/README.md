@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Loader-side capabilities before the staged payload runs. Right now this is just beacon sleep using the shared Linux API helpers and global delay settings.
+分段载荷运行前的 loader 侧能力。目前仅包含使用共享 Linux API 辅助函数和全局延迟设置的信标睡眠。

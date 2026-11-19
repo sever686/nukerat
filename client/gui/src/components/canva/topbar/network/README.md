@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Topbar panel for network connections (port forwarding and socks). Add, view, and remove them here.
+网络连接（端口转发与 socks）的顶栏面板。可在此添加、查看和移除。
 
-## Directories
+## 目录
 
-- `/components`: Add and view forms, plus the panel logic
+- `/components`：添加与查看表单，以及面板逻辑

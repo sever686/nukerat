@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Beacon registration helpers for Linux stageless. Resolves or randomizes the host tag, builds the fingerprint JSON (hostname, user, arch, listener fields, etc.), and sends it over the active HTTP or TCP channel.
+Linux stageless 的信标注册辅助。解析或随机化主机标签、构建指纹 JSON（主机名、用户、架构、监听器字段等），并通过当前活跃的 HTTP 或 TCP 通道发送。

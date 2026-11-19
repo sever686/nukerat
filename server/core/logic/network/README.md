@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-SOCKS and port forwarding. Create, list, restart, and remove.
+SOCKS 与端口转发。创建、列出、重启和移除。

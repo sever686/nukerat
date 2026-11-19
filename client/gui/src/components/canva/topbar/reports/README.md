@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Reports top bar panel. Lists server reports, creates new ones from sessions, and opens or downloads HTML output.
+报告顶栏面板。列出服务端报告，从会话创建新报告，并打开或下载 HTML 输出。
 
-## Directories
+## 目录
 
-- `/components`: Table logic, create form, and view dialog
+- `/components`：表格逻辑、创建表单以及查看对话框

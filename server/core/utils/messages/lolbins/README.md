@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Help texts for lolbins. One file per binary, plus the category indexes (_execute, _download, _dll, etc). The path and tag catalog is lolbins.json in the utils root.
+Lolbins 的帮助文本。每个二进制一个文件，外加类别索引（_execute、_download、_dll 等）。路径与标签目录是 utils 根目录下的 lolbins.json。
 
-## Directories
+## 目录
 
-- `/reference`: copy of the LOLBAS project files that shipped with this help
+- `/reference`：随此帮助一起提供的 LOLBAS 项目文件副本

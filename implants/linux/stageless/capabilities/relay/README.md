@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Relay worker registry and task wiring for the Linux implant. `core` tracks relay configs and threads; `frame`, `http`, `http_custom`, and `tcp` implement the channel-specific forwarding.
+Linux 植入体的中继工作线程注册表与任务接线。`core` 跟踪中继配置和线程；`frame`、`http`、`http_custom` 和 `tcp` 实现各通道特定的转发。

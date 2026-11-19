@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Keylogger records. Search, time range, host filter, and pagination.
+键盘记录记录。搜索、时间范围、主机过滤与分页。

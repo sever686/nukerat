@@ -1,17 +1,17 @@
-# Overview
+# 概览
 
-Dockview workspace. This is where the panels are mounted, opened, and closed.
+Dockview 工作区。面板在此挂载、打开和关闭。
 
-## Directories
+## 目录
 
-- `/agent`: AI agent chat
-- `/credentials`: Credential list (add, edit, view, remove)
-- `/explorer`: File browser for a selected host
-- `/file_server`: Team server file server (upload, download, rename, delete)
-- `/graphs`: Graph of entrypoints and sessions
-- `/keylogger`: Keylogger entries
-- `/ns_debugger`: NukeScript debugger output
-- `/process`: Process list for a selected host
-- `/screenshot`: Screenshot for a selected host
-- `/sessions`: Session list
-- `/terminal`: Host terminal
+- `/agent`：AI 智能体聊天
+- `/credentials`：凭据列表（添加、编辑、查看、移除）
+- `/explorer`：所选主机的文件浏览器
+- `/file_server`：团队服务器文件服务器（上传、下载、重命名、删除）
+- `/graphs`：入口点与会话图谱
+- `/keylogger`：键盘记录条目
+- `/ns_debugger`：NukeScript 调试器输出
+- `/process`：所选主机的进程列表
+- `/screenshot`：所选主机的截图
+- `/sessions`：会话列表
+- `/terminal`：主机终端

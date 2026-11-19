@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Lists used to tell a domain apart from a filename. map.py loads them and checks if a candidate ends in a known TLD.
+用于区分域名与文件名的列表。map.py 加载它们并检查候选值是否以已知 TLD 结尾。
 
-## Directories
+## 目录
 
-- `/json`: the raw lists (top level domains, file extensions)
+- `/json`：原始列表（顶级域名、文件扩展名）

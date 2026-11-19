@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Team server connection UI logic. Loads stored server entries, add/edit forms, auth and key handling, and connection tests before persisting config.
+团队服务器连接 UI 逻辑。加载已保存的服务器条目、添加/编辑表单、认证与密钥处理，以及在持久化配置前的连接测试。

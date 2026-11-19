@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Files sitting in a file server listener (list, upload, rename, delete, download). Upload and download also hit the IOC hook.
+位于文件服务器监听器中的文件（列出、上传、重命名、删除、下载）。上传和下载还会触发 IOC hook。

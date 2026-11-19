@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Low-level crypto primitives for stageless AES. Same adapted nimcrypto Rijndael and block-mode helpers as the loader, consumed from the parent `/crypt` folder.
+Stageless AES 的底层密码原语。与 loader 相同，为改编自 nimcrypto 的 Rijndael 与分组模式辅助，由父级 `/crypt` 文件夹使用。

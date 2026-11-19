@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-HTTP GET helper for the Linux loader. `http_core.nim` pulls the next stage from the configured URL (HTTP or HTTPS).
+Linux loader 的 HTTP GET 辅助。`http_core.nim` 从配置的 URL（HTTP 或 HTTPS）拉取下一阶段。

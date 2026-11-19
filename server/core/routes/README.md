@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Route entrypoints, the raw logic lives in `/logic`. One file per area (auth, agents, terminal, listeners, sessions, implants, reports, etc.).
+路由入口，原始逻辑位于 `/logic`。每个领域一个文件（auth、agents、terminal、listeners、sessions、implants、reports 等）。

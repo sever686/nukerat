@@ -1,63 +1,63 @@
-# NukeRat: legal notice and disclaimer
+# NukeRat：法律声明与免责声明
 
-**Last updated:** November 16, 2026
+**最后更新：** 2026 年 11 月 16 日
 
-**NukeRat** is an **open source** post exploitation project for **cyber security professionals**. What follows supplements the repository `LICENSE` regarding limitation of liability.
-
----
-
-## Software license
-
-Reproduction, modification, and redistribution of the code are governed solely by the repository `LICENSE`. Armory modules and other dependencies have their own licenses, as stated in their respective `LICENSE` files.
+**NukeRat** 是一个面向**网络安全专业人员**的**开源**后渗透项目。以下内容是对仓库 `LICENSE` 中有关责任限制条款的补充。
 
 ---
 
-## Purpose
+## 软件许可
 
-The Software was designed to **simulate real attacks and threats** in **authorized** security exercises: reproduce adversary tactics after initial compromise, test vulnerabilities and exploitation paths, validate defensive controls, and measure detection and response capability (red team, purple team, pentest, audit, or lab research), always with permission from whoever is responsible for the systems, networks, and data involved.
-
-It is not a consumer product nor a tool for unauthorized access to third party systems.
+代码的复制、修改和再分发仅受仓库 `LICENSE` 约束。军械库（Armory）模块及其他依赖项拥有各自独立的许可证，详见各自目录下的 `LICENSE` 文件。
 
 ---
 
-## Author position on illicit use
+## 用途
 
-The Author **condemns and does not support** any illicit use of NukeRat. The Author **does not** authorize, **does not** encourage, **does not** supervise, and **does not** take part in operations carried out by third parties with the Software.
+本软件旨在**经授权**的安全演练中**模拟真实的攻击与威胁**：在初始入侵之后复现攻击者战术、测试漏洞与利用路径、验证防御控制措施，并衡量检测与响应能力（红队、紫队、渗透测试、审计或实验室研究），且始终须获得对相关系统、网络和数据负责者的许可。
 
-NukeRat is **not** intended for creating, distributing, or operating **malware** to attack third parties. Artifacts produced by anyone who misuses the Software for that purpose (implants, payloads, or tools for malicious use) **do not** represent the purpose of the project nor have the Author's support. Responsibility for that conduct lies solely with whoever engages in it.
-
----
-
-## Third-party platforms and external C2
-
-NukeRat can route implant traffic through an **external C2** channel that the operator configures. That channel may be a service the operator reaches through **their own** API credentials. Mentions of **Telegram**, **Discord**, **Dropbox**, and similar names in the README, documentation, or source are **illustrative references only**: examples of third-party platforms that expose an API. They describe a class of possible transports. They are not a recommendation, an instruction, or permission to use those services.
-
-The Author:
-
-- **does not** endorse, encourage, or support use of any third-party platform **without authorization**, whether that authorization is missing from the owner of the systems under test or forbidden by the platform itself;
-- **does not** operate, host, monitor, or control accounts, bots, tokens, API keys, or traffic on Telegram, Discord, Dropbox, or any other third-party service;
-- **does not** supply credentials or infrastructure on those platforms. Anything of that kind is brought solely by the operator;
-- **has no** partnership, sponsorship, agency, or affiliation with the owners of those platforms. Names and trademarks belong to their respective owners and are used only to identify the kind of service an operator might connect.
-
-External C2 is a **transport option for authorized security work** (red team, purple team, pentest, audit, or lab), under permission from whoever is responsible for the systems, networks, and data in scope. It is **not** support for malware command-and-control, unauthorized access, fraud, or any other offense carried out through a consumer or cloud platform.
-
-Before enabling any external channel, the operator must **both**:
-
-1. hold **explicit authorization** covering the engagement and the systems in scope; and
-2. comply with the **terms of service, acceptable use policy, developer policy, and applicable law** of every third-party platform involved.
-
-If a platform prohibits automated abuse, covert command channels, malware distribution, or this kind of integration, the operator **must not** use it that way. A reference in this project **does not** override that platform's rules and **does not** permit use the platform has not allowed.
-
-The Author **condemns** use of NukeRat together with any third-party platform for unauthorized activity or for activity that platform does not allow. Account suspension, abuse reports, cooperation with authorities, and any other consequence of that conduct are the **operator's alone**. That conduct creates **no** agency, representation, or joint participation with the Author. To the fullest extent permitted by applicable law, the Author is **not liable** for how an operator uses, misuses, or connects third-party platforms through the Software.
+本软件不是消费级产品，也不是用于未授权访问第三方系统的工具。
 
 ---
 
-## Limitation of liability
+## 作者对非法使用的立场
 
-Anyone who uses, modifies, or redistributes NukeRat assumes **full and exclusive responsibility** for their actions, for the legality of their operations, for any required authorizations, and for all effects arising from them, including toward third parties and authorities, in civil, administrative, and criminal matters. Anyone who uses the Software for unlawful conduct (such as unauthorized access, causing damage, exfiltrating data, extortion, fraud, or any other offense) is liable **on their own**, with no agency, representation, or joint participation with the Author.
+作者**谴责且不支持**对 NukeRat 的任何非法使用。作者**不**授权、**不**鼓励、**不**监督、也**不**参与第三方使用本软件开展的任何行动。
 
-To the **fullest extent permitted by applicable law**, the Author **is not liable** for any losses, damages, obligations, claims, or consequences of any kind related to the Software, its use, misuse, unavailability, or integration with other tools, **even if warned** of the possibility. Any liability of the Author that the law does not allow to exclude is limited to the **minimum legally required**, except in cases of **intentional misconduct** by the Author.
+NukeRat **并非**用于创建、分发或运营攻击第三方的**恶意软件**。任何滥用本软件达到该目的所产出的制品（植入体、载荷或供恶意使用的工具）**均不**代表本项目的宗旨，也不受作者支持。此类行为的责任完全由实施者本人承担。
 
 ---
 
-*Informational document. Rights to the code follow the project `LICENSE`.*
+## 第三方平台与外部 C2
+
+NukeRat 可将植入体流量通过操作员配置的**外部 C2** 通道转发。该通道可以是操作员使用**自己的** API 凭据访问的服务。README、文档或源码中提及 **Telegram**、**Discord**、**Dropbox** 及类似名称，**仅为示例性引用**：它们是提供 API 的第三方平台的例子，描述的是一类可能的传输方式。这些提及不构成对使用上述服务的推荐、指示或授权。
+
+作者：
+
+- **不**支持、鼓励或协助**未经授权**使用任何第三方平台，无论该授权是缺失于被测系统所有者，还是该平台本身所禁止；
+- **不**运营、托管、监控或控制 Telegram、Discord、Dropbox 或任何其他第三方服务上的账号、机器人、令牌、API 密钥或流量；
+- **不**在上述平台上提供凭据或基础设施。此类内容完全由操作员自行准备；
+- 与上述平台的所有者**不存在**任何合伙、赞助、代理或关联关系。名称与商标归各自所有者所有，仅用于说明操作员可能连接的某类服务。
+
+外部 C2 是**用于经授权安全工作的传输选项**（红队、紫队、渗透测试、审计或实验室），须获得对范围内系统、网络和数据负责者的许可。它**不支持**恶意软件的命令与控制、未授权访问、欺诈或通过消费级/云平台实施的任何其他犯罪行为。
+
+在启用任何外部通道前，操作员**必须同时**满足：
+
+1. 持有覆盖该次行动及范围内系统的**明确授权**；且
+2. 遵守所涉每个第三方平台的**服务条款、可接受使用政策、开发者政策及适用法律**。
+
+若平台禁止自动化滥用、隐蔽指令通道、恶意软件分发或此类集成，操作员**不得**以该方式使用。本项目中的引用**不能**凌驾于该平台的规则之上，也**不能**授权平台未允许的用途。
+
+作者**谴责**将 NukeRat 与任何第三方平台结合用于未经授权的活动，或用于该平台不允许的活动。账号封禁、滥用举报、配合执法机构调查以及此类行为的任何其他后果，**均由操作员独自承担**。此类行为**不**在操作员与作者之间构成任何代理、代表或共同参与关系。在适用法律允许的最大范围内，对于操作员如何通过本软件使用、滥用或连接第三方平台，作者**不承担任何责任**。
+
+---
+
+## 责任限制
+
+任何使用、修改或再分发 NukeRat 的人，对其行为、操作的合法性、所需的任何授权以及由此产生的一切后果承担**全部且唯一的责任**，包括对第三方和主管机关的责任，涵盖民事、行政和刑事层面。任何将本软件用于非法行为（如未授权访问、造成损害、窃取数据、勒索、欺诈或任何其他犯罪）的人，须**自行**承担责任，与作者之间不存在任何代理、代表或共同参与关系。
+
+在**适用法律允许的最大范围内**，作者对与本软件及其使用、滥用、不可用或与其他工具集成相关的任何损失、损害、义务、索赔或任何形式的后果**不承担任何责任**，**即使已被告知**此类可能性。法律规定不可排除的任何作者责任，限于**法律要求的最低限度**，但作者**故意不当行为**的情形除外。
+
+---
+
+*本文档仅供参考。代码权利以项目 `LICENSE` 为准。*

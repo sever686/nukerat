@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Folder related to the workers. Up to the present moment the only worker is the one related to NukeScript. This worker is responsible for creating a monitoring loop of the database for changes.
+与 worker 相关的文件夹。截至目前唯一的 worker 与 NukeScript 相关。该 worker 负责创建数据库变更的监控循环。

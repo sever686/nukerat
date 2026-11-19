@@ -1,8 +1,8 @@
-# Overview
+# 概览
 
-Nim compile path (exe, dll, shellcode, elf, so).
+Nim 编译路径（exe、dll、shellcode、elf、so）。
 
-## Directories
+## 目录
 
-- `/modes`: One file per output format
-- `/utils`: Files with helper functions (nim invocation, placeholders, PE tweaks, donut, encoders, etc.)
+- `/modes`：每种输出格式一个文件
+- `/utils`：存放辅助函数的文件（nim 调用、占位符、PE 调整、donut、编码器 等）

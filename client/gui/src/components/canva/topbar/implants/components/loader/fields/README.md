@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Loader form sections (general, runtime, stage, preface, channel, PE artifacts, etc.).
+Loader 表单分区（通用、运行时、stage、前言、通道、PE 制品等）。
 
-## Directories
+## 目录
 
-- `/editor`: Preface, channel, and strings editors
+- `/editor`：前言、通道和字符串编辑器

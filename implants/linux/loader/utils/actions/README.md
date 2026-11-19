@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Pre-main hooks for the Linux loader. `main_preparations` is the entry the routine calls before C2 work; up to the present moment it is a no-op placeholder for build-time or future prep logic.
+Linux loader 的 main 前置 hook。例程在 C2 工作前调用的入口就是 `main_preparations`；截至目前，它是用于构建期或未来准备逻辑的空占位。

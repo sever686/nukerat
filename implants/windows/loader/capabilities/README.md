@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Loader-only capability hooks before the stageless payload runs. AMSI/ETW and PE header patches live in `patch.nim`; beacon sleep masking variants live under `/sleep`.
+Stageless 载荷运行前的 loader 侧能力 hook。AMSI/ETW 与 PE 头补丁位于 `patch.nim`；信标睡眠掩码变体位于 `/sleep` 下。
 
-## Directories
+## 目录
 
-- `/sleep`: Ekko, Zilean, and basic sleep implementations for the loader
+- `/sleep`：loader 的 Ekko、Zilean 与基础睡眠实现

@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Files with helper functions for the file server. `sanitization.py` keeps requested paths inside the content dir, and `create_log.py` writes the request line to the listener log.
+文件服务器的辅助函数文件。`sanitization.py` 将请求路径限制在内容目录内，`create_log.py` 将请求行写入监听器日志。

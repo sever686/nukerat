@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Queue panel pieces. The table, the host filter, the detail split, and the raw logic that loads and removes entries.
+队列面板的各个部分。包括表格、主机过滤器、详情分栏，以及加载和移除条目的原始逻辑。

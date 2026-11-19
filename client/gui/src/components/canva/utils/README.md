@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Files with helper functions for the Canva panels, such as: host select, split panels, toasts, UTC dates, empty states, the panel portal, etc.
+Canva 面板的辅助函数文件，例如：主机选择、分栏面板、Toast 提示、UTC 日期、空状态、面板传送门等。

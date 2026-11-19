@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Listeners panel. List, add, view, and remove.
+监听器面板。支持列出、添加、查看和移除。
 
-## Directories
+## 目录
 
-- `/components`: Raw logic of the panel, plus the add and view forms (HTTP, HTTPS, file server)
+- `/components`：面板的原始逻辑，以及添加和查看表单（HTTP、HTTPS、文件服务器）

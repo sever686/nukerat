@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-IOC report HTML (ips, domains, files, hashes).
+IOC 报告 HTML（ip、域名、文件、哈希）。

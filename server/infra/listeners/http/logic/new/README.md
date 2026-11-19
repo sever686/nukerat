@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Logic that runs when a new implant checks in. `core.py` records the external IP when the peer is a public address and inserts the host.
+新植入体签入时运行的逻辑。当对端为公网地址时，`core.py` 记录外部 IP 并插入主机。

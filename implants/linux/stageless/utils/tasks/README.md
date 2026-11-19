@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Task queue for Linux stageless: registry and IDs in `tasks.nim`, large output buffers, pthread workers in `threads.nim`, and the dispatch loop in `utils.nim` that routes server commands into capabilities.
+Linux stageless 的任务队列：`tasks.nim` 中的注册表与 ID、大输出缓冲区、`threads.nim` 中的 pthread 工作线程，以及 `utils.nim` 中将服务端命令路由到各能力的分发循环。

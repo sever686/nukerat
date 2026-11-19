@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Logic that runs when the implant asks for queued commands. `core.py` loads the pending queue, runs the content handlers, and marks the tasks captured.
+植入体请求排队命令时运行的逻辑。`core.py` 加载待处理队列、运行内容处理器，并将任务标记为已捕获。
 
-## Directories
+## 目录
 
-- `/capabilities`: content handlers that fill the command body before it goes back to the implant (bof, shellcode, donut, upload, etc.)
+- `/capabilities`：在命令正文返回植入体之前填充它的内容处理器（bof、shellcode、donut、上传等）

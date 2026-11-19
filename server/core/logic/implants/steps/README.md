@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Build steps for an implant.
+植入体的构建步骤。
 
-## Directories
+## 目录
 
-- `/compilation`: Where the compile logic lives (format dispatch, sandbox, file reads)
+- `/compilation`：编译逻辑所在（格式分派、沙箱、文件读取）

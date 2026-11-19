@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Placeholder workspace when no dock panel is open. Shows the dashed frame and logo, and hosts the right-click menu that opens or floats new panels.
+未打开任何停靠面板时的占位工作区。显示虚线框和标志，并承载用于打开或浮动新面板的右键菜单。

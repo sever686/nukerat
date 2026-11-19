@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Route entrypoint for the file server. `commands.py` builds the app that serves GET and HEAD from the listener content dir.
+文件服务器的路由入口。`commands.py` 构建从监听器内容目录提供 GET 和 HEAD 的应用。
 
-## Directories
+## 目录
 
-- `/content`: where the hosted files live, one folder per file server listener
+- `/content`：托管文件所在位置，每个文件服务器监听器一个文件夹

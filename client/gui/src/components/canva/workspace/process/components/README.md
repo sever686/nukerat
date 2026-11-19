@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Process tree workspace for a session. Parses the process API response, sorting and filtering, icon heuristics per process name, and hooks for the process context menu.
+会话的进程树工作区。解析进程 API 响应、排序与过滤、按进程名推断图标，以及进程上下文菜单的 hook。

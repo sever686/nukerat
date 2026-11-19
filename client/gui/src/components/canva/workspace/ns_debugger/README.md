@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-NukeScript debugger workspace. Polls the ns_debugger API per server and shows a searchable log stream in a dockview panel.
+NukeScript 调试器工作区。按服务器轮询 ns_debugger API，并在 Dockview 面板中显示可搜索的日志流。
 
-## Directories
+## 目录
 
-- `/components`: Polling logic, line formatting, and the log content view
+- `/components`：轮询逻辑、行格式化以及日志内容视图

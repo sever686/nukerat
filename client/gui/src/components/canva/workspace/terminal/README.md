@@ -1,7 +1,7 @@
-# Overview
+# 概览
 
-Host terminal.
+主机终端。
 
-## Directories
+## 目录
 
-- `/components`: Command input, output, and downloads
+- `/components`：命令输入、输出与下载

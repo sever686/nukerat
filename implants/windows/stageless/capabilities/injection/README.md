@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Process injection for stageless tasks. Decodes task input, picks an allocation mode, writes shellcode or PE bytes into a remote process, and starts execution via `createThreadEx`.
+Stageless 任务的进程注入。解码任务输入、选择分配模式、将 shellcode 或 PE 字节写入远程进程，并通过 `createThreadEx` 启动执行。

@@ -1,8 +1,8 @@
-# Overview
+# 概览
 
-Launcher is the logic that runs between the nukerat.py call at the root and the actual team server execution. This is where the operator key creation logic, adding pip packages to the env, etc. will live.
+Launcher 是运行在根目录 `nukerat.py` 调用与实际团队服务器执行之间的逻辑。操作员密钥创建逻辑、向环境添加 pip 包等内容将放在这里。
 
-# Directories
+# 目录
 
-- `/logic`: Raw logic of the commands
-- `/utils`: Files with helper functions
+- `/logic`：命令的原始逻辑
+- `/utils`：存放辅助函数的文件

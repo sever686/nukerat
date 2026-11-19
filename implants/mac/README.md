@@ -1,8 +1,8 @@
-# Overview
+# 概览
 
-macOS agent code in Go. Loader and stageless trees mirror the other platforms; build tags and obfuscated strings are wired through `utils/obf` and `utils/global`.
+用 Go 编写的 macOS 智能体代码。loader 与 stageless 目录结构与其他平台一致；构建标签和混淆字符串通过 `utils/obf` 和 `utils/global` 接入。
 
-## Directories
+## 目录
 
-- `/loader`: Staging loader (`main.go` runs `Custom` then `routine.MainInit`)
-- `/stageless`: Full implant with exported `StartW` for dylib-style builds
+- `/loader`：分段加载器（`main.go` 先运行 `Custom`，再运行 `routine.MainInit`）
+- `/stageless`：完整植入体，为 dylib 风格构建导出 `StartW`

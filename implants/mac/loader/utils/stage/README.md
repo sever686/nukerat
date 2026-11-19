@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Thin bridge from the Go loader to the staged app bundle. `RunSharedLibrary` forwards the decrypted payload into `macapi.RunStageApp`.
+从 Go loader 到分段 app 包的薄桥接。`RunSharedLibrary` 将解密后的载荷转发给 `macapi.RunStageApp`。

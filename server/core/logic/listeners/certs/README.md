@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Certificate checks and the openssl self-signed path. Manual PEM is accepted too.
+证书检查与 openssl 自签名路径。也支持手动提供 PEM。

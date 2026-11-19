@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Help texts for armory tools (bof-*, net-*, etc) and a few built-in commands (cp, mv, rm, ren, prefix). help for one command looks here before `/commands`.
+军械库工具（bof-*、net-* 等）以及少数内置命令（cp、mv、rm、ren、prefix）的帮助文本。某个命令的帮助会先在这里查找，再到 `/commands`。

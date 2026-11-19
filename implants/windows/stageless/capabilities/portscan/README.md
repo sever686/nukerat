@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Windows port-scan task (Winsock-backed). Parses port specs, resolves targets, runs TCP/UDP probes with timeouts, and formats results like the Linux scanner.
+Windows 端口扫描任务（Winsock 支撑）。解析端口规格、解析目标、带超时执行 TCP/UDP 探测，并像 Linux 扫描器那样格式化结果。

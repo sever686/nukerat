@@ -1,9 +1,9 @@
-# Overview
+# 概览
 
-Linux stageless implant: entry in `main.nim`, build macros, and the channel loop that keeps talking to the team server.
+Linux stageless 植入体：入口位于 `main.nim`，包含构建宏以及持续与团队服务器通信的通道循环。
 
-## Directories
+## 目录
 
-- `/capabilities`: Task handlers (files, relay, shell, port scan, etc.)
-- `/routine`: HTTP, TCP, and custom channel entrypoints
-- `/utils`: Globals, crypto, network, tasks, COFF loader, linapi
+- `/capabilities`：任务处理器（文件、中继、shell、端口扫描等）
+- `/routine`：HTTP、TCP 和自定义通道入口
+- `/utils`：全局变量、加密、网络、任务、COFF loader、linapi

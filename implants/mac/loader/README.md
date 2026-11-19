@@ -1,9 +1,9 @@
-# Overview
+# 概览
 
-macOS staging loader. Fetches and runs the next stage (shared library via `utils/stage` and macapi), with HTTP or custom C2 loops under `/routine`.
+macOS 分段加载器。获取并运行下一阶段（通过 `utils/stage` 和 macapi 加载共享库），并在 `/routine` 下实现 HTTP 或自定义 C2 循环。
 
-## Directories
+## 目录
 
-- `/capabilities`: Loader-only capabilities (sleep, etc.)
-- `/routine`: Channel entry (`start`, `http`, `custom`)
-- `/utils`: Globals, crypto transport, network, macapi, obfuscation, staging helpers
+- `/capabilities`：仅 loader 使用的能力（睡眠等）
+- `/routine`：通道入口（`start`、`http`、`custom`）
+- `/utils`：全局变量、加密传输、网络、macapi、混淆、分段辅助

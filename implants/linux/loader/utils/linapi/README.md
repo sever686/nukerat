@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Linux libc imports the loader uses instead of scattering raw `importc` blocks. Tick count, sleep, memfd staging, and `dlopen` of the next stage live here.
+Loader 使用的 Linux libc 导入，避免到处散落原始 `importc` 块。tick 计数、sleep、memfd 分段以及下一阶段的 `dlopen` 都在这里。

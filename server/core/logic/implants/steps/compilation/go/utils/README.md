@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Files with helper functions for the Go build: paths under `infra/tmp`, placeholders, source prep (channel, relay, preface), and the go invocation.
+Go 构建的辅助函数文件：`infra/tmp` 下的路径、占位符、源码准备（通道、中继、前言）以及 go 调用。

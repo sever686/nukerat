@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Raw logic of the file server panel: list, upload, download, rename, and delete. The dockview shell lives here too.
+文件服务器面板的原始逻辑：列出、上传、下载、重命名和删除。Dockview 外壳也在这里。

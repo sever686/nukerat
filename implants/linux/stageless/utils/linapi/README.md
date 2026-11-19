@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Linux-side API surface for the stageless implant. `handlers.nim` binds POSIX and libc (files, processes, pipes, networking helpers, etc.); `utils.nim` holds shared constants and small helpers used by those handlers.
+Stageless 植入体的 Linux 侧 API 接口。`handlers.nim` 绑定 POSIX 与 libc（文件、进程、管道、网络辅助等）；`utils.nim` 保存这些处理器使用的共享常量和小型辅助。

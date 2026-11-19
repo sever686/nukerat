@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Folder and file reads on a host. A file request queues a `folders` task and waits for the bytes in `infra/tmp`. The folder tree comes from the stored rows, and a refresh is queued when autoRefresh is set.
+主机上的文件夹与文件读取。文件请求会入队一个 `folders` 任务，并在 `infra/tmp` 中等待字节。文件夹树来自已存储的数据行；设置 autoRefresh 时会入队一次刷新。

@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Raw logic and forms for the agents top bar panel. Lists configured agents, drives add and edit flows, and talks to the agents API.
+智能体顶栏面板的原始逻辑与表单。列出已配置的智能体，驱动添加与编辑流程，并与智能体 API 通信。

@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Implant payload validation. `implant.py` is the schemas for input, new, output, kill, and task error, plus the parser the route uses.
+植入体载荷校验。`implant.py` 是输入、new、输出、终止和任务错误的 schema，以及路由使用的解析器。

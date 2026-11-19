@@ -1,3 +1,3 @@
-# Overview
+# 概览
 
-Loader prep hook. Up to the present moment `MainPreparations` is empty.
+Loader 准备 hook。截至目前 `MainPreparations` 为空。
