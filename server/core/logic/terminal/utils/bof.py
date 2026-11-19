@@ -67,8 +67,8 @@ def parseNone(tokens, raw, schemaRaw, params, helpName):
         return None, None
     helpText = read_message(f"tools/{helpName}.txt")
     if helpText:
-        return None, f"BOF loader error: Missing required parameters. See help below.\n\n{helpText}"
-    return None, "BOF loader error: Missing required parameters."
+        return None, f"BOF 加载器错误：缺少必需参数。参见下方帮助。\n\n{helpText}"
+    return None, "BOF 加载器错误：缺少必需参数。"
 
 
 def parsePositional(specs, tokens, helpName, params=None):
@@ -117,8 +117,8 @@ def parsePositional(specs, tokens, helpName, params=None):
                     if cursor + 1 >= len(tokens):
                         helpText = read_message(f"tools/{helpName}.txt")
                         if helpText:
-                            return None, f"BOF loader error: Missing required parameters. See help below.\n\n{helpText}"
-                        return None, "BOF loader error: Missing required parameters."
+                            return None, f"BOF 加载器错误：缺少必需参数。参见下方帮助。\n\n{helpText}"
+                        return None, "BOF 加载器错误：缺少必需参数。"
                     inlineValue = tokens[cursor + 1]
                     cursor += 2
                 else:
@@ -148,8 +148,8 @@ def parsePositional(specs, tokens, helpName, params=None):
         if not filled[index] and slots[index] in (None, ""):
             helpText = read_message(f"tools/{helpName}.txt")
             if helpText:
-                return None, f"BOF loader error: Missing required parameters. See help below.\n\n{helpText}"
-            return None, "BOF loader error: Missing required parameters."
+                return None, f"BOF 加载器错误：缺少必需参数。参见下方帮助。\n\n{helpText}"
+            return None, "BOF 加载器错误：缺少必需参数。"
 
     packed = []
     for index, spec in enumerate(specs):
@@ -214,8 +214,8 @@ def parseNormalize(specs, tokens, helpName, params=None):
                     if cursor + 1 >= len(tokens):
                         helpText = read_message(f"tools/{helpName}.txt")
                         if helpText:
-                            return None, f"BOF loader error: Missing required parameters. See help below.\n\n{helpText}"
-                        return None, "BOF loader error: Missing required parameters."
+                            return None, f"BOF 加载器错误：缺少必需参数。参见下方帮助。\n\n{helpText}"
+                        return None, "BOF 加载器错误：缺少必需参数。"
                     inlineValue = tokens[cursor + 1]
                     cursor += 2
                 else:
@@ -245,8 +245,8 @@ def parseNormalize(specs, tokens, helpName, params=None):
         if not filled[index] and slots[index] in (None, ""):
             helpText = read_message(f"tools/{helpName}.txt")
             if helpText:
-                return None, f"BOF loader error: Missing required parameters. See help below.\n\n{helpText}"
-            return None, "BOF loader error: Missing required parameters."
+                return None, f"BOF 加载器错误：缺少必需参数。参见下方帮助。\n\n{helpText}"
+            return None, "BOF 加载器错误：缺少必需参数。"
 
     packed = []
     for index, spec in enumerate(specs):
@@ -311,8 +311,8 @@ def parseNamed(specs, tokens, helpName, params=None):
                     if cursor + 1 >= len(tokens):
                         helpText = read_message(f"tools/{helpName}.txt")
                         if helpText:
-                            return None, f"BOF loader error: Missing required parameters. See help below.\n\n{helpText}"
-                        return None, "BOF loader error: Missing required parameters."
+                            return None, f"BOF 加载器错误：缺少必需参数。参见下方帮助。\n\n{helpText}"
+                        return None, "BOF 加载器错误：缺少必需参数。"
                     inlineValue = tokens[cursor + 1]
                     cursor += 2
                 else:
@@ -342,8 +342,8 @@ def parseNamed(specs, tokens, helpName, params=None):
         if not filled[index] and slots[index] in (None, ""):
             helpText = read_message(f"tools/{helpName}.txt")
             if helpText:
-                return None, f"BOF loader error: Missing required parameters. See help below.\n\n{helpText}"
-            return None, "BOF loader error: Missing required parameters."
+                return None, f"BOF 加载器错误：缺少必需参数。参见下方帮助。\n\n{helpText}"
+            return None, "BOF 加载器错误：缺少必需参数。"
 
     packed = []
     for index, spec in enumerate(specs):
@@ -408,8 +408,8 @@ def parseCustom(specs, tokens, helpName, params=None):
                     if cursor + 1 >= len(tokens):
                         helpText = read_message(f"tools/{helpName}.txt")
                         if helpText:
-                            return None, f"BOF loader error: Missing required parameters. See help below.\n\n{helpText}"
-                        return None, "BOF loader error: Missing required parameters."
+                            return None, f"BOF 加载器错误：缺少必需参数。参见下方帮助。\n\n{helpText}"
+                        return None, "BOF 加载器错误：缺少必需参数。"
                     inlineValue = tokens[cursor + 1]
                     cursor += 2
                 else:
@@ -439,8 +439,8 @@ def parseCustom(specs, tokens, helpName, params=None):
         if not filled[index] and slots[index] in (None, ""):
             helpText = read_message(f"tools/{helpName}.txt")
             if helpText:
-                return None, f"BOF loader error: Missing required parameters. See help below.\n\n{helpText}"
-            return None, "BOF loader error: Missing required parameters."
+                return None, f"BOF 加载器错误：缺少必需参数。参见下方帮助。\n\n{helpText}"
+            return None, "BOF 加载器错误：缺少必需参数。"
 
     packed = []
     for index, spec in enumerate(specs):

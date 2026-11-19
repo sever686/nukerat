@@ -80,7 +80,7 @@ async def armory_install_all(source_terminal):
 
     msg = f"已成功安装 {installed} 个文件。"
     if skipped:
-        msg = f"{msg} Skipped {skipped} existing file(s)."
+        msg = f"{msg} 已跳过 {skipped} 个已存在的文件。"
     return reply("success", msg, source_terminal)
 
 
@@ -94,7 +94,7 @@ async def armory_install(tool_name, source_terminal):
                 bin_name = item.get("armory_bin")
                 break
     if not bin_name:
-        return reply("failure", 'Tool not found. Use "armory" to list available tools.', source_terminal)
+        return reply("failure", '未找到该工具。使用 "armory" 列出可用工具。', source_terminal)
 
     repo = armory_repository
     armory_conf = config.get("armory")
@@ -174,7 +174,7 @@ async def armory_update(tool_name, source_terminal):
                 bin_name = item.get("armory_bin")
                 break
     if not bin_name:
-        return reply("failure", 'Tool not found. Use "armory" to list available tools.', source_terminal)
+        return reply("failure", '未找到该工具。使用 "armory" 列出可用工具。', source_terminal)
 
     await asyncio.to_thread(tmp_dir.mkdir, parents=True, exist_ok=True)
     dest = armory_dir / bin_name
@@ -218,7 +218,7 @@ async def armory_remove(tool_name, source_terminal):
                 bin_name = item.get("armory_bin")
                 break
     if not bin_name:
-        return reply("failure", 'Tool not found. Use "armory" to list available tools.', source_terminal)
+        return reply("failure", '未找到该工具。使用 "armory" 列出可用工具。', source_terminal)
 
     dest = armory_dir / bin_name
     removed = []

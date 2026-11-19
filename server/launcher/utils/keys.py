@@ -49,7 +49,7 @@ def key_add(name):
     path.write_text(f"{username}:{password}:{secret}\n", encoding="utf-8")
     print(f"{username}:{password}:{secret}")
     print(f"\n操作员创建成功：{username}")
-    print(f"Saved: {path}")
+    print(f"已保存：{path}")
 
 def key_list():
     # Prints the operators stored in the DB
