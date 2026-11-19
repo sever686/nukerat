@@ -144,7 +144,7 @@ def validate_syntax(content):
     if command_error:
         return command_error
 
-    return {"status": "success", "message": "Syntax OK"}
+    return {"status": "success", "message": "语法检查通过"}
 
 
 async def validate_syntax_async(content):

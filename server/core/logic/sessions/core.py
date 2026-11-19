@@ -113,7 +113,7 @@ async def patch_session(tag, body):
     # Updates the notes of a session
     tag = (tag or "").strip()
     if not tag:
-        return {"status": "failure", "message": "Tag required"}
+        return {"status": "failure", "message": "需要标签"}
     if not await sqlite_db.read(Host, tag=tag):
         return {"status": "failure", "message": "未找到会话"}
     await sqlite_db.modify(Host, {"tag": tag}, {"notes": body.get("notes") or ""})
@@ -124,7 +124,7 @@ async def remove_session(tag: str):
     # Deletes a session
     tag = (tag or "").strip()
     if not tag:
-        return {"status": "failure", "message": "Tag required"}
+        return {"status": "failure", "message": "需要标签"}
     if not await sqlite_db.read(Host, tag=tag):
         return {"status": "failure", "message": "未找到会话"}
     # await enqueue(tag, "kill", {"mode": "kill", "args": ""}, "kill")

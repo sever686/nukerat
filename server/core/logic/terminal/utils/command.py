@@ -107,11 +107,11 @@ async def compat_error(host_tag, verb, cmd_id):
     rows = await sqlite_db.read(Host, tag=host_tag)
     host_os = (rows[0].os if rows else "").lower()
     if "mac" in host_os and verb not in compatibility_list.get("mac", []):
-        return "Feature not supported on macOS"
+        return "macOS 不支持该功能"
     if "linux" in host_os and verb not in compatibility_list.get("linux", []):
-        return "Feature not supported on Linux"
+        return "Linux 不支持该功能"
     if "windows" in host_os and verb not in compatibility_list.get("windows", []):
-        return "Feature not supported on Windows"
+        return "Windows 不支持该功能"
     return None
 
 

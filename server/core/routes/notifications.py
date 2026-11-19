@@ -16,7 +16,7 @@ async def list_notifications(request: Request):
         write_log(logger, "error", f"Unhandled exception | {request.method} {request.url.path} | {e}")
         return JSONResponse(
             status_code=500,
-            content={"status": "failure", "message": "Internal error"},
+            content={"status": "failure", "message": "内部错误"},
         )
 
 
@@ -29,5 +29,5 @@ async def list_custom_notifications(request: Request):
         write_log(logger, "error", f"Unhandled exception | {request.method} {request.url.path} | {e}")
         return JSONResponse(
             status_code=500,
-            content={"status": "failure", "message": "Internal error"},
+            content={"status": "failure", "message": "内部错误"},
         )

@@ -78,7 +78,7 @@ async def get_file(content):
 
     return JSONResponse(content={
         "status": "failure",
-        "error": "Request timeout"
+        "error": "请求超时"
     })
 
 

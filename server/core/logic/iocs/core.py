@@ -46,7 +46,7 @@ async def remove_ioc(tag: str):
     tag = (tag or "").strip()
     if not tag:
         return await conclude_request(
-            {"status": "failure", "message": "Tag required"},
+            {"status": "failure", "message": "需要标签"},
             status_code=400,
             type="iocs",
         )

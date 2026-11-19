@@ -20,7 +20,7 @@ async def list_sessions(request: Request, query: Annotated[ListSessionsQuery, Qu
         write_log(logger, "error", f"Unhandled exception | {request.method} {request.url.path} | {e}")
         return JSONResponse(
             status_code=500,
-            content={"status": "failure", "message": "Internal error"},
+            content={"status": "failure", "message": "内部错误"},
         )
 
 
@@ -33,7 +33,7 @@ async def patch(request: Request, tag: str, body: PatchSessionRequest):
         write_log(logger, "error", f"Unhandled exception | {request.method} {request.url.path} | {e}")
         return JSONResponse(
             status_code=500,
-            content={"status": "failure", "message": "Internal error"},
+            content={"status": "failure", "message": "内部错误"},
         )
 
 
@@ -46,5 +46,5 @@ async def delete(request: Request, tag: str):
         write_log(logger, "error", f"Unhandled exception | {request.method} {request.url.path} | {e}")
         return JSONResponse(
             status_code=500,
-            content={"status": "failure", "message": "Internal error"},
+            content={"status": "failure", "message": "内部错误"},
         )

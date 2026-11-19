@@ -64,9 +64,9 @@ async def fetch_queue(query):
 async def remove_queue(tag: str):
     # Deletes a queue line
     if not await sqlite_db.read(Queue, tag=tag):
-        return JSONResponse(status_code=404, content={"status": "failure", "message": "Not found"})
+        return JSONResponse(status_code=404, content={"status": "failure", "message": "未找到"})
     await delete_queue_line(tag)
-    return JSONResponse(content={"status": "success", "message": "Removed"})
+    return JSONResponse(content={"status": "success", "message": "已移除"})
 
 
 async def delete_queue_route(tag: str):

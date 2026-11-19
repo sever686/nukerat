@@ -63,14 +63,33 @@ const hostless_titles = new Set([
   "关于",
 ]);
 
+const panelTitles: Record<string, string> = {
+  terminal: "终端",
+  explorer: "文件浏览器",
+  process: "进程",
+  screenshot: "截图",
+  credentials: "凭据",
+  sessions: "会话",
+  fileServer: "文件服务器",
+  agent: "AI 智能体",
+  agents: "智能体",
+  keylogger: "键盘记录",
+  nukescripts: "NukeScript",
+  nukescripts_output: "NS 调试器",
+  iocs: "IOC",
+  servers: "服务器",
+  listeners: "监听器",
+  implants: "植入体",
+  network: "网络",
+  queue: "队列",
+  logs: "事件日志",
+  reports: "报告",
+  graphs: "攻击图谱",
+  about: "关于",
+};
+
 export function getPanelTitle(windowType: string): string {
-  if (windowType === "agent") return "AI 智能体";
-  if (windowType === "explorer") return "文件浏览器";
-  if (windowType === "fileServer") return "文件服务器";
-  if (windowType === "nukescripts_output") return "NS 调试器";
-  if (windowType === "nukescripts") return "NukeScript";
-  if (windowType === "iocs") return "IOC";
-  return windowType.charAt(0).toUpperCase() + windowType.slice(1);
+  return panelTitles[windowType] ?? windowType.charAt(0).toUpperCase() + windowType.slice(1);
 }
 
 export function shouldShowHostSelect(title: string | undefined): boolean {

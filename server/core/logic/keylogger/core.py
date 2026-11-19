@@ -52,9 +52,9 @@ async def fetch_keylogger(query):
 
 async def remove_keylogger(tag: str):
     if not await sqlite_db.read(Keylogger, tag=tag):
-        return JSONResponse(status_code=404, content={"status": "failure", "message": "Not found"})
+        return JSONResponse(status_code=404, content={"status": "failure", "message": "未找到"})
     await sqlite_db.delete(Keylogger, tag=tag)
-    return JSONResponse(content={"status": "success", "message": "Removed"})
+    return JSONResponse(content={"status": "success", "message": "已移除"})
 
 
 async def delete_keylogger_route(tag: str):

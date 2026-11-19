@@ -61,9 +61,9 @@ async def edit_script(body):
         return check
     tag = (body.get("tag") or "").strip()
     if not tag:
-        return {"status": "failure", "message": "Missing tag"}
+        return {"status": "failure", "message": "缺少标签"}
     if not await sqlite_db.read(NukeScripts, tag=tag):
-        return {"status": "failure", "message": "Not found"}
+        return {"status": "failure", "message": "未找到"}
     await sqlite_db.modify(
         NukeScripts,
         {"tag": tag},
@@ -76,10 +76,10 @@ async def delete_script(body):
     # Deletes a script when the content matches
     tag = (body.get("tag") or "").strip()
     if not tag:
-        return {"status": "failure", "message": "Missing tag"}
+        return {"status": "failure", "message": "缺少标签"}
     rows = await sqlite_db.read(NukeScripts, tag=tag)
     if not rows:
-        return {"status": "failure", "message": "Not found"}
+        return {"status": "failure", "message": "未找到"}
     if rows[0].content != (body.get("content") or ""):
         return {"status": "failure", "message": "内容不匹配"}
     await sqlite_db.delete(NukeScripts, tag=tag)
@@ -94,12 +94,12 @@ async def change_status(body):
     except (TypeError, ValueError):
         return {"status": "failure", "message": "标签或状态无效"}
     if not tag:
-        return {"status": "failure", "message": "Missing tag"}
+        return {"status": "failure", "message": "缺少标签"}
     if value not in (0, 1):
         return {"status": "failure", "message": "状态无效"}
     rows = await sqlite_db.read(NukeScripts, tag=tag)
     if not rows:
-        return {"status": "failure", "message": "Not found"}
+        return {"status": "failure", "message": "未找到"}
     if value == 1:
         check = await validate_syntax_async(rows[0].content)
         if check.get("status") != "success":

@@ -105,7 +105,7 @@ async def main(body, tag):
         if shellcode is None:
             return {
                 "status": "failure",
-                "message": "Donut failed to generate shellcode",
+                "message": "Donut 生成 shellcode 失败",
                 "stdout": stdout,
                 "stderr": stderr,
             }
@@ -134,7 +134,7 @@ async def main(body, tag):
 
         return {
             "status": "success",
-            "message": "Implant built successfully",
+            "message": "植入体构建成功",
             "bytes": base64.b64encode(shellcode).decode(),
             "stdout": stdout,
             "stderr": stderr,

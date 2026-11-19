@@ -13,7 +13,7 @@ def parse_process_response(response):
         return json.loads(response.body.decode())
     if isinstance(response, dict):
         return response
-    return {"status": "failure", "error": "Invalid process response"}
+    return {"status": "failure", "error": "进程响应无效"}
 
 
 async def send_process(host_tag):

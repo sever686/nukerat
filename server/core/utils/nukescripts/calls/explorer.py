@@ -13,7 +13,7 @@ def parse_explorer_response(response):
         return json.loads(response.body.decode())
     if isinstance(response, dict):
         return response
-    return {"status": "failure", "error": "Invalid explorer response"}
+    return {"status": "failure", "error": "资源管理器响应无效"}
 
 
 async def send_explorer(host_tag, path):

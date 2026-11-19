@@ -17,4 +17,4 @@ async def wait_nukescript_validation(tag):
                 await sqlite_db.modify(Queue, {"tag": tag}, {"is_completed": 1})
             return
         await asyncio.sleep(1)
-    await sqlite_db.modify(Queue, {"tag": tag}, {"error": "Error: Worker validation timeout."})
+    await sqlite_db.modify(Queue, {"tag": tag}, {"error": "错误：Worker 校验超时。"})

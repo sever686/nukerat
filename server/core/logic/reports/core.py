@@ -74,7 +74,7 @@ async def create_report(body):
     report_type = (body.get("reportType") or "").strip().lower()
 
     if not name:
-        return {"status": "failure", "message": "Name required"}
+        return {"status": "failure", "message": "需要名称"}
     if report_type not in report_types:
         return {"status": "failure", "message": "报告类型无效"}
 
@@ -161,7 +161,7 @@ async def remove_report(tag: str):
     tag = (tag or "").strip()
     if not tag:
         return await conclude_request(
-            {"status": "failure", "message": "Tag required"},
+            {"status": "failure", "message": "需要标签"},
             status_code=400,
             type="reports",
         )
@@ -180,7 +180,7 @@ async def get_report_download(tag: str):
     tag = (tag or "").strip()
     if not tag:
         return await conclude_request(
-            {"status": "failure", "message": "Tag required"},
+            {"status": "failure", "message": "需要标签"},
             status_code=400,
             type="reports",
         )
@@ -199,7 +199,7 @@ async def get_report_view(tag: str):
     tag = (tag or "").strip()
     if not tag:
         return await conclude_request(
-            {"status": "failure", "message": "Tag required"},
+            {"status": "failure", "message": "需要标签"},
             status_code=400,
             type="reports",
         )

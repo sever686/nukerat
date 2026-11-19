@@ -18,5 +18,5 @@ async def list_logs(request: Request, query: Annotated[ListLogsQuery, Query()]):
         write_log(logger, "error", f"Unhandled exception | {request.method} {request.url.path} | {e}")
         return JSONResponse(
             status_code=500,
-            content={"status": "failure", "message": "Internal error"},
+            content={"status": "failure", "message": "内部错误"},
         )

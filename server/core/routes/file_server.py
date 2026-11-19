@@ -26,7 +26,7 @@ async def list_files(request: Request, tag: FileServerTag):
         write_log(logger, "error", f"Unhandled exception | {request.method} {request.url.path} | {e}")
         return JSONResponse(
             status_code=500,
-            content={"status": "failure", "message": "Internal error"},
+            content={"status": "failure", "message": "内部错误"},
         )
 
 
@@ -39,7 +39,7 @@ async def download(request: Request, tag: FileServerTag, file_name: FileServerFi
         write_log(logger, "error", f"Unhandled exception | {request.method} {request.url.path} | {e}")
         return JSONResponse(
             status_code=500,
-            content={"status": "failure", "message": "Internal error"},
+            content={"status": "failure", "message": "内部错误"},
         )
 
 
@@ -52,7 +52,7 @@ async def upload(request: Request, tag: FileServerTag, file_name: FileServerFile
         write_log(logger, "error", f"Unhandled exception | {request.method} {request.url.path} | {e}")
         return JSONResponse(
             status_code=500,
-            content={"status": "failure", "message": "Internal error"},
+            content={"status": "failure", "message": "内部错误"},
         )
 
 
@@ -70,7 +70,7 @@ async def rename(
         write_log(logger, "error", f"Unhandled exception | {request.method} {request.url.path} | {e}")
         return JSONResponse(
             status_code=500,
-            content={"status": "failure", "message": "Internal error"},
+            content={"status": "failure", "message": "内部错误"},
         )
 
 
@@ -83,5 +83,5 @@ async def delete(request: Request, tag: FileServerTag, file_name: FileServerFile
         write_log(logger, "error", f"Unhandled exception | {request.method} {request.url.path} | {e}")
         return JSONResponse(
             status_code=500,
-            content={"status": "failure", "message": "Internal error"},
+            content={"status": "failure", "message": "内部错误"},
         )

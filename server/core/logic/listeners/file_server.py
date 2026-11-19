@@ -35,7 +35,7 @@ async def create_file_server_listener(data: dict):
         return JSONResponse(status_code=200, content={"status": "failure", "message": "端口已被占用"})
     except Exception as e:
         write_log(logger, "error", f"Unhandled exception | listeners/file_server | {e}")
-        return JSONResponse(status_code=200, content={"status": "failure", "message": "Internal error"})
+        return JSONResponse(status_code=200, content={"status": "failure", "message": "内部错误"})
 
 
 async def remove_file_server_listener(data: dict):
@@ -50,7 +50,7 @@ async def remove_file_server_listener(data: dict):
         return JSONResponse(status_code=200, content={"status": "failure", "message": "未找到监听器"})
     except Exception as e:
         write_log(logger, "error", f"Unhandled exception | listeners/file_server | {e}")
-        return JSONResponse(status_code=200, content={"status": "failure", "message": "Internal error"})
+        return JSONResponse(status_code=200, content={"status": "failure", "message": "内部错误"})
 
 
 async def restart_file_server_listener(data: dict):
@@ -73,7 +73,7 @@ async def restart_file_server_listener(data: dict):
         return JSONResponse(status_code=200, content={"status": "failure", "message": "监听器启动错误"})
     except Exception as e:
         write_log(logger, "error", f"Unhandled exception | listeners/file_server | {e}")
-        return JSONResponse(status_code=200, content={"status": "failure", "message": "Internal error"})
+        return JSONResponse(status_code=200, content={"status": "failure", "message": "内部错误"})
 
 
 async def list_file_server_listeners():

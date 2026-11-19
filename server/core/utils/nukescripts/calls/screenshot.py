@@ -66,7 +66,7 @@ async def send_screenshot(host_tag, output=None):
             pending = None
         await asyncio.sleep(sleep_time)
 
-    return {"status": "failure", "error": "Screenshot timeout"}
+    return {"status": "failure", "error": "截图超时"}
 
 
 def dispatch_screenshot(host_tag, output=None):

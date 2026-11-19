@@ -55,7 +55,7 @@ async def main_process(content):
             break
     else:
         return await conclude_request(
-            {"status": "failure", "error": "Request timeout"},
+            {"status": "failure", "error": "请求超时"},
             body=content,
             type="process",
         )
@@ -65,7 +65,7 @@ async def main_process(content):
 
     if row is None:
         return await conclude_request(
-            {"status": "failure", "error": "Process tree not found"},
+            {"status": "failure", "error": "未找到进程树"},
             body=content,
             type="process",
         )
