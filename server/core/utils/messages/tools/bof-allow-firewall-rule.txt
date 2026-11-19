@@ -1,15 +1,15 @@
-ABOUT
+关于
     Add inbound or outbound firewall allow rule.
 
-USAGE:
+用法：
     bof-allow-firewall-rule --- <in|out> <port> <rule_name> <group_name> <description>
 
-EXAMPLES:
+示例：
     bof-allow-firewall-rule --- out 8080 MyRule MyGroup Allowing outbound traffic
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-allow-firewall-rule -w 60 --- out 8080 MyRule MyGroup Allowing outbound traffic

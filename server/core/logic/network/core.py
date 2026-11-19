@@ -35,7 +35,7 @@ async def create_socks(data: dict):
                 "hostTag": data.get("hostTag", ""),
             },
         )
-        return JSONResponse(status_code=200, content={"status": "success", "message": "Connection created", "session_id": session_id})
+        return JSONResponse(status_code=200, content={"status": "success", "message": "连接已创建", "session_id": session_id})
     except PortAlreadyInUseError as e:
         return JSONResponse(status_code=409, content={"status": "failure", "message": str(e)})
     except ListenerStartupError as e:
@@ -51,7 +51,7 @@ async def create_socks(data: dict):
 async def create_port_forward(data: dict):
     # Creates a port forward connection
     if (data.get("protocol") or "tcp").lower() != "tcp":
-        return JSONResponse(status_code=400, content={"status": "failure", "message": "Only TCP supported"})
+        return JSONResponse(status_code=400, content={"status": "failure", "message": "仅支持 TCP"})
     try:
         session_id = await port_forward_listener.create(
             port=await parse_port(data.get("portToOpen")),
@@ -63,7 +63,7 @@ async def create_port_forward(data: dict):
                 "forwardPort": await parse_port(data.get("forwardPort")),
             },
         )
-        return JSONResponse(status_code=200, content={"status": "success", "message": "Connection created", "session_id": session_id})
+        return JSONResponse(status_code=200, content={"status": "success", "message": "连接已创建", "session_id": session_id})
     except PortAlreadyInUseError as e:
         return JSONResponse(status_code=409, content={"status": "failure", "message": str(e)})
     except ListenerStartupError as e:
@@ -81,7 +81,7 @@ async def remove_connection(data: dict):
     try:
         tag = (data.get("tag") or data.get("id") or "").strip()
         await mgr_stop(tag)
-        return JSONResponse(status_code=200, content={"status": "success", "message": "Connection removed"})
+        return JSONResponse(status_code=200, content={"status": "success", "message": "连接已移除"})
     except ListenerNotFoundError as e:
         return JSONResponse(status_code=404, content={"status": "failure", "message": str(e)})
     except KeyError as e:
@@ -98,7 +98,7 @@ async def restart_connection(data: dict):
         for mgr in managers:
             if await listener_get(mgr, sid):
                 session_id = await mgr.restart(sid)
-                return JSONResponse(status_code=200, content={"status": "success", "message": "Connection restarted", "session_id": session_id})
+                return JSONResponse(status_code=200, content={"status": "success", "message": "连接已重启", "session_id": session_id})
         raise ListenerNotFoundError(f"Listener '{sid}' not found")
     except ListenerNotFoundError as e:
         return JSONResponse(status_code=404, content={"status": "failure", "message": str(e)})

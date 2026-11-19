@@ -1,7 +1,7 @@
 import { UtcTableColumnHeader, utcTableColumnTitle } from "@/components/canva/utils/utc-date";
 import { short, type LogEntry } from "./logic";
 
-const TABLE_COLUMNS = [utcTableColumnTitle("Date"), "Type", "Category", "Message"] as const;
+const TABLE_COLUMNS = [utcTableColumnTitle("日期"), "类型", "类别", "消息"] as const;
 
 export default function MainList({
   entries,

@@ -61,7 +61,7 @@ const HostSelectBox = ({ onSelect, hide, panelSelectedHost }: HostSelectBoxProps
                 </span>
               </span>
             ) : (
-              <span className={`text-muted-foreground text-[12px] ${mono}`}>Host</span>
+              <span className={`text-muted-foreground text-[12px] ${mono}`}>主机</span>
             )}
             <ChevronsUpDownIcon
               className="text-muted-foreground/80 shrink-0"
@@ -91,17 +91,17 @@ const HostSelectBox = ({ onSelect, hide, panelSelectedHost }: HostSelectBoxProps
               </Button>
               <CommandInputNoIcon
                 className={`w-[9.7rem] placeholder:text-[#ffffff0b] ${mono}`}
-                placeholder="Search host..."
+                placeholder="搜索主机..."
               />
             </div>
             <CommandList>
               {loading && (
                 <div className={`flex items-center justify-center h-10 text-muted-foreground text-[13.5px] ${mono}`}>
                   <RefreshCw size={14} className="animate-spin mr-2" />
-                  Loading...
+                  加载中...
                 </div>
               )}
-              {!loading && <CommandEmpty className={mono}>No host found.</CommandEmpty>}
+              {!loading && <CommandEmpty className={mono}>未找到主机。</CommandEmpty>}
               {Object.entries(groups).map(([server, serverHosts]) => (
                 <Fragment key={server}>
                   <CommandGroup

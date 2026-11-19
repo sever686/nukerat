@@ -1,26 +1,26 @@
-ABOUT
-    Port scan against one host (IPv4 or name) for TCP and UDP services.
+关于
+    对单个主机（IPv4 或名称）进行 TCP 和 UDP 服务端口扫描。
 
-USAGE:
+用法：
     portscan --target <host> [--ports <spec>] [--protocol <0|1|2>] [--timeout <ms>]
 
-ARGUMENTS:
-    --target            Host IPv4 or name (-t).
-    --ports             Port spec (-P). Default top20.
-    --protocol          0 TCP, 1 UDP, 2 both (--method alias).
-    --timeout           Per port timeout ms (-d alias).
-    Positional form: portscan <host> [<ports>] [<protocol>] [<timeoutms>].
+参数：
+    --target            目标主机 IPv4 或名称（-t）。
+    --ports             端口规格（-P）。默认 top20。
+    --protocol          0 表示 TCP，1 表示 UDP，2 表示两者（--method 的别名）。
+    --timeout           每个端口的超时毫秒数（-d 的别名）。
+    位置参数形式：portscan <host> [<ports>] [<protocol>] [<timeoutms>]。
 
-EXAMPLES:
+示例：
     portscan --target 192.168.1.100
     portscan --target fileserver.corp.local --ports 22,80,443,445,3389 --protocol 0 --timeout 1000
     portscan --target 192.168.1.10 --ports 53,161 --protocol 1 --timeout 2000
     portscan 192.168.1.100 top20
     portscan 192.168.1.100 1-1024 0 1500
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     portscan -w 60 --target 192.168.1.100 --ports top100

@@ -1,26 +1,26 @@
-ABOUT
+关于
     Probes cloud local metadata services for AWS, Azure, and GCP from the current process,
     reporting provider identity, instance context, and bounded credential snippets when
     reachable.
 
-USAGE:
+用法：
     bof-cloud-metadata-check --- [presence] [-aud <audience>]
 
-ARGUMENTS:
+参数：
     presence            Optional. Presence and context only, no credential snippets
     -aud arm            Azure ARM audience (default)
     -aud graph          Microsoft Graph audience
     -aud other:<resource>   Custom Azure audience
 
-EXAMPLES:
+示例：
     bof-cloud-metadata-check
     bof-cloud-metadata-check --- presence
     bof-cloud-metadata-check --- -aud graph
     bof-cloud-metadata-check --- presence -aud other:https://vault.azure.net
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-cloud-metadata-check -w 60 --- presence

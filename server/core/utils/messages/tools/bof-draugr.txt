@@ -1,24 +1,24 @@
-ABOUT
+关于
     Draugr stack spoofing with indirect syscalls. Allocates memory via
     NtAllocateVirtualMemory, copies shellcode with NtWriteVirtualMemory,
     sets PAGE_EXECUTE_READ with NtProtectVirtualMemory, and runs it in a
     new thread via NtCreateThreadEx using synthetic stack frames.
 
-USAGE:
+用法：
     bof-draugr --- <shellcode path>
 
-EXAMPLES:
+示例：
     bof-draugr --- /path/to/payload.bin
     bof-draugr -bg --- /path/to/payload.bin
 
-NOTES:
+备注：
     Use -bg when the shellcode blocks or spawns a long-running process,
     otherwise the BOF may time out waiting for output.
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-draugr -w 60 --- /path/to/payload.bin
     bof-draugr -bg --- /path/to/payload.bin

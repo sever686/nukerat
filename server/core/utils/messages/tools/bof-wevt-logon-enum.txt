@@ -1,18 +1,18 @@
-ABOUT
+关于
     Enumerates recent Security log successful and failed logon events (Event IDs 4624, 4625,
     4672) via the wevtapi API and prints remote workstation name/IP plus the target username.
     Requires Security log read permission (typically admin or SYSTEM).
 
-USAGE:
+用法：
     bof-wevt-logon-enum
 
-EXAMPLES:
+示例：
     bof-wevt-logon-enum
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-wevt-logon-enum -w 60
     bof-wevt-logon-enum -bg

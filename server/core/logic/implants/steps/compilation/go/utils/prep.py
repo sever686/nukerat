@@ -39,7 +39,7 @@ def load_relay_aes_key():
     """Return relay key as base64(32 bytes) for implant crypt (same encoding as aesKey)."""
     key = str((config.get("implants") or {}).get("relay_aes_key") or "").strip()
     if not key:
-        raise ValueError("implants.relay_aes_key is not set in server.conf")
+        raise ValueError("server.conf 中未设置 implants.relay_aes_key")
     try:
         raw = base64.b64decode(key, validate=True)
         if len(raw) == 32:
@@ -53,7 +53,7 @@ def load_relay_aes_key():
             "implants.relay_aes_key must be base64 (32 bytes) or hexadecimal"
         ) from None
     if len(raw) < 32:
-        raise ValueError("implants.relay_aes_key must decode to at least 32 bytes")
+        raise ValueError("implants.relay_aes_key 解码后必须至少为 32 字节")
     return base64.b64encode(raw[:32]).decode("ascii")
 
 

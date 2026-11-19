@@ -197,7 +197,7 @@ const ProcessTable = ({
               </tbody>
             )}
           </table>
-          {visibleNodes.length === 0 && <PanelEmptyState>No processes</PanelEmptyState>}
+          {visibleNodes.length === 0 && <PanelEmptyState>暂无进程</PanelEmptyState>}
         </div>
       </div>
     </div>

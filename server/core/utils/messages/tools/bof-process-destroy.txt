@@ -1,24 +1,24 @@
-ABOUT
+关于
     Closes a specific handle or all handles in the specified process.
 
-USAGE:
+用法：
     bof-process-destroy --- <PID> [HANDLEID]
 
-ARGUMENTS:
+参数：
 
     PID        Target process ID
 
     HANDLEID   Optional specific handle ID (1 to 65535). Closes all if omitted
 
-EXAMPLES:
+示例：
 
     bof-process-destroy --- 1234
 
     bof-process-destroy --- 1234 256
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-process-destroy -w 60 --- 1234

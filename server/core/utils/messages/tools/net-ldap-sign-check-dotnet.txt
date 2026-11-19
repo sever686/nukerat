@@ -1,15 +1,15 @@
-ABOUT
+关于
     .NET tool that enumerates domain controllers and checks LDAP signing/channel binding settings
     to assess relay attack risk. Tests both LDAP and LDAPS on each discovered DC.
 
-USAGE:
+用法：
     net-ldap-sign-check-dotnet    net-ldap-sign-check-dotnet --- -domain <domain> -user <user> -password <pass> [-dc-ip <ip>]
 
-OPTIONS:
+选项：
     -domain      Domain FQDN (optional, uses current domain if omitted)
     -user        Domain username for authenticated DC enumeration
     -password    Password for authenticated DC enumeration
     -dc-ip       Specific DC IP for DNS queries
 
-EXAMPLES:
+示例：
     net-ldap-sign-check-dotnet    net-ldap-sign-check-dotnet --- -domain lab.local -user domain_user -password Password123! -dc-ip 192.168.1.10

@@ -1,10 +1,10 @@
-ABOUT
+关于
     Sets the password for the specified user account.
 
-USAGE:
+用法：
     bof-setuserpass --- <USERNAME> <PASSWORD> <DOMAIN>
 
-ARGUMENTS:
+参数：
 
     USERNAME    Target user
 
@@ -12,13 +12,13 @@ ARGUMENTS:
 
     DOMAIN      Domain for the account (empty for local)
 
-EXAMPLES:
+示例：
 
     bof-setuserpass --- user P@ssw0rd CORP
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-setuserpass -w 60 --- user P@ssw0rd CORP

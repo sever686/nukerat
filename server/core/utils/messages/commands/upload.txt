@@ -1,21 +1,20 @@
-ABOUT
-    Upload a local file to the implant host. The maximum upload size is
-    about 384 MB when using the Nukerat desktop client.
+关于
+    将本地文件上传到植入体主机。使用 Nukerat 桌面客户端时最大上传大小约为 384 MB。
 
-USAGE:
+用法：
     upload -f <localfile> -o <remotepath>
 
-ARGUMENTS:
-    -f                  File on the operator station (--file).
-    -o                  Destination on the implant (--output).
+参数：
+    -f                  操作员工作站上的文件（--file）。
+    -o                  植入体上的目标位置（--output）。
 
-EXAMPLES:
+示例：
     upload -f file.exe -o C:/file.exe
     upload -f payload.dll -o C:\Users\Public\payload.dll
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     upload -w 120 -f file.exe -o C:\Users\Public\file.exe

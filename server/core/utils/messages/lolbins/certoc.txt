@@ -1,23 +1,23 @@
-ABOUT
+关于
     Certificate OCSP helper on newer Windows Server.
     Loads arbitrary DLLs with -LoadDLL or downloads remote scripts via
     -GetCACAPS.
 
-USAGE:
+用法：
     certoc.exe -LoadDLL {PATH_ABSOLUTE:.dll}
     certoc.exe -GetCACAPS {REMOTEURL:.ps1}
 
-ARGUMENTS:
+参数：
     -LoadDLL                     Load specified DLL path
     -GetCACAPS                   Download from remote URL
 
-EXAMPLES:
+示例：
     certoc.exe -LoadDLL {PATH_ABSOLUTE:.dll}
     certoc.exe -GetCACAPS {REMOTEURL:.ps1}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     certoc.exe -LoadDLL {PATH_ABSOLUTE:.dll}

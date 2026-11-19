@@ -10,7 +10,7 @@ export default function SplitPanel({ entry, onClose }: { entry: LogEntry; onClos
   return (
     <div className="flex flex-col h-full min-h-0 min-w-[32rem]">
       <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a] shrink-0">
-        <span className="text-[13.5px] font-semibold text-[#cecece] tracking-wide">Log</span>
+        <span className="text-[13.5px] font-semibold text-[#cecece] tracking-wide">日志</span>
         <button
           type="button"
           onClick={onClose}
@@ -22,7 +22,7 @@ export default function SplitPanel({ entry, onClose }: { entry: LogEntry; onClos
 
       <div className="flex-1 min-h-0 min-w-0 overflow-y-auto px-4 py-4">
         <div className="mb-3 space-y-1.5">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Message</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">消息</label>
           <textarea
             readOnly
             tabIndex={-1}

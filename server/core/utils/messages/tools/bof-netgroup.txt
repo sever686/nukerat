@@ -1,16 +1,16 @@
-ABOUT
+关于
     List domain groups or group members from the default or specified domain.
 
-USAGE:
+用法：
     bof-netgroup --- [opt:domain]
         bof-netgroup --- <groupname> [opt:domain]
 
-EXAMPLES:
+示例：
     bof-netgroup    bof-netgroup --- "Domain Admins" corp.local
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-netgroup -w 60 --- "Domain Admins" corp.local

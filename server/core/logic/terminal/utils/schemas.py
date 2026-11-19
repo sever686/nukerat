@@ -24,7 +24,7 @@ def int_or_none(v, flag: str):
     try:
         return int(str(v).strip())
     except ValueError:
-        raise ValueError(f"{flag} must be an integer.")
+        raise ValueError(f"{flag} 必须为整数。")
 
 
 # --- General -----------------------------------------------------------------
@@ -41,11 +41,11 @@ class Delay(BaseModel):
     def check(self):
         # Checks that delay seconds are an integer
         if not self.args.strip():
-            raise ValueError("delay requires seconds. Example: delay 4")
+            raise ValueError("delay 需要以秒为单位，例如：delay 4")
         try:
             int(self.args.split()[0])
         except ValueError:
-            raise ValueError("delay seconds must be an integer.")
+            raise ValueError("delay 的秒数必须为整数。")
         return self
 
 
@@ -65,7 +65,7 @@ class TasksKill(BaseModel):
     def check(self):
         # Checks that tasks kill has a task id
         if not self.args.strip():
-            raise ValueError("tasks kill requires a task ID. Example: tasks kill 3912")
+            raise ValueError("tasks kill 需要任务 ID，例如：tasks kill 3912")
         return self
 
 
@@ -91,7 +91,7 @@ class Cat(BaseModel):
     def check(self):
         # Checks that cat has a file path
         if not self.args.strip():
-            raise ValueError("cat requires a file path.")
+            raise ValueError("cat 需要文件路径。")
         return self
 
 
@@ -110,9 +110,9 @@ class Preview(BaseModel):
     def check(self):
         # Checks the preview path and the size limit
         if not self.args.strip():
-            raise ValueError("preview requires a file path.")
+            raise ValueError("preview 需要文件路径。")
         if self.size_limit is not None and self.size_limit < 1:
-            raise ValueError("--size-limit must be at least 1.")
+            raise ValueError("--size-limit 至少为 1。")
         return self
 
 
@@ -124,7 +124,7 @@ class Fileinfo(BaseModel):
     def check(self):
         # Checks that fileinfo has a path
         if not self.args.strip():
-            raise ValueError("fileinfo requires a path.")
+            raise ValueError("fileinfo 需要路径。")
         return self
 
 
@@ -136,7 +136,7 @@ class Acl(BaseModel):
     def check(self):
         # Checks that acl has a path
         if not self.args.strip():
-            raise ValueError("acl requires a path.")
+            raise ValueError("acl 需要路径。")
         return self
 
 
@@ -148,7 +148,7 @@ class Echo(BaseModel):
     def check(self):
         # Checks that echo has text
         if not self.args.strip():
-            raise ValueError("echo requires text or $<variable>.")
+            raise ValueError("echo 需要文本或 $<变量>。")
         return self
 
 
@@ -161,7 +161,7 @@ class Cp(BaseModel):
         # Checks that cp has a source and a destination
         parts = split_cli_args(self.args)
         if len(parts) < 2:
-            raise ValueError("cp requires <source> and <destination>.")
+            raise ValueError("cp 需要 <源> 和 <目标>。")
         return self
 
 
@@ -174,7 +174,7 @@ class Mv(BaseModel):
         # Checks that mv has a source and a destination
         parts = split_cli_args(self.args)
         if len(parts) < 2:
-            raise ValueError("mv requires <source> and <destination>.")
+            raise ValueError("mv 需要 <源> 和 <目标>。")
         return self
 
 
@@ -186,7 +186,7 @@ class Rm(BaseModel):
     def check(self):
         # Checks that rm has a path
         if not self.args.strip():
-            raise ValueError("rm requires a path.")
+            raise ValueError("rm 需要路径。")
         return self
 
 
@@ -199,7 +199,7 @@ class Ren(BaseModel):
         # Checks that ren has a source and a destination
         parts = split_cli_args(self.args)
         if len(parts) < 2:
-            raise ValueError("ren requires <source> and <destination>.")
+            raise ValueError("ren 需要 <源> 和 <目标>。")
         return self
 
 
@@ -211,7 +211,7 @@ class Mkdir(BaseModel):
     def check(self):
         # Checks that mkdir has a path
         if not self.args.strip():
-            raise ValueError("mkdir requires a path.")
+            raise ValueError("mkdir 需要路径。")
         return self
 
 
@@ -223,7 +223,7 @@ class Rmdir(BaseModel):
     def check(self):
         # Checks that rmdir has a path
         if not self.args.strip():
-            raise ValueError("rmdir requires a path.")
+            raise ValueError("rmdir 需要路径。")
         return self
 
 
@@ -257,7 +257,7 @@ class Download(BaseModel):
             try:
                 int(self.size.strip())
             except ValueError:
-                raise ValueError("--size must be an integer (megabytes).")
+                raise ValueError("--size 必须为整数（兆字节）。")
         return self
 
 
@@ -359,9 +359,9 @@ class Search(BaseModel):
         if needed:
             raise missing(*needed)
         if self.thread is not None and not (1 <= self.thread <= 32):
-            raise ValueError("--thread must be between 1 and 32.")
+            raise ValueError("--thread 必须介于 1 和 32 之间。")
         if self.size_limit is not None and self.size_limit < 1:
-            raise ValueError("--size-limit must be at least 1.")
+            raise ValueError("--size-limit 至少为 1。")
         return self
 
 
@@ -433,7 +433,7 @@ class Shell(BaseModel):
     def check(self):
         # Checks that shell has a command line
         if not self.args.strip():
-            raise ValueError("shell requires a command line.")
+            raise ValueError("shell 需要命令行。")
         return self
 
 
@@ -445,7 +445,7 @@ class Powershell(BaseModel):
     def check(self):
         # Checks that powershell has a script or command
         if not self.args.strip():
-            raise ValueError("powershell requires a script or command.")
+            raise ValueError("powershell 需要脚本或命令。")
         return self
 
 
@@ -531,7 +531,7 @@ class Migrate(BaseModel):
     def check(self):
         # Checks that migrate has a pid
         if self.pid is None:
-            raise ValueError("migrate requires a pid. Example: migrate 4919")
+            raise ValueError("migrate 需要 pid，例如：migrate 4919")
         return self
 
 
@@ -641,14 +641,14 @@ class ProcPrivileges(BaseModel):
     def check(self):
         # Checks the proc privileges name and status
         if self.pid is not None:
-            raise ValueError("proc privileges does not accept --pid (current process token only)")
+            raise ValueError("proc privileges 不接受 --pid（仅针对当前进程令牌）")
         if not self.name.strip():
             raise ValueError(
                 "proc privileges requires --name. Example: proc privileges --name SeDebugPrivilege -st on"
             )
         st = self.status.strip().lower()
         if st not in ("on", "off", "enable", "disable", "enabled", "disabled", "1", "0", "true", "false"):
-            raise ValueError("proc privileges requires -st on or -st off")
+            raise ValueError("proc privileges 需要 -st on 或 -st off")
         return self
 
 
@@ -660,7 +660,7 @@ class ProcKill(BaseModel):
     def check(self):
         # Checks that proc kill has a pid
         if self.pid is None:
-            raise ValueError("proc kill requires --pid. Example: proc kill --pid 1234")
+            raise ValueError("proc kill 需要 --pid，例如：proc kill --pid 1234")
         return self
 
 
@@ -672,7 +672,7 @@ class ProcSuspend(BaseModel):
     def check(self):
         # Checks that proc suspend has a pid
         if self.pid is None:
-            raise ValueError("proc suspend requires --pid. Example: proc suspend --pid 1234")
+            raise ValueError("proc suspend 需要 --pid，例如：proc suspend --pid 1234")
         return self
 
 
@@ -684,7 +684,7 @@ class ProcResume(BaseModel):
     def check(self):
         # Checks that proc resume has a pid
         if self.pid is None:
-            raise ValueError("proc resume requires --pid. Example: proc resume --pid 1234")
+            raise ValueError("proc resume 需要 --pid，例如：proc resume --pid 1234")
         return self
 
 
@@ -700,7 +700,7 @@ class TokensGrab(BaseModel):
     def check(self):
         # Checks that tokens grab has a pid
         if self.pid is None:
-            raise ValueError("tokens grab requires --pid. Example: tokens grab --pid 1000")
+            raise ValueError("tokens grab 需要 --pid，例如：tokens grab --pid 1000")
         return self
 
 
@@ -716,7 +716,7 @@ class TokensImpersonate(BaseModel):
     def check(self):
         # Checks that tokens impersonate has an id
         if self.id is None:
-            raise ValueError("tokens impersonate requires --id. Example: tokens impersonate --id 0")
+            raise ValueError("tokens impersonate 需要 --id，例如：tokens impersonate --id 0")
         return self
 
 
@@ -729,7 +729,7 @@ class TokensRemove(BaseModel):
     def check(self):
         # Checks that tokens remove has an id or all
         if not self.all and not self.id.strip():
-            raise ValueError("tokens remove requires --id or --all")
+            raise ValueError("tokens remove 需要 --id 或 --all")
         return self
 
 
@@ -741,7 +741,7 @@ class TokensForge(BaseModel):
     def check(self):
         # Checks that tokens forge has a user
         if not self.user.strip():
-            raise ValueError("tokens forge requires --user (and usually --pass, --domain)")
+            raise ValueError("tokens forge 需要 --user（通常还需要 --pass、--domain）")
         return self
 
 
@@ -759,9 +759,9 @@ class Runas(BaseModel):
     def check(self):
         # Checks the runas user, password and path
         if not self.user.strip():
-            raise ValueError("runas requires --user")
+            raise ValueError("runas 需要 --user")
         if not self.password.strip():
-            raise ValueError("runas requires --pass")
+            raise ValueError("runas 需要 --pass")
         if not self.path.strip():
             raise ValueError(
                 "runas requires --path (executable). Example: runas --domain CORP -u jhon -p 123 "
@@ -825,9 +825,9 @@ class Getsystem(BaseModel):
         if method in ("token", "com"):
             host = self.sacrifice.strip() or self.path.strip()
             if not host:
-                raise ValueError("getsystem --method token/com requires --sacrifice (or --path).")
+                raise ValueError("getsystem --method token/com 需要 --sacrifice（或 --path）。")
         elif method not in ("", "inject"):
-            raise ValueError("getsystem --method must be inject, token, or com.")
+            raise ValueError("getsystem --method 必须为 inject、token 或 com。")
         return self
 
 
@@ -845,9 +845,9 @@ class KeyloggerStart(BaseModel):
         try:
             n = int(str(v).strip())
         except ValueError:
-            raise ValueError("--delay must be an integer (milliseconds).")
+            raise ValueError("--delay 必须为整数（毫秒）。")
         if n < 0:
-            raise ValueError("--delay must be zero or a positive integer (milliseconds).")
+            raise ValueError("--delay 必须为零或正整数（毫秒）。")
         return n
 
     @model_validator(mode="after")
@@ -855,7 +855,7 @@ class KeyloggerStart(BaseModel):
         # Checks the keylogger method
         mode = self.method.strip()
         if mode and mode not in ("keystate", "boardstate"):
-            raise ValueError("invalid --method. Use keystate or boardstate.")
+            raise ValueError("--method 无效，请使用 keystate 或 boardstate。")
         return self
 
 
@@ -883,7 +883,7 @@ class ScreenshotStart(BaseModel):
     def check(self):
         # Checks that the screenshot delay is an integer
         if self.delay and not self.delay.isdigit():
-            raise ValueError("--delay must be an integer (seconds).")
+            raise ValueError("--delay 必须为整数（秒）。")
         return self
 
 

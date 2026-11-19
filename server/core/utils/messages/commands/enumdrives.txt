@@ -1,19 +1,18 @@
-ABOUT
-    List logical drive letters on the host with drive type (fixed, removable,
-    remote, CD ROM, and others). Windows only.
+关于
+    列出主机上的逻辑驱动器盘符及其类型（固定、可移动、远程、CD ROM 等）。仅限 Windows。
 
-USAGE:
+用法：
     enumdrives
 
-ARGUMENTS:
-    (none)
+参数：
+    （无）
 
-EXAMPLES:
+示例：
     enumdrives
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     enumdrives -w 30

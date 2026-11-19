@@ -1,12 +1,12 @@
-ABOUT
+关于
     C# tool for raw Kerberos interaction and abuse. Supports ticket requests, renewals,
     S4U constrained delegation, golden/silver/diamond tickets, Kerberoasting, AS-REP roasting,
     password spraying, and ticket management.
 
-USAGE:
+用法：
     net-rubeus --- <command> [options]
 
-COMMANDS:
+命令：
     asktgt          Request a TGT (password, hash, or certificate)
     asktgs          Request service ticket(s) from a TGT
     renew           Renew a TGT
@@ -30,7 +30,7 @@ COMMANDS:
     createnetonly   Create hidden desktop/logon session
     currentluid     Display current logon ID
 
-EXAMPLES:
+示例：
     net-rubeus --- asktgt /user:admin /password:P@ssw0rd /ptt
     net-rubeus --- kerberoast /outfile:hashes.txt
     net-rubeus --- s4u /user:svc /rc4:HASH /impersonateuser:admin /msdsspn:cifs/dc01 /ptt
@@ -38,5 +38,5 @@ EXAMPLES:
     net-rubeus --- klist
     net-rubeus --- triage
 
-NOTES:
+备注：
     Run net-rubeus --- for full command reference. Many commands support /domain, /dc, /luid, /nowrap, /opsec.

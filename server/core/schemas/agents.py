@@ -8,7 +8,7 @@ def _strip_required_tag(value):
     if isinstance(value, str):
         value = value.strip()
     if not value:
-        raise ValueError("tag is required")
+        raise ValueError("tag 为必填项")
     return value
 
 

@@ -1,17 +1,17 @@
-ABOUT
+关于
     Windows Write. LOLBAS documents execute binary through
     legitimate proxy. This might be utilized to confuse detection
     solutions that rely on parent-child relationships.
 
-USAGE:
+用法：
     write.exe
 
-EXAMPLES:
+示例：
     write.exe
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     write.exe

@@ -30,16 +30,16 @@ export default function StageFields({
   return (
   <>
     <div className="mb-3 space-y-1.5">
-      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Channel</label>
+      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">通道</label>
       <Select value={formData.protocol} onValueChange={(v) => handleFormChange("protocol", v as Protocol)}>
         <SelectTrigger className="w-auto text-[13.5px] bg-[#212121] border-[#363636] text-[#cecece] rounded px-3 py-1.5 h-auto focus:border-[#555] focus-visible:ring-0">
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectLabel className="text-[11px] text-[#6e6e6e] uppercase">external</SelectLabel>
+            <SelectLabel className="text-[11px] text-[#6e6e6e] uppercase">外部</SelectLabel>
             <SelectItem value="http">http</SelectItem>
-            <SelectItem value="custom">custom</SelectItem>
+            <SelectItem value="custom">自定义</SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>
@@ -78,7 +78,7 @@ export default function StageFields({
     </div>
 
     <div className="mb-3 space-y-1.5">
-      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Delay (seconds)</label>
+      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">延迟（秒）</label>
       <input
         className="w-[5rem] text-[13.5px] bg-[#212121] border border-[#363636] text-[#cecece] rounded px-3 py-1.5 outline-none focus:border-[#555] placeholder:text-[#444] tabular-nums"
         value={formData.sleep}
@@ -91,7 +91,7 @@ export default function StageFields({
     </div>
 
     <div className="mb-3 space-y-1.5">
-      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Jitter (%)</label>
+      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">抖动（%）</label>
       <input
         className="w-[5rem] text-[13.5px] bg-[#212121] border border-[#363636] text-[#cecece] rounded px-3 py-1.5 outline-none focus:border-[#555] placeholder:text-[#444] tabular-nums"
         value={formData.delay}
@@ -106,7 +106,7 @@ export default function StageFields({
     <Separator className="bg-[#252525] mb-4 mt-4" />
     <KeyValueEditor
       className="implant-kv-table mb-3"
-      label="Custom headers"
+      label="自定义请求头"
       items={formData.customHeaders}
       onChange={(next) => handleFormChange("customHeaders", next)}
       keyPlaceholder="Header"

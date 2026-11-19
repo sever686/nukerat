@@ -1,17 +1,17 @@
-ABOUT
+关于
     Internet Explorer extension export utility. LOLBAS loads
     mozcrt19.dll, mozsqlite3.dll, or sqlite.dll from attacker-controlled
     folder names passed as dummy export arguments.
 
-USAGE:
+用法：
     Extexport.exe {PATH_ABSOLUTE:folder} foo bar
 
-EXAMPLES:
+示例：
     Extexport.exe {PATH_ABSOLUTE:folder} foo bar
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     Extexport.exe {PATH_ABSOLUTE:folder} foo bar

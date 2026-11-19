@@ -1,27 +1,27 @@
-ABOUT
+关于
     Execute a binary on disk in the context of another user. It achieves
     this through cross-session interaction using the IStandardActivator,
     ISpecialSystemProperties, and IHxHelpPaneServer COM interfaces.
     Consequently, process injection is not necessary to run code on behalf
     of another logged-on user.
-USAGE:
+用法：
     bof-execute-cross-session --- <binarypath> <sessionid>
 
-ARGUMENTS:
+参数：
     binarypath          Full path to the binary (e.g. C:\Windows\System32\calc.exe)
     sessionid           Target session ID (qwinsta). Requires another logged-on user session for cross-session abuse.
 
-NOTES:
+备注：
     Requires local administrator privileges.
     IHxHelpPaneServer Execute() may block indefinitely in synchronous mode — prefer -bg for long-running binaries.
 
-EXAMPLES:
+示例：
     bof-execute-cross-session --- C:\Windows\System32\calc.exe 1
     bof-execute-cross-session -bg --- C:\Windows\System32\calc.exe 1
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-execute-cross-session -w 60 --- <binarypath> <sessionid>

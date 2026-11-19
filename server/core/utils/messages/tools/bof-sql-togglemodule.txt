@@ -1,16 +1,16 @@
-ABOUT
+关于
     Enables or disables SQL server features: RPC, CLR, xp_cmdshell, or OLE automation.
 
-USAGE:
+用法：
     bof-sql-togglemodule --- <server> [database] [linkedserver] [impersonate] <module> <value>
 
-MODULES:
+模块：
     rpc                 Enable/disable RPC on linked server (TRUE/FALSE)
     clr enabled         Enable/disable CLR integration (1/0)
     xp_cmdshell         Enable/disable xp_cmdshell (1/0)
     Ole Automation Procedures  Enable/disable OLE automation (1/0)
 
-EXAMPLES:
+示例：
     bof-sql-togglemodule --- SQL01 master LINKED01 dbo rpc TRUE
     bof-sql-togglemodule --- SQL01 master xp_cmdshell 1
     bof-sql-togglemodule --- SQL01 master clr enabled 0

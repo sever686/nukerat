@@ -25,10 +25,10 @@ export interface FileEntry {
 }
 
 export const tableColumns = [
-  utcTableColumnTitle("Date"),
-  "Name",
-  "Size",
-  "Actions",
+  utcTableColumnTitle("日期"),
+  "名称",
+  "大小",
+  "操作",
 ] as const;
 
 const serverBaseKey = (ip: string, port: string) =>

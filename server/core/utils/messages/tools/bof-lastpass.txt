@@ -1,20 +1,20 @@
-ABOUT
+关于
     Searches Chrome or Brave process memory for LastPass passwords and data.
 
-USAGE:
+用法：
     bof-lastpass --- <pid1> <pid2> ...
 
-ARGUMENTS:
+参数：
 
     pid    One or more Chrome/Brave process IDs to scan
 
-EXAMPLES:
+示例：
 
     bof-lastpass --- 1234 5678
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-lastpass -w 60 --- 1234 5678

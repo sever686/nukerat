@@ -1,28 +1,27 @@
-ABOUT
-    Injects shellcode into a process by PID. The payload is the shellcode
-    build of the implant (produced at compile time). Windows only.
+关于
+    按 PID 向进程注入 shellcode。载荷是植入体的 shellcode 构建产物（在编译时生成）。仅限 Windows。
 
-USAGE:
+用法：
     migrate <pid> [--alloc <mode>] [--encoder <name>] [--stomp-dll <dllname>]
 
-ARGUMENTS:
-    <pid>               Target process ID (positional).
-    --alloc             section or stomp. Omit for vanilla.
-    --encoder           sgn or supernova on the server.
-    --stomp-dll         DLL name when alloc is stomp.
+参数：
+    <pid>               目标进程 ID（位置参数）。
+    --alloc             section 或 stomp。省略则使用默认方式。
+    --encoder           服务器端使用 sgn 或 supernova。
+    --stomp-dll         alloc 为 stomp 时使用的 DLL 名称。
 
-ALLOC:
-    section             Shared section mapped RX in the target.
-    stomp               Payload in a module code cave. --stomp-dll picks the DLL if scan fails.
+分配：
+section             在目标中以 RX 映射的共享节区。
+stomp               将载荷放入模块代码洞中。扫描失败时由 --stomp-dll 指定 DLL。
 
-EXAMPLES:
+示例：
     migrate 4919
     migrate 4919 --alloc section
     migrate 4919 --alloc stomp --stomp-dll amsi.dll
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     migrate -w 120 4919 --alloc section

@@ -1,11 +1,11 @@
-ABOUT
+关于
     Patch, check, and revert AMSI and ETW for x64 processes. Compares the
     first 10+ bytes of AmsiScanBuffer and EtwEventWrite. Does not load
     amsi.dll if it is not already present in the current process. x64 only.
-USAGE:
+用法：
     bof-patchit --- <command_id>
 
-COMMANDS:
+命令：
     1    check       Check if AMSI and ETW are patched
     2    all         Patch both AMSI and ETW
     3    amsi        Patch AMSI (AmsiScanBuffer)
@@ -14,7 +14,7 @@ COMMANDS:
     6    revertAmsi  Revert patched AMSI
     7    revertEtw   Revert patched ETW
 
-EXAMPLES:
+示例：
     bof-patchit --- 1
     bof-patchit --- 2
     bof-patchit --- 3
@@ -23,9 +23,9 @@ EXAMPLES:
     bof-patchit --- 6
     bof-patchit --- 7
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-patchit -w 60 --- 1

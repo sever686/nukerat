@@ -32,8 +32,8 @@ export default function CustomChannelFields({
   return (
     <Tabs defaultValue="implant" className="implant-custom-channel-tabs">
       <TabsList variant="line" className="gap-4">
-        <TabsTrigger value="implant">Implant routine</TabsTrigger>
-        <TabsTrigger value="relay">Relay forwarder</TabsTrigger>
+        <TabsTrigger value="implant">植入体例程</TabsTrigger>
+        <TabsTrigger value="relay">中继转发器</TabsTrigger>
       </TabsList>
       <TabsContent value="implant">
         <div className={editorChrome}>

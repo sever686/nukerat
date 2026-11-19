@@ -1,15 +1,15 @@
-ABOUT
+关于
     Launcher process. LOLBAS documents executes arbitrary command.
 
-USAGE:
+用法：
     provlaunch.exe LOLBin
 
-EXAMPLES:
+示例：
     provlaunch.exe LOLBin
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     provlaunch.exe LOLBin

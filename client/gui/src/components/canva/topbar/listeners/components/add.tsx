@@ -47,7 +47,7 @@ const AddListenerPanel = ({
       <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a] shrink-0">
         <div className="flex items-center gap-2">
           <span className="text-[13.5px] font-semibold text-[#cecece] tracking-wide">
-            New Listener
+            新建监听器
           </span>
         </div>
         <button
@@ -60,19 +60,19 @@ const AddListenerPanel = ({
 
       <div className="flex-1 min-h-0 min-w-0 overflow-y-auto px-4 py-4">
         <div className="mb-3 space-y-1.5">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Name</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">名称</label>
           <input
             className="w-full text-[13.5px] bg-[#212121] border border-[#363636] text-[#cecece] rounded px-3 py-1.5 outline-none focus:border-[#555] placeholder:text-[#444]"
             value={formData.name}
             onChange={(e) => handleFormChange("name", e.target.value)}
-            placeholder="Listener name"
+            placeholder="监听器名称"
             autoComplete="off"
             spellCheck={false}
           />
         </div>
 
         <div className="mb-3 space-y-1.5">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Type</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">类型</label>
           <Select
             value={formData.listenerType}
             onValueChange={(v) => handleFormChange("listenerType", v as ListenerType)}
@@ -81,8 +81,8 @@ const AddListenerPanel = ({
               <SelectValue />
             </SelectTrigger>
             <SelectContent className="text-[13.5px]">
-              <SelectItem value="channel" className="text-[13.5px]">Channel</SelectItem>
-              <SelectItem value="file_server" className="text-[13.5px]">File server</SelectItem>
+              <SelectItem value="channel" className="text-[13.5px]">通道</SelectItem>
+              <SelectItem value="file_server" className="text-[13.5px]">文件服务器</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -92,7 +92,7 @@ const AddListenerPanel = ({
         {isChannel && (
           <>
             <div className="mb-3 space-y-1.5">
-              <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Channel</label>
+              <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">通道</label>
               <Select
                 value={cp}
                 onValueChange={(v) => handleFormChange("channelPayload", v as ChannelPayload)}
@@ -137,7 +137,7 @@ const AddListenerPanel = ({
           onClick={handleClosePanel}
           className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer"
         >
-          Cancel
+          取消
         </button>
         <button
           type="button"
@@ -146,7 +146,7 @@ const AddListenerPanel = ({
           className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
         >
           {submitting && <RefreshCw size={10} className="animate-spin" />}
-          Create
+          创建
         </button>
       </div>
     </div>

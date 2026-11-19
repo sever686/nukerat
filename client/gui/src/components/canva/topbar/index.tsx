@@ -58,10 +58,10 @@ import { DownloadsTopbarButton } from "./downloads";
 import logoSvg from "@/assets/logo.svg";
 
 export const hostOpenPanels: { type: string; icon: LucideIcon; label: string }[] = [
-  { type: "terminal", icon: SquareChevronRight, label: "Terminal" },
-  { type: "explorer", icon: Folder, label: "File browser" },
-  { type: "process", icon: Cpu, label: "Processes" },
-  { type: "screenshot", icon: Camera, label: "Screenshot" },
+  { type: "terminal", icon: SquareChevronRight, label: "终端" },
+  { type: "explorer", icon: Folder, label: "文件浏览器" },
+  { type: "process", icon: Cpu, label: "进程" },
+  { type: "screenshot", icon: Camera, label: "截图" },
 ];
 
 interface MainProps {
@@ -120,7 +120,7 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <Server size={13} />
-                Servers
+                服务器
               </span>
               <ShortcutHint id="servers" />
             </DropdownMenuItem>
@@ -130,7 +130,7 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <Headphones size={14} />
-                Listeners
+                监听器
               </span>
               <ShortcutHint id="listeners" />
             </DropdownMenuItem>
@@ -140,7 +140,7 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <Bug size={13} />
-                Implants
+                植入体
               </span>
               <ShortcutHint id="implants" />
             </DropdownMenuItem>
@@ -150,7 +150,7 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <Network size={13} />
-                Network
+                网络
               </span>
               <ShortcutHint id="network" />
             </DropdownMenuItem>
@@ -159,7 +159,7 @@ export default function TopBar(props: MainProps) {
 
             <DropdownMenuItem onClick={() => props.floatWindow("agents")}>
               <Bot size={13} />
-              Agents
+              智能体
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => props.floatWindow("nukescripts")}>
               <CodeXmlIcon size={13} />
@@ -170,11 +170,11 @@ export default function TopBar(props: MainProps) {
 
             <DropdownMenuItem onClick={() => props.floatWindow("reports")}>
               <HiOutlineDocumentReport size={13} />
-              Reports
+              报告
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => props.floatWindow("iocs")}>
               <Fingerprint size={13} />
-              IOCs
+              IOC
             </DropdownMenuItem>
 
             <DropdownMenuSeparator />
@@ -185,7 +185,7 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <Logs size={13} />
-                Queue
+                队列
               </span>
               <ShortcutHint id="queue" />
             </DropdownMenuItem>
@@ -195,7 +195,7 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <FileText size={13} />
-                Event Log
+                事件日志
               </span>
               <ShortcutHint id="logs" />
             </DropdownMenuItem>
@@ -208,14 +208,14 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <LogOut size={13} />
-                Quit
+                退出
               </span>
               <ShortcutHint id="quit" />
             </DropdownMenuItem>
           </DropdownMenuGroup>
         </TopBarMenu>
 
-        <TopBarMenu label="View" openMenu={openMenu} setOpenMenu={setOpenMenu}>
+        <TopBarMenu label="查看" openMenu={openMenu} setOpenMenu={setOpenMenu}>
           <DropdownMenuGroup>
             <DropdownMenuItem
               className="flex w-full items-center justify-between gap-2"
@@ -223,7 +223,7 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <Fullscreen size={13} />
-                Full Screen
+                全屏
               </span>
               <ShortcutHint id="view_fullscreen" />
             </DropdownMenuItem>
@@ -236,7 +236,7 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <ZoomIn size={13} />
-                Zoom In
+                放大
               </span>
               <ShortcutHint id="view_zoom_in" />
             </DropdownMenuItem>
@@ -246,7 +246,7 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <ZoomOut size={13} />
-                Zoom Out
+                缩小
               </span>
               <ShortcutHint id="view_zoom_out" />
             </DropdownMenuItem>
@@ -256,7 +256,7 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <RotateCcw size={13} />
-                Reset Zoom
+                重置缩放
               </span>
               <ShortcutHint id="view_zoom_reset" />
             </DropdownMenuItem>
@@ -269,14 +269,14 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <CodeXml size={13} />
-                Devtools
+                开发者工具
               </span>
               <ShortcutHint id="view_devtools" />
             </DropdownMenuItem>
           </DropdownMenuGroup>
         </TopBarMenu>
 
-        <TopBarMenu label="Tabs" openMenu={openMenu} setOpenMenu={setOpenMenu}>
+        <TopBarMenu label="标签页" openMenu={openMenu} setOpenMenu={setOpenMenu}>
           <DropdownMenuGroup>
             <DropdownMenuItem
               className="flex w-full items-center justify-between gap-2"
@@ -284,7 +284,7 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <SquareChevronRight size={13} />
-                Terminal
+                终端
               </span>
               <ShortcutHint id="terminal" />
             </DropdownMenuItem>
@@ -294,7 +294,7 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <Folder size={13} />
-                File Browser
+                文件浏览器
               </span>
               <ShortcutHint id="explorer" />
             </DropdownMenuItem>
@@ -304,7 +304,7 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <Cpu size={13} />
-                Processes
+                进程
               </span>
               <ShortcutHint id="process" />
             </DropdownMenuItem>
@@ -313,11 +313,11 @@ export default function TopBar(props: MainProps) {
 
             <DropdownMenuItem onClick={() => props.openWindow("screenshot")}>
               <Camera size={13} />
-              Screenshot
+              截图
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => props.openWindow("keylogger")}>
               <Keyboard size={13} />
-              Keystrokes
+              键盘记录
             </DropdownMenuItem>
             <DropdownMenuItem
               className="flex w-full items-center justify-between gap-2"
@@ -325,7 +325,7 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <KeyRound size={13} />
-                Credentials
+                凭据
               </span>
               <ShortcutHint id="credentials" />
             </DropdownMenuItem>
@@ -338,13 +338,13 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <MonitorIcon size={13} />
-                Sessions
+                会话
               </span>
               <ShortcutHint id="sessions" />
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => props.openWindow("graphs")}>
               <Share2 size={13} />
-              Attack Graph
+              攻击图谱
             </DropdownMenuItem>
 
             <DropdownMenuSeparator />
@@ -355,25 +355,25 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <Bot size={13} />
-                AI Agent
+                AI 智能体
               </span>
               <ShortcutHint id="agent" />
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => props.openWindow("fileServer")}>
               <Globe size={13} />
-              File Server
+              文件服务器
             </DropdownMenuItem>
 
             <DropdownMenuSeparator />
 
             <DropdownMenuItem onClick={() => props.openWindow("nukescripts_output")}>
               <LuSquareCode size={13} />
-              NS Debugger
+              NS 调试器
             </DropdownMenuItem>
           </DropdownMenuGroup>
         </TopBarMenu>
 
-        <TopBarMenu label="Help" openMenu={openMenu} setOpenMenu={setOpenMenu}>
+        <TopBarMenu label="帮助" openMenu={openMenu} setOpenMenu={setOpenMenu}>
           <DropdownMenuGroup>
             <DropdownMenuItem
               className="flex w-full items-center justify-between gap-2"
@@ -383,7 +383,7 @@ export default function TopBar(props: MainProps) {
             >
               <span className="flex items-center gap-2">
                 <GrHelpBook size={13} />
-                Documentation
+                文档
               </span>
               <ShortcutHint id="docs" />
             </DropdownMenuItem>
@@ -393,7 +393,7 @@ export default function TopBar(props: MainProps) {
               }
             >
               <Command size={13} />
-              Shortcuts
+              快捷键
             </DropdownMenuItem>
 
             <DropdownMenuSeparator />
@@ -407,7 +407,7 @@ export default function TopBar(props: MainProps) {
               }
             >
               <MessageCircleMore size={13} />
-              Feedbacks
+              反馈
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={() =>
@@ -418,14 +418,14 @@ export default function TopBar(props: MainProps) {
               }
             >
               <Scale size={13} />
-              License
+              许可证
             </DropdownMenuItem>
 
             <DropdownMenuSeparator />
 
             <DropdownMenuItem onClick={() => props.floatWindow("about")}>
               <Info size={10} />
-              About
+              关于
             </DropdownMenuItem>
           </DropdownMenuGroup>
         </TopBarMenu>
@@ -436,27 +436,27 @@ export default function TopBar(props: MainProps) {
           onClick={() => props.openWindow("terminal")}
           type="icons-only"
           icon={<SquareChevronRight size={18.5} />}
-          label="Terminal"
-          title="Terminal"
-          desc="Interactive session console"
+          label="终端"
+          title="终端"
+          desc="交互式会话控制台"
           shortcutId="terminal"
         />
         <NavItem
           onClick={() => props.openWindow("explorer")}
           type="icons-only"
           icon={<Folder size={18.5} />}
-          label="File Browser"
-          title="File Browser"
-          desc="Browse files on the active host"
+          label="文件浏览器"
+          title="文件浏览器"
+          desc="浏览当前主机上的文件"
           shortcutId="explorer"
         />
         <NavItem
           onClick={() => props.openWindow("process")}
           type="icons-only"
           icon={<Cpu size={18.5} />}
-          label="Processes"
-          title="Processes"
-          desc="View and manage host processes"
+          label="进程"
+          title="进程"
+          desc="查看并管理主机进程"
           shortcutId="process"
         />
 
@@ -466,25 +466,25 @@ export default function TopBar(props: MainProps) {
           onClick={() => props.openWindow("screenshot")}
           type="icons-only"
           icon={<Camera size={20} />}
-          label="Screenshot"
-          title="Screenshot"
-          desc="Capture remote desktop view"
+          label="截图"
+          title="截图"
+          desc="截取远程桌面画面"
         />
         <NavItem
           onClick={() => props.openWindow("keylogger")}
           type="icons-only"
           icon={<Keyboard size={18.5} />}
-          label="Keylogger"
-          title="Keylogger"
-          desc="Capture keyboard events"
+          label="键盘记录"
+          title="键盘记录"
+          desc="捕获键盘事件"
         />
         <NavItem
           onClick={() => props.openWindow("credentials")}
           type="icons-only"
           icon={<KeyRound size={18.5} />}
-          label="Credentials"
-          title="Credentials"
-          desc="Manage stored credentials"
+          label="凭据"
+          title="凭据"
+          desc="管理已存储的凭据"
           shortcutId="credentials"
         />
 
@@ -494,18 +494,18 @@ export default function TopBar(props: MainProps) {
           onClick={() => props.openWindow("sessions")}
           type="icons-only"
           icon={<MonitorIcon size={18.5} />}
-          label="Sessions"
-          title="Sessions"
-          desc="View active sessions"
+          label="会话"
+          title="会话"
+          desc="查看活动会话"
           shortcutId="sessions"
         />
         <NavItem
           onClick={() => props.openWindow("graphs")}
           type="icons-only"
           icon={<Share2 size={18.5} />}
-          label="Attack Graph"
-          title="Attack Graph"
-          desc="Visualize lateral movement and pivots"
+          label="攻击图谱"
+          title="攻击图谱"
+          desc="可视化横向移动与跳板"
         />
 
         <div className="w-px h-4 bg-[#292929] mr-4 ml-4 shrink-0" />
@@ -514,18 +514,18 @@ export default function TopBar(props: MainProps) {
           onClick={() => props.openWindow("agent")}
           type="icons-only"
           icon={<Bot size={22} />}
-          label="AI Agent"
-          title="AI Agent"
-          desc="AI-assisted session operations"
+          label="AI 智能体"
+          title="AI 智能体"
+          desc="AI 辅助的会话操作"
           shortcutId="agent"
         />
         <NavItem
           onClick={() => props.openWindow("fileServer")}
           type="icons-only"
           icon={<Globe size={18.5} />}
-          label="File Server"
-          title="File Server"
-          desc="Team server file staging"
+          label="文件服务器"
+          title="文件服务器"
+          desc="团队服务器文件暂存"
         />
 
         <DownloadsTopbarButton />
@@ -605,7 +605,7 @@ export default function TopBar(props: MainProps) {
         ))}
         <button
           onClick={props.onTabAdd}
-          title="New workspace"
+          title="新建工作区"
           className="button-default p-1 rounded text-[#6b6b6b] hover:text-[#a0a0a0] hover:bg-[#1e1e1e] transition-colors"
         >
           <Plus size={17} />

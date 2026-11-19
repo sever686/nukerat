@@ -53,7 +53,7 @@ export default function SplitPanel({ session, onClose, onSaved }: { session: Ses
       <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a] shrink-0">
         <span className="text-[13.5px] font-semibold text-[#cecece] tracking-wide flex items-center gap-2">
           {session && <img src={sessionIcon(session)} alt="" className="w-[16px] h-[16px] opacity-90" />}
-          View - {session?.tag ?? "Session"}
+          查看 - {session?.tag ?? "Session"}
         </span>
         <button type="button" onClick={onClose} className="p-1 rounded text-[#6b6b6b] hover:text-[#d4d4d4] hover:bg-[#2a2a2a] transition-colors cursor-pointer">
           <X size={13} />
@@ -61,7 +61,7 @@ export default function SplitPanel({ session, onClose, onSaved }: { session: Ses
       </div>
       <div className="flex-1 min-h-0 min-w-0 overflow-y-auto px-4 py-4">
         <div className="mb-3 space-y-1.5">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Note</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">备注</label>
           <textarea
             className={`${inputClass} min-h-[72px] resize-y py-2 focus:border-[#555] transition-colors`}
             rows={3}
@@ -69,26 +69,26 @@ export default function SplitPanel({ session, onClose, onSaved }: { session: Ses
             onChange={(e) => setNote(e.target.value)}
           />
         </div>
-        <ViewField label="Last Check" value={session?.last_activity || "-"} />
-        <ViewField label="Tag" value={session?.tag} />
-        <ViewField label="Hostname" value={session?.hostname} />
-        <ViewField label="User" value={session?.user} />
-        <ViewField label="Privilege" value={session?.privilege || "user"} />
-        <ViewField label="Internal" value={session?.internal ?? session?.ip} />
-        <ViewField label="External" value={session?.external_ip} />
-        <ViewField label="Listener" value={session?.listener} uppercase />
-        <ViewField label="Host Server" value={session?.host_server} />
-        <ViewField label="Host Port" value={session?.host_port != null ? String(session.host_port) : undefined} />
-        <ViewField label="Arch" value={session?.arch} />
+        <ViewField label="最后检查" value={session?.last_activity || "-"} />
+        <ViewField label="标签" value={session?.tag} />
+        <ViewField label="主机名" value={session?.hostname} />
+        <ViewField label="用户" value={session?.user} />
+        <ViewField label="权限" value={session?.privilege || "user"} />
+        <ViewField label="内网" value={session?.internal ?? session?.ip} />
+        <ViewField label="外部" value={session?.external_ip} />
+        <ViewField label="监听器" value={session?.listener} uppercase />
+        <ViewField label="主机服务器" value={session?.host_server} />
+        <ViewField label="主机端口" value={session?.host_port != null ? String(session.host_port) : undefined} />
+        <ViewField label="架构" value={session?.arch} />
         <ViewField label="PID" value={session?.pid != null ? String(session.pid) : undefined} />
-        <ViewField label="Process" value={session?.process || "-"} />
-        <ViewField label="OS" value={session?.os} />
-        <ViewField label="First Seen" value={formatDate(session?.first_seen)} />
-        <ViewField label="Last Seen" value={formatDate(session?.last_seen)} />
-        <ViewField label="delay" value={session?.delay != null ? String(session.delay) : undefined} />
-        <ViewField label="Server" value={session?._server} />
+        <ViewField label="进程" value={session?.process || "-"} />
+        <ViewField label="操作系统" value={session?.os} />
+        <ViewField label="首次发现" value={formatDate(session?.first_seen)} />
+        <ViewField label="最近发现" value={formatDate(session?.last_seen)} />
+        <ViewField label="延迟" value={session?.delay != null ? String(session.delay) : undefined} />
+        <ViewField label="服务器" value={session?._server} />
         <div className="mb-3 space-y-1.5">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Implant Config</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">植入体配置</label>
           {implant && typeof implant === "object" ? (
             <div className="rounded border border-[#363636] bg-[#212121] overflow-hidden">
               {Object.entries(implant).map(([key, val], i, arr) => (
@@ -125,16 +125,16 @@ export default function SplitPanel({ session, onClose, onSaved }: { session: Ses
             const res = await EditSession(session.tag, note, session._server);
             setSaving(false);
             if (res?.status === "success") {
-              toast.success("Note saved");
+              toast.success("备注已保存");
               onSaved();
             } else {
-              toast.error(res?.message ?? "Failed to save");
+              toast.error(res?.message ?? "保存失败");
             }
           }}
           className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#444] bg-[#232323] px-3 text-[13px] text-[#c8c8c8] hover:bg-[#2b2b2b] cursor-pointer disabled:cursor-not-allowed disabled:opacity-30"
         >
           {saving && <RefreshCw size={10} className="animate-spin" />}
-          Save
+          保存
         </button>
       </div>
     </div>

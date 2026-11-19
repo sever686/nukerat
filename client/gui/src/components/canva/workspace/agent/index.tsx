@@ -136,14 +136,14 @@ const AgentPanel = (props: IDockviewPanelProps) => {
             <Bot size={16} className="text-[#c7c7c7]" />
           </div>
           <h2 className="shrink-0 whitespace-nowrap text-[15px] font-semibold text-[#cecece]">
-            AI Agent
+            AI 智能体
           </h2>
           <div className="min-w-2 flex-1 shrink" aria-hidden />
           <button
             type="button"
             onClick={handleCopyHistory}
             disabled={messages.length === 0}
-            title="Copy"
+            title="复制"
             className="button-default flex h-[29px] w-[29px] shrink-0 items-center justify-center rounded border border-[#333] bg-[#232323] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
           >
             <Copy size={14} />
@@ -152,7 +152,7 @@ const AgentPanel = (props: IDockviewPanelProps) => {
             type="button"
             onClick={openClearConfirm}
             disabled={messages.length === 0}
-            title="Clear"
+            title="清除"
             className="button-default flex h-[29px] w-[29px] shrink-0 items-center justify-center rounded border border-[#333] bg-[#232323] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
           >
             <Trash2 size={14} />
@@ -168,14 +168,14 @@ const AgentPanel = (props: IDockviewPanelProps) => {
             onRefresh={refreshAgents}
             onSelect={selectModel}
             onClear={clearModelFilter}
-            placeholder="Select a model"
+            placeholder="选择模型"
           />
           <button
             type="button"
             onClick={toggleConfigOpen}
             className="button-default flex h-[29px] shrink-0 items-center rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer"
           >
-            Settings
+            设置
           </button>
         </div>
       </div>
@@ -244,24 +244,24 @@ const AgentPanel = (props: IDockviewPanelProps) => {
             <div className="flex items-center gap-2 mb-3">
               <Trash2 size={14} className="text-[#c97070] mb-0.5" />
               <span className="text-[13.5px] font-semibold text-[#cecece]">
-                Clear History
+                清除历史
               </span>
             </div>
             <p className="text-[13px] text-[#9b9b9b] mb-5 leading-relaxed">
-              Clear chat history? This cannot be undone.
+              清除聊天记录？此操作无法撤销。
             </p>
             <div className="flex items-center justify-end gap-2">
               <button
                 onClick={closeClearConfirm}
                 className="button-default px-3 py-1 rounded text-[12px] text-[#9b9b9b] hover:text-[#d4d4d4] hover:bg-[#252525] transition-colors border border-[#333] cursor-pointer"
               >
-                Cancel
+                取消
               </button>
               <button
                 onClick={handleConfirmClear}
                 className="button-default flex items-center gap-1.5 px-3 py-1 rounded text-[12px] text-white bg-[#8b2020] hover:bg-[#a83232] transition-colors cursor-pointer"
               >
-                Clear
+                清除
               </button>
             </div>
           </div>

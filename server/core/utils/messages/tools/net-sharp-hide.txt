@@ -1,20 +1,20 @@
-ABOUT
+关于
     Persistence tool that creates hidden registry Run keys using NtSetValueKey with a null
     byte prefix in the UNICODE_STRING key value name, evading standard registry enumeration.
 
-USAGE:
+用法：
     net-sharp-hide --- action=<action> [options]
 
-OPTIONS:
+选项：
     action       create or delete
     keyvalue     Path to executable for create (required for create)
     arguments    Optional arguments for the executable
 
-EXAMPLES:
+示例：
     net-sharp-hide --- action=create keyvalue="C:\Windows\Temp\payload.exe"
     net-sharp-hide --- action=create keyvalue="C:\Windows\Temp\payload.exe" arguments="arg1 arg2"
     net-sharp-hide --- action=delete
 
-NOTES:
+备注：
     Creates hidden Run key at HKCU or HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
     depending on current user context.

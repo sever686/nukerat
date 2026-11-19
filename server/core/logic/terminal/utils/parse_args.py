@@ -73,7 +73,7 @@ async def parse_special_args(command):
                 try:
                     int(wait)
                 except ValueError:
-                    raise ValueError("Error: invalid wait time, must be an integer")
+                    raise ValueError("错误：等待时间无效，必须为整数")
                 i += 2
             elif not takes_value:
                 bg = True

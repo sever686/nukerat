@@ -1,20 +1,19 @@
-ABOUT
-    Show metadata for a file or directory: type, size, attribute flags, and created,
-    accessed, and modified times.
+关于
+    显示文件或目录的元数据：类型、大小、属性标志，以及创建、访问和修改时间。
 
-USAGE:
+用法：
     fileinfo <path>
 
-ARGUMENTS:
-    <path>              File or folder.
+参数：
+    <path>              文件或文件夹。
 
-EXAMPLES:
+示例：
     fileinfo file.exe
     fileinfo C:\ProgramData
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     fileinfo -w 30 C:\Windows\notepad.exe

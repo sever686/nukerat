@@ -1,20 +1,20 @@
-ABOUT
-    List files and directories under a path. With no path, lists the current directory.
+关于
+    列出路径下的文件和目录。未指定路径时列出当前目录。
 
-USAGE:
+用法：
     ls [<path>]
 
-ARGUMENTS:
-    <path>              Directory to list. Default current directory.
+参数：
+    <path>              要列出的目录。默认为当前目录。
 
-EXAMPLES:
+示例：
     ls /etc
     ls C:\Windows\Temp
     ls
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     ls -w 60 C:\Windows\Temp

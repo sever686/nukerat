@@ -1,17 +1,17 @@
-ABOUT
+关于
     LDAP Data Interchange Format tool. LOLBAS imports LDF that
     references HTTP attribute values, causing Windows to fetch remote
     files into IE temporary storage.
 
-USAGE:
+用法：
     Ldifde -i -f {PATH:.ldf}
 
-EXAMPLES:
+示例：
     Ldifde -i -f {PATH:.ldf}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     Ldifde -i -f {PATH:.ldf}

@@ -1,17 +1,17 @@
-ABOUT
+关于
     Steals the contents of an open Notepad window by finding the Notepad
     Edit control and reading its text via WM_GETTEXT.
-USAGE:
+用法：
     bof-notethief
-EXAMPLES:
+示例：
     bof-notethief
-NOTES:
+备注：
     Requires an open Notepad window on the target desktop. Reads up to 30,000 characters.
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-notethief -w 60
     bof-notethief -bg

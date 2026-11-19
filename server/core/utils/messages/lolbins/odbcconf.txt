@@ -1,24 +1,24 @@
-ABOUT
+关于
     Used in Windows for managing ODBC connections. LOLBAS documents
     execute a DLL file using technique that can evade defensive
     counter measures and execute dll file using technique that can
     evade defensive counter measures.
 
-USAGE:
+用法：
     odbcconf /a {REGSVR {PATH_ABSOLUTE:.dll}}
     odbcconf INSTALLDRIVER "lolbas-project|Driver={PATH_ABSOLUTE:.dll}|APILevel=2"
 odbcconf configsysdsn "lolbas-project" "DSN=lolbas-project"
     odbcconf -f {PATH:.rsp}
 
-EXAMPLES:
+示例：
     odbcconf /a {REGSVR {PATH_ABSOLUTE:.dll}}
     odbcconf INSTALLDRIVER "lolbas-project|Driver={PATH_ABSOLUTE:.dll}|APILevel=2"
 odbcconf configsysdsn "lolbas-project" "DSN=lolbas-project"
     odbcconf -f {PATH:.rsp}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     odbcconf /a {REGSVR {PATH_ABSOLUTE:.dll}}

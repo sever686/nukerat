@@ -55,7 +55,7 @@ const ProcessWindow = (props: IDockviewPanelProps<ProcessPanelParams>) => {
               onClick={cancelLoading}
               className="mt-2 text-[13.5px] text-[#3a3a3a] cursor-pointer select-none hover:text-[#4a4a4a]"
             >
-              Cancel
+              取消
             </span>
           </div>
         ) : (

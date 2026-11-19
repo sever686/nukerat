@@ -1,8 +1,8 @@
-ABOUT
+关于
     Requests service tickets and outputs crackable TGS hashes in hashcat
     format.
 
-USAGE:
+用法：
     net-sharp-roast --- <target> [domain\\user] [password]
 
 TARGET:
@@ -13,11 +13,11 @@ TARGET:
     LDAP://DC=domain,DC=local     Roast users in trusted domain
     <SPN>@domain                  Roast SPN in trusted domain
 
-EXAMPLES:
+示例：
     net-sharp-roast --- all
     net-sharp-roast --- sqlservice
     net-sharp-roast --- "MSSQLSvc/SQL.corp.local"
     net-sharp-roast --- harmj0y "corp.local\\user" "Password123!"
 
-NOTES:
+备注：
     Deprecated. Functionality incorporated into net-rubeus kerberoast action.

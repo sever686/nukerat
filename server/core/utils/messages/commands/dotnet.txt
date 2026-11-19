@@ -1,22 +1,21 @@
-ABOUT
-    Execute a .NET assembly from an uploaded file in the current process
-    using inline execution. Optional arguments after --- are passed to
-    the loader. Windows only.
+关于
+    在当前进程中使用内联执行运行来自已上传文件的 .NET 程序集。--- 之后的可选参数会传给加载器。仅限 W
+    indows。
 
-USAGE:
+用法：
     dotnet -f <file> --- <assemblyargs>
 
-ARGUMENTS:
-    -f                  Local .NET file (--file).
-    ---                 Optional assembly command line.
+参数：
+    -f                  本地 .NET 文件（--file）。
+    ---                 可选的要传给程序集的命令行。
 
-EXAMPLES:
+示例：
     dotnet -f Seatbelt.exe --- -group=all
     dotnet -f Rubeus.exe --- asktgt /user:admin
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     dotnet -w 180 -f tool.exe --- --help

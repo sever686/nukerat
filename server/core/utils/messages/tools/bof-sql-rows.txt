@@ -1,9 +1,9 @@
-ABOUT
+关于
     Returns row count for a table on a SQL server.
 
-USAGE:
+用法：
     bof-sql-rows --- <server> [database] <table> [linkedserver] [impersonate]
 
-EXAMPLES:
+示例：
     bof-sql-rows --- SQL01 master sysusers
     bof-sql-rows --- SQL01 AdventureWorks Users

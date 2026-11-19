@@ -1,11 +1,11 @@
-ABOUT
+关于
     .NET domain enumeration tool similar to PowerView. Enumerates forest, domain, computer, and
     user data, and supports chained admin discovery and share hunting actions.
 
-USAGE:
+用法：
     net-edd --- -f <function> [options]
 
-EXAMPLES:
+示例：
     net-edd --- -l
     net-edd --- -f getdomaincomputers
     net-edd --- -f getdomainuser -u jsmith
@@ -16,7 +16,7 @@ EXAMPLES:
     net-edd --- -f changeaccountpassword -u victim -w NewPassword123
     net-edd --- -i -f getdomainuser
 
-OPTIONS:
+选项：
     -f, --function         Function to run
     -o, --output           Path to save output file
     -c, --computername     Target computer name
@@ -67,9 +67,9 @@ FUNCTIONS:
     findinterestingdomainsharefile Search shares for interesting filenames
     findwritableshares     Enumerate writable domain shares
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     net-edd -w 60 --- -l

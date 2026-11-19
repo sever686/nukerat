@@ -1,19 +1,19 @@
-ABOUT
+关于
     (linux) Copy files.
 
-USAGE:
+用法：
     bof-lin-cp --- <source> <dest>
 
-ARGUMENTS:
+参数：
     source              Source file
     dest                Destination
 
-EXAMPLES:
+示例：
     bof-lin-cp --- <source> <dest>
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-lin-cp -w 60 --- <source> <dest>

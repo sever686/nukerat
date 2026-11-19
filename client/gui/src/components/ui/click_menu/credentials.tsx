@@ -43,29 +43,29 @@ export function createCredentialsBridge(): PanelEditMenuBridge | null {
     canEdit: () => rt.canEditFields(),
     prepareMenu: (t) => rt.prepareRowFromTarget(t),
     getCustomMenuItems: () => [
-      menuAction("Add", Plus, () => rt.add()),
-      menuAction("Edit", Edit, () => rt.edit(), () => !rt.hasRowSelection()),
+      menuAction("添加", Plus, () => rt.add()),
+      menuAction("编辑", Edit, () => rt.edit(), () => !rt.hasRowSelection()),
       {
         kind: "action",
-        label: "Remove",
+        label: "移除",
         icon: Trash2,
         disabled: () => !credentialsCanRemoveSelected() && !credentialsCanRemoveAll(),
         items: [
           {
             kind: "action",
-            label: "Selected",
+            label: "所选",
             onClick: () => credentialsRemoveSelected(),
             disabled: () => !credentialsCanRemoveSelected(),
           },
           {
             kind: "action",
-            label: "All",
+            label: "全部",
             onClick: () => credentialsRemoveAll(),
             disabled: () => !credentialsCanRemoveAll(),
           },
         ],
       },
-      menuAction("Update", RefreshCw, () => rt.refresh()),
+      menuAction("更新", RefreshCw, () => rt.refresh()),
     ],
   };
 }

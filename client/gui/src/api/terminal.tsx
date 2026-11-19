@@ -347,7 +347,7 @@ export const DataFetch = async (
       lastError ?? {
         status: "failure",
         command,
-        message: "Request failed",
+        message: "请求失败",
       }
     );
   } catch (error) {

@@ -30,7 +30,7 @@ async def main_agents(body: dict):
         return await conclude_request(await usage_agent(body), body=body, type="agents")
     else:
         return await conclude_request(
-            {"status": "failure", "message": "Invalid type"},
+            {"status": "failure", "message": "类型无效"},
             status_code=400,
             body=body,
             type="agents",

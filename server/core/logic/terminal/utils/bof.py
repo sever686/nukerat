@@ -50,7 +50,7 @@ def pack_arg(type_prefix, value, params=None):
         try:
             base64.b64decode(blob, validate=True)
         except (binascii.Error, ValueError):
-            raise ValueError("BOF loader error: binary argument must be valid base64") from None
+            raise ValueError("BOF 加载器错误：binary 参数必须是有效的 base64") from None
         return f"b:{blob}"
     if any(ch.isspace() for ch in text_value):
         return f'{type_prefix}:"{text_value}"'

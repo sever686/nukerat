@@ -1,9 +1,9 @@
-ABOUT
+关于
     Searches for and optionally removes non-ASCII phantom services that cannot be removed by built-in tools.
 
-USAGE:
+用法：
     net-phantom-service --- audit | remove
 
-EXAMPLES:
+示例：
     net-phantom-service --- audit
     net-phantom-service --- remove

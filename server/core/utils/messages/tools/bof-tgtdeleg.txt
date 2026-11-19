@@ -1,14 +1,14 @@
-ABOUT
+关于
     Retrieve a usable TGT via GSS API delegation abuse.
-USAGE:
+用法：
     bof-tgtdeleg --- [/target:SPN]
 
-EXAMPLES:
+示例：
     bof-tgtdeleg --- /target:CIFS/dc.corp.local
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-tgtdeleg -w 60 --- /target:CIFS/dc.corp.local

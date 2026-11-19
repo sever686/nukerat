@@ -23,10 +23,10 @@ import { topbarFloatEscapeBlockRef } from "@/components/canva/shortcuts";
 import { tryConfirmDialogEnter } from "@/components/canva/utils/confirm-dialog-keydown";
 import { formatUtcDateOnly, utcTableColumnTitle } from "@/components/canva/utils/utc-date";
 
-export const table_columns = ["Name", "File", "Type", "Server", "Hosts", utcTableColumnTitle("Created")] as const;
+export const table_columns = ["名称", "文件", "类型", "服务器", "主机", utcTableColumnTitle("创建时间")] as const;
 
 export const tableHeaderClassName = (col: (typeof table_columns)[number]) =>
-  col === "File" || col === utcTableColumnTitle("Created")
+  col === "文件" || col === utcTableColumnTitle("创建时间")
     ? "text-left px-4 py-2 text-[12px] text-[#888888] font-medium uppercase tracking-widest whitespace-nowrap"
     : "text-left px-4 py-2 text-[12px] text-[#888888] font-medium uppercase tracking-widest whitespace-nowrap";
 
@@ -35,9 +35,9 @@ export const getReportRowId = (r: ReportEntry) => `${r.server ?? ""}-${r.tag}`;
 export const reportFileTypeLabel = (entry: ReportEntry) => resolveReportFileType(entry);
 
 export const report_type_options: { value: ReportType; label: string }[] = [
-  { value: "activity", label: "Activity Report" },
-  { value: "hosts", label: "Hosts Report" },
-  { value: "ioc", label: "Indicators of Compromise" },
+  { value: "activity", label: "活动报告" },
+  { value: "hosts", label: "主机报告" },
+  { value: "ioc", label: "入侵指标" },
 ];
 
 export const reportTypeLabel = (value?: string) =>
@@ -108,7 +108,7 @@ export function useReportsPanel() {
       setReports(Array.isArray(res.reports) ? res.reports : []);
     } else {
       setReports([]);
-      toast.error(res?.message ?? "Failed to fetch reports");
+      toast.error(res?.message ?? "获取报告失败");
     }
   }, []);
 
@@ -224,10 +224,10 @@ export function useReportsPanel() {
     );
     setSubmitting(false);
     if (res?.status !== "success") {
-      toast.error(res?.message ?? "Failed to create report");
+      toast.error(res?.message ?? "创建报告失败");
       return;
     }
-    toast.success(res?.message ?? "Report created");
+    toast.success(res?.message ?? "报告已创建");
     setPanelMode(null);
     await refreshReports();
   };
@@ -245,7 +245,7 @@ export function useReportsPanel() {
     const res = await downloadReportRequest(selected.tag, selected.server);
     setSubmitting(false);
     if (res?.status !== "success" || !res.content) {
-      toast.error(res?.message ?? "Failed to download report");
+      toast.error(res?.message ?? "下载报告失败");
       return;
     }
     const fileType = resolveReportFileType(selected, res);
@@ -254,7 +254,7 @@ export function useReportsPanel() {
       res.file || `${selected.name}.${fileType}`,
       fileType,
     );
-    toast.success("Report downloaded");
+    toast.success("报告已下载");
   };
 
   const openReportView = useCallback(
@@ -267,7 +267,7 @@ export function useReportsPanel() {
       const res = await viewReportRequest(report.tag, report.server);
       setViewLoading(false);
       if (res?.status !== "success" || !res.html) {
-        toast.error(res?.message ?? "Failed to load report");
+        toast.error(res?.message ?? "加载报告失败");
         handleCloseView();
         return;
       }
@@ -294,11 +294,11 @@ export function useReportsPanel() {
     setSubmitting(false);
     setShowRemoveConfirm(false);
     if (res?.status !== "success") {
-      toast.error(res?.message ?? "Failed to remove report");
+      toast.error(res?.message ?? "移除报告失败");
       return;
     }
     setSelectedRowId(null);
-    toast.success(res?.message ?? "Report removed");
+    toast.success(res?.message ?? "报告已移除");
     await refreshReports();
   };
   confirmRemoveRef.current = () => {

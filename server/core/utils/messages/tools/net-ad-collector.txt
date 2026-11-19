@@ -1,4 +1,4 @@
-ABOUT
+关于
     ADCollector is a lightweight tool that enumerates the Active Directory environment to
     identify possible attack vectors. It provides a basic understanding of the configuration
     and deployment of the environment as a starting point for reconnaissance. It focuses on
@@ -7,10 +7,10 @@ ABOUT
     to retrieve domain and forest information from the domain controller and the S.DS.P
     namespace for LDAP searching.
 
-USAGE:
+用法：
     net-ad-collector --- [options]
 
-EXAMPLES:
+示例：
     net-ad-collector
     net-ad-collector --- --LDAPS --DisableSigning
     net-ad-collector --- --OU IT
@@ -29,7 +29,7 @@ EXAMPLES:
     net-ad-collector --- --Domain domain.local --Username user --Password pass
     net-ad-collector --- --Domain domain.local --DC 10.10.10.1
 
-CONNECTION OPTIONS:
+CONNECTION 选项：
     --Domain            Domain to enumerate
     --LDAPS             (Default: false) LDAP over SSL/TLS
     --DisableSigning    (Default: false) Disable Kerberos Encryption (with LDAPS flag)
@@ -39,7 +39,7 @@ CONNECTION OPTIONS:
     --OU                Perform the Search under a specific Organizational Unit
     --Debug             (Default: false) Debug Mode
 
-ENUMERATION MODES:
+ENUMERATION 模式：
     (default)           Full AD enumeration
     --LDAPONLY          Only enumerate objects in LDAP
     --ADCS              (Default: false) Only perform AD Certificate Service check
@@ -70,9 +70,9 @@ DEFAULT ENUMERATION COVERS:
     certificate templates, machine owners, ACL scan, privilege rights in group policies,
     and user credentials stored in LDAP
     
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     net-ad-collector -w 60 --- --LDAPS --DisableSigning

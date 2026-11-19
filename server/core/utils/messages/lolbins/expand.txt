@@ -1,21 +1,21 @@
-ABOUT
+关于
     Compressed file expander.
     Copies local or UNC sources to destinations or into alternate data
     streams.
 
-USAGE:
+用法：
     expand {PATH_SMB:.bat} {PATH_ABSOLUTE:.bat}
     expand {PATH_ABSOLUTE:.source.ext} {PATH_ABSOLUTE:.dest.ext}
     expand {PATH_SMB:.bat} {PATH_ABSOLUTE}:file.bat
 
-EXAMPLES:
+示例：
     expand {PATH_SMB:.bat} {PATH_ABSOLUTE:.bat}
     expand {PATH_ABSOLUTE:.source.ext} {PATH_ABSOLUTE:.dest.ext}
     expand {PATH_SMB:.bat} {PATH_ABSOLUTE}:file.bat
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     expand {PATH_SMB:.bat} {PATH_ABSOLUTE:.bat}

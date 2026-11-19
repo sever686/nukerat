@@ -1,18 +1,18 @@
-ABOUT
+关于
     Regsvcs and Regasm are Windows command-line utilities that are
     used to register .NET Component Object Model (COM) assemblies.
     LOLBAS documents execute dll file and bypass Application
     whitelisting.
 
-USAGE:
+用法：
     regsvcs.exe {PATH:.dll}
 
-EXAMPLES:
+示例：
     regsvcs.exe {PATH:.dll}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     regsvcs.exe {PATH:.dll}

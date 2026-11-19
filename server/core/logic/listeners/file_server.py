@@ -29,10 +29,10 @@ async def create_file_server_listener(data: dict):
         )
         return JSONResponse(
             status_code=200,
-            content={"status": "success", "message": "Listener created", "tag": session_id},
+            content={"status": "success", "message": "监听器已创建", "tag": session_id},
         )
     except (PortAlreadyInUseError, ListenerAlreadyExistsError) as e:
-        return JSONResponse(status_code=200, content={"status": "failure", "message": "Port already in use"})
+        return JSONResponse(status_code=200, content={"status": "failure", "message": "端口已被占用"})
     except Exception as e:
         write_log(logger, "error", f"Unhandled exception | listeners/file_server | {e}")
         return JSONResponse(status_code=200, content={"status": "failure", "message": "Internal error"})
@@ -45,9 +45,9 @@ async def remove_file_server_listener(data: dict):
         if not tag:
             raise KeyError("tag")
         await file_server_listener.stop(tag)
-        return JSONResponse(status_code=200, content={"status": "success", "message": "Listener removed"})
+        return JSONResponse(status_code=200, content={"status": "success", "message": "监听器已移除"})
     except ListenerNotFoundError as e:
-        return JSONResponse(status_code=200, content={"status": "failure", "message": "Listener not found"})
+        return JSONResponse(status_code=200, content={"status": "failure", "message": "未找到监听器"})
     except Exception as e:
         write_log(logger, "error", f"Unhandled exception | listeners/file_server | {e}")
         return JSONResponse(status_code=200, content={"status": "failure", "message": "Internal error"})
@@ -62,15 +62,15 @@ async def restart_file_server_listener(data: dict):
         new_tag = await file_server_listener.restart(tag, **await build_overrides(data))
         return JSONResponse(
             status_code=200,
-            content={"status": "success", "message": "Listener restarted", "tag": new_tag},
+            content={"status": "success", "message": "监听器已重启", "tag": new_tag},
         )
     except ListenerNotFoundError as e:
-        return JSONResponse(status_code=200, content={"status": "failure", "message": "Listener not found"})
+        return JSONResponse(status_code=200, content={"status": "failure", "message": "未找到监听器"})
     except (PortAlreadyInUseError, ListenerAlreadyExistsError) as e:
-        return JSONResponse(status_code=200, content={"status": "failure", "message": "Port already in use"})
+        return JSONResponse(status_code=200, content={"status": "failure", "message": "端口已被占用"})
     except (ListenerStartupError, ListenerStopError) as e:
         write_log(logger, "error", f"Unhandled exception | listeners/file_server | {e}")
-        return JSONResponse(status_code=200, content={"status": "failure", "message": "Listener startup error"})
+        return JSONResponse(status_code=200, content={"status": "failure", "message": "监听器启动错误"})
     except Exception as e:
         write_log(logger, "error", f"Unhandled exception | listeners/file_server | {e}")
         return JSONResponse(status_code=200, content={"status": "failure", "message": "Internal error"})

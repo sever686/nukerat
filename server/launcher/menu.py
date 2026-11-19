@@ -34,7 +34,7 @@ def main_menu():
             from .logic.db_cmd import main_db
             main_db(command)
         else:
-            print("Command not found. Use 'help' to see the available commands.")
+            print("未找到该命令。使用 'help' 查看可用命令。")
             sys.exit(1)
     except KeyboardInterrupt:
         os._exit(0)

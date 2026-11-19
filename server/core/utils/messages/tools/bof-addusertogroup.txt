@@ -1,10 +1,10 @@
-ABOUT
+关于
     Adds the specified user to the specified domain group.
 
-USAGE:
+用法：
     bof-addusertogroup --- <DOMAIN> <SERVER> <USERNAME> <GROUPNAME>
 
-ARGUMENTS:
+参数：
 
     DOMAIN      Domain for the account (empty for local)
 
@@ -14,14 +14,14 @@ ARGUMENTS:
 
     GROUPNAME   Target group (domain groups only)
 
-EXAMPLES:
+示例：
 
     bof-addusertogroup --- sevenkingdoms "" benchuser01 BENCHGRP01
     bof-addusertogroup --- CORP "" newuser "Domain Admins"
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-addusertogroup -w 60 --- sevenkingdoms "" benchuser01 BENCHGRP01

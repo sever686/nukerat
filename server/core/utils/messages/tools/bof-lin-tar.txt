@@ -1,21 +1,21 @@
-ABOUT
+关于
     (linux) Create, list, and extract tar archives.
 
-USAGE:
+用法：
     bof-lin-tar --- <mode> <archive> [path] [filter]
 
-ARGUMENTS:
+参数：
     mode                Operation: create, list, or extract (choices: create|list|extract)
     archive             Archive file path
     path                Source path (create) or extract destination
     filter              Filter pattern for list/extract
 
-EXAMPLES:
+示例：
     bof-lin-tar --- <mode> <archive>
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-lin-tar -w 60 --- <mode> <archive>

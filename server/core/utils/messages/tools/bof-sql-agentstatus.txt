@@ -1,9 +1,9 @@
-ABOUT
+关于
     Enumerates SQL agent status and jobs on a server.
 
-USAGE:
+用法：
     bof-sql-agentstatus --- <server> [database] [linkedserver] [impersonate]
 
-EXAMPLES:
+示例：
     bof-sql-agentstatus --- SQL01
     bof-sql-agentstatus --- SQL01 master LINKED01 dbo

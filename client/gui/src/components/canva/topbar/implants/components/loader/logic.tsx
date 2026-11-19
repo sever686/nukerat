@@ -39,7 +39,7 @@ export const archOptions = (cpu: Cpu, _os: Os): Arch[] => {
 };
 
 export const sleepMaskOptions: { value: SleepMaskMode; label: string }[] = [
-  { value: "off", label: "Off" },
+  { value: "off", label: "关闭" },
   { value: "timer", label: "Ekko" },
   { value: "zilean", label: "Zilean" },
 ];
@@ -126,11 +126,11 @@ export interface ImplantFormData {
 }
 
 export const sectionLabels: Record<Section, string> = {
-  general: "General",
-  stage: "Stage",
-  preface: "Preface",
-  artifact: "PE Artifacts",
-  runtime: "Runtime",
+  general: "通用",
+  stage: "阶段",
+  preface: "前言",
+  artifact: "PE 制品",
+  runtime: "运行时",
 };
 
 export const isHttpProtocol = (protocol: Protocol) => protocol === "http";
@@ -313,9 +313,9 @@ export const peTimestampDayRange = (date: string) => {
 };
 
 export const requiredFields: { label: string; ok: (d: ImplantFormData) => boolean }[] = [
-  { label: "compile server", ok: (d) => !!(d.teamHost.trim() && d.teamPort.trim()) },
+  { label: "编译服务器", ok: (d) => !!(d.teamHost.trim() && d.teamPort.trim()) },
   {
-    label: "server",
+    label: "服务器",
     ok: (d) => d.protocol === "custom" || parseStageUrl(d.stageUrl) !== null,
   },
 ];

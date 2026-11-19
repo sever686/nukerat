@@ -46,7 +46,7 @@ class ListIocsQuery(BaseModel):
         tags = []
         for item in value:
             if not isinstance(item, str):
-                raise ValueError("each host tag must be a string")
+                raise ValueError("每个主机标签必须是字符串")
             text = item.strip()
             if text and text not in tags:
                 tags.append(text)

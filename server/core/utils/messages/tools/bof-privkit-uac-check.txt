@@ -1,13 +1,13 @@
-ABOUT
+关于
     Checks UAC configuration status.
-USAGE:
+用法：
     bof-privkit-uac-check --- (no arguments)
 
-EXAMPLES:
+示例：
     bof-privkit-uac-check
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-privkit-uac-check -w 60 --- (no arguments)

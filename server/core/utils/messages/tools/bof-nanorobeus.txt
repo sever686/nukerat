@@ -1,10 +1,10 @@
-ABOUT
+关于
     Kerberos ticket management. Supports listing LUIDs, sessions, tickets,
     dumping, importing (ptt), purging, TGT delegation, and Kerberoasting.
-USAGE:
+用法：
     bof-nanorobeus --- <command> [options]
 
-COMMANDS:
+命令：
     luid                              Get current logon ID
     sessions [/luid:<hex> | /all]     List logon sessions
     klist [/luid:<hex> | /all]        List Kerberos tickets
@@ -15,16 +15,16 @@ COMMANDS:
     kerberoast /spn:<SPN>             Perform Kerberoasting against SPN
     help                              Print help
 
-EXAMPLES:
+示例：
     bof-nanorobeus --- luid
     bof-nanorobeus --- klist
     bof-nanorobeus --- dump /all
     bof-nanorobeus --- ptt /ticket:BASE64...
     bof-nanorobeus --- kerberoast /spn:MSSQLSvc/dc01.corp.local:1433
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-nanorobeus -w 60 --- luid

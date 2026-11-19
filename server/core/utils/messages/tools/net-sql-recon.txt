@@ -1,8 +1,8 @@
-ABOUT
+关于
     Microsoft SQL Server offensive reconnaissance and post exploitation toolkit.
     Supports enumeration, impersonation, linked server, and SCCM module execution.
 
-USAGE:
+用法：
     net-sql-recon --- /a:<auth> /h:<host> /m:<module> [options]
 
 AUTHENTICATION (/a):
@@ -35,7 +35,7 @@ COMMON FLAGS:
     /debug          Show SQL queries without executing
     /v, /verbose    Show queries before executing
 
-EXAMPLES:
+示例：
     net-sql-recon --- /a:WinToken /h:SQL01 /m:Whoami
     net-sql-recon --- /a:WinDomain /h:SQL01 /d:CORP /u:admin /p:Pass /m:Databases
     net-sql-recon --- /a:WinToken /h:SQL01 /m:XpCmd /c:whoami

@@ -1,27 +1,27 @@
-ABOUT
-    Token vault and impersonation. Windows only.
+关于
+    令牌保险库与模拟。仅限 Windows。
 
-USAGE:
+用法：
     tokens [grab|list|impersonate|remove|forge|revert] [flags]
 
-ARGUMENTS:
-    --pid               Process to copy token from (grab).
-    --id                Vault entry index (list shows ids).
-    --domain            Domain for forge. Use . for local.
-    --user              Username for forge.
-    --pass              Password for forge.
-    --all               Remove every vault token (remove).
+参数：
+    --pid               要从中复制令牌的进程（grab）。
+    --id                保险库条目索引（list 会显示 id）。
+    --domain            forge 使用的域。使用 . 表示本地。
+    --user              forge 使用的用户名。
+    --pass              forge 使用的密码。
+    --all               移除所有保险库令牌（remove）。
 
-MODES:
-    tokens              Report on the current effective token.
-    grab                Duplicate a process token into the vault.
-    list                Show saved vault tokens.
-    impersonate         Apply a vault token to the implant thread.
-    remove              Delete one vault entry or all with --all.
-    forge               Logon with user and pass, store token in vault.
-    revert              RevertToSelf. End impersonation.
+模式：
+tokens              报告当前有效令牌。
+grab                将进程令牌复制到保险库。
+list                显示已保存的保险库令牌。
+impersonate         将保险库令牌应用到植入体线程。
+remove              删除一个保险库条目，或使用 --all 删除全部。
+forge               使用用户名和密码登录，并将令牌保存到保险库。
+revert              RevertToSelf。结束模拟。
 
-EXAMPLES:
+示例：
     tokens
     tokens grab --pid 1000
     tokens list
@@ -30,9 +30,9 @@ EXAMPLES:
     tokens forge --domain CORP --user jhon --pass 123456
     tokens revert
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     tokens -w 30 list

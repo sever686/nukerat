@@ -1,9 +1,9 @@
-ABOUT
+关于
     Enumerates tables within a database on a SQL server.
 
-USAGE:
+用法：
     bof-sql-tables --- <server> [database] [linkedserver] [impersonate]
 
-EXAMPLES:
+示例：
     bof-sql-tables --- SQL01
     bof-sql-tables --- SQL01 AdventureWorks

@@ -1,15 +1,15 @@
-ABOUT
+关于
     Enumerates stored credentials in Windows Credential Manager via CredEnumerate.
     Lists metadata (type, persistence, target, user) for each entry. Does not
     perform a full credential dump — use bof-cred-man for that.
 
-USAGE:
+用法：
     bof-privkit-cred-check --- (no arguments)
 
-EXAMPLES:
+示例：
     bof-privkit-cred-check
 
-OUTPUT:
+输出：
     For each credential found, the BOF prints:
 
     Type     Credential type (Generic, Domain Password, etc.)
@@ -22,7 +22,7 @@ OUTPUT:
     When no credentials exist:
         [-] No credentials found in Credential Manager
 
-NOTES:
+备注：
     Secret field behavior:
         - Generic credentials created with cmdkey often expose only the first
           character of the password in the blob (e.g. pass "PsTest789!" → Secret: P).
@@ -44,9 +44,9 @@ NOTES:
 
         powershell cmdkey /delete:LegacyGeneric:target=nukebench-test
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-privkit-cred-check -w 60 --- (no arguments)

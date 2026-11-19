@@ -57,7 +57,7 @@ export function parseServerForm(
   const host = form.host.trim();
   const port = form.port.trim();
 
-  if (!key) return { ok: false, error: "Key is empty." };
+  if (!key) return { ok: false, error: "密钥为空。" };
   if (scheme !== "http" && scheme !== "https") {
     return { ok: false, error: 'Protocol must be "http" or "https".' };
   }
@@ -297,7 +297,7 @@ export function useServerPanel() {
       await putServer(entry);
       setServers((prev) => prev.map((s) => (s.id === entry.id ? entry : s)));
       checkStatus(entry);
-      toast.success("Session cleared");
+      toast.success("会话已清除");
     } catch (e) {
       toast.error(formatToastMessage(e instanceof Error ? e.message : "Failed to clear JWT"));
     } finally {
@@ -341,7 +341,7 @@ export function useServerPanel() {
           : prev.map((s) => (s.id === entry.id ? entry : s))
       );
       checkStatus(entry);
-      toast.success("Authenticated");
+      toast.success("已认证");
       setPanelMode(null);
     } catch (e) {
       toast.error(formatToastMessage(e instanceof Error ? e.message : "Authentication failed"));

@@ -17,7 +17,7 @@ import { credentialsMenuRuntimeRef } from "@/components/ui/rigth-click-menu.tsx"
 export type FormMode = "add" | "edit";
 export type PanelMode = FormMode | "view" | null;
 
-export const TABLE_COLUMNS = ["Name", "Server", "Host Tag", "Desc"] as const;
+export const TABLE_COLUMNS = ["名称", "服务器", "主机标签", "描述"] as const;
 
 export const tableCellTruncate =
   "inline-block max-w-[30ch] truncate align-middle";
@@ -132,7 +132,7 @@ export function useCredentialsPanel() {
     if (isCredentialSuccess(res?.status)) {
       setCredentials(Array.isArray(res.credentials) ? res.credentials : []);
     } else if (res?.message !== "Cancelled") {
-      toast.error(formatToastMessage(res?.message ?? "Failed to load credentials"));
+      toast.error(formatToastMessage(res?.message ?? "加载凭据失败"));
     }
     setLoading(false);
   }, []);

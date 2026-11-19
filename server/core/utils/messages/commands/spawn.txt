@@ -1,22 +1,21 @@
-ABOUT
-    Spawns a process from a path. On Windows, use spawn suspend to create
-    the process in a suspended state.
+关于
+    从路径派生进程。在 Windows 上可使用 spawn suspend 以挂起状态创建进程。
 
-USAGE:
+用法：
     spawn [-t <target> --- <args> | suspend -t <target>]
 
-ARGUMENTS:
-    -t                  Executable path or command line (--target).
-    ---                 Optional text after separator
+参数：
+    -t                  可执行文件路径或命令行（--target）。
+    ---                 分隔符之后的可选文本
 
-EXAMPLES:
+示例：
     spawn -t cmd.exe --- /c whoami
     spawn -t C:\Windows\System32\cmd.exe --- /c ipconfig
     spawn suspend -t C:\Windows\System32\notepad.exe
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     spawn -w 90 -t cmd.exe --- /c hostname

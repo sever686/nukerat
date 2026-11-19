@@ -1,15 +1,15 @@
-ABOUT
+关于
     List visible windows in the current user session.
 
-USAGE:
+用法：
     bof-windowlist --- [opt:all]
 
-EXAMPLES:
+示例：
     bof-windowlist    bof-windowlist --- all
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-windowlist -w 60 --- all

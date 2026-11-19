@@ -34,10 +34,10 @@ const ServerFormPanel = ({
         <div className="flex items-center gap-2 min-w-0">
           <span className="cursor-text select-text text-[13.5px] font-medium text-[#cecece] tracking-wide min-w-0">
             {mode === "add" ? (
-              "New Server"
+              "新建服务器"
             ) : (
               <>
-                Edit -{" "}
+                编辑 -{" "}
                 <span className="inline-block max-w-[180px] align-bottom overflow-hidden text-ellipsis whitespace-nowrap">
                   {selectedName}
                 </span>
@@ -60,7 +60,7 @@ const ServerFormPanel = ({
               className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest"
               style={{ marginBottom: 0 }}
             >
-              Key (.key)
+              密钥 (.key)
             </label>
             <input
               ref={fileInputRef}
@@ -88,12 +88,12 @@ const ServerFormPanel = ({
           className="button-default mb-4 flex items-center gap-1.5 px-3 py-1 rounded bg-[#232323] text-[#cecece] text-[13px] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] transition-colors border border-[#333] disabled:opacity-25 disabled:cursor-not-allowed cursor-pointer"
         >
           <Upload size={10} />
-          Upload .key
+          上传 .key
         </button>
 
         <div className="grid grid-cols-[5rem_1fr] gap-2 mb-2">
           <label className="text-[12px] text-[#6e6e6e] uppercase tracking-widest self-center">
-            Protocol
+            协议
           </label>
           <Select
             value={formData.scheme}
@@ -110,7 +110,7 @@ const ServerFormPanel = ({
         </div>
         <div className="grid grid-cols-[5rem_1fr] gap-2 mb-2">
           <label className="text-[12px] text-[#6e6e6e] uppercase tracking-widest self-center">
-            Host
+            主机
           </label>
           <input
             value={formData.host}
@@ -123,7 +123,7 @@ const ServerFormPanel = ({
         </div>
         <div className="grid grid-cols-[5rem_1fr] gap-2">
           <label className="text-[12px] text-[#6e6e6e] uppercase tracking-widest self-center">
-            Port
+            端口
           </label>
           <input
             value={formData.port}
@@ -144,7 +144,7 @@ const ServerFormPanel = ({
           disabled={!canClearAuth || submitting}
           className="h-7 px-0 text-[13px] text-[#888888] hover:text-[#d4d4d4] hover:bg-transparent"
         >
-          Clear Session
+          清除会话
         </Button>
         <button
           type="button"
@@ -153,7 +153,7 @@ const ServerFormPanel = ({
           className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#444] bg-[#232323] px-3 text-[13px] text-[#c8c8c8] hover:bg-[#2b2b2b] cursor-pointer disabled:cursor-not-allowed disabled:opacity-30"
         >
           {submitting && <RefreshCw size={10} className="animate-spin" />}
-          Auth
+          认证
         </button>
       </div>
     </div>

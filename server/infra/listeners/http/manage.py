@@ -149,7 +149,7 @@ class HttpListenerManager:
                     config_data=cfg,
                 )
             except Exception as exc:
-                print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] Unable to start http listener {row.tag} | {exc}")
+                print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] 无法启动 HTTP 监听器 {row.tag} | {exc}")
         
 
     async def start_listener(self, name: str, host: str, port: int, ssl: bool = False,
@@ -268,7 +268,7 @@ class HttpListenerManager:
             }
 
         scheme = "https" if ssl else "http"
-        print(f"[ \x1b[38;2;0;238;0mOK\x1b[0m ] Started http listener {name} ({scheme}://{host}:{port})")
+        print(f"[ \x1b[38;2;0;238;0mOK\x1b[0m ] 已启动 HTTP 监听器 {name} ({scheme}://{host}:{port})")
         return session_id
 
     def all(self) -> list[dict]:

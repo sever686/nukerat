@@ -1,15 +1,15 @@
-ABOUT
+关于
     Display file version information for a process executable (name, version, company, etc.).
 
-USAGE:
+用法：
     bof-procinfo --- <pid>
 
-EXAMPLES:
+示例：
     bof-procinfo --- 1234
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-procinfo -w 60 --- 1234

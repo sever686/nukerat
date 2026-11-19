@@ -181,7 +181,7 @@ export const DeleteSession = async (tag: string, server: string): Promise<any> =
     return { status: "failure", message: "Server not found" };
   }
 
-  let lastError: any = { status: "failure", message: "Request failed" };
+  let lastError: any = { status: "failure", message: "请求失败" };
   for (const entry of servers) {
     const ip = entry.ip?.trim().replace(/\/$/, "");
     const port = entry.port?.trim();
@@ -225,7 +225,7 @@ export const EditSession = async (
     return { status: "failure", message: "Server not found" };
   }
 
-  let lastError: any = { status: "failure", message: "Request failed" };
+  let lastError: any = { status: "failure", message: "请求失败" };
   for (const entry of servers) {
     const ip = entry.ip?.trim().replace(/\/$/, "");
     const port = entry.port?.trim();

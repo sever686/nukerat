@@ -1,10 +1,10 @@
-ABOUT
+关于
     .NET tool that dumps LSASS to a minidump and runs a customized in-memory Mimikatz to
     extract logonpasswords and ekeys from the dump, then deletes the dump file.
 
-USAGE:
+用法：
     net-safety-katz
-EXAMPLES:
+示例：
     net-safety-katz
-NOTES:
+备注：
     Requires SeDebugPrivilege. Dumps to C:\Windows\Temp\debug.bin before Mimikatz execution.

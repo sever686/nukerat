@@ -1,17 +1,17 @@
-ABOUT
+关于
     (linux) Print current date/time.
 
-USAGE:
+用法：
     bof-lin-date --- [format]
 
-ARGUMENTS:
+参数：
     format              +format string
 
-EXAMPLES:
+示例：
     bof-lin-date
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-lin-date -w 60 --- [format]

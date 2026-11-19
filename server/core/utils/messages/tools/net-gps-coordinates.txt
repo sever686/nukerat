@@ -1,8 +1,8 @@
-ABOUT
+关于
     Tracks system GPS coordinates (within ~1km) if Location Services are enabled. Windows 10+.
 
-USAGE:
+用法：
     net-gps-coordinates --- (no arguments)
 
-EXAMPLES:
+示例：
     net-gps-coordinates

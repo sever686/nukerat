@@ -1,19 +1,19 @@
-ABOUT
+关于
     This binary can be downloaded along side multiple software downloads
     on the Microsoft website. It gets downloaded when the user forgets
     to uncheck the option to set Bing as the default search provider.
     LOLBAS documents can be used to execute stagers, binaries, and other
     malicious commands.
 
-USAGE:
+用法：
     DefaultPack.EXE /C:"{CMD}"
 
-EXAMPLES:
+示例：
     DefaultPack.EXE /C:"{CMD}"
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     DefaultPack.EXE /C:"{CMD}"

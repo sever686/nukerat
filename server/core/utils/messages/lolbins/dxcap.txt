@@ -1,19 +1,19 @@
-ABOUT
+关于
     DirectX diagnostics/debugger included with Visual Studio. LOLBAS
     covers local execution of a process as a subprocess of dxcap.exe and
     executing an arbitrary executable via trusted system executable.
 
-USAGE:
+用法：
     Dxcap.exe -c {PATH_ABSOLUTE:.exe}
     dxcap.exe -usage
 
-EXAMPLES:
+示例：
     Dxcap.exe -c {PATH_ABSOLUTE:.exe}
     dxcap.exe -usage
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     Dxcap.exe -c {PATH_ABSOLUTE:.exe}

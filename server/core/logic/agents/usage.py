@@ -24,7 +24,7 @@ async def usage_agent(body: dict):
     elif agent.type == "custom":
         reply, err = await call_custom(agent, messages)
     else:
-        return JSONResponse(content={"status": "failure", "message": "Unknown model type"})
+        return JSONResponse(content={"status": "failure", "message": "未知模型类型"})
 
     if err:
         return JSONResponse(content={"status": "failure", "message": err})

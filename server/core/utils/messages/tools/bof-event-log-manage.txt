@@ -1,12 +1,12 @@
-ABOUT
+关于
     Inspects Event Log channels, manages BOF owned classic logs and sources, writes text or
     binary events through registered sources, and clears channels with optional backup.
     create, clear, and destroy require elevated Administrator or SYSTEM context.
 
-USAGE:
+用法：
     bof-event-log-manage --- <action> [arguments]
 
-ACTIONS:
+操作：
     inspect <channel>                           Full channel configuration
     create <log> <source> [max_size_bytes]      Register classic custom log and source
     sources <log>                               Enumerate registered classic sources
@@ -15,15 +15,15 @@ ACTIONS:
     clear <channel> [backup_path]               Clear channel, optional backup
     destroy <log> <source>                      Clear and unregister BOF owned custom log
 
-EXAMPLES:
+示例：
     bof-event-log-manage --- inspect Application
     bof-event-log-manage --- sources Application
     bof-event-log-manage --- write Application Application "test event"
     bof-event-log-manage --- clear Application C:\Temp\app_backup.evtx
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-event-log-manage -w 60 --- inspect Application

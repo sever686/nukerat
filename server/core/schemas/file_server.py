@@ -16,10 +16,10 @@ def _strip_required_tag(value):
 def _safe_file_name(value):
     # Sanitizes the file name and rejects path pieces
     if not isinstance(value, str):
-        raise ValueError("file name is required")
+        raise ValueError("文件名为必填项")
     name = os.path.basename(value.replace("\\", "/")).strip()
     if not name or name in (".", ".."):
-        raise ValueError("file name is required")
+        raise ValueError("文件名为必填项")
     return name
 
 

@@ -1,33 +1,32 @@
-ABOUT
-    Creates a traffic redirect through a host. Use it together with relay
-    to help pivot traffic.
+关于
+    通过主机创建流量重定向。与 relay 配合使用，帮助横向转发流量。
 
-USAGE:
+用法：
     relay [create|delete] [flags]
 
-ARGUMENTS:
-    -c                  Transport tcp or smb (--channel).
-    -l                  Local listen port (--listen). Also used as default relay id.
-    -t                  Downstream endpoint (--target). Use implant:// or server://
-                        with host and port, for example implant://10.1.1.5:9090.
-    --pipe              Named pipe for smb. Use \\pipe\\name form on Windows.
-    --id                Relay id for delete or to override the default listen port id.
-    --tls               For server:// targets, POST to the team server over HTTPS (default HTTP).
+参数：
+    -c                  传输方式 tcp 或 smb（--channel）。
+    -l                  本地监听端口（--listen）。也用作默认中继 id。
+    -t                  下游端点（--target）。使用 implant:// 或 server://
+                        并带上主机和端口，例如 implant://10.1.1.5:9090。
+    --pipe              SMB 使用的命名管道。Windows 上使用 \\pipe\\name 形式。
+    --id                用于 delete 的中继 id，或覆盖默认监听端口 id。
+    --tls               对 server:// 目标，通过 HTTPS 向团队服务器发起 POST（默认 HTTP）。
 
-MODES:
-    relay               Show active relays (listen, target, mode, status).
-    create              Start a relay worker on the implant.
-    delete              Stop and remove a relay by id.
+模式：
+relay               显示活动中继（监听、目标、模式、状态）。
+create              在植入体上启动中继工作线程。
+delete              按 id 停止并移除中继。
 
-EXAMPLES:
+示例：
     relay
     relay create -c tcp -l 8888 -t implant://10.1.1.5:9090
     relay create -c smb -l 445 -t server://10.1.1.5:9090 --pipe test --tls
     relay delete --id 8888
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     relay -w 30 create -c tcp -l 8888 -t implant://10.1.1.5:9090

@@ -21,10 +21,10 @@ function HostSelect({ server, value, onChange }: { server: string; value: string
   return (
     <div className="mb-3">
       <FetchToast response={response} />
-      <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">Host</label>
+      <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">主机</label>
       <Select value={value || undefined} onValueChange={onChange} disabled={!server || loading}>
         <SelectTrigger className="w-full bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-2 h-auto outline-none focus:border-[#555] placeholder:text-[#444] disabled:opacity-40 focus-visible:ring-0">
-          <SelectValue placeholder={!server ? "Select a server first..." : loading ? "Loading hosts..." : "Select host..."} />
+          <SelectValue placeholder={!server ? "请先选择服务器..." : loading ? "正在加载主机..." : "选择主机..."} />
         </SelectTrigger>
         <SelectContent>
           {hosts.map((host) => {
@@ -71,7 +71,7 @@ export default function SplitPanel({
     <div className="flex flex-col h-full min-h-0 min-w-[22rem]">
       <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a] shrink-0">
         <span className="text-[13.5px] font-semibold text-[#cecece] tracking-wide min-w-0">
-          {mode === "add" ? "New Credential" : <>Edit - <span className="inline-block max-w-[180px] truncate align-bottom">{selectedName}</span></>}
+          {mode === "add" ? "New Credential" : <>编辑 - <span className="inline-block max-w-[180px] truncate align-bottom">{selectedName}</span></>}
         </span>
         <button
           type="button"
@@ -84,24 +84,24 @@ export default function SplitPanel({
       <div className="flex-1 min-h-0 min-w-0 overflow-y-auto px-4 py-4" data-credentials-input>
         <div className="min-w-[280px]">
           <div className="mb-3">
-            <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">Name</label>
-            <input data-credential-field="name" className="w-full bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-2 outline-none focus:border-[#555] placeholder:text-[#444]" value={formData.name} onChange={(e) => onChange("name", e.target.value)} placeholder="Credential name" autoComplete="off" spellCheck={false} />
+            <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">名称</label>
+            <input data-credential-field="name" className="w-full bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-2 outline-none focus:border-[#555] placeholder:text-[#444]" value={formData.name} onChange={(e) => onChange("name", e.target.value)} placeholder="凭据名称" autoComplete="off" spellCheck={false} />
           </div>
           <ServerDropdown host={serverHost} port={serverPort} onSelect={onServerChange} />
           <HostSelect server={formData.server} value={formData.host} onChange={(host) => onChange("host", host)} />
           <div className="mb-3">
-            <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">Description</label>
-            <input data-credential-field="desc" className="w-full bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-2 outline-none focus:border-[#555] placeholder:text-[#444]" value={formData.desc} onChange={(e) => onChange("desc", e.target.value)} placeholder="Optional" autoComplete="off" spellCheck={false} />
+            <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">描述</label>
+            <input data-credential-field="desc" className="w-full bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-2 outline-none focus:border-[#555] placeholder:text-[#444]" value={formData.desc} onChange={(e) => onChange("desc", e.target.value)} placeholder="可选" autoComplete="off" spellCheck={false} />
           </div>
           <div className="mb-3">
-            <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">Credentials</label>
+            <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">凭据</label>
             <textarea data-credential-field="content" className="w-full h-48 resize-none font-mono bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-2 outline-none focus:border-[#555] placeholder:text-[#444]" value={formData.content} onChange={(e) => onChange("content", e.target.value)} placeholder="username:password" autoComplete="off" spellCheck={false} />
           </div>
         </div>
       </div>
       <div className="flex shrink-0 flex-nowrap items-center justify-end gap-2 border-t border-[#2a2a2a] p-2">
         <button type="button" onClick={onClose} className={panelActionClass}>
-          Cancel
+          取消
         </button>
         <button
           type="button"

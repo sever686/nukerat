@@ -1,20 +1,20 @@
-ABOUT
-    Change the working directory.
+关于
+    切换当前工作目录。
     
-USAGE:
+用法：
     cd [<path>]
 
-ARGUMENTS:
-    <path>              Directory to enter. Omit to print cwd.
+参数：
+    <path>              要进入的目录。省略则打印当前目录。
 
-EXAMPLES:
+示例：
     cd /home/user
     cd C:\Users\Public
     cd
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     cd -w 30 C:\Users\Public

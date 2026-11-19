@@ -1,22 +1,22 @@
-ABOUT
+关于
     Starts an existing Windows service.
 
-USAGE:
+用法：
     bof-sc-start --- <SVCNAME> [HOSTNAME]
 
-ARGUMENTS:
+参数：
 
     SVCNAME    Service name
 
     HOSTNAME   Optional remote host
 
-EXAMPLES:
+示例：
 
     bof-sc-start --- MySvc
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-sc-start -w 60 --- MySvc

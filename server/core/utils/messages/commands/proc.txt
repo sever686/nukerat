@@ -1,25 +1,25 @@
-ABOUT
-    Process inspection and control. Windows only.
+关于
+    进程查看与控制。仅限 Windows。
 
-USAGE:
+用法：
     proc <info|privileges|kill|suspend|resume> [flags]
 
-ARGUMENTS:
-    --pid               Target process. Default is implant for proc info.
-    --name              Privilege name for proc privileges (e.g. SeDebugPrivilege).
-    -st                 on or off to enable or disable the privilege.
+参数：
+    --pid               目标进程。proc info 默认针对植入体。
+    --name              proc privileges 使用的权限名称（例如 SeDebugPrivilege）。
+    -st                 on 或 off，用于启用或禁用该权限。
 
-MODES:
-    info                Summary for current or --pid process.
-    info modules        Loaded modules list.
-    info privileges     Token privileges for the opened process.
-    info full           Summary, privileges, extra details, and modules.
-    privileges          Enable or disable a privilege on the implant process only. No --pid.
-    kill                Terminate target PID. Cannot kill the implant.
-    suspend             Suspend target PID. Cannot suspend the implant.
-    resume              Resume a suspended PID.
+模式：
+info                当前进程或 --pid 指定进程的摘要。
+info modules        已加载模块列表。
+info privileges     已打开进程的令牌权限。
+info full           摘要、权限、额外详情与模块。
+privileges          仅在植入体进程上启用或禁用权限。不接受 --pid。
+kill                终止目标 PID。不能终止植入体自身。
+suspend             挂起目标 PID。不能挂起植入体自身。
+resume              恢复已挂起的 PID。
 
-EXAMPLES:
+示例：
     proc info
     proc info modules
     proc info --pid 1234
@@ -27,9 +27,9 @@ EXAMPLES:
     proc privileges --name SeDebugPrivilege -st on
     proc kill --pid 5678
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     proc -w 60 info full

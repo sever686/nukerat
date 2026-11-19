@@ -1,8 +1,8 @@
-ABOUT
+关于
     Audits the local system for common Windows privilege escalation
     misconfigurations.
 
-USAGE:
+用法：
     net-sharp-up --- [audit] [check1] [check2]...
 
 CHECKS:
@@ -22,10 +22,10 @@ CHECKS:
     UnattendedInstallFiles
     UnquotedServicePath
 
-EXAMPLES:
+示例：
     net-sharp-up    net-sharp-up --- audit
     net-sharp-up --- HijackablePaths
     net-sharp-up --- audit UnquotedServicePath ModifiableServices
 
-NOTES:
+备注：
     Without audit flag, checks only run in high integrity or local admin context.

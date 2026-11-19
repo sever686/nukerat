@@ -1,32 +1,32 @@
-ABOUT
+关于
     Abuses ESC1 vulnerable certificate templates through token impersonation
     to extract NT hashes of arbitrary domain users. Steals a token from a
     user with enrollment rights, requests a certificate with arbitrary SAN,
     performs PKINIT authentication, and extracts the target NT hash via
     UnPAC the hash. x64 only. Requires elevated privileges.
-USAGE:
+用法：
     bof-token2cert --- sessions
     bof-token2cert --- debug <session_id>
     bof-token2cert --- run <session> <CA> <template> <target_upn>
 
-COMMANDS:
+命令：
     sessions            List active sessions on the target
     debug               List all processes in a specific session (troubleshooting)
     run                 Execute the full attack chain
 
-ARGUMENTS:
+参数：
     session             Session ID or username with ESC1 enrollment rights
     CA                  Certificate Authority (e.g. CA01\Corp-CA)
     template            Vulnerable ESC1 certificate template name
     target_upn          Target user UPN (e.g. administrator@corp.local)
 
-EXAMPLES:
+示例：
     bof-token2cert --- sessions
     bof-token2cert --- run 2 "CA01\Corp-CA" ESC1 administrator@corp.local
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-token2cert -w 60 --- sessions

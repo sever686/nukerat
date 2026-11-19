@@ -1,13 +1,13 @@
-ABOUT
+关于
     Command execution and lateral movement via DCOM. Must run in the context of a
     privileged user. Supports multiple DCOM methods including MMC20.Application,
     ShellWindows, ShellBrowserWindow, ExcelDDE, VisioAddonEx, OutlookShellEx,
     ExcelXLL, VisioExecLine, and OfficeMacro. If executed with target ., runs locally.
 
-USAGE:
+用法：
     net-cheese-dcom --- [options]
 
-ARGUMENTS:
+参数：
     -t, --target=VALUE         Target machine (use . for local)
     -b, --binary=VALUE         Binary to launch (example: powershell.exe)
     -a, --args=VALUE           Arguments for the binary (example: -enc <base64>)
@@ -16,13 +16,13 @@ ARGUMENTS:
                                OutlookShellEx, ExcelXLL, VisioExecLine, OfficeMacro
     -r, --reg, --registry      Enable registry manipulation
 
-EXAMPLES:
+示例：
     net-cheese-dcom --- -t DC01 -b powershell.exe -a "-enc <base64>" -m ShellWindows
     net-cheese-dcom --- -t . -b powershell.exe -a "-enc <base64>" -m MMC20Application
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     net-cheese-dcom -w 60 --- -t DC01 -b powershell.exe -a "-enc <base64>" -m ShellWindows

@@ -42,10 +42,10 @@ const ServerSelect = ({
 
   return (
     <div className="mb-3 space-y-1.5">
-      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Server</label>
+      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">服务器</label>
       <Select value={selectedId || undefined} onValueChange={handleChange}>
         <SelectTrigger className="w-full bg-[#212121] border-[#363636] text-[#cecece] text-[13.5px] rounded h-auto focus:border-[#555] focus-visible:ring-0">
-          <SelectValue placeholder="Select a server..." />
+          <SelectValue placeholder="选择服务器..." />
         </SelectTrigger>
         <SelectContent>
           {servers.map((s) => (
@@ -76,7 +76,7 @@ const CreateReportPanel = ({
   return (
     <div className="flex flex-col h-full min-h-0 min-w-[32rem]">
       <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a] shrink-0">
-        <span className="text-[13.5px] font-semibold text-[#cecece] tracking-wide">New Report</span>
+        <span className="text-[13.5px] font-semibold text-[#cecece] tracking-wide">新建报告</span>
         <button
           onClick={handleClosePanel}
           className="button-default p-1 rounded text-[#6b6b6b] hover:text-[#d4d4d4] hover:bg-[#2a2a2a] transition-colors cursor-pointer"
@@ -87,12 +87,12 @@ const CreateReportPanel = ({
 
       <div className="flex-1 min-h-0 min-w-0 overflow-y-auto px-4 py-4">
         <div className="mb-3 space-y-1.5">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Name</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">名称</label>
           <input
             className="w-full bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] transition-colors placeholder:text-[#444]"
             value={formData.name}
             onChange={(e) => handleFormChange("name", e.target.value)}
-            placeholder="Report name"
+            placeholder="报告名称"
             maxLength={100}
             autoComplete="off"
             spellCheck={false}
@@ -100,12 +100,12 @@ const CreateReportPanel = ({
         </div>
 
         <div className="mb-3 space-y-1.5">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Description</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">描述</label>
           <textarea
             className="w-full min-h-[4.5rem] bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] transition-colors placeholder:text-[#444] resize-none"
             value={formData.description}
             onChange={(e) => handleFormChange("description", e.target.value)}
-            placeholder="Optional report description"
+            placeholder="可选的报告描述"
             maxLength={500}
             autoComplete="off"
             spellCheck={false}
@@ -115,7 +115,7 @@ const CreateReportPanel = ({
         <ServerSelect server={formData.server} onSelect={handleServerChange} />
 
         <div className="mb-4 space-y-1.5">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Report Type</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">报告类型</label>
           <Select
             value={formData.reportType}
             onValueChange={(v) => handleFormChange("reportType", v as ReportFormData["reportType"])}
@@ -134,7 +134,7 @@ const CreateReportPanel = ({
         </div>
 
         <div className="mb-4 space-y-1.5">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">File Type</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">文件类型</label>
           <Select
             value={formData.fileType}
             onValueChange={(v) => handleFormChange("fileType", v as ReportFormData["fileType"])}
@@ -161,7 +161,7 @@ const CreateReportPanel = ({
                   checked={formData.hideCredentials}
                   onCheckedChange={(checked) => handleFormChange("hideCredentials", checked === true)}
                 />
-                <span className="text-[13px] text-[#6e6e6e] tracking-widest">Hide credentials</span>
+                <span className="text-[13px] text-[#6e6e6e] tracking-widest">隐藏凭据</span>
               </label>
             </div>
           </>
@@ -187,7 +187,7 @@ const CreateReportPanel = ({
           onClick={handleClosePanel}
           className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer"
         >
-          Cancel
+          取消
         </button>
         <button
           type="button"
@@ -196,7 +196,7 @@ const CreateReportPanel = ({
           className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
         >
           {submitting && <RefreshCw size={10} className="animate-spin" />}
-          Create
+          创建
         </button>
       </div>
     </div>

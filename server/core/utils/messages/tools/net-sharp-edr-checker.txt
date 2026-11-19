@@ -1,11 +1,11 @@
-ABOUT
+关于
     C# EDR/AV detection tool. Checks running processes, loaded DLLs, install directories,
     services, and drivers for known defensive products including hidden EDR via metadata.
 
-USAGE:
+用法：
     net-sharp-edr-checker
-EXAMPLES:
+示例：
     net-sharp-edr-checker
-NOTES:
+备注：
     Checks processes, module loads in current process, common install paths, services,
     and drivers for AV, EDR, and logging tool signatures.

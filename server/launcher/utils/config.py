@@ -86,7 +86,7 @@ def config_operations(operation, *args):
                 return section, key[len(prefix) :]
         return None, None
 
-    raise ValueError(f"unknown config operation: {operation}")
+    raise ValueError(f"未知的配置操作：{operation}")
 
 
 def create_default_config():
@@ -168,49 +168,49 @@ def validate_config():
 
     conf_path = config_operations("path")
     if not conf_path.is_file():
-        return f"Error: server.conf not found ({conf_path})"
+        return f"错误：未找到 server.conf（{conf_path}）"
 
     parser = config_operations("read")
 
     for section, keys in sections.items():
         if not parser.has_section(section):
-            return f"Error: missing section [{section}] in server.conf"
+            return f"错误：server.conf 中缺少配置段 [{section}]"
         for key in keys:
             if not parser.has_option(section, key):
-                return f"Error: missing key {key} in [{section}]"
+                return f"错误：[{section}] 中缺少配置项 {key}"
             if section == "server.tls" and key in ("certfile", "keyfile"):
                 continue
             if not str(parser.get(section, key)).strip():
-                return f"Error: empty value for {key} in [{section}]"
+                return f"错误：[{section}] 中的 {key} 值为空"
 
     host = parser.get("server", "host").strip()
     if not host:
-        return "Error: server.host must not be empty"
+        return "错误：server.host 不能为空"
 
     try:
         port = int(parser.get("server", "port").strip())
     except ValueError:
-        return "Error: server.port must be an integer"
+        return "错误：server.port 必须为整数"
 
     if port < 1 or port > 65535:
-        return "Error: server.port must be between 1 and 65535"
+        return "错误：server.port 必须介于 1 和 65535 之间"
 
     tls_raw = parser.get("server.tls", "tls").strip()
     if tls_raw.lower() not in bool_values:
-        return f"Error: server.tls.tls must be one of {', '.join(sorted(bool_values))}"
+        return f"错误：server.tls.tls 必须为 {', '.join(sorted(bool_values))} 之一"
 
     tls_on = tls_raw.lower() in ("1", "true", "yes", "on")
     if tls_on:
         certfile = parser.get("server.tls", "certfile").strip()
         keyfile = parser.get("server.tls", "keyfile").strip()
         if not certfile:
-            return "Error: server.tls.certfile is required when tls is enabled"
+            return "错误：启用 TLS 时 server.tls.certfile 为必填项"
         if not keyfile:
-            return "Error: server.tls.keyfile is required when tls is enabled"
+            return "错误：启用 TLS 时 server.tls.keyfile 为必填项"
         if certfile.lower() != "none" and not os.path.isfile(certfile):
-            return f"Error: TLS certfile not found ({certfile})"
+            return f"错误：未找到 TLS 证书文件（{certfile}）"
         if keyfile.lower() != "none" and not os.path.isfile(keyfile):
-            return f"Error: TLS keyfile not found ({keyfile})"
+            return f"错误：未找到 TLS 密钥文件（{keyfile}）"
 
     duration = parser.get("server.keys", "jwt.duration").strip().lower()
     if duration.isdigit():
@@ -218,24 +218,24 @@ def validate_config():
     elif len(duration) >= 2 and duration[-1] in "dhms" and duration[:-1].isdigit():
         pass
     else:
-        return "Error: server.keys.jwt.duration must be like 7d, 24h, 30m or minutes as integer"
+        return "错误：server.keys.jwt.duration 必须形如 7d、24h、30m，或使用整数表示分钟"
 
     jwt_secret = parser.get("server.keys", "jwt_secret").strip()
     if len(jwt_secret) < jwt_secret_min_len:
-        return f"Error: server.keys.jwt_secret must be at least {jwt_secret_min_len} characters"
+        return f"错误：server.keys.jwt_secret 长度至少为 {jwt_secret_min_len} 个字符"
 
     relay_key = parser.get("implants", "relay_aes_key").strip()
     if len(relay_key) < relay_aes_key_min_len:
-        return f"Error: implants.relay_aes_key must be at least {relay_aes_key_min_len} characters"
+        return f"错误：implants.relay_aes_key 长度至少为 {relay_aes_key_min_len} 个字符"
 
     if parser.has_section("server.database"):
         raw_bytes = parser.get("server.database", "max_cell_value_bytes", fallback="").strip()
         if raw_bytes:
             try:
                 if int(raw_bytes) < 0:
-                    return "Error: server.database.max_cell_value_bytes must be >= 0"
+                    return "错误：server.database.max_cell_value_bytes 必须 >= 0"
             except ValueError:
-                return "Error: server.database.max_cell_value_bytes must be an integer"
+                return "错误：server.database.max_cell_value_bytes 必须为整数"
 
     if parser.has_section("server.nukescripts"):
         raw = parser.get("server.nukescripts", "sandbox", fallback="false").strip().lower()
@@ -262,7 +262,7 @@ def config_set(key, value):
     # Sets a config key and writes it to server.conf
     section, option = config_operations("split", key.strip())
     if not section or not option:
-        print(f"Error: unknown config key {key}")
+        print(f"错误：未知配置项 {key}")
         return 1
 
     parser = config_operations("read")
@@ -308,7 +308,7 @@ def config_reset(key):
     elif key in defaults:
         value = defaults[key]
     else:
-        print(f"Error: unknown config key {key}")
+        print(f"错误：未知配置项 {key}")
         return 1
 
     return config_set(key, value)
@@ -318,7 +318,7 @@ def config_load(path):
     # Copies a config file over server.conf and validates it
     src = Path(path).expanduser()
     if not src.is_file():
-        print(f"Error: file not found ({src})")
+        print(f"错误：未找到文件（{src}）")
         return 1
 
     shutil.copy(src, config_operations("path"))
@@ -348,14 +348,14 @@ def config_create_tls():
 
     if conf_cert or conf_key:
         print(
-            f"Current TLS paths: certfile={conf_cert or '(unset)'}, "
-            f"keyfile={conf_key or '(unset)'}"
+            f"当前 TLS 路径：certfile={conf_cert or '(未设置)'}，"
+            f"keyfile={conf_key or '(未设置)'}"
         )
         answer = input(
-            "Replace existing TLS certificate paths with a new self-signed certificate? [y/N]: "
+            "是否用新的自签名证书替换现有 TLS 证书路径？[y/N]："
         ).strip().lower()
         if answer not in ("y", "yes"):
-            print("Cancelled.")
+            print("已取消。")
             return 0
 
     if conf_cert and conf_key:
@@ -393,11 +393,11 @@ def config_create_tls():
             text=True,
         )
     except FileNotFoundError:
-        print("Error: openssl not found")
+        print("错误：未找到 openssl")
         return 1
     except subprocess.CalledProcessError as exc:
         detail = (exc.stderr or exc.stdout or str(exc)).strip()
-        print(f"Error: openssl failed ({detail})")
+        print(f"错误：openssl 执行失败（{detail}）")
         return 1
 
     cert_path = str(certfile)
@@ -414,7 +414,7 @@ def config_create_tls():
         print(err)
         return 1
 
-    print(f"TLS enabled (cert={cert_path}, key={key_path})")
+    print(f"TLS 已启用（cert={cert_path}, key={key_path}）")
     return 0
 
 

@@ -1,18 +1,18 @@
-ABOUT
+关于
     Enumerates Windows Defender Attack Surface Reduction (ASR) rules from registry locations
     to identify which ASR rules are configured, their enforcement state (Block/Audit/Warn/
     Disabled), and the policy source (Intune/MDM vs Group Policy).
 
-USAGE:
+用法：
     bof-asr-status
 
-EXAMPLES:
+示例：
     bof-asr-status
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-asr-status -w 60
     bof-asr-status -bg

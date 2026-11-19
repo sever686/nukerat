@@ -1,17 +1,17 @@
-ABOUT
+关于
     VSTest.Console.exe is the command-line tool to run tests. LOLBAS
     documents proxy Execution and AWL bypass, Adversaries may run
     malicious code embedded inside the test methods of crafted DLL/exe.
 
-USAGE:
+用法：
     vstest.console.exe {PATH:.dll}
 
-EXAMPLES:
+示例：
     vstest.console.exe {PATH:.dll}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     vstest.console.exe {PATH:.dll}

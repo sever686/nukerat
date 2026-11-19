@@ -1,17 +1,17 @@
-ABOUT
+关于
     Request a TGT using password, hash, or no preauth.
-USAGE:
+用法：
     bof-asktgt --- /user:USER /password:PASSWORD [/domain:DOMAIN] [/dc:DC] [/enctype:{rc4|aes256}] [/ptt] [/nopac] [/opsec]
     bof-asktgt --- /user:USER /aes256:HASH [/domain:DOMAIN] [/dc:DC] [/ptt]
     bof-asktgt --- /user:USER /rc4:HASH [/domain:DOMAIN] [/dc:DC] [/ptt]
     bof-asktgt --- /user:USER /nopreauth [/domain:DOMAIN] [/dc:DC] [/ptt]
 
-EXAMPLES:
+示例：
     bof-asktgt --- /user:admin /password:P@ss /domain:corp.local /ptt
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-asktgt -w 60 --- /user:admin /password:P@ss /domain:corp.local /ptt

@@ -1,20 +1,20 @@
-ABOUT
+关于
     Move or rename a file.
 
-USAGE:
+用法：
     mv <source> <destination>
 
-ARGUMENTS:
+参数：
     <source>            Source file (positional).
     <destination>       Destination path (positional).
 
-EXAMPLES:
+示例：
     mv /tmp/a /tmp/b
     mv C:\Temp\old.txt C:\Temp\new.txt
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    EXAMPLE:
+    示例：
     mv -w 30 C:\Temp\old.txt C:\Temp\new.txt

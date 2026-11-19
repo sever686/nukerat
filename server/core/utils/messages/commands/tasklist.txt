@@ -1,19 +1,19 @@
-ABOUT
-    List running processes on the target machine.
+关于
+    列出目标机器上正在运行的进程。
 
-USAGE:
+用法：
     tasklist [<args>]
 
-ARGUMENTS:
-    <args>              Optional ps args on Linux and macOS. Ignored on Windows.
+参数：
+    <args>              在 Linux 和 macOS 上为可选的 ps 参数。Windows 上忽略。
 
-EXAMPLES:
+示例：
     tasklist
     tasklist aux
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     tasklist -w 60

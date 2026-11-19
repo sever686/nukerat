@@ -32,7 +32,7 @@ export default function SplitPanel({ entry, onClose }: { entry: KeyloggerEntry; 
   return (
     <div className="flex flex-col h-full min-h-0 min-w-[22rem]">
       <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a] shrink-0">
-        <span className="text-[13.5px] font-semibold text-[#cecece] tracking-wide">Keylogger</span>
+        <span className="text-[13.5px] font-semibold text-[#cecece] tracking-wide">键盘记录</span>
         <button
           type="button"
           onClick={onClose}
@@ -42,12 +42,12 @@ export default function SplitPanel({ entry, onClose }: { entry: KeyloggerEntry; 
         </button>
       </div>
       <div className="flex-1 min-h-0 min-w-0 overflow-y-auto px-4 py-4">
-        <ViewField label="date" value={entry.date} />
-        <ViewField label="server" value={entry.server} />
-        <ViewField label="host tag" value={entry.hostTag} />
-        <ViewField label="host" value={entry.host} />
+        <ViewField label="日期" value={entry.date} />
+        <ViewField label="服务器" value={entry.server} />
+        <ViewField label="主机标签" value={entry.hostTag} />
+        <ViewField label="主机" value={entry.host} />
         <div className="mb-3 space-y-1.5">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">content</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">内容</label>
           <textarea
             readOnly
             tabIndex={-1}

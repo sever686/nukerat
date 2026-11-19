@@ -74,10 +74,10 @@ const FileServerPanel = (props: IDockviewPanelProps) => {
             onRefresh={refreshTags}
             onSelectItem={(option, s) => selectFileServerTarget(s.id, option.id)}
             onClear={clearTagFilter}
-            placeholder="Select a server"
-            searchPlaceholder="Search server..."
-            emptyLabel="No server found."
-            clearAriaLabel="Clear server"
+            placeholder="选择服务器"
+            searchPlaceholder="搜索服务器..."
+            emptyLabel="未找到服务器。"
+            clearAriaLabel="清除服务器"
           />
           <div className="relative min-w-[8rem] flex-1 shrink-0" data-file-server-search-input>
             <input
@@ -85,7 +85,7 @@ const FileServerPanel = (props: IDockviewPanelProps) => {
               className="box-border h-[29px] w-full rounded border border-[#363636] bg-[#212121] py-0 pl-3 pr-8 text-[13.5px] text-[#cecece] outline-none transition-colors placeholder:text-[#444] focus:border-[#555]"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search files..."
+              placeholder="搜索文件..."
               autoComplete="off"
               spellCheck={false}
             />
@@ -109,7 +109,7 @@ const FileServerPanel = (props: IDockviewPanelProps) => {
         {loading ? (
           <div className="flex items-center justify-center h-16 text-[#444] text-[13.5px]">
             <RefreshCw size={14} className="animate-spin mr-2" />
-            Loading...
+            加载中...
           </div>
         ) : (
           <>
@@ -120,9 +120,9 @@ const FileServerPanel = (props: IDockviewPanelProps) => {
                     <th
                       key={col}
                       className={`px-3 py-2 text-[12px] text-[#888888] font-medium uppercase tracking-widest whitespace-nowrap ${
-                        col === "Name"
+                        col === "名称"
                           ? "!text-left !pl-[.9rem]"
-                          : col === "Actions"
+                          : col === "操作"
                             ? "!text-center"
                             : ""
                       }`}
@@ -164,7 +164,7 @@ const FileServerPanel = (props: IDockviewPanelProps) => {
                           type="button"
                           variant="ghost"
                           size="icon"
-                          aria-label="Download"
+                          aria-label="下载"
                           disabled={loading || !tag}
                           onClick={() => handleDownload(file.name)}
                           className={rowActionIconBtn}
@@ -175,7 +175,7 @@ const FileServerPanel = (props: IDockviewPanelProps) => {
                           type="button"
                           variant="ghost"
                           size="icon"
-                          aria-label="Rename"
+                          aria-label="重命名"
                           disabled={loading || !tag}
                           onClick={() => handleOpenRename(file.name)}
                           className={rowActionIconBtn}
@@ -186,7 +186,7 @@ const FileServerPanel = (props: IDockviewPanelProps) => {
                           type="button"
                           variant="ghost"
                           size="icon"
-                          aria-label="Delete"
+                          aria-label="删除"
                           disabled={loading || !tag}
                           onClick={() => handleOpenDelete(file.name)}
                           className={`${rowActionIconBtn} hover:text-[#c97070]`}
@@ -203,7 +203,7 @@ const FileServerPanel = (props: IDockviewPanelProps) => {
             </table>
             {files.length === 0 && (
               <PanelEmptyState>
-                {!tag ? "Select a server to view files" : "No files found"}
+                {!tag ? "请选择服务器以查看文件" : "未找到文件"}
               </PanelEmptyState>
             )}
           </>
@@ -218,7 +218,7 @@ const FileServerPanel = (props: IDockviewPanelProps) => {
           className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
         >
           <Upload size={11} />
-          Upload
+          上传
         </button>
         <input
           ref={uploadRef}
@@ -238,7 +238,7 @@ const FileServerPanel = (props: IDockviewPanelProps) => {
             className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
           >
             <RefreshCw size={11} className={loading ? "animate-spin" : ""} />
-            Update
+            更新
           </button>
         </div>
       </div>
@@ -249,11 +249,11 @@ const FileServerPanel = (props: IDockviewPanelProps) => {
             <div className="flex items-center gap-2 mb-3">
               <Trash2 size={14} className="text-[#c97070] mb-0.5" />
               <span className="text-[13.5px] font-semibold text-[#cecece]">
-                Delete File
+                删除文件
               </span>
             </div>
             <p className="text-[13px] text-[#9b9b9b] mb-5 leading-relaxed">
-              Delete{" "}
+              删除{" "}
               <span className="text-[#d4d4d4] text-[13px] font-semibold">
                 "{deleteTarget.length > 80 ? `${deleteTarget.slice(0, 80)}...` : deleteTarget}"
               </span>
@@ -265,7 +265,7 @@ const FileServerPanel = (props: IDockviewPanelProps) => {
                 onClick={() => setDeleteTarget(null)}
                 className="button-default flex items-center gap-1.5 px-3 py-1 rounded bg-[#232323] text-[#cecece] text-[13px] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] transition-colors border border-[#333] cursor-pointer disabled:opacity-25 disabled:cursor-not-allowed"
               >
-                Cancel
+                取消
               </button>
               <button
                 type="button"
@@ -274,7 +274,7 @@ const FileServerPanel = (props: IDockviewPanelProps) => {
                 className="button-default flex items-center gap-1.5 px-3 py-1 rounded text-[12px] text-white bg-[#8b2020] hover:bg-[#a83232] transition-colors disabled:opacity-50 cursor-pointer"
               >
                 {submitting && <RefreshCw size={10} className="animate-spin" />}
-                Delete
+                删除
               </button>
             </div>
           </div>
@@ -287,7 +287,7 @@ const FileServerPanel = (props: IDockviewPanelProps) => {
             <div className="flex items-center gap-2 mb-3">
               <Pencil size={14} className="text-[#c8c8c8] mb-0.5" />
               <span className="text-[13.5px] font-semibold text-[#cecece]">
-                Rename File
+                重命名文件
               </span>
             </div>
             <input
@@ -306,7 +306,7 @@ const FileServerPanel = (props: IDockviewPanelProps) => {
                 onClick={() => setRenameDraft(null)}
                 className="button-default px-3 py-1 rounded text-[12px] text-[#9b9b9b] hover:text-[#d4d4d4] hover:bg-[#252525] transition-colors border border-[#333] cursor-pointer"
               >
-                Cancel
+                取消
               </button>
               <button
                 type="button"
@@ -319,7 +319,7 @@ const FileServerPanel = (props: IDockviewPanelProps) => {
                 className="button-default flex items-center gap-1.5 px-3 py-1 rounded text-[12px] text-white bg-[#232323] hover:bg-[#2b2b2b] transition-colors border border-[#333] disabled:opacity-50 cursor-pointer"
               >
                 {submitting && <RefreshCw size={10} className="animate-spin" />}
-                Rename
+                重命名
               </button>
             </div>
           </div>

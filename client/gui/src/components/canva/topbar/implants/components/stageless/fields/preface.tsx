@@ -19,11 +19,11 @@ export default ({
           checked={formData.customPreface}
           onCheckedChange={(v) => handleFormChange("customPreface", v === true)}
         />
-        <span className="text-[13px] text-[#cecece]">Custom preface code</span>
+        <span className="text-[13px] text-[#cecece]">自定义前言代码</span>
       </label>
       <Tooltip delayDuration={200}>
         <TooltipTrigger asChild>
-          <span className="inline-flex items-center text-[#666] cursor-default select-none" aria-label="Preface help">
+          <span className="inline-flex items-center text-[#666] cursor-default select-none" aria-label="前言代码说明">
             <CircleHelp size={13} />
           </span>
         </TooltipTrigger>

@@ -38,7 +38,7 @@ async def run(body, tag, compile_fn):
 
         return {
             "status": "success",
-            "message": "Implant built successfully",
+            "message": "植入体构建成功",
             "bytes": data,
             "stdout": build["stdout"],
             "stderr": build["stderr"],

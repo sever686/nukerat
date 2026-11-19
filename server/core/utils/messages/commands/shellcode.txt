@@ -1,20 +1,19 @@
-ABOUT
-    Execute shellcode in the current process using inline execution. The
-    payload runs on a separate thread, not the main thread.
+关于
+    在当前进程中使用内联执行运行 shellcode。载荷在独立线程上运行，而不是主线程。
 
-USAGE:
+用法：
     shellcode -f <file>
 
-ARGUMENTS:
-    -f                  Local shellcode file (--file).
+参数：
+    -f                  本地 shellcode 文件（--file）。
 
-EXAMPLES:
+示例：
     shellcode -f file.bin
     shellcode -f beacon.bin
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     shellcode -w 60 -f payload.bin

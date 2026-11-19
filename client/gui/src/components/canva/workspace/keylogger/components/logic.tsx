@@ -6,7 +6,7 @@ import type { FetchToastResponse } from "@/components/canva/utils/toast_rules";
 import { tryConfirmDialogEnter } from "@/components/canva/utils/confirm-dialog-keydown";
 import { formatUtcDateOnly, utcTableColumnTitle } from "@/components/canva/utils/utc-date";
 
-export const TABLE_COLUMNS = [utcTableColumnTitle("Date"), "Server", "Host Tag", "Content"] as const;
+export const TABLE_COLUMNS = [utcTableColumnTitle("日期"), "服务器", "主机标签", "内容"] as const;
 
 export const tableCellTruncate =
   "inline-block max-w-[30ch] truncate align-middle";

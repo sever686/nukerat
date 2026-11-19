@@ -1,20 +1,20 @@
-ABOUT
+关于
     Reports the taskbar host executable and enumerates system tray notification icon tooltips,
     with optional full image paths for the host and each icon's owning process.
 
-USAGE:
+用法：
     bof-tray-scout --- [verbose]
 
-ARGUMENTS:
+参数：
     verbose             Optional. Pass verbose or /verbose for full image paths
 
-EXAMPLES:
+示例：
     bof-tray-scout
     bof-tray-scout --- verbose
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-tray-scout -w 60 --- verbose

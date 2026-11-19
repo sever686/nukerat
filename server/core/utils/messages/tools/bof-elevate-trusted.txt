@@ -1,23 +1,23 @@
-ABOUT
+关于
     Elevates the current beacon to SYSTEM and obtains the TrustedInstaller
     group privilege through SetThreadToken impersonation. Optionally runs a
     command via cmd.exe /c while impersonating SYSTEM.
 
-USAGE:
+用法：
     bof-elevate-trusted --- <command>
 
-ARGUMENTS:
+参数：
     command    Optional command to execute as SYSTEM via cmd.exe /c
 
-EXAMPLES:
+示例：
     bof-elevate-trusted
     bof-elevate-trusted --- notepad.exe
     bof-elevate-trusted --- whoami > C:\\Windows\\Temp\\system.txt
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-elevate-trusted -w 60 --- notepad.exe
     bof-elevate-trusted -bg

@@ -1,8 +1,8 @@
-ABOUT
+关于
     Console version of ListNetworks. Enumerates network printers accessible to the
     current user context.
 
-USAGE:
+用法：
     net-sharp-printer
-EXAMPLES:
+示例：
     net-sharp-printer

@@ -1,12 +1,12 @@
-ABOUT
+关于
     Enumerates M365 Desktop Office applications for plain text
     authentication tokens that can be used to compromise the user's M365
     identity.
 
-USAGE:
+用法：
     net-sharp-token-finder
-EXAMPLES:
+示例：
     net-sharp-token-finder
-NOTES:
+备注：
     Run with matching process architecture for target Office applications.
     Parses tokens from Outlook, Teams, and other M365 desktop apps.

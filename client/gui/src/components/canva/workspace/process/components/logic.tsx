@@ -38,10 +38,10 @@ export type SortDir = "asc" | "desc";
 export type ProcessFilter = "all" | "user" | "admin" | "system" | "root";
 
 export const PROCESS_FILTERS: { label: string; value: ProcessFilter }[] = [
-  { label: "All", value: "all" },
-  { label: "User", value: "user" },
-  { label: "Admin", value: "admin" },
-  { label: "System", value: "system" },
+  { label: "全部", value: "all" },
+  { label: "用户", value: "user" },
+  { label: "管理员", value: "admin" },
+  { label: "系统", value: "system" },
   { label: "Root", value: "root" },
 ];
 
@@ -72,16 +72,16 @@ export const DEFAULT_WIDTHS: Record<string, number> = {
 };
 
 export const TABLE_HEADERS: { label: string; key: string }[] = [
-  { label: "NAME", key: "name" },
+  { label: "名称", key: "name" },
   { label: "PID", key: "pid" },
   { label: "CPU", key: "cpu" },
-  { label: "MEMORY", key: "memory" },
-  { label: "USER", key: "user" },
-  { label: "PRIV", key: "privilege" },
-  { label: "INTEGRITY", key: "integrity" },
-  { label: "SESSION", key: "session" },
-  { label: "ARCH", key: "arch" },
-  { label: "NETWORK", key: "network" },
+  { label: "内存", key: "memory" },
+  { label: "用户", key: "user" },
+  { label: "权限", key: "privilege" },
+  { label: "完整性", key: "integrity" },
+  { label: "会话", key: "session" },
+  { label: "架构", key: "arch" },
+  { label: "网络", key: "network" },
 ];
 
 // icons -----------------------------------------------------------------------
@@ -252,7 +252,7 @@ export function copyProcessContext(
     name, pid, cpu, memory, user, privilege, integrity, session, arch, network,
   }));
   navigator.clipboard.writeText(JSON.stringify({ process: payload }));
-  toast.success("Process context copied");
+  toast.success("进程上下文已复制");
 }
 
 export function allParentPids(nodes: ProcessNode[]): Set<number> {
@@ -402,7 +402,7 @@ export function useProcessWindow(selectedHost?: { host: Session; server: string 
 
     const nextProcesses = parseProcessTree(res);
     if ((res as { status?: string })?.status === "success" && nextProcesses === null) {
-      toast.error("Could not parse process tree.");
+      toast.error("无法解析进程树。");
       return;
     }
 

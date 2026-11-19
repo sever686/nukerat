@@ -1,8 +1,8 @@
-ABOUT
+关于
     Enumerates abandoned COM InprocServer32 keys where the referenced DLL no longer exists. Useful for persistence via rundll32.exe -sta {CLSID}.
 
-USAGE:
+用法：
     net-abandoned-com-keys --- (no arguments)
 
-EXAMPLES:
+示例：
     net-abandoned-com-keys

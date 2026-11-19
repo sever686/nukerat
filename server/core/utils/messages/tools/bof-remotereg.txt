@@ -1,20 +1,20 @@
-ABOUT
+关于
     Queries logged on users on remote servers, VDI, or domain controllers
     using the remote registry API.
-USAGE:
+用法：
     bof-remotereg --- <computer>
 
-ARGUMENTS:
+参数：
 
     computer    Remote hostname or FQDN
 
-EXAMPLES:
+示例：
 
     bof-remotereg --- MSRV01.rexcorp.com
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-remotereg -w 60 --- MSRV01.rexcorp.com

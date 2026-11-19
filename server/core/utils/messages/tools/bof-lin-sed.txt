@@ -1,21 +1,21 @@
-ABOUT
+关于
     (linux) Stream editor (s/old/new/g).
 
-USAGE:
+用法：
     bof-lin-sed --- <expression> <file>
 
-ARGUMENTS:
+参数：
     expression          s/pattern/replacement/[g]
     file                Input file
 
 Supports pipe chaining with other BusyBOF tools.
 
-EXAMPLES:
+示例：
     bof-lin-sed --- <expression> <file>
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-lin-sed -w 60 --- <expression> <file>

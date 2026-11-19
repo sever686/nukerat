@@ -1,21 +1,21 @@
-ABOUT
+关于
     Intel Graphics Control Panel helper that downloads a remote URL to a
     local file path. First argument is the source URL; second is the
     destination path on disk.
 
-USAGE:
+用法：
     GfxDownloadWrapper.exe "URL" "DESTINATION FILE"
 
-ARGUMENTS:
+参数：
     URL                  Remote location to fetch
     DESTINATION FILE     Local path where content is written
 
-EXAMPLES:
+示例：
     GfxDownloadWrapper.exe "URL" "DESTINATION FILE"
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     gfxdownloadwrapper -w 60 GfxDownloadWrapper.exe "URL" "DESTINATION FILE"

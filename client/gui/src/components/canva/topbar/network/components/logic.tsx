@@ -24,12 +24,12 @@ export type { NetworkFormData, Connection };
 export type PanelMode = "add" | "view" | null;
 
 export const TABLE_COLUMNS = [
-  "Host",
-  "Type",
-  "Port",
-  "Forward",
-  "Protocol",
-  "Server",
+  "主机",
+  "类型",
+  "端口",
+  "转发",
+  "协议",
+  "服务器",
 ] as const;
 
 export const emptyForm: NetworkFormData = {
@@ -202,22 +202,22 @@ export function useNetworkPanel() {
       const user = formData.authUser.trim();
       const pass = formData.authPass.trim();
       if (Boolean(user) !== Boolean(pass)) {
-        toast.error("User and password must both be set or both empty");
+        toast.error("用户名和密码必须同时填写或同时留空");
         return;
       }
       if (!formData.hostTag.trim()) {
-        toast.error("Implant tag is required");
+        toast.error("植入体标签为必填项");
         return;
       }
     }
     if (formData.networkType === "port_forwarding") {
       const fp = Number(formData.forwardPort);
       if (!formData.hostTag.trim() || !formData.forwardHost.trim() || !formData.forwardPort.trim() || fp < 1 || fp > 65535) {
-        toast.error("Implant, forward host and port are required");
+        toast.error("植入体、转发主机和端口均为必填项");
         return;
       }
       if (formData.protocol !== "tcp") {
-        toast.error("Only TCP supported");
+        toast.error("仅支持 TCP");
         return;
       }
     }
@@ -225,10 +225,10 @@ export function useNetworkPanel() {
     const res = await saveConnectionRequest("create", formData, buildCreateSelectedServer(formData));
     setSubmitting(false);
     if (res?.status !== "success") {
-      toast.error(res?.message ?? "Failed to create connection");
+      toast.error(res?.message ?? "创建连接失败");
       return;
     }
-    toast.success(res?.message ?? "Connection created");
+    toast.success(res?.message ?? "连接已创建");
     await refresh();
     setPanelMode(null);
   };
@@ -240,10 +240,10 @@ export function useNetworkPanel() {
     const res = await restartConnectionRequest(id, buildActionSelectedServer(selected));
     setSubmitting(false);
     if (res?.status !== "success") {
-      toast.error(res?.message ?? "Failed to restart connection");
+      toast.error(res?.message ?? "重启连接失败");
       return;
     }
-    toast.success(res?.message ?? "Connection restarted");
+    toast.success(res?.message ?? "连接已重启");
     await refresh();
   };
 
@@ -254,14 +254,14 @@ export function useNetworkPanel() {
     const res = await removeConnectionRequest(id, buildActionSelectedServer(selected));
     if (res?.status !== "success") {
       setSubmitting(false);
-      toast.error(res?.message ?? "Failed to remove connection");
+      toast.error(res?.message ?? "移除连接失败");
       return;
     }
     setItems((prev) => prev.filter((c, i) => getRowId(c, i) !== selectedRowId));
     setSelectedRowId(null);
     setSubmitting(false);
     setShowRemoveConfirm(false);
-    toast.success(res?.message ?? "Connection removed");
+    toast.success(res?.message ?? "连接已移除");
     await refresh();
   };
   confirmRemoveRef.current = () => {

@@ -71,7 +71,7 @@ const TerminalInputBar = memo(function TerminalInputBar({
       >
         {searchActive
           ? <>
-              search
+              搜索
               {input.trim() && (
                 <span style={{ color: '#929193' }}>
                   {' '}({matchOccurrences.length === 0 ? '0/0' : `${searchMatchIndex < 0 ? 0 : searchMatchIndex + 1}/${matchOccurrences.length}`})
@@ -94,7 +94,7 @@ const TerminalInputBar = memo(function TerminalInputBar({
             onClick={(e) => { e.stopPropagation(); onClearPrefix(); }}
             className="button-default opacity-50 hover:opacity-100"
             style={{ color: '#6eb5ff', padding: '0 2px', marginLeft: 1, lineHeight: 1, cursor: 'pointer' }}
-            title="Clear prefix (Esc)"
+            title="清除前缀 (Esc)"
           >
             ×
           </button>
@@ -118,7 +118,7 @@ const TerminalInputBar = memo(function TerminalInputBar({
       </div>
       <button
         type="button"
-        title="Send (Enter)"
+        title="发送 (Enter)"
         disabled={sendDisabled}
         onClick={(e) => {
           e.stopPropagation();

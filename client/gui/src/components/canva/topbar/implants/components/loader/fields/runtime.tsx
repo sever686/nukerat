@@ -26,24 +26,24 @@ export default ({
     {windowsRuntime ? (
       <>
     <div className="mb-3 space-y-1.5">
-      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">API resolution</label>
+      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">API 解析</label>
       <Select value={formData.apiResolution} disabled>
         <SelectTrigger className="w-[11rem] bg-[#212121] border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 h-auto focus:border-[#555] focus-visible:ring-0 disabled:opacity-60 disabled:cursor-not-allowed">
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="dynamic">Dynamic Loading</SelectItem>
+          <SelectItem value="dynamic">动态加载</SelectItem>
         </SelectContent>
       </Select>
     </div>
     <div className="mb-3 space-y-1.5">
-      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Win API method</label>
+      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Win API 方式</label>
       <Select value={formData.winApiMethod} disabled>
         <SelectTrigger className="w-[11rem] bg-[#212121] border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 h-auto focus:border-[#555] focus-visible:ring-0 disabled:opacity-60 disabled:cursor-not-allowed">
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="indirect">Indirect syscall</SelectItem>
+          <SelectItem value="indirect">间接系统调用</SelectItem>
         </SelectContent>
       </Select>
     </div>
@@ -56,7 +56,7 @@ export default ({
         checked={formData.etwPatch === "on"}
         onCheckedChange={(v) => handleFormChange("etwPatch", v === true ? "on" : "off")}
       />
-      <span className="text-[13px] text-[#cecece]">ETW patch</span>
+      <span className="text-[13px] text-[#cecece]">ETW 补丁</span>
     </label>
     <label className="flex items-center gap-2 mb-3 cursor-pointer">
       <Checkbox
@@ -64,13 +64,13 @@ export default ({
         checked={formData.amsiPatch === "on"}
         onCheckedChange={(v) => handleFormChange("amsiPatch", v === true ? "on" : "off")}
       />
-      <span className="text-[13px] text-[#cecece]">AMSI patch</span>
+      <span className="text-[13px] text-[#cecece]">AMSI 补丁</span>
     </label>
 
     <Separator className="bg-[#252525] mb-4 mt-4" />
 
     <div className="mb-3 space-y-1.5">
-      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Sleep mask</label>
+      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">睡眠掩码</label>
       <Select value={formData.sleepMask} onValueChange={(v) => handleFormChange("sleepMask", v as ImplantFormData["sleepMask"])}>
         <SelectTrigger className="w-[6rem] bg-[#212121] border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 h-auto focus:border-[#555] focus-visible:ring-0">
           <SelectValue />
@@ -89,7 +89,7 @@ export default ({
       <Alert className="mb-3 border-[#5c4a2a] bg-[#2a2419] text-[#e0a84b] [&_[data-slot=alert-description]]:text-[#9a9080]">
         <TriangleAlertIcon />
         <AlertDescription>
-          The sleep mask encrypts all PE sections. Be careful when using your own code for inline loading, to avoid access violation crashes.
+          睡眠掩码会加密所有 PE 节区。使用自己的代码进行内联加载时请务必小心，以免发生访问冲突导致崩溃。
         </AlertDescription>
       </Alert>
     ) : null}
@@ -99,13 +99,13 @@ export default ({
     ) : null}
 
     <div className="mb-3 space-y-1.5">
-      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">String obfuscation</label>
+      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">字符串混淆</label>
       <Select value={formData.stringObfuscation} onValueChange={(v) => handleFormChange("stringObfuscation", v as ImplantFormData["stringObfuscation"])}>
         <SelectTrigger className="w-auto bg-[#212121] border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 h-auto focus:border-[#555] focus-visible:ring-0">
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="off">Off</SelectItem>
+          <SelectItem value="off">关闭</SelectItem>
           <SelectItem value="xor">Xor</SelectItem>
           <SelectItem value="rc4">RC4</SelectItem>
         </SelectContent>
@@ -122,7 +122,7 @@ export default ({
         checked={formData.peHeadersPatch === "on"}
         onCheckedChange={(v) => handleFormChange("peHeadersPatch", v === true ? "on" : "off")}
       />
-      <span className="text-[13px] text-[#cecece]">Wipe PE headers in memory</span>
+      <span className="text-[13px] text-[#cecece]">在内存中擦除 PE 头</span>
     </label>
       </>
     ) : null}

@@ -1,18 +1,18 @@
-ABOUT
+关于
     Uses a scoring model to assess MDM enrollment posture on Windows systems by evaluating
     indicators including join state, scheduled tasks, policy configuration, and enrollment
     artifacts.
 
-USAGE:
+用法：
     bof-mdm-policy-artifacts
 
-EXAMPLES:
+示例：
     bof-mdm-policy-artifacts
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-mdm-policy-artifacts -w 60
     bof-mdm-policy-artifacts -bg

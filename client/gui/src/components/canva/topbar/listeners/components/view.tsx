@@ -67,7 +67,7 @@ const ViewListenerPanel = ({ listener, handleClosePanel }: ViewListenerPanelProp
       <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a] shrink-0">
         <div className="flex items-center gap-2">
           <span className="text-[13.5px] font-semibold text-[#cecece] tracking-wide">
-            View - {listener?.name ?? "Listener"}
+            查看 - {listener?.name ?? "Listener"}
           </span>
         </div>
         <button
@@ -79,26 +79,26 @@ const ViewListenerPanel = ({ listener, handleClosePanel }: ViewListenerPanelProp
       </div>
 
       <div className="flex-1 min-h-0 min-w-0 overflow-y-auto px-4 py-4">
-        <ViewField label="Name" value={listener?.name} />
-        <ViewField label="Type" value={getViewTypeLabel(listener)} />
-        <ViewField label="Server" value={listener?.server} />
-        <ViewField label="Protocol" value={getViewProtocolLabel(listener)} />
+        <ViewField label="名称" value={listener?.name} />
+        <ViewField label="类型" value={getViewTypeLabel(listener)} />
+        <ViewField label="服务器" value={listener?.server} />
+        <ViewField label="协议" value={getViewProtocolLabel(listener)} />
 
         {isChannel && (
           <>
-            <ViewField label="Host" value={listener?.host} />
-            <ViewField label="Port" value={listener?.port} />
+            <ViewField label="主机" value={listener?.host} />
+            <ViewField label="端口" value={listener?.port} />
           </>
         )}
 
         {showAdvanced && (
           <>
-            <ViewField label="Endpoint Path" value={listener?.endpointPath} />
-            <ViewField label="Custom Body" value={listener?.implantBodyType} />
+            <ViewField label="端点路径" value={listener?.endpointPath} />
+            <ViewField label="自定义正文" value={listener?.implantBodyType} />
             {(listener?.responseHeaders?.length ?? 0) > 0 && (
               <div className="mb-3 space-y-1.5">
                 <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">
-                  Response Headers
+                  响应头
                 </label>
                 <div className="space-y-1.5">
                   {listener?.responseHeaders?.map((h, i) => (
@@ -122,15 +122,15 @@ const ViewListenerPanel = ({ listener, handleClosePanel }: ViewListenerPanelProp
                 </div>
               </div>
             )}
-            <ViewTextField label="Listener response" value={listener?.listenerResponse} />
-            <ViewTextField label="Implant request" value={listener?.implantBody} />
+            <ViewTextField label="监听器响应" value={listener?.listenerResponse} />
+            <ViewTextField label="植入体请求" value={listener?.implantBody} />
           </>
         )}
 
         {isFileServer && (
           <>
-            <ViewField label="Host" value={listener?.host} />
-            <ViewField label="Port to Open" value={listener?.port} />
+            <ViewField label="主机" value={listener?.host} />
+            <ViewField label="开放端口" value={listener?.port} />
           </>
         )}
       </div>
@@ -141,7 +141,7 @@ const ViewListenerPanel = ({ listener, handleClosePanel }: ViewListenerPanelProp
           onClick={handleClosePanel}
           className="button-default z-10 flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
         >
-          Close
+          关闭
         </button>
       </div>
     </div>

@@ -71,7 +71,7 @@ async def help_text(input, verb):
                 or read_message("commands/" + arg + ".txt")
                 or read_message("lolbins/" + lolbin_help + ".txt")
                 or read_message("lolbins/" + arg + ".txt")
-                or "No help available for this command."
+                or "该命令暂无可用的帮助信息。"
             )
         flags = commands["flags"]
         i = 1
@@ -88,7 +88,7 @@ async def help_text(input, verb):
                     if os_name == "windows":
                         return read_message("help/default.txt") or ""
                     else:
-                        return "Error: invalid OS argument"
+                        return "错误：无效的操作系统参数"
                 if takes_value:
                     i = i + 2
                 else:

@@ -23,16 +23,16 @@ def build_html(name: str, description: str, hosts: list) -> str:
     # Builds the hosts report html
     rows_data = [host_row(host) for host in hosts[:max_rows]]
     table = render_table(
-        ["Hostname", "User", "OS", "Internal IP", "External IP", "PID"],
+        ["主机名", "用户", "操作系统", "内网 IP", "外部 IP", "PID"],
         [[h["hostname"], h["user"], h["os"], h["ip"], h["external_ip"], h["pid"]] for h in rows_data],
         6,
     )
     generated = esc(datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"))
-    body = f"""<h2>Compromised Hosts ({len(rows_data)})</h2>
+    body = f"""<h2>已被攻陷主机（{len(rows_data)}）</h2>
 {table}"""
     return format_report_html(
         esc(name),
-        f"Hosts Report · Generated {generated}",
+        f"主机报告 · 生成时间 {generated}",
         esc(description),
         body,
     )

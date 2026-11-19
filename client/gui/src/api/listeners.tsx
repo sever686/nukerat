@@ -178,7 +178,7 @@ export const DataFetch = async (
       lastError ?? {
         status: "failure",
         type,
-        message: "Request failed",
+        message: "请求失败",
       }
     );
   } catch (error) {
@@ -263,7 +263,7 @@ export const removeListenerRequest = async (
 
   let lastError: { status: string; message?: string } = {
     status: "failure",
-    message: "Request failed",
+    message: "请求失败",
   };
 
   for (const server of servers) {

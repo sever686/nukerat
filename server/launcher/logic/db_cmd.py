@@ -5,14 +5,14 @@ def main_db(option):
     # Receives the db command and calls usage, export or import
     parts = option.split()
     if len(parts) < 2 or parts[0] != "db":
-        print("Invalid option")
+        print("选项无效")
         return
 
     cmd = parts[1]
 
     if cmd == "usage":
         if len(parts) != 2:
-            print('Invalid syntax. Use "db usage".')
+            print('语法无效。请使用 "db usage"。')
             return
         exit_code = db_usage()
         if exit_code:
@@ -21,7 +21,7 @@ def main_db(option):
 
     if cmd == "export":
         if len(parts) != 3:
-            print('Invalid syntax. Use "db export <path>".')
+            print('语法无效。请使用 "db export <path>"。')
             return
         exit_code = db_export(parts[2])
         if exit_code:
@@ -30,11 +30,11 @@ def main_db(option):
 
     if cmd == "import":
         if len(parts) != 3:
-            print('Invalid syntax. Use "db import <file>".')
+            print('语法无效。请使用 "db import <file>"。')
             return
         exit_code = db_import(parts[2])
         if exit_code:
             raise SystemExit(exit_code)
         return
 
-    print("Invalid option")
+    print("选项无效")

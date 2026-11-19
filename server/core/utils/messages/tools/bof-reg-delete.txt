@@ -1,24 +1,24 @@
-ABOUT
+关于
     Deletes a registry key or value on the local or remote system.
 
-USAGE:
+用法：
     bof-reg-delete --- <hive> <path> [value]
     bof-reg-delete --- --host <hostname> <hive> <path> [value]
 
-ARGUMENTS:
+参数：
     hive                Numeric hive code: HKCR=0 HKCU=1 HKLM=2 HKU=3 HKCC=5
     path                Registry key path
     value               Optional value name (omit to delete entire key)
     --host              Optional remote computer name
 
-EXAMPLES:
+示例：
     bof-reg-delete --- 1 Software\NukeratBenchTest
     bof-reg-delete --- 1 Software\Test ValueName
     bof-reg-delete --- --host kingslanding 1 Software\NukeratBenchTest
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-reg-delete -w 60 --- 1 Software\NukeratBenchTest

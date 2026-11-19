@@ -1,23 +1,23 @@
-ABOUT
+关于
     File system maintenance utility. LOLBAS zeros file content,
     deletes USN change journals, plants netsh.exe via trace decode,
     or fills disk with sparse files to impair defenses.
 
-USAGE:
+用法：
     fsutil.exe file setZeroData offset=0 length=9999999999 {PATH_ABSOLUTE}
     fsutil.exe usn deletejournal /d c:
     fsutil.exe trace decode
     fsutil.exe file createnew {PATH_ABSOLUTE} {LENGTH_IN_BYTES}
 
-EXAMPLES:
+示例：
     fsutil.exe file setZeroData offset=0 length=9999999999 {PATH_ABSOLUTE}
     fsutil.exe usn deletejournal /d c:
     fsutil.exe trace decode
     fsutil.exe file createnew {PATH_ABSOLUTE} {LENGTH_IN_BYTES}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     fsutil.exe file setZeroData offset=0 length=9999999999 {PATH_ABSOLUTE}

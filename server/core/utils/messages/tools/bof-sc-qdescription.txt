@@ -1,14 +1,14 @@
-ABOUT
+关于
     Sc qdescription implementation in BOF
-USAGE:
+用法：
     bof-sc-qdescription --- <service name> [opt:server]
 
-EXAMPLES:
+示例：
     bof-sc-qdescription --- Spooler
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-sc-qdescription -w 60 --- Spooler

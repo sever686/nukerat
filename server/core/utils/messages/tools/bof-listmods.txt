@@ -1,15 +1,15 @@
-ABOUT
+关于
     List process modules (DLL). Target current process if PID is empty. Complement to driversigs to determine if our process was injected by AV/EDR
 
-USAGE:
+用法：
     bof-listmods --- [opt:pid]
 
-EXAMPLES:
+示例：
     bof-listmods    bof-listmods --- 1234
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-listmods -w 60 --- 1234

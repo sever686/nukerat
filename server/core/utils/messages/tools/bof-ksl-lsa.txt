@@ -1,21 +1,21 @@
-ABOUT
+关于
     Extracts credentials from LSASS memory using the KslD.sys BYOVD physical
     memory read primitive. Does not call OpenProcess, NtReadVirtualMemory,
     or MiniDumpWriteDump on lsass. Extracts MSV1_0 NT hashes, WDigest
     cleartext (when enabled), and LSA encryption keys. Requires
     administrative privileges.
-USAGE:
+用法：
     bof-ksl-lsa
-EXAMPLES:
+示例：
     bof-ksl-lsa
-NOTES:
+备注：
     Uses the vulnerable KslD.sys driver from System32\drivers\ (333,216 bytes). Credential Guard
     blocks domain credential extraction but local accounts and LSA secrets may still be recovered.
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-ksl-lsa -w 60
     bof-ksl-lsa -bg

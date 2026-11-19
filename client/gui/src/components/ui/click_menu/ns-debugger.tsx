@@ -14,9 +14,9 @@ export function createNsDebuggerBridge(): PanelEditMenuBridge {
       return r;
     },
     getCustomMenuItems: () => [
-      menuAction("Update", RefreshCw, () => nsDebuggerMenuRuntimeRef.current?.refresh()),
+      menuAction("更新", RefreshCw, () => nsDebuggerMenuRuntimeRef.current?.refresh()),
       menuAction(
-        "Clear",
+        "清除",
         Trash2,
         () => nsDebuggerMenuRuntimeRef.current?.clear(),
         () => !nsDebuggerMenuRuntimeRef.current?.canClear(),

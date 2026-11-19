@@ -19,9 +19,9 @@ import { tryConfirmDialogEnter } from "@/components/canva/utils/confirm-dialog-k
 import { listRowMouseDown } from "@/components/canva/utils/list-row-selection";
 import { formatUtcDateOnly, utcTableColumnTitle } from "@/components/canva/utils/utc-date";
 
-export const TABLE_COLUMNS = ["Host", "Type", "Input", utcTableColumnTitle("Date"), "Completed", "Server"] as const;
+export const TABLE_COLUMNS = ["主机", "类型", "输入", utcTableColumnTitle("日期"), "已完成", "服务器"] as const;
 
-export const yn = (n: number) => (n ? "yes" : "no");
+export const yn = (n: number) => (n ? "是" : "否");
 
 export const short = (s: string, n = 15) => (s.length > n ? `${s.slice(0, n)}...` : s);
 

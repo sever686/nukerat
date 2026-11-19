@@ -1,11 +1,11 @@
-ABOUT
+关于
     Proof of concept RDP session hijack utility. Takes control of disconnected
     interactive login sessions using WTSConnectSession and WTSDisconnectSession.
 
-USAGE:
+用法：
     net-sharp-rdp-hijack --- [options]
 
-OPTIONS:
+选项：
     --tsquery=<host>     Query host for RDP/TS session information
     --session=<ID>       Target session identifier
     --password=<pass>    Session user password if known
@@ -13,13 +13,13 @@ OPTIONS:
     --shadow             Shadow an active session (experimental)
     --disconnect         Disconnect an active remote session
 
-EXAMPLES:
+示例：
     net-sharp-rdp-hijack --- --tsquery=localhost
     net-sharp-rdp-hijack --- --session=6
     net-sharp-rdp-hijack --- --session=2 --console
     net-sharp-rdp-hijack --- --session=4 --password=P@ssw0rd
     net-sharp-rdp-hijack --- --session=3 --disconnect
 
-NOTES:
+备注：
     Session hijacking requires elevated (administrator) context.
     Without password, impersonates NT AUTHORITY\\SYSTEM.

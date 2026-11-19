@@ -1,12 +1,12 @@
-ABOUT
+关于
     A tool for efficient querying of Active Directory. Supports listing domain admins,
     custom LDAP search, LDAPS connections, JSON output, and retrieving custom attributes
     from generic queries.
 
-USAGE:
+用法：
     net-adsearch --- [options]
 
-EXAMPLES:
+示例：
     net-adsearch --- --domain ldap.example.com --username admin --password AdminPass1 --users
     net-adsearch --- --domain ldap.example.com --username admin --password AdminPass1 --groups
     net-adsearch --- --domain ldap.example.com --username admin --password AdminPass1 --computers
@@ -19,7 +19,7 @@ EXAMPLES:
     net-adsearch --- --domain ldap.example.com --username admin --password AdminPass1 --computers --attributes cn,dNSHostName,operatingSystem
     net-adsearch --- --domain ldap.example.com --username admin --password AdminPass1 --users --insecure
 
-CONNECTION OPTIONS:
+CONNECTION 选项：
     -u, --username      Attempts to authenticate to AD with the given username
     -p, --password      Attempts to authenticate to AD with the given password
     -h, --hostname      Remote bind hostname or IP (requires --domain)
@@ -27,7 +27,7 @@ CONNECTION OPTIONS:
     -d, --domain        Domain controller in FQDN format. If blank, lookups are done locally
     --insecure          (Default: false) Communicate over port 389 without SSL
 
-QUERY OPTIONS:
+QUERY 选项：
     -G, --groups        Enumerate and return all groups from AD
     -U, --users         Enumerate and return all users from AD
     -C, --computers     Enumerate and return all computers joined to AD
@@ -36,15 +36,15 @@ QUERY OPTIONS:
     --domain-admins     Retrieve all Domain Admin accounts
     --attributes        (Default: cn) Attributes to return from results in csv format
 
-OUTPUT OPTIONS:
+OUTPUT 选项：
     -f, --full          Show all attributes for returned items
     -o, --output        File path to output results
     --json              (Default: false) Output results in JSON format
     --supress-banner    Disable banner display
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     net-adsearch -w 60 --- --domain ldap.example.com --username admin --password AdminPass1 --users

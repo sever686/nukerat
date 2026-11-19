@@ -1,16 +1,16 @@
-ABOUT
+关于
     Configures failure actions for an existing Windows service.
 
-USAGE:
+用法：
     bof-sc-failure --- <SVCNAME> <RESETPERIOD> <REBOOTMESSAGE> <COMMAND> <NUMACTIONS> <ACTIONS> [HOSTNAME]
 
-EXAMPLES:
+示例：
 
     bof-sc-failure --- MySvc 86400 "" "" 3 "1/6000/1"
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-sc-failure -w 60 --- MySvc 86400 "" "" 3 "1/6000/1"

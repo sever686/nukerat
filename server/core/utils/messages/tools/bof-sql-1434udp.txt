@@ -1,11 +1,11 @@
-ABOUT
+关于
     Enumerates SQL Server connection information via SQL Server Browser service on UDP 1434.
 
-USAGE:
+用法：
     bof-sql-1434udp --- <server_ip>
 
-ARGUMENTS:
+参数：
     server_ip    Target IP address (hostnames not accepted)
 
-EXAMPLES:
+示例：
     bof-sql-1434udp --- 192.168.1.10

@@ -1,18 +1,18 @@
-ABOUT
+关于
     User Experience Virtualization tool that launches applications under
     monitoring to capture and synchronize user settings. LOLBAS
     documents executing an executable under a trusted, Microsoft-signed
     binary.
 
-USAGE:
+用法：
     AppLauncher.exe {PATH_ABSOLUTE:.exe}
 
-EXAMPLES:
+示例：
     AppLauncher.exe {PATH_ABSOLUTE:.exe}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     AppLauncher.exe {PATH_ABSOLUTE:.exe}

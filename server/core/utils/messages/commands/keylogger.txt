@@ -1,25 +1,25 @@
-ABOUT
-    Runs a background thread that monitors keys pressed by the user.
+关于
+    运行后台线程，监视用户按下的按键。
 
-USAGE:
+用法：
     keylogger <start|stop> [--method <method>] [--delay <ms>]
 
-ARGUMENTS:
-    --method            boardstate or keystate. Default boardstate on Windows.
-    --delay             Poll interval in milliseconds for boardstate only. Default 50.
+参数：
+    --method            boardstate 或 keystate。Windows 上默认 boardstate。
+    --delay             仅 boardstate 模式的轮询间隔（毫秒）。默认 50。
 
-MODES:
-    start               Begin background key capture.
-    stop                Stop the worker and flush pending keys.
+模式：
+start               开始后台按键捕获。
+stop                停止工作线程并刷新待处理的按键。
 
-EXAMPLES:
+示例：
     keylogger start --method boardstate --delay 100
     keylogger start --method keystate
     keylogger stop
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     keylogger -bg start --method boardstate

@@ -1,17 +1,17 @@
-ABOUT
+关于
     Kiosk custom shell host.
     Runs explorer.exe /NoShellRegistrationCheck from the current
     directory when a local explorer is present.
 
-USAGE:
+用法：
     CustomShellHost.exe
 
-EXAMPLES:
+示例：
     CustomShellHost.exe
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     CustomShellHost.exe

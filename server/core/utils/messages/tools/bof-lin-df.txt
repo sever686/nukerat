@@ -1,17 +1,17 @@
-ABOUT
+关于
     (linux) Disk space usage.
 
-USAGE:
+用法：
     bof-lin-df --- [path]
 
-ARGUMENTS:
+参数：
     path                Mount point or path
 
-EXAMPLES:
+示例：
     bof-lin-df
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-lin-df -w 60 --- [path]

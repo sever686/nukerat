@@ -1,11 +1,11 @@
-ABOUT
+关于
     Dumps Windows Credential Manager by abusing SeTrustedCredManAccess
     privilege. Steals a token from winlogon.exe to enable the privilege.
     Requires administrator privileges.
-USAGE:
+用法：
     bof-cred-man --- <encrypted backup file> <decrypted backup file> <user process id>
 
-ARGUMENTS:
+参数：
 
     encrypted backup file    Path for encrypted credential backup output
 
@@ -13,13 +13,13 @@ ARGUMENTS:
 
     user process id          PID of a user process for impersonation
 
-EXAMPLES:
+示例：
 
     bof-cred-man --- C:\Temp\cred.enc C:\Temp\cred.dec 1234
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-cred-man -w 60 --- C:\Temp\cred.enc C:\Temp\cred.dec 1234

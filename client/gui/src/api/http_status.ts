@@ -1,20 +1,20 @@
 const HTTP_STATUS_MESSAGE: Record<number, string> = {
-  400: "Bad request",
-  401: "Unauthorized",
-  403: "Forbidden",
-  404: "Not found",
-  405: "Method not allowed",
-  408: "Request timeout",
-  409: "Conflict",
-  413: "Payload too large",
-  415: "Unsupported media type",
-  422: "Unprocessable entity",
-  429: "Too many requests",
-  500: "Internal error",
-  501: "Not implemented",
-  502: "Bad gateway",
-  503: "Service unavailable",
-  504: "Gateway timeout",
+  400: "请求无效",
+  401: "未授权",
+  403: "禁止访问",
+  404: "未找到",
+  405: "方法不允许",
+  408: "请求超时",
+  409: "冲突",
+  413: "负载过大",
+  415: "不支持的媒体类型",
+  422: "无法处理的实体",
+  429: "请求过多",
+  500: "内部错误",
+  501: "未实现",
+  502: "网关错误",
+  503: "服务不可用",
+  504: "网关超时",
 };
 
 export function httpStatusMessage(status: number): string {
@@ -25,7 +25,7 @@ export function responseErrorMessage(status: number, bodyMessage?: unknown): str
   if (status < 200 || status >= 300) return httpStatusMessage(status);
   return typeof bodyMessage === "string" && bodyMessage.trim()
     ? bodyMessage
-    : "Request failed";
+    : "请求失败";
 }
 
 const GENERIC_FETCH_ERRORS = new Set([
@@ -37,7 +37,7 @@ const GENERIC_FETCH_ERRORS = new Set([
 
 export function unreachableHost(name?: string): string {
   const label = name?.trim();
-  return label ? `${label}: Unreachable host` : "Unreachable host";
+  return label ? `${label}: 主机不可达` : "主机不可达";
 }
 
 export function thrownErrorMessage(error: unknown, name?: string): string {

@@ -1,5 +1,5 @@
 try:
-    print("Loading dependencies ...", end="", flush=True)
+    print("正在加载依赖 ...", end="", flush=True)
     from fastapi import FastAPI
     import asyncio
     from contextlib import asynccontextmanager
@@ -41,7 +41,7 @@ try:
     print(" done")
 
 except Exception as e:
-    print(f"\n[ \x1b[38;2;255;48;48mERROR\x1b[0m ] Failed to load dependencies")
+    print(f"\n[ \x1b[38;2;255;48;48mERROR\x1b[0m ] 依赖加载失败")
     print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] {e}")
     exit(1)
 
@@ -51,12 +51,12 @@ setup_logging()
 async def lifespan(app: FastAPI):
     # Starts the database, restores listeners and boots the nukescript worker
     try:
-        print("Starting SQLite database ...", end="", flush=True)
+        print("正在启动 SQLite 数据库 ...", end="", flush=True)
         await sqlite_db.start()
         print(" done")
     except Exception as e:
         print()
-        print(f"\n[ \x1b[38;2;255;48;48mERROR\x1b[0m ] Unable to start sqlite database")
+        print(f"\n[ \x1b[38;2;255;48;48mERROR\x1b[0m ] 无法启动 SQLite 数据库")
         print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] {e}")
         exit(1)
     for label, setup in (
@@ -68,24 +68,24 @@ async def lifespan(app: FastAPI):
         try:
             await setup()
         except Exception as e:
-            print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] Unable to restore {label} listeners from database | {e}")
+            print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] 无法从数据库恢复 {label} 监听器 | {e}")
             
 
     get_bridge().main_loop = asyncio.get_running_loop()
     try:
-        print("Starting NukeScripts worker ...", end="", flush=True)
+        print("正在启动 NukeScripts worker ...", end="", flush=True)
         worker_ready, worker_state = start_worker()
         if not await asyncio.to_thread(worker_ready.wait, 30.0):
             print()
-            print(f"\n[ \x1b[38;2;255;48;48mERROR\x1b[0m ] Unable to start NukeScripts worker")
-            print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] worker did not become ready in time")
+            print(f"\n[ \x1b[38;2;255;48;48mERROR\x1b[0m ] 无法启动 NukeScripts worker")
+            print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] worker 未能在规定时间内就绪")
             exit(1)
         if worker_state.get("error"):
             raise worker_state["error"]
         print(" done")
     except Exception as e:
         print()
-        print(f"\n[ \x1b[38;2;255;48;48mERROR\x1b[0m ] Unable to start NukeScripts worker")
+        print(f"\n[ \x1b[38;2;255;48;48mERROR\x1b[0m ] 无法启动 NukeScripts worker")
         print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] {e}")
         exit(1)
 
@@ -94,7 +94,7 @@ async def lifespan(app: FastAPI):
     srv = app_config["config"]
     scheme = srv.get("protocol", "http")
     host, port = srv["host"], srv["port"]
-    print(f"[ \x1b[38;2;0;238;0mOK\x1b[0m ] Server is running on {host}:{port} ({scheme}://{host}:{port})")
+    print(f"[ \x1b[38;2;0;238;0mOK\x1b[0m ] 服务端正在运行 {host}:{port} ({scheme}://{host}:{port})")
     yield
 
 

@@ -1,10 +1,10 @@
-ABOUT
+关于
     Wrapper around KrbRelay and Rubeus that automates local privilege escalation in domain
     environments where LDAP signing is not enforced. Coerces machine account Kerberos auth,
     relays to LDAP (or ADCS), establishes a control primitive (RBCD, Shadow Credentials, or
     ADCS), and spawns a SYSTEM service.
 
-USAGE:
+用法：
     net-krb-relay-up --- <full | relay | spawn | krbscm> [options]
 
 PHASES:
@@ -13,7 +13,7 @@ PHASES:
     spawn    Phase 2: obtain service ticket and create a SYSTEM service
     krbscm   Create a SYSTEM service using the currently loaded Kerberos service ticket
 
-RELAY OPTIONS:
+RELAY 选项：
     -m <rbcd|shadowcred>              Abuse method after relay (default: rbcd)
     -p <port>                         COM server port (default: 12345)
     -cls <clsid>                      CLSID for auth coercion (default: 90f18417-f0f1-484e-9d3c-59dceee5dbd8)
@@ -26,7 +26,7 @@ RELAY OPTIONS:
     -https                            Use HTTPS for CA endpoint
     -cet <template>                   Certificate template (default: Machine)
 
-SPAWN OPTIONS:
+SPAWN 选项：
     -m <rbcd|shadowcred>              Method used in relay phase (default: rbcd)
     -i <user>                         User to impersonate (default: Administrator)
     -s <name>                         Service name (default: KrbSCM)
@@ -37,18 +37,18 @@ SPAWN OPTIONS:
     -ce <cert>                        Base64 certificate or path (ShadowCred/ADCS)
     -cep <password>                   Certificate password
 
-KRBSCM OPTIONS:
+KRBSCM 选项：
     -s <name>                         Service name (default: KrbSCM)
     -sc <command>                     Service binPath
 
-GENERAL OPTIONS:
+GENERAL 选项：
     -d <domain>                       Domain FQDN
     -dc <dc>                          Domain controller FQDN
     -ssl                              Use LDAP over SSL
     -n                                Use CreateNetOnly instead of PTT
     -v                                Verbose output
 
-EXAMPLES:
+示例：
     net-krb-relay-up --- full -d corp.local -c -cn KRBRELAYUP$
     net-krb-relay-up --- relay -d corp.local -m shadowcred
     net-krb-relay-up --- spawn -d corp.local -cn KRBRELAYUP$ -cp Password123! -i Administrator

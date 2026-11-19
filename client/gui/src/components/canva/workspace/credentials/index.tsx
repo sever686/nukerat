@@ -52,7 +52,7 @@ const CredentialsPanel = (props: IDockviewPanelProps) => {
             {loading ? (
               <div className="flex items-center justify-center h-16 text-[#444] text-[13.5px]">
                 <RefreshCw size={14} className="animate-spin mr-2" />
-                Loading...
+                加载中...
               </div>
             ) : (
               <>
@@ -96,7 +96,7 @@ const CredentialsPanel = (props: IDockviewPanelProps) => {
                     </tbody>
                   )}
                 </table>
-                {credentials.length === 0 && <PanelEmptyState>No content found</PanelEmptyState>}
+                {credentials.length === 0 && <PanelEmptyState>未找到内容</PanelEmptyState>}
               </>
             )}
           </div>
@@ -108,7 +108,7 @@ const CredentialsPanel = (props: IDockviewPanelProps) => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] cursor-pointer"
             >
               <Plus size={11} />
-              Add
+              添加
             </button>
             <button
               type="button"
@@ -117,7 +117,7 @@ const CredentialsPanel = (props: IDockviewPanelProps) => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
             >
               <Edit size={11} />
-              Edit
+              编辑
             </button>
             <button
               type="button"
@@ -126,7 +126,7 @@ const CredentialsPanel = (props: IDockviewPanelProps) => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] font-medium text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#c97070] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
             >
               <Trash2 size={11} />
-              Remove
+              移除
             </button>
             <div className="min-w-2 flex-1 shrink" aria-hidden />
             <button
@@ -135,7 +135,7 @@ const CredentialsPanel = (props: IDockviewPanelProps) => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer"
             >
               <RefreshCw size={11} />
-              Update
+              更新
             </button>
           </div>
         </div>
@@ -178,28 +178,28 @@ const CredentialsPanel = (props: IDockviewPanelProps) => {
           <div style={{ borderRadius: "8px" }} className="bg-[#191919] border border-[#2f2f2f] p-5 max-w-sm w-[90%] shadow-2xl">
             <div className="flex items-center gap-2 mb-3">
               <Trash2 size={13} className="text-[#c97070]" />
-              <span className="text-[13.5px] font-semibold text-[#d4d4d4]">Remove credential</span>
+              <span className="text-[13.5px] font-semibold text-[#d4d4d4]">移除凭据</span>
             </div>
             <p className="text-[13.5px] text-[#9b9b9b] mb-5 leading-relaxed">
               {removeConfirmMode === "all" ? (
                 <>
-                  Remove all{" "}
+                  移除全部{" "}
                   <span className="text-[#d4d4d4] font-semibold">{credentialCount}</span>{" "}
-                  credential{credentialCount === 1 ? "" : "s"}? This cannot be undone.
+                  个凭据？此操作无法撤销。
                 </>
               ) : (
                 <>
-                  Remove{" "}
+                  移除{" "}
                   <span className="inline-block max-w-[180px] truncate text-[#d4d4d4] font-semibold align-bottom">
                     "{selected?.name}"
                   </span>
-                  ? This cannot be undone.
+                  ？此操作无法撤销。
                 </>
               )}
             </p>
             <div className="flex items-center justify-end gap-2">
               <button onClick={() => setShowRemoveConfirm(false)} className="button-default flex items-center gap-1.5 px-3 py-1 rounded bg-[#232323] text-[#9b9b9b] text-[13px] hover:bg-[#252525] hover:text-[#d4d4d4] transition-colors border border-[#333] cursor-pointer">
-                Cancel
+                取消
               </button>
               <button
                 onClick={handleConfirmRemove}
@@ -207,7 +207,7 @@ const CredentialsPanel = (props: IDockviewPanelProps) => {
                 className="button-default flex items-center gap-1.5 px-3 py-1 rounded text-[13px] text-white bg-[#852b2b] hover:bg-[#a83232] disabled:opacity-50 cursor-pointer"
               >
                 {submitting && <RefreshCw size={10} className="animate-spin" />}
-                Remove
+                移除
               </button>
             </div>
           </div>

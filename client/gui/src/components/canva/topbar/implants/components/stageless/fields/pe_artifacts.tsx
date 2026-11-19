@@ -41,7 +41,7 @@ export default ({
     <div className="space-y-4">
       {isExeFormat(formData.format) ? (
         <div className="mb-3 space-y-1.5">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">EXE icon</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">EXE 图标</label>
           <input
             ref={iconRef}
             type="file"
@@ -88,17 +88,17 @@ export default ({
                     checked={formData.customCopyPeStrings}
                     onCheckedChange={(v) => handleFormChange("customCopyPeStrings", v === true)}
                   />
-                  <span className="text-[13px] text-[#cecece]">PE strings</span>
+                  <span className="text-[13px] text-[#cecece]">PE 字符串</span>
                 </label>
                 <Tooltip delayDuration={200}>
                   <TooltipTrigger asChild>
-                    <span className="inline-flex items-center text-[#666] cursor-default select-none" aria-label="PE strings help">
+                    <span className="inline-flex items-center text-[#666] cursor-default select-none" aria-label="PE 字符串说明">
                       <CircleHelp size={13} />
                     </span>
                   </TooltipTrigger>
                   <TooltipContent side="bottom" className="bg-[#3A3A3A] max-w-xs rounded-[6px]">
                     <div className="text-xs">
-                      Embeds decoy values into PE sections at build.
+                      构建时将诱饵值嵌入 PE 节区。
                     </div>
                   </TooltipContent>
                 </Tooltip>
@@ -125,7 +125,7 @@ export default ({
 
           <div className="mb-3 space-y-3">
             <div className="space-y-1.5">
-              <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">TimeDateStamp</label>
+              <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">时间戳</label>
               <PeTimestampField
                 value={formData.peTimestampDate}
                 onChange={(iso) => handleFormChange("peTimestampDate", iso)}
@@ -134,7 +134,7 @@ export default ({
 
             <div className="grid grid-cols-4 gap-2">
               <div className="space-y-1.5">
-                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Linker major</label>
+                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">链接器主版本</label>
                 <input
                   className="w-full tabular-nums bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] placeholder:text-[#444]"
                   value={formData.peMajorLinkerVersion}
@@ -148,7 +148,7 @@ export default ({
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Linker minor</label>
+                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">链接器次版本</label>
                 <input
                   className="w-full tabular-nums bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] placeholder:text-[#444]"
                   value={formData.peMinorLinkerVersion}
@@ -162,7 +162,7 @@ export default ({
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">OS major</label>
+                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">系统主版本</label>
                 <input
                   className="w-full tabular-nums bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] placeholder:text-[#444]"
                   value={formData.peMajorOsVersion}
@@ -176,7 +176,7 @@ export default ({
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">OS minor</label>
+                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">系统次版本</label>
                 <input
                   className="w-full tabular-nums bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] placeholder:text-[#444]"
                   value={formData.peMinorOsVersion}
@@ -190,7 +190,7 @@ export default ({
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Image major</label>
+                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">映像主版本</label>
                 <input
                   className="w-full tabular-nums bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] placeholder:text-[#444]"
                   value={formData.peMajorImageVersion}
@@ -204,7 +204,7 @@ export default ({
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Image minor</label>
+                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">映像次版本</label>
                 <input
                   className="w-full tabular-nums bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] placeholder:text-[#444]"
                   value={formData.peMinorImageVersion}
@@ -218,7 +218,7 @@ export default ({
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Subsystem major</label>
+                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">子系统主版本</label>
                 <input
                   className="w-full tabular-nums bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] placeholder:text-[#444]"
                   value={formData.peMajorSubsystemVersion}
@@ -232,7 +232,7 @@ export default ({
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Subsystem minor</label>
+                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">子系统次版本</label>
                 <input
                   className="w-full tabular-nums bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] placeholder:text-[#444]"
                   value={formData.peMinorSubsystemVersion}

@@ -1,4 +1,4 @@
-ABOUT
+关于
     Windows Sandbox command-line interface. Creates, lists, controls,
     and executes commands inside Windows Sandbox sessions from the host
     CLI. LOLBAS covers fileless execution of arbitrary commands in an
@@ -8,7 +8,7 @@ ABOUT
     while the host-side process tree is masked by the Sandbox client
     binaries.
 
-USAGE:
+用法：
     wsb start --config "<Configuration><LogonCommand><Command>{CMD}</Command></LogonCommand></Configuration>"
 wsb exec -r System --id YOUR_ID
     wsb start --config "<Configuration><MappedFolders><MappedFolder><HostFolder>{PATH_ABSOLUTE:folder}</HostFolder><ReadOnly>false</ReadOnly></MappedFolder></MappedFolders></Configuration>"
@@ -17,7 +17,7 @@ wsb exec -r System --id YOUR_ID -c "cmd.exe /c copy C:\users\WDAGUtilityAccount\
 wsb share --id YOUR_ID -f {PATH_ABSOLUTE:folder} -s c:\SOME_FOLDER --allow-write
 wsb exec -r System --id YOUR_ID -c "cmd.exe /c copy {PATH_ABSOLUTE} c:\SOME_FOLDER"
 
-EXAMPLES:
+示例：
     wsb start --config "<Configuration><LogonCommand><Command>{CMD}</Command></LogonCommand></Configuration>"
 wsb exec -r System --id YOUR_ID
     wsb start --config "<Configuration><MappedFolders><MappedFolder><HostFolder>{PATH_ABSOLUTE:folder}</HostFolder><ReadOnly>false</ReadOnly></MappedFolder></MappedFolders></Configuration>"
@@ -26,10 +26,10 @@ wsb exec -r System --id YOUR_ID -c "cmd.exe /c copy C:\users\WDAGUtilityAccount\
 wsb share --id YOUR_ID -f {PATH_ABSOLUTE:folder} -s c:\SOME_FOLDER --allow-write
 wsb exec -r System --id YOUR_ID -c "cmd.exe /c copy {PATH_ABSOLUTE} c:\SOME_FOLDER"
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     wsb start --config "<Configuration><LogonCommand><Command>{CMD}</Command></LogonCommand></Configuration>"
 wsb exec -r System --id YOUR_ID

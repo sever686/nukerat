@@ -1,18 +1,18 @@
-ABOUT
+关于
     Enumerates the current desktop wallpaper path for each attached monitor using the modern
     IDesktopWallpaper COM interface. Centralized wallpapers can reveal network paths, domain
     trusts, and policy enforcement.
 
-USAGE:
+用法：
     bof-wallpaper-enum
 
-EXAMPLES:
+示例：
     bof-wallpaper-enum
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-wallpaper-enum -w 60
     bof-wallpaper-enum -bg

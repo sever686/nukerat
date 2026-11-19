@@ -1,19 +1,19 @@
-ABOUT
-    Load a reflective DLL in the current process using inline execution.
+关于
+    在当前进程中使用内联执行加载反射 DLL。
 
-USAGE:
+用法：
     load-dll -f <file>
 
-ARGUMENTS:
-    -f                  Local DLL file (--file).
+参数：
+    -f                  本地 DLL 文件（--file）。
 
-EXAMPLES:
+示例：
     load-dll -f file.dll
     load-dll -f reflective.dll
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     load-dll -w 90 -f plugin.dll

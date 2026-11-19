@@ -15,7 +15,7 @@ async def parse_port(raw_port) -> int:
     # Turns the port into an int inside the valid range
     port = int(raw_port)
     if port < 1 or port > 65535:
-        raise ValueError("Port must be between 1 and 65535")
+        raise ValueError("端口必须介于 1 和 65535 之间")
     return port
 
 

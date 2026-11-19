@@ -156,7 +156,7 @@ export const DataFetch = async (
       lastError ?? {
         status: "failure",
         request: PROCESS_REQUEST,
-        message: "Request failed",
+        message: "请求失败",
       }
     );
   } catch (error) {

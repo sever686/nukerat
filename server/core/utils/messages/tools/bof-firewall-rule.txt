@@ -1,11 +1,11 @@
-ABOUT
+关于
     Add, remove, or query Windows Firewall rules via the COM API (INetFwPolicy2) without
     spawning netsh.exe or cmd.exe. Useful for pivoting inside networks.
 
-USAGE:
+用法：
     bof-firewall-rule --- <subcommand> [arguments]
 
-SUBCOMMANDS:
+SUB命令：
     add <name> <dir> <action> <protocol> [localport] [remoteport] [profile]
     remove <name>
     query <name>
@@ -17,15 +17,15 @@ PARAMETER VALUES:
     protocol            tcp, udp, or any
     profile             domain, private, public, or all (default all)
 
-EXAMPLES:
+示例：
     bof-firewall-rule --- add pivot in allow tcp 4444
     bof-firewall-rule --- query pivot
     bof-firewall-rule --- list
     bof-firewall-rule --- remove pivot
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-firewall-rule -w 60 --- add pivot in allow tcp 4444

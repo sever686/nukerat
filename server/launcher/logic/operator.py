@@ -6,7 +6,7 @@ def main_operator(option):
     option = option.split()
 
     if len(option) < 1 or option[0] != "key":
-        print("Invalid option")
+        print("选项无效")
         return
 
     if len(option) == 2 and option[1] == "list":
@@ -14,7 +14,7 @@ def main_operator(option):
         return
 
     if len(option) < 3:
-        print('Invalid syntax. Use "key add <name>" or "key rem <name>".')
+        print('语法无效。请使用 "key add <name>" 或 "key rem <name>"。')
         return
 
     name = option[2]
@@ -24,4 +24,4 @@ def main_operator(option):
     elif option[1] == "rem":
         key_rem(name)
     else:
-        print("Invalid option")
+        print("选项无效")

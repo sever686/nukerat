@@ -32,23 +32,23 @@ export function createKeyloggerBridge(): PanelEditMenuBridge | null {
     readValue: () => rt.getSearch(),
     writeValue: (_, v) => rt.setSearch(v),
     getCustomMenuItems: () => [
-      menuAction("View", Eye, () => rt.view(), () => !rt.canUseSelection()),
-      menuAction("Update", RefreshCw, () => rt.refresh()),
+      menuAction("查看", Eye, () => rt.view(), () => !rt.canUseSelection()),
+      menuAction("更新", RefreshCw, () => rt.refresh()),
       {
         kind: "action",
-        label: "Remove",
+        label: "移除",
         icon: Trash2,
         disabled: () => !keyloggerCanRemoveSelected() && !keyloggerCanRemoveAll(),
         items: [
           {
             kind: "action",
-            label: "Selected",
+            label: "所选",
             onClick: () => keyloggerRemoveSelected(),
             disabled: () => !keyloggerCanRemoveSelected(),
           },
           {
             kind: "action",
-            label: "All",
+            label: "全部",
             onClick: () => keyloggerRemoveAll(),
             disabled: () => !keyloggerCanRemoveAll(),
           },

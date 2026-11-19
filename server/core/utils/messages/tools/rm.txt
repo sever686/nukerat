@@ -1,19 +1,19 @@
-ABOUT
+关于
     Delete a file or directory on the implant
 
-USAGE:
+用法：
     rm <path>
 
-ARGUMENTS:
+参数：
     <path>              File to delete.
 
-EXAMPLES:
+示例：
     rm /tmp/a.txt
     rm C:\Temp\a.txt
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    EXAMPLE:
+    示例：
     rm -w 15 C:\Temp\a.txt

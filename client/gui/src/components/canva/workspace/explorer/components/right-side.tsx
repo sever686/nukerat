@@ -126,15 +126,15 @@ const RightSide = ({
             type="button"
             onClick={onDownload}
             disabled={controlsDisabled || !canDownload}
-            title="Download"
+            title="下载"
             className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded-[6px] border border-[#ffffff26] bg-[#191819] px-2 text-[13.5px] whitespace-nowrap text-[#bdbdbd] select-none hover:bg-[#1a1a1a] disabled:cursor-not-allowed disabled:border-[#2a2a2a] disabled:text-[#555] disabled:opacity-50"
           >
             <ArrowDownToLine size={10} />
-            <span>Download</span>
+            <span>下载</span>
           </button>
           <button
             type="button"
-            title="Icon view"
+            title="图标视图"
             onClick={() => onViewModeChange("grid")}
             className={`button-default flex h-[29px] shrink-0 items-center rounded-[5px] border px-2 ${viewMode === "grid" ? "border-[#ffffff26] text-[#cecece]" : "border-transparent text-[#555]"}`}
           >
@@ -142,7 +142,7 @@ const RightSide = ({
           </button>
           <button
             type="button"
-            title="List view"
+            title="列表视图"
             onClick={() => onViewModeChange("list")}
             className={`button-default flex h-[29px] shrink-0 items-center rounded-[5px] border px-2 ${viewMode === "list" ? "border-[#ffffff26] text-[#cecece]" : "border-transparent text-[#555]"}`}
           >
@@ -164,7 +164,7 @@ const RightSide = ({
             onClick={onCancelLoading}
             className="mt-2 text-[13.5px] text-[#3a3a3a] cursor-pointer select-none hover:text-[#4a4a4a]"
           >
-            Cancel
+            取消
           </span>
         </div>
       ) : fileContent !== null ? (
@@ -185,7 +185,7 @@ const RightSide = ({
           />
         )
       ) : items.length === 0 ? (
-        <PanelEmptyState>No content found</PanelEmptyState>
+        <PanelEmptyState>未找到内容</PanelEmptyState>
       ) : viewMode === "grid" ? (
         <div id="explorer-grid-view" className="flex-1 overflow-y-auto overflow-x-hidden px-3 py-4">
           <TooltipProvider delayDuration={500}>

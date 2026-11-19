@@ -10,10 +10,10 @@ export function createGraphsBridge(): PanelEditMenuBridge | null {
   return {
     ...readOnlyInputBridge(),
     getCustomMenuItems: () => [
-      menuAction("Update", RefreshCw, () => rt.refresh()),
-      menuAction("Zoom in", ZoomIn, () => rt.zoomIn()),
-      menuAction("Zoom out", ZoomOut, () => rt.zoomOut()),
-      menuAction("Fit view", Maximize2, () => rt.fitView()),
+      menuAction("更新", RefreshCw, () => rt.refresh()),
+      menuAction("放大", ZoomIn, () => rt.zoomIn()),
+      menuAction("缩小", ZoomOut, () => rt.zoomOut()),
+      menuAction("适应视图", Maximize2, () => rt.fitView()),
     ],
   };
 }

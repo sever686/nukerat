@@ -1,11 +1,11 @@
-ABOUT
-    Set the callback interval in seconds.
+关于
+    设置以秒为单位的回调间隔。
 
-USAGE:
+用法：
     delay <seconds>
 
-ARGUMENTS:
-    <seconds>           Callback interval.
+参数：
+    <seconds>           回调间隔。
 
-EXAMPLES:
+示例：
     delay 4

@@ -63,7 +63,7 @@ const ReportsPanel = () => {
             {loading ? (
               <div className="flex items-center justify-center h-16 text-[#444] text-[13.5px]">
                 <RefreshCw size={14} className="animate-spin mr-2" />
-                Loading...
+                加载中...
               </div>
             ) : (
               <>
@@ -115,7 +115,7 @@ const ReportsPanel = () => {
                     </tbody>
                   )}
                 </table>
-                {reports.length === 0 && <PanelEmptyState>No reports generated yet</PanelEmptyState>}
+                {reports.length === 0 && <PanelEmptyState>尚未生成报告</PanelEmptyState>}
               </>
             )}
           </div>
@@ -127,7 +127,7 @@ const ReportsPanel = () => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer"
             >
               <Plus size={11} />
-              New
+              新建
             </button>
             <button
               type="button"
@@ -136,7 +136,7 @@ const ReportsPanel = () => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
             >
               {viewLoading ? <RefreshCw size={11} className="animate-spin" /> : <Eye size={11} />}
-              View
+              查看
             </button>
             <button
               type="button"
@@ -145,7 +145,7 @@ const ReportsPanel = () => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
             >
               <Download size={11} />
-              Download
+              下载
             </button>
             <button
               type="button"
@@ -154,7 +154,7 @@ const ReportsPanel = () => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#c97070] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
             >
               <Trash2 size={11} />
-              Remove
+              移除
             </button>
             <div className="min-w-2 flex-1 shrink" aria-hidden />
             <button
@@ -163,7 +163,7 @@ const ReportsPanel = () => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer"
             >
               <RefreshCw size={11} />
-              Update
+              更新
             </button>
           </div>
         </div>
@@ -210,10 +210,10 @@ const ReportsPanel = () => {
           >
             <div className="flex items-center gap-2 mb-3">
               <Trash2 size={14} className="text-[#c97070] mb-0.5" />
-              <span className="text-[13.5px] font-semibold text-[#cecece]">Remove Report</span>
+              <span className="text-[13.5px] font-semibold text-[#cecece]">移除报告</span>
             </div>
             <p className="text-[13px] text-[#9b9b9b] mb-5 leading-relaxed">
-              Remove{" "}
+              移除{" "}
               <span className="text-[#d4d4d4] text-[13px] font-semibold">
                 "
                 {selected?.name && selected.name.length > 20
@@ -228,7 +228,7 @@ const ReportsPanel = () => {
                 onClick={() => setShowRemoveConfirm(false)}
                 className="button-default px-3 py-1 rounded text-[12px] text-[#9b9b9b] hover:text-[#d4d4d4] hover:bg-[#252525] transition-colors border border-[#333] cursor-pointer"
               >
-                Cancel
+                取消
               </button>
               <button
                 onClick={handleConfirmRemove}
@@ -236,7 +236,7 @@ const ReportsPanel = () => {
                 className="button-default flex items-center gap-1.5 px-3 py-1 rounded text-[12px] text-white bg-[#8b2020] hover:bg-[#a83232] transition-colors disabled:opacity-50 cursor-pointer"
               >
                 {submitting && <RefreshCw size={10} className="animate-spin" />}
-                Remove
+                移除
               </button>
             </div>
           </div>

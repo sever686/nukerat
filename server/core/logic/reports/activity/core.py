@@ -58,7 +58,7 @@ def build_html(name: str, description: str, hosts: list, data: dict, hide_creden
     host_data = [host_row(host) for host in hosts]
     host_map = {h["tag"]: h for h in host_data}
     host_table = render_table(
-        ["Hostname", "User", "OS", "Internal IP", "External IP"],
+        ["主机名", "用户", "操作系统", "内网 IP", "外部 IP"],
         [[h["hostname"], h["user"], h["os"], h["ip"], h["external_ip"]] for h in host_data],
         5,
     )
@@ -73,7 +73,7 @@ def build_html(name: str, description: str, hosts: list, data: dict, hide_creden
             row["command"],
         ])
     queue_table = render_table(
-        ["Time", "Hostname", "User", "Command"],
+        ["时间", "主机名", "用户", "命令"],
         queue_rows,
         4,
     )
@@ -86,20 +86,20 @@ def build_html(name: str, description: str, hosts: list, data: dict, hide_creden
             row["created_at"], row["host"], row["name"], content, row["description"] or "-"
         ])
     cred_table = render_table(
-        ["Time", "Host", "Name", "Content", "Description"],
+        ["时间", "主机", "名称", "内容", "描述"],
         cred_rows,
         5,
     )
     generated = esc(datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"))
-    body = f"""<h2>Target Scope ({len(host_data)})</h2>
+    body = f"""<h2>目标范围（{len(host_data)}）</h2>
 {host_table}
-<h2>Queue Activity ({len(queue_rows)})</h2>
+<h2>队列活动（{len(queue_rows)}）</h2>
 {queue_table}
-<h2>Captured Credentials ({len(data["credentials"])})</h2>
+<h2>已捕获凭据（{len(data["credentials"])}）</h2>
 {cred_table}"""
     return format_report_html(
         esc(name),
-        f"Activity Report · Generated {generated}",
+        f"活动报告 · 生成时间 {generated}",
         esc(description),
         body,
     )

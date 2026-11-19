@@ -1,25 +1,25 @@
-ABOUT
+关于
     Enable, disable, check, and dump capabilities for Windows clipboard
     history.
-USAGE:
+用法：
     bof-clipboard-steal --- <command>
 
-ARGUMENTS:
+参数：
     dump                Dump clipboard history contents to console
     enable              Enable clipboard history feature
     disable             Disable clipboard history feature
     check               Check if clipboard history is enabled
     help                Show help menu
 
-EXAMPLES:
+示例：
     bof-clipboard-steal --- dump
     bof-clipboard-steal --- enable
     bof-clipboard-steal --- disable
     bof-clipboard-steal --- check
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-clipboard-steal -w 60 --- dump

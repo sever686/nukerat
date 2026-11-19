@@ -1,9 +1,9 @@
-ABOUT
+关于
     BloodHound data collector for Active Directory. Enumerates users, groups, sessions,
     ACLs, trusts, GPOs, certificate services, and other attack path data for import
     into BloodHound CE.
 
-USAGE:
+用法：
     net-sharp-hound --- [options]
 
 COLLECTION METHODS (-c):
@@ -11,7 +11,7 @@ COLLECTION METHODS (-c):
     ACL, ComputerOnly, Trusts, RDP, DCOM, DCOnly, UserRights, CARegistry, DCRegistry,
     CertServices, WebClientService, NTLMRegistry, SMBInfo, LdapServices, Container
 
-ENUMERATION OPTIONS:
+ENUMERATION 选项：
     -d, --domain              Domain to enumerate
     -s, --searchforest        Search all domains in the forest
     --stealth                 Stealth collection (prefer DCOnly)
@@ -20,7 +20,7 @@ ENUMERATION OPTIONS:
     --computerfile            File with computer names to enumerate
     --excludedcs              Exclude domain controllers from session enumeration
 
-CONNECTION OPTIONS:
+CONNECTION 选项：
     --ldapusername            LDAP username
     --ldappassword            LDAP password
     --domaincontroller        Override domain controller
@@ -28,7 +28,7 @@ CONNECTION OPTIONS:
     --secureldap              Connect via LDAPS
     --disablesigning          Disable Kerberos signing/sealing
 
-OUTPUT OPTIONS:
+OUTPUT 选项：
     --outputdirectory         Output directory (default: current)
     --outputprefix            Prefix for output filenames
     --nozip                   Do not zip output files
@@ -36,7 +36,7 @@ OUTPUT OPTIONS:
     --prettyprint             Pretty print JSON
     --randomfilenames         Use random output filenames
 
-PERFORMANCE OPTIONS:
+PERFORMANCE 选项：
     --throttle                Delay after computer requests (ms)
     --jitter                  Jitter percentage for throttle
     --threads                 Enumeration thread count (default: 50)
@@ -45,7 +45,7 @@ PERFORMANCE OPTIONS:
     --loopduration            Loop duration (hh:mm:ss)
     --loopinterval            Delay between loops (hh:mm:ss)
 
-EXAMPLES:
+示例：
     net-sharp-hound    net-sharp-hound --- -c All -d corp.local
     net-sharp-hound --- -c DCOnly --stealth -d corp.local
     net-sharp-hound --- -c Session,LocalGroup -d corp.local --computerfile hosts.txt

@@ -20,7 +20,7 @@ async def fetch_files(tag: str):
     files = await list_files(tag)
     if files is None:
         return await conclude_request(
-            {"status": "failure", "message": "File server not found"},
+            {"status": "failure", "message": "未找到文件服务器"},
             status_code=404,
             type="file_server",
         )
@@ -34,22 +34,22 @@ async def remove_file(tag: str, file_name: str):
     tag = (tag or "").strip()
     if not await delete_file(tag, file_name):
         return await conclude_request(
-            {"status": "failure", "message": "File not found"},
+            {"status": "failure", "message": "未找到文件"},
             status_code=404,
             type="file_server",
         )
-    return await conclude_request({"status": "success", "message": "File deleted"}, type="file_server")
+    return await conclude_request({"status": "success", "message": "文件已删除"}, type="file_server")
 
 
 async def patch_file(tag: str, file_name: str, body: dict):
     tag = (tag or "").strip()
     if not await rename_file(tag, file_name, body.get("new_file_name")):
         return await conclude_request(
-            {"status": "failure", "message": "File not found"},
+            {"status": "failure", "message": "未找到文件"},
             status_code=404,
             type="file_server",
         )
-    return await conclude_request({"status": "success", "message": "File renamed"}, type="file_server")
+    return await conclude_request({"status": "success", "message": "文件已重命名"}, type="file_server")
 
 
 async def create_file(tag: str, body: dict):
@@ -58,11 +58,11 @@ async def create_file(tag: str, body: dict):
     raw = body.get("bytes")
     if not await upload_file(tag, body.get("file_name"), raw):
         return await conclude_request(
-            {"status": "failure", "message": "Upload failed"},
+            {"status": "failure", "message": "上传失败"},
             status_code=400,
             type="file_server",
         )
-    return await conclude_request({"status": "success", "message": "File uploaded"}, type="file_server")
+    return await conclude_request({"status": "success", "message": "文件已上传"}, type="file_server")
 
 
 async def download_file(tag: str, file_name: str):
@@ -71,7 +71,7 @@ async def download_file(tag: str, file_name: str):
     path = await file_path(tag, file_name)
     if not path:
         return await conclude_request(
-            {"status": "failure", "message": "File not found"},
+            {"status": "failure", "message": "未找到文件"},
             status_code=404,
             type="file_server",
         )

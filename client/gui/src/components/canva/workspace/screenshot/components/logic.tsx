@@ -42,7 +42,7 @@ export function useScreenshot(selectedHost?: { host: Session; server: string } |
         try {
           const data = await fetchScreenshot(selectedHost, signal, hash, !!hash);
           if (data.status === "failure") {
-            toast.error(formatToastMessage(data.message ?? "Screenshot failed"));
+            toast.error(formatToastMessage(data.message ?? "截图失败"));
             continue;
           }
           hash = data.hash ?? hash;
@@ -53,7 +53,7 @@ export function useScreenshot(selectedHost?: { host: Session; server: string } |
           }
         } catch (err) {
           if (signal.aborted || (err instanceof Error && err.name === "AbortError")) return;
-          toast.error(formatToastMessage(err instanceof Error ? err.message : "Unknown error"));
+          toast.error(formatToastMessage(err instanceof Error ? err.message : "未知错误"));
           await new Promise((r) => setTimeout(r, 5000));
         }
       }

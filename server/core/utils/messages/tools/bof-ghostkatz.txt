@@ -1,13 +1,13 @@
-ABOUT
+关于
     Dumps LSASS credentials by reading physical memory through signed vulnerable kernel
     drivers with MmMapIoSpace primitives. Supports MSV1 (logonpasswords) and WDigest
     credential extraction. Requires administrator privileges. May cause a BSOD if a driver
     fails during operation.
 
-USAGE:
+用法：
     bof-ghostkatz --- <mode> [-prv <provider id>]
 
-MODES:
+模式：
     logonpasswords    Dump MSV1 logon session credentials
     wdigest           Dump WDigest credentials
 
@@ -15,14 +15,14 @@ PROVIDERS:
     1    Toshiba TPwSav
     2    TechPowerUp ThrottleStop
 
-EXAMPLES:
+示例：
     bof-ghostkatz --- logonpasswords -prv 1
     bof-ghostkatz --- wdigest -prv 2
     bof-ghostkatz --- wdigest
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-ghostkatz -w 60 --- logonpasswords -prv 1

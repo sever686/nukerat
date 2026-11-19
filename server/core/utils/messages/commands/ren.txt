@@ -1,20 +1,20 @@
-ABOUT
-    Rename a file.
+关于
+    重命名文件。
 
-USAGE:
+用法：
     ren <source> <destination>
 
-ARGUMENTS:
-    <source>            Existing file (positional).
-    <destination>       New name or path (positional).
+参数：
+    <source>            已存在的文件（位置参数）。
+    <destination>       新名称或路径（位置参数）。
 
-EXAMPLES:
+示例：
     ren /tmp/a.txt /tmp/b.txt
     ren C:\Temp\old.txt C:\Temp\new.txt
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     ren -w 30 C:\Temp\old.txt C:\Temp\new.txt

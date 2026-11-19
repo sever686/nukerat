@@ -1,12 +1,12 @@
-ABOUT
+关于
     Sets a fixed prefix for all commands sent in the terminal. To
     close, click "x" on the blue bar.
 
-USAGE:
+用法：
     prefix <prefix>
 
-ARGUMENTS:
+参数：
     <command>           Prefix to prepend (for example powershell).
 
-EXAMPLES:
+示例：
     prefix powershell

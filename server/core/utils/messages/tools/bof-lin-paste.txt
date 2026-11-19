@@ -1,18 +1,18 @@
-ABOUT
+关于
     (linux) Merge lines of files.
 
-USAGE:
+用法：
     bof-lin-paste --- <files>
 
-ARGUMENTS:
+参数：
     files               Space-separated file paths (min 2)
 
-EXAMPLES:
+示例：
     bof-lin-paste --- <files>
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-lin-paste -w 60 --- <files>

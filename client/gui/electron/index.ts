@@ -132,11 +132,11 @@ function createWindow(): void {
     if (!hasWindows) return
     const choice = dialog.showMessageBoxSync(mainWindow, {
       type: 'question',
-      buttons: ['Quit', 'Cancel'],
+      buttons: ['退出', '取消'],
       defaultId: 1,
       cancelId: 1,
-      title: 'Confirm exit',
-      message: 'There are active sessions. Are you sure you want to quit?',
+      title: '确认退出',
+      message: '当前仍有活动会话，确定要退出吗？',
     })
     if (choice !== 0) e.preventDefault()
   })
@@ -257,27 +257,27 @@ ipcMain.handle('app:getAboutInfo', () => {
 
 function readLocalFileBytes(filePath: string): string {
   if (!filePath || typeof filePath !== 'string') {
-    throw new Error('File path is required')
+    throw new Error('文件路径为必填项')
   }
 
   if (!existsSync(filePath)) {
-    throw new Error('File not found')
+    throw new Error('文件未找到')
   }
 
   try {
     const fileStat = statSync(filePath)
     if (!fileStat.isFile()) {
-      throw new Error('Path is not a file')
+      throw new Error('路径不是文件')
     }
     const maxRawBytes = Math.floor((bufferConstants.MAX_STRING_LENGTH - 1024) * 3 / 4)
     if (fileStat.size > maxRawBytes) {
       const maxMiB = Math.floor(maxRawBytes / (1024 * 1024))
-      throw new Error(`File is too large (max ${maxMiB} MB)`)
+      throw new Error(`文件过大（最大 ${maxMiB} MB）`)
     }
 
     const data = readFileSync(filePath)
     if (!data.length) {
-      throw new Error('File is empty')
+      throw new Error('文件为空')
     }
 
     return data.toString('base64')
@@ -294,23 +294,23 @@ function readLocalFileBytes(filePath: string): string {
     switch (code) {
       case 'EACCES':
       case 'EPERM':
-        throw new Error('Permission denied')
+        throw new Error('权限不足')
       case 'EBUSY':
       case 'ETXTBSY':
-        throw new Error('File is in use')
+        throw new Error('文件被占用')
       case 'EISDIR':
-        throw new Error('Path is a directory')
+        throw new Error('路径是目录')
       case 'ENOTDIR':
-        throw new Error('Invalid file path')
+        throw new Error('文件路径无效')
       case 'ENOENT':
-        throw new Error('File not found')
+        throw new Error('文件未找到')
       case 'EMFILE':
       case 'ENFILE':
-        throw new Error('Too many open files')
+        throw new Error('打开的文件过多')
       case 'EFBIG':
-        throw new Error('File is too large')
+        throw new Error('文件过大')
       default:
-        throw new Error('Failed to read file')
+        throw new Error('读取文件失败')
     }
   }
 }
@@ -380,17 +380,17 @@ ipcMain.handle(
 
 function writeLocalFileBytes(filePath: string, base64: string): void {
   if (!filePath || typeof filePath !== 'string') {
-    throw new Error('File path is required')
+    throw new Error('文件路径为必填项')
   }
 
   const parentDir = dirname(filePath)
   if (!existsSync(parentDir)) {
-    throw new Error('Directory not found')
+    throw new Error('目录未找到')
   }
 
   try {
     if (!statSync(parentDir).isDirectory()) {
-      throw new Error('Invalid file path')
+      throw new Error('文件路径无效')
     }
     writeFileSync(filePath, Buffer.from(base64, 'base64'))
   } catch (error) {
@@ -406,21 +406,21 @@ function writeLocalFileBytes(filePath: string, base64: string): void {
     switch (code) {
       case 'EACCES':
       case 'EPERM':
-        throw new Error('Permission denied')
+        throw new Error('权限不足')
       case 'EBUSY':
       case 'ETXTBSY':
-        throw new Error('File is in use')
+        throw new Error('文件被占用')
       case 'EISDIR':
-        throw new Error('Path is a directory')
+        throw new Error('路径是目录')
       case 'ENOTDIR':
-        throw new Error('Invalid file path')
+        throw new Error('文件路径无效')
       case 'ENOENT':
-        throw new Error('Directory not found')
+        throw new Error('目录未找到')
       case 'EMFILE':
       case 'ENFILE':
-        throw new Error('Too many open files')
+        throw new Error('打开的文件过多')
       default:
-        throw new Error('Failed to save file')
+        throw new Error('保存文件失败')
     }
   }
 }
@@ -438,7 +438,7 @@ function writeStreamChunk(stream: WriteStream, data: Uint8Array): Promise<void> 
 }
 
 ipcMain.handle('file:downloadOpen', (_event, outputPath: string) => {
-  if (!outputPath) throw new Error('File path is required')
+  if (!outputPath) throw new Error('文件路径为必填项')
   const existing = downloadStreams.get(outputPath)
   if (existing) {
     existing.destroy()
@@ -450,7 +450,7 @@ ipcMain.handle('file:downloadOpen', (_event, outputPath: string) => {
 
 ipcMain.handle('file:downloadWrite', async (_event, payload: { outputPath: string; data: Uint8Array }) => {
   const stream = downloadStreams.get(payload.outputPath)
-  if (!stream) throw new Error('Download stream not open')
+  if (!stream) throw new Error('下载流未打开')
   await writeStreamChunk(stream, payload.data)
   return true
 })

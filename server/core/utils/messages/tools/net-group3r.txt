@@ -1,13 +1,13 @@
-ABOUT
+关于
     Enumerates Active Directory Group Policy settings and identifies exploitable
     misconfigurations. Queries domain controllers over LDAP, parses GPO files from SYSVOL,
     and inspects referenced scripts, MSI packages, and other files on shares.
 
-USAGE:
+用法：
     net-group3r --- -s [options]
     net-group3r --- -f <outfile> [options]
 
-OUTPUT:
+输出：
     -s          Send results to stdout (required unless -f is used)
     -f          Path for output file (required unless -s is used)
 
@@ -29,7 +29,7 @@ OTHER:
     -v, --verobsity    Verbosity: info, debug, degub, or trace
     -h, --help         Show help
 
-EXAMPLES:
+示例：
     net-group3r --- -s
     net-group3r --- -f group3r.log -w
     net-group3r --- -s -a 4

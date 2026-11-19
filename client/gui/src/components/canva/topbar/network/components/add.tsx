@@ -59,7 +59,7 @@ export default function AddNetworkPanel({
     <div className="flex flex-col h-full min-h-0 min-w-[32rem]">
       <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a] shrink-0">
         <span className="text-[13.5px] font-semibold text-[#cecece] tracking-wide">
-          New Connection
+          新建连接
         </span>
         <button
           onClick={handleClosePanel}
@@ -80,7 +80,7 @@ export default function AddNetworkPanel({
         />
 
         <div className="mb-4 space-y-1.5">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Type</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">类型</label>
           <Select
             value={formData.networkType}
             onValueChange={(v) =>
@@ -91,8 +91,8 @@ export default function AddNetworkPanel({
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="port_forwarding">port forwarding</SelectItem>
-              <SelectItem value="socks">socks</SelectItem>
+              <SelectItem value="port_forwarding">端口转发</SelectItem>
+              <SelectItem value="socks">SOCKS</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -111,7 +111,7 @@ export default function AddNetworkPanel({
           onClick={handleClosePanel}
           className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer"
         >
-          Cancel
+          取消
         </button>
         <button
           type="button"
@@ -120,7 +120,7 @@ export default function AddNetworkPanel({
           className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
         >
           {submitting && <RefreshCw size={10} className="animate-spin" />}
-          Create
+          创建
         </button>
       </div>
     </div>

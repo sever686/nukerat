@@ -38,7 +38,7 @@ async def main(body, tag):
     config = body["config"]
 
     if config["arch"] not in arch:
-        return {"status": "failure", "message": f"Unsupported arch '{config['arch']}'"}
+        return {"status": "failure", "message": f"不支持的架构 '{config['arch']}'"}
 
     src = None
     try:

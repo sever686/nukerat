@@ -139,8 +139,8 @@ async def handle_download_queue_command(input_text, verb, source_terminal):
     if verb == "download list":
         rows = list(download_queue.values())
         if not rows:
-            return reply("success", "No active downloads.", source_terminal)
-        lines = [f"Active downloads ({len(rows)})", ""]
+            return reply("success", "没有活动下载。", source_terminal)
+        lines = [f"活动下载（{len(rows)}）", ""]
         for row in rows:
             received = int(row.get("received_bytes") or 0)
             total = int(row.get("total_bytes") or 0)
@@ -161,9 +161,9 @@ async def handle_download_queue_command(input_text, verb, source_terminal):
             lines.extend([
                 f"[*] {row.get('id', '—')}",
                 "",
-                f"File      :  {row.get('file_name') or 'download'}",
-                f"Status    :  {'active' if row.get('active') else 'inactive'}",
-                f"Progress  :  {prog}",
+                f"文件      :  {row.get('file_name') or 'download'}",
+                f"状态      :  {'活动' if row.get('active') else '非活动'}",
+                f"进度      :  {prog}",
                 "",
             ])
         return reply("success", "\n".join(lines).rstrip(), source_terminal)
@@ -171,11 +171,11 @@ async def handle_download_queue_command(input_text, verb, source_terminal):
     if verb == "download delete":
         match = re.search(r"--id\s+(\S+)", input_text)
         if not match:
-            return reply("failure", "Usage: download delete --id <id>", source_terminal)
+            return reply("failure", "用法：download delete --id <id>", source_terminal)
         item_id = match.group(1)
         row = download_queue_read(item_id)
         if not row:
-            return reply("failure", f"Download id not found: {item_id}", source_terminal)
+            return reply("failure", f"未找到下载 id：{item_id}", source_terminal)
         host_tag = (row.get("host_tag") or "").strip()
         cmd_tag = (row.get("cmd_tag") or "").strip()
         await delete_tmp_and_dict(
@@ -185,6 +185,6 @@ async def handle_download_queue_command(input_text, verb, source_terminal):
             source_terminal=source_terminal,
             kill_implant=False,
         )
-        return reply("success", f"Download {item_id} removed.", source_terminal)
+        return reply("success", f"下载 {item_id} 已移除。", source_terminal)
 
-    return reply("failure", "Unknown download queue command.", source_terminal)
+    return reply("failure", "未知的下载队列命令。", source_terminal)

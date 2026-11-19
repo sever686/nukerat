@@ -33,7 +33,7 @@ const AgentFormPanel = ({
     <div className="flex flex-col h-full min-h-0 min-w-[32rem]">
       <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a] shrink-0">
         <span className="text-[13.5px] font-medium text-[#cecece] tracking-wide">
-          {mode === "add" ? "New Agent" : `Edit - ${selectedName ?? ""}`}
+          {mode === "add" ? "新建智能体" : `编辑 - ${selectedName ?? ""}`}
         </span>
         <button
           onClick={handleClosePanel}
@@ -45,12 +45,12 @@ const AgentFormPanel = ({
 
       <div className="flex-1 min-h-0 min-w-0 overflow-y-auto px-4 py-4">
         <div className="mb-3 space-y-1.5">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Name</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">名称</label>
           <input
             className="w-full bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] transition-colors placeholder:text-[#444]"
             value={formData.name}
             onChange={(e) => handleFormChange("name", e.target.value)}
-            placeholder="Agent name"
+            placeholder="智能体名称"
             autoComplete="off"
             spellCheck={false}
           />
@@ -66,7 +66,7 @@ const AgentFormPanel = ({
         />
 
         <div className="mb-4 space-y-1.5">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Type</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">类型</label>
           <Select
             value={formData.type}
             onValueChange={(v) => handleFormChange("type", v as AgentType)}
@@ -75,7 +75,7 @@ const AgentFormPanel = ({
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="custom">Custom</SelectItem>
+              <SelectItem value="custom">自定义</SelectItem>
               <SelectItem value="deepseek">DeepSeek</SelectItem>
             </SelectContent>
           </Select>
@@ -83,7 +83,7 @@ const AgentFormPanel = ({
 
         {formData.type === "deepseek" ? (
           <div className="space-y-1.5">
-            <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">API Key</label>
+            <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">API 密钥</label>
             <input
               className="w-full bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] transition-colors placeholder:text-[#444] font-mono"
               value={formData.apiKey}
@@ -96,7 +96,7 @@ const AgentFormPanel = ({
         ) : (
           <>
             <div className="mb-3 space-y-1.5">
-              <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Endpoint</label>
+              <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">端点</label>
               <input
                 className="w-full bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] transition-colors placeholder:text-[#444]"
                 value={formData.endpoint}
@@ -107,7 +107,7 @@ const AgentFormPanel = ({
               />
             </div>
             <div className="mb-3 space-y-1.5">
-              <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Request Body</label>
+              <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">请求体</label>
               <textarea
                 className="w-full bg-[#212121] border border-[#363636] h-[12rem] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] transition-colors placeholder:text-[#444] resize-w ![font-family:'Mona_Sans_Mono',ui-monospace,monospace] leading-relaxed"
                 value={formData.bodyTemplate}
@@ -123,7 +123,7 @@ const AgentFormPanel = ({
                   style={{width: "70px"}}
                   className={kvRowButtonClass}
                 >
-                  Clear
+                  清除
                 </button>
                 <button
                   type="button"
@@ -135,19 +135,19 @@ const AgentFormPanel = ({
                         JSON.stringify(JSON.parse(formData.bodyTemplate), null, 4)
                       );
                     } catch {
-                      toast.error("Invalid JSON");
+                      toast.error("无效的 JSON");
                     }
                   }}
                   className={kvRowButtonClass}
                 >
-                  Format
+                  格式
                 </button>
               </div>
             </div>
             <Separator className="bg-[#252525] mb-4 mt-4" />
             <KeyValueEditor
               className="implant-kv-table mb-4"
-              label="Custom headers"
+              label="自定义请求头"
               items={formData.headers}
               onChange={(next) => handleFormChange("headers", next)}
               keyPlaceholder="Header"
@@ -155,14 +155,14 @@ const AgentFormPanel = ({
             />
             <KeyValueEditor
               className="implant-kv-table mb-3"
-              label="Custom cookies"
+              label="自定义 Cookie"
               items={formData.cookies}
               onChange={(next) => handleFormChange("cookies", next)}
               keyPlaceholder="Cookie"
               valuePlaceholder="Value"
             />
             <div className="space-y-1.5">
-              <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Response Field</label>
+              <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">响应字段</label>
               <input
                 className="w-full bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] transition-colors placeholder:text-[#444] font-mono"
                 value={formData.responseField}
@@ -182,7 +182,7 @@ const AgentFormPanel = ({
           onClick={handleClosePanel}
           className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#444] bg-[#232323] px-3 text-[13px] text-[#c8c8c8] hover:bg-[#2b2b2b] cursor-pointer"
         >
-          Cancel
+          取消
         </button>
         <button
           type="button"

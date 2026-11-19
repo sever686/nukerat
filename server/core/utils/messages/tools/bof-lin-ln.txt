@@ -1,20 +1,20 @@
-ABOUT
+关于
     (linux) Create links.
 
-USAGE:
+用法：
     bof-lin-ln --- <target> <linkname> [options]
 
-ARGUMENTS:
+参数：
     target              Link target
     linkname            Link name
     options             Flags: s (symbolic) (choices: s)
 
-EXAMPLES:
+示例：
     bof-lin-ln --- <target> <linkname>
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-lin-ln -w 60 --- <target> <linkname>

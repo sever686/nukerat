@@ -1,15 +1,15 @@
-ABOUT
+关于
     Multi threaded C# version of WebDAV status checking. Probes remote systems for the
     Web Client service via the DAV RPC SERVICE named pipe. Does not require admin rights
     on the target but requires valid credentials.
 
-USAGE:
+用法：
     net-webdav-status --- <hosts> [--tc <threads>]
 
-ARGUMENTS:
+参数：
     hosts       Comma separated list of hostnames or IPs to scan
     --tc        Optional maximum thread count (default: 5)
 
-EXAMPLES:
+示例：
     net-webdav-status --- server01,server02
     net-webdav-status --- server01,server02,server03 --tc 1

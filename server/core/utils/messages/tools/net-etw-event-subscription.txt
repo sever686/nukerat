@@ -1,9 +1,9 @@
-ABOUT
+关于
     ETW-based event subscription similar to WMI events. Triggers on user logon or process start.
 
-USAGE:
+用法：
     net-etw-event-subscription --- -UserLogon | -ProcStart <keyword>
 
-EXAMPLES:
+示例：
     net-etw-event-subscription --- -UserLogon
     net-etw-event-subscription --- -ProcStart notepad

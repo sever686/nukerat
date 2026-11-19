@@ -1,8 +1,8 @@
-ABOUT
+关于
     Installs a user-supplied SSP DLL on the system for LSA to load on boot. DLL must export SpLsaModeInitialize.
 
-USAGE:
+用法：
     net-implant-ssp --- <dll_path>
 
-EXAMPLES:
+示例：
     net-implant-ssp --- C:\Windows\Temp\evil.dll

@@ -1,19 +1,19 @@
-ABOUT
-    Run a PowerShell script or command with no profile and non interactive mode.
+关于
+    以无配置文件、非交互模式运行 PowerShell 脚本或命令。
 
-USAGE:
+用法：
     powershell <scriptorcommand>
 
-ARGUMENTS:
-    <script>            PowerShell script or command.
+参数：
+    <script>            PowerShell 脚本或命令。
 
-EXAMPLES:
+示例：
     powershell Get-Process
     powershell whoami
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     powershell -w 120 Get-ChildItem C:\Users

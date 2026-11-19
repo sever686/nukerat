@@ -1,21 +1,21 @@
-ABOUT
+关于
     Patch and revert the EtwEventWrite function in ntdll.dll to degrade ETW
     based logging.
-USAGE:
+用法：
     bof-etw --- start
     bof-etw --- stop
 
-COMMANDS:
+命令：
     start               Revert ETW patching (restore EtwEventWrite)
     stop                Patch EtwEventWrite to stop ETW logging
 
-EXAMPLES:
+示例：
     bof-etw --- stop
     bof-etw --- start
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-etw -w 60 --- stop

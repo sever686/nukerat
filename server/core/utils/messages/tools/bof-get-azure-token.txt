@@ -1,10 +1,10 @@
-ABOUT
+关于
     Attempts to complete an OAuth authorization code flow against Azure using saved browser logins and prints returned tokens.
 
-USAGE:
+用法：
     bof-get-azure-token --- <CLIENT_ID> <SCOPE> <BROWSER> [HINT] [BROWSER_PATH]
 
-ARGUMENTS:
+参数：
 
     CLIENT_ID     Azure application client ID (must accept http://localhost redirect)
 
@@ -16,13 +16,13 @@ ARGUMENTS:
 
     BROWSER_PATH  Optional full path to browser executable
 
-EXAMPLES:
+示例：
 
     bof-get-azure-token --- 1950a258-227b-4e31-a9cf-717495945fc2 "74658136-14ec-4630-ad9b-26e160ff0fc6/user_impersonation offline_access openid profile" 2 "user@domain.com"
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-get-azure-token -w 60 --- 1950a258-227b-4e31-a9cf-717495945fc2 "74658136-14ec-4630-ad9b-26e160ff0fc6/user_impersonation offline_access openid profile" 2 "user@domain.com"

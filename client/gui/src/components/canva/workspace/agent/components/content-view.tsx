@@ -70,7 +70,7 @@ function SubmittingRow({ onCancel }: { onCancel: () => void }) {
               />
             ))}
           </span>
-          <span>Thinking</span>
+          <span>思考中</span>
         </div>
         <span className="h-3 w-px shrink-0 bg-[#333]" aria-hidden="true" />
         <button
@@ -82,10 +82,10 @@ function SubmittingRow({ onCancel }: { onCancel: () => void }) {
           }}
           type="button"
           onClick={onCancel}
-          title="Cancel request"
+          title="取消请求"
           className="button-default flex text-left items-center gap-1.5 rounded px-1 py-0.5 text-[12px] text-[#7a7a7a] hover:text-[#c97070] transition-colors cursor-pointer"
         >
-          Stop
+          停止
         </button>
       </div>
     </div>

@@ -1,8 +1,8 @@
-ABOUT
+关于
     Decrypts DPAPI masterkeys, credentials, vaults, certificates, RDG,
     KeePass, SCCM secrets, and Chrome/Edge browser data.
 
-USAGE:
+用法：
     net-sharp-dpapi --- <command> [options]
 
 USER TRIAGE:
@@ -32,14 +32,14 @@ SHARPCHROME:
     cookies             Decrypt Chrome/Edge cookies
     statekeys           Decrypt Chrome/Edge state keys
 
-DECRYPTION OPTIONS:
+DECRYPTION 选项：
     /pvk:key.pvk        Domain DPAPI backup key
     /password:X         User password for masterkey decryption
     /ntlm:X             NTLM hash for masterkey decryption
     /rpc                Ask DC to decrypt masterkeys
     /server:HOST        Remote server triage (admin required)
 
-EXAMPLES:
+示例：
     net-sharp-dpapi --- triage
     net-sharp-dpapi --- credentials /pvk:backup.pvk
     net-sharp-dpapi --- backupkey /server:dc01.corp.local

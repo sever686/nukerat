@@ -1,16 +1,16 @@
-ABOUT
+关于
     Command-line tool for managing certificates in Microsoft Exchange
     Server. LOLBAS documents remote payload download into INetCache.
 
-USAGE:
+用法：
     ECMangen.exe {REMOTEURL}
 
-EXAMPLES:
+示例：
     ECMangen.exe {REMOTEURL}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     ECMangen.exe {REMOTEURL}

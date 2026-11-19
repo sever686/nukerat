@@ -24,13 +24,13 @@ export const implantBases = ["stageless", "loader"] as const;
 export type ImplantBase = (typeof implantBases)[number];
 
 export const implantBaseLabels: Record<ImplantBase, string> = {
-  stageless: "Stageless",
-  loader: "Loader",
+  stageless: "无阶段",
+  loader: "加载器",
 };
 
 function buildErrorText(res: any) {
   const log = [res.stderr, res.stdout].map((s) => s?.trim()).filter(Boolean).join("\n\n");
-  return log || formatToastMessage(res.message ?? res.error ?? "Request failed");
+  return log || formatToastMessage(res.message ?? res.error ?? "请求失败");
 }
 
 export function PeTimestampField({
@@ -99,14 +99,14 @@ export function PeTimestampField({
         autoComplete="off"
         spellCheck={false}
         maxLength={8}
-        aria-label="TimeDateStamp"
+        aria-label="时间戳"
       />
       <Popover>
         <PopoverTrigger asChild>
           <button
             type="button"
             className="h-[28px] min-w-[28px] button-default bg-[#212121] border border-[#363636] text-[#cecece] rounded px-1.5 flex items-center justify-center cursor-pointer"
-            aria-label="Open calendar"
+            aria-label="打开日历"
           >
             <CalendarDays className="size-3.5 shrink-0 text-[#888]" />
             <ChevronDown className="size-3 shrink-0 text-[#666] ml-0.5" />
@@ -184,7 +184,7 @@ export function useImplantsPanel() {
       URL.revokeObjectURL(url);
     }
 
-    toast.success(res.message ?? "Build completed");
+    toast.success(res.message ?? "构建完成");
   };
 
   return {

@@ -1,9 +1,9 @@
-ABOUT
+关于
     Executes a custom SQL query on a remote SQL server.
 
-USAGE:
+用法：
     bof-sql-query --- <server> [database] [linkedserver] [impersonate] <query>
 
-EXAMPLES:
+示例：
     bof-sql-query --- SQL01 master LINKED01 dbo SELECT name FROM sys.databases
     bof-sql-query --- SQL01 master SELECT @@version

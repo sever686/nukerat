@@ -60,7 +60,7 @@ def _download_progress_event(received: int, total: int, source_terminal: str) ->
 async def wait_response(cmd_tag, host_tag, command, source_terminal, params):
     # Waits for the terminal output or a timeout
     if params.get("bg"):
-        return reply("success", "Successfully executed in background.", source_terminal)
+        return reply("success", "已在后台成功执行。", source_terminal)
     if params.get("wait") is not None:
         delay = int(params["wait"])
     else:
@@ -81,19 +81,19 @@ async def wait_response(cmd_tag, host_tag, command, source_terminal, params):
             return reply("success", out, source_terminal)
         await asyncio.sleep(1)
 
-    return reply("failure", "Implant request timeout", source_terminal)
+    return reply("failure", "植入体请求超时", source_terminal)
 
 
 async def wait_download_response(cmd_tag, host_tag, source_terminal, params, request=None):
     # Streams the download progress and the file chunks
     done_path = None
     download_id = params.get("download_id")
-    cancel_msg = "Download cancelled\n"
+    cancel_msg = "下载已取消\n"
 
     if params.get("bg"):
         yield json.dumps({
             "status": "success",
-            "message": "Successfully executed in background.",
+            "message": "已在后台成功执行。",
             "source_terminal": source_terminal,
         }, ensure_ascii=False) + "\n"
         return
@@ -193,7 +193,7 @@ async def wait_download_response(cmd_tag, host_tag, source_terminal, params, req
             )
         yield json.dumps({
             "status": "failure",
-            "message": "Download timed out waiting for the next chunk from implant",
+            "message": "等待植入体下一个数据块超时",
             "source_terminal": source_terminal,
         }, ensure_ascii=False) + "\n"
         return
@@ -227,7 +227,7 @@ async def wait_download_response(cmd_tag, host_tag, source_terminal, params, req
             if not piece:
                 yield json.dumps({
                     "status": "failure",
-                    "message": "Download stream interrupted",
+                    "message": "下载流已中断",
                     "source_terminal": source_terminal,
                 }, ensure_ascii=False) + "\n"
                 return
@@ -244,7 +244,7 @@ async def wait_download_response(cmd_tag, host_tag, source_terminal, params, req
 
     yield json.dumps({
         "status": "success",
-        "message": "Download complete",
+        "message": "下载完成",
         "download": True,
         "source_terminal": source_terminal,
     }, ensure_ascii=False) + "\n"

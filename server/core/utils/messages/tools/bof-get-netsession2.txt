@@ -1,14 +1,14 @@
-ABOUT
+关于
     Modified version of `netsession` that supports BOFHound
 
-USAGE:
+用法：
     bof-get-netsession2 --- [opt:computer] [opt:resolution method] [opt:dns server]
 
-EXAMPLES:
+示例：
     bof-get-netsession2
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-get-netsession2 -w 60 --- [opt:computer] [opt:resolution method] [opt:dns server]

@@ -257,7 +257,7 @@ export const deleteReportRequest = async (
 
   let lastError: { status: string; message?: string } = {
     status: "failure",
-    message: "Request failed",
+    message: "请求失败",
   };
 
   for (const entry of servers) {

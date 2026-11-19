@@ -1,19 +1,19 @@
-ABOUT
+关于
     (linux) Recursive directory tree listing.
 
-USAGE:
+用法：
     bof-lin-tree --- [path] [options] [depth]
 
-ARGUMENTS:
+参数：
     path                Root path (default: .)
     options             Flags: a (all), d (dirs only), F (full paths) (choices: a|d|F|ad|aF|dF|adF)
     depth               Max depth
 
-EXAMPLES:
+示例：
     bof-lin-tree
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-lin-tree -w 60 --- [path] [options] [depth]

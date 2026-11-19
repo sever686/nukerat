@@ -1,19 +1,19 @@
-ABOUT
+关于
     Windows utility to manipulate registry. LOLBAS documents hide
     registry data in alternate data stream and import hidden
     registry data from alternate data stream.
 
-USAGE:
+用法：
     regedit /E {PATH_ABSOLUTE}:regfile.reg HKEY_CURRENT_USER\MyCustomRegKey
     regedit {PATH_ABSOLUTE}:regfile.reg
 
-EXAMPLES:
+示例：
     regedit /E {PATH_ABSOLUTE}:regfile.reg HKEY_CURRENT_USER\MyCustomRegKey
     regedit {PATH_ABSOLUTE}:regfile.reg
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     regedit /E {PATH_ABSOLUTE}:regfile.reg HKEY_CURRENT_USER\MyCustomRegKey

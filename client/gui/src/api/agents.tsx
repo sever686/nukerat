@@ -114,7 +114,7 @@ export const DataFetch = async (
       lastError ?? {
         status: "failure",
         type,
-        message: "Request failed",
+        message: "请求失败",
       }
     );
   } catch (error) {
@@ -201,7 +201,7 @@ const mutateAgentRequest = async (
 
   let lastError: { status: string; message?: string } = {
     status: "failure",
-    message: "Request failed",
+    message: "请求失败",
   };
 
   for (const server of servers) {
@@ -248,7 +248,7 @@ export const saveAgentRequest = (
   selectedServer?: string
 ) => {
   if (type === "update") {
-    if (!tag?.trim()) return Promise.resolve({ status: "failure", message: "Tag required" });
+    if (!tag?.trim()) return Promise.resolve({ status: "failure", message: "需要标签" });
     return mutateAgentRequest(tag, "PATCH", selectedServer, { config: buildConfig(data) });
   }
   return DataFetch("create", { config: buildConfig(data) }, selectedServer);

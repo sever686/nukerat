@@ -22,13 +22,13 @@ import { formatNukeScript } from "./format";
 export type PanelMode = "add" | "edit" | null;
 
 export const TABLE_COLUMNS = [
-  "Status",
-  "Name",
-  "Server",
-  "Description",
-  "Errors",
-  utcTableColumnTitle("Last Run"),
-  utcTableColumnTitle("Created"),
+  "状态",
+  "名称",
+  "服务器",
+  "描述",
+  "错误",
+  utcTableColumnTitle("上次运行"),
+  utcTableColumnTitle("创建时间"),
 ] as const;
 
 export const formatUtc = (raw?: string | null) => formatUtcDateOnly(raw);
@@ -236,7 +236,7 @@ export function useScriptsPanel() {
       setSubmitting(false);
       if (reportFailure(res)) return;
       setScriptError(null);
-      toast.success(res?.message ?? (panelMode === "add" ? "Script created" : "Script updated"));
+      toast.success(res?.message ?? (panelMode === "add" ? "脚本已创建" : "脚本已更新"));
       closePanel();
       await loadScripts();
     },
@@ -248,7 +248,7 @@ export function useScriptsPanel() {
       setSubmitting(false);
       if (reportFailure(res)) return;
       setScriptError(null);
-      toast.success(res?.message ?? "Script removed");
+      toast.success(res?.message ?? "脚本已移除");
       setShowRemoveConfirm(false);
       setSelectedTag(null);
       await loadScripts();
@@ -261,7 +261,7 @@ export function useScriptsPanel() {
       setSubmitting(false);
       if (reportFailure(res)) return;
       setScriptError(null);
-      toast.success(res?.message ?? "Script updated");
+      toast.success(res?.message ?? "脚本已更新");
       await loadScripts();
     },
     handleRefresh: () => loadScripts(true),

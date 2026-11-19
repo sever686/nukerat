@@ -1,16 +1,16 @@
-ABOUT
+关于
     Part of the NodeJS Visual Studio tools. LOLBAS documents spawn a new
     process via Microsoft.NodejsTools.PressAnyKey.exe.
 
-USAGE:
+用法：
     Microsoft.NodejsTools.PressAnyKey.exe normal 1 {PATH:.exe}
 
-EXAMPLES:
+示例：
     Microsoft.NodejsTools.PressAnyKey.exe normal 1 {PATH:.exe}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     Microsoft.NodejsTools.PressAnyKey.exe normal 1 {PATH:.exe}

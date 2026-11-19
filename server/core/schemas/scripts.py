@@ -49,7 +49,7 @@ class CreateScriptRequest(BaseModel):
     def content_not_empty(cls, value: str):
         # Rejects the script when the content is empty
         if not value.strip():
-            raise ValueError("content is required")
+            raise ValueError("content 为必填项")
         return value
 
 
@@ -84,15 +84,15 @@ class PatchScriptRequest(BaseModel):
         if value is None:
             return value
         if isinstance(value, bool):
-            raise ValueError("status must be 0 or 1")
+            raise ValueError("status 必须为 0 或 1")
         if isinstance(value, str):
             value = value.strip()
             if value not in ("0", "1"):
-                raise ValueError("status must be 0 or 1")
+                raise ValueError("status 必须为 0 或 1")
             return int(value)
         if isinstance(value, int) and value in (0, 1):
             return value
-        raise ValueError("status must be 0 or 1")
+        raise ValueError("status 必须为 0 或 1")
 
     @model_validator(mode="after")
     def require_content_or_status(self):
@@ -100,7 +100,7 @@ class PatchScriptRequest(BaseModel):
         if self.status is not None:
             return self
         if self.content is None or not self.content.strip():
-            raise ValueError("content is required")
+            raise ValueError("content 为必填项")
         return self
 
 

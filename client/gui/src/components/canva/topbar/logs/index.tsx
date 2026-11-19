@@ -21,7 +21,7 @@ const LogsPanel = () => {
             onClick={p.cancelLoading}
             className="mt-2 text-[13.5px] text-[#3a3a3a] cursor-pointer select-none hover:text-[#4a4a4a]"
           >
-            Cancel
+            取消
           </span>
         </div>
       );
@@ -30,24 +30,24 @@ const LogsPanel = () => {
       return (
         <div className="flex-1 min-h-0 flex items-center justify-center text-[#444] text-[13.5px] bg-[#171717]">
           <RefreshCw size={14} className="animate-spin mr-2" />
-          Loading...
+          加载中...
         </div>
       );
     }
     if (!p.serverId) {
-      return <PanelEmptyState>Select a server to view logs</PanelEmptyState>;
+      return <PanelEmptyState>选择服务器以查看日志</PanelEmptyState>;
     }
     if (p.entries.length === 0) {
       return (
         <div className="flex flex-1 flex-col items-center justify-center min-h-0 gap-1">
-          <span className={panelEmptyTextClass}>No log entries</span>
+          <span className={panelEmptyTextClass}>暂无日志条目</span>
           {p.hasActiveFilters && (
             <button
               type="button"
               onClick={p.clearFilters}
               className="button-default text-[12px] text-[#555] hover:text-[#aaa] transition-colors cursor-pointer"
             >
-              Reset filters
+              重置筛选
             </button>
           )}
         </div>
@@ -88,12 +88,12 @@ const LogsPanel = () => {
               onClick={() => p.setPanelOpen(true)}
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
             >
-              <Eye size={11} /> View
+              <Eye size={11} /> 查看
             </button>
             <div className="ml-auto flex shrink-0 items-center gap-2">
               {p.total > 0 && !p.loading && (
                 <span className="text-nowrap text-[13px] tabular-nums text-[#444]">
-                  Page {p.page} / {p.pageCount}
+                  页码 {p.page} / {p.pageCount}
                 </span>
               )}
               <button
@@ -119,7 +119,7 @@ const LogsPanel = () => {
                 className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
               >
                 <RefreshCw size={11} className={p.loading ? "animate-spin" : ""} />
-                Update
+                更新
               </button>
             </div>
           </div>

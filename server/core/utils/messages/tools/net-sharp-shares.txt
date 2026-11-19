@@ -1,11 +1,11 @@
-ABOUT
+关于
     Multithreaded C# assembly to enumerate accessible network shares in a domain.
     Queries LDAP for targets and checks read/write access on discovered shares.
 
-USAGE:
+用法：
     net-sharp-shares --- [/threads:N] [/ldap:filter] [options]
 
-OPTIONS:
+选项：
     /threads:N    Maximum parallel threads (default: 25)
     /dc           Domain controller to query
     /domain       Domain name
@@ -16,7 +16,7 @@ OPTIONS:
     /outfile      Write results to file instead of stdout
     /verbose      Show unauthorized shares
 
-EXAMPLES:
+示例：
     net-sharp-shares    net-sharp-shares --- /ldap:all /threads:50
     net-sharp-shares --- /ldap:servers /ou:"OU=Special Servers,DC=corp,DC=local" /verbose
     net-sharp-shares --- /ldap:all /filter:sysvol,netlogon,ipc$,print$ /outfile:C:\\shares.txt

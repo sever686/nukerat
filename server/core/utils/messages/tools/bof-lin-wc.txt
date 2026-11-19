@@ -1,20 +1,20 @@
-ABOUT
+关于
     (linux) Word, line, byte count.
 
-USAGE:
+用法：
     bof-lin-wc --- [file] [options]
 
-ARGUMENTS:
+参数：
     file                Input file
     options             Flags: l (lines), w (words), c (bytes) (choices: l|w|c|lw|lc|wc|lwc)
 
 Supports pipe chaining with other BusyBOF tools.
 
-EXAMPLES:
+示例：
     bof-lin-wc
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-lin-wc -w 60 --- [file] [options]

@@ -1,17 +1,17 @@
-ABOUT
+关于
     Queries Windows Security Center health status, including Anti Virus, Firewall, Anti Spyware,
     WSC Service, Auto Update, Internet Settings, and User Account Control.
 
-USAGE:
+用法：
     bof-wsc-status
 
-EXAMPLES:
+示例：
     bof-wsc-status
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-wsc-status -w 60
     bof-wsc-status -bg

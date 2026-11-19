@@ -1,12 +1,12 @@
-ABOUT
+关于
     Executes a system command using OLE automation procedures on a SQL server.
 
-USAGE:
+用法：
     bof-sql-olecmd --- <server> <command> [database] [linkedserver] [impersonate]
 
-EXAMPLES:
+示例：
     bof-sql-olecmd --- SQL01 whoami
     bof-sql-olecmd --- SQL01 cmd.exe /c whoami master
 
-NOTES:
+备注：
     Output is not returned.

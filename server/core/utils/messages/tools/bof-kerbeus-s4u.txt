@@ -1,14 +1,14 @@
-ABOUT
+关于
     Perform S4U2self and S4U2proxy constrained delegation abuse.
-USAGE:
+用法：
     bof-kerbeus-s4u --- /ticket:BASE64 /service:SPN {/impersonateuser:USER | /tgs:BASE64} [/domain:DOMAIN] [/dc:DC] [/altservice:SERVICE] [/ptt] [/nopac] [/opsec] [/self]
 
-EXAMPLES:
+示例：
     bof-kerbeus-s4u --- /ticket:BASE64 /service:cifs/target /impersonateuser:admin /ptt
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-kerbeus-s4u -w 60 --- /ticket:BASE64 /service:cifs/target /impersonateuser:admin /ptt

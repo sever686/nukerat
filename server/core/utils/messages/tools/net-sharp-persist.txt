@@ -1,12 +1,12 @@
-ABOUT
+关于
     Windows persistence toolkit supporting registry keys, scheduled tasks, startup
     folder LNK files, KeePass config backdoor, Windows services, Tortoise SVN hooks,
     and scheduled task backdoors with add, remove, check, and list operations.
 
-USAGE:
+用法：
     net-sharp-persist --- -t <technique> -m <method> [options]
 
-OPTIONS:
+选项：
     -t    Persistence technique
     -c    Command to execute
     -a    Arguments for the command
@@ -30,7 +30,7 @@ TECHNIQUES (-t):
 REGISTRY KEYS (-k):
     hklmrun, hklmrunonce, hklmrunonceex, hkcurun, hkcurunonce, logonscript, stickynotes, userinit
 
-EXAMPLES:
+示例：
     net-sharp-persist --- -t reg -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" -k hkcurun -v "Test" -m add
     net-sharp-persist --- -t schtask -c "C:\Windows\System32\cmd.exe" -a "/c whoami" -n "Some Task" -m add -o hourly
     net-sharp-persist --- -t service -c "C:\Windows\System32\cmd.exe" -a "/c calc.exe" -n "Some Service" -m add

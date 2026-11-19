@@ -1,4 +1,4 @@
-ABOUT
+关于
     Searches the local workstation for low hanging credential artifacts and useful escalation
     information. Runs all built in checks with no arguments.
 
@@ -10,7 +10,7 @@ CHECKS:
     AWS, Azure, and Google Cloud credential files
     RDP, PuTTY, SuperPuTTY, WinSCP, FileZilla, VNC, TeamViewer, and PulseSecure saved data
 
-USAGE:
+用法：
     net-gopher
-EXAMPLES:
+示例：
     net-gopher

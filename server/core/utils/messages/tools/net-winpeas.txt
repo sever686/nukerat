@@ -1,11 +1,11 @@
-ABOUT
+关于
     Windows Privilege Escalation Awesome Script. Enumerates misconfigurations, vulnerable
     services, credentials, AV/EDR, network, AD, and privilege escalation vectors on Windows.
 
-USAGE:
+用法：
     net-winpeas --- [options] [modules]
 
-OPTIONS:
+选项：
     -h                            Show help
     notcolor                      Disable colored output
     domain                        Enumerate domain information
@@ -16,10 +16,10 @@ OPTIONS:
     -linpeas=<url>                Run linpeas.sh in WSL (optional custom URL)
     -lolbas                       Run LOLBAS search check
 
-MODULES:
+模块：
     systeminfo userinfo ...       Run only specified check modules (default: all)
 
-EXAMPLES:
+示例：
     net-winpeas    net-winpeas --- systeminfo userinfo
     net-winpeas --- domain
     net-winpeas --- notcolor log

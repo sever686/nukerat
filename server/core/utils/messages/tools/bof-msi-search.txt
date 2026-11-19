@@ -1,15 +1,15 @@
-ABOUT
+关于
     Scans C:\Windows\Installer\ for cached MSI files and lists them with
     their associated software names. Helps identify MSI installers for local
     privilege escalation research via MSI repair vulnerabilities.
-USAGE:
+用法：
     bof-msi-search
-EXAMPLES:
+示例：
     bof-msi-search
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-msi-search -w 60
     bof-msi-search -bg

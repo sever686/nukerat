@@ -29,37 +29,37 @@ nukerat_cmd = Path(sys.argv[0]).name
 server_root = root / "server"
 client_root = root / "client" / "gui"
 
-nukerat_help = f"""USAGE:
-    {nukerat_cmd} <mode> <command> ...
+nukerat_help = f"""用法：
+    {nukerat_cmd} <模式> <命令> ...
 
-MODES
-    server                             Server mode
-    client                             Client mode
+模式
+    server                             服务端模式
+    client                             客户端模式
 
-COMMANDS
-    help                               Show this help message
-    version                            Show version of the server and client
+命令
+    help                               显示此帮助信息
+    version                            显示服务端和客户端版本
 
-    server start                       Start server
-    client start                       Start client
+    server start                       启动服务端
+    client start                       启动客户端
 
-    server config list                 List server config
-    server config set <key> <value>    Set server config
-    server config reset <key>          Reset server config to default
-    server config load <file>          Load server config from file
-    server config create-tls           Create a self signed cert and enable TLS
+    server config list                 列出服务端配置
+    server config set <key> <value>    设置服务端配置
+    server config reset <key>          将配置项重置为默认值
+    server config load <file>          从文件加载服务端配置
+    server config create-tls           创建自签名证书并启用 TLS
 
-    server key list                    List operators keys
-    server key add john                Create operator key
-    server key rem john                Remove operator key
+    server key list                    列出操作员密钥
+    server key add john                创建操作员密钥
+    server key rem john                移除操作员密钥
 
-    server venv list                   List installed python packages
-    server venv install <package>      Install a python package
-    server venv uninstall <package>    Uninstall a python package
-    
-    server db usage                    Show database information
-    server db export <path>            Export database to a file
-    server db import <file>            Import database from a file
+    server venv list                   列出已安装的 Python 包
+    server venv install <package>      安装 Python 包
+    server venv uninstall <package>    卸载 Python 包
+
+    server db usage                    显示数据库信息
+    server db export <path>            将数据库导出到文件
+    server db import <file>            从文件导入数据库
 """
 
 # FUNCTIONS ======================================================================================
@@ -74,7 +74,7 @@ def is_root():
 def client():
     if os.name == "nt":
         if not (client_root / "dist" / "win-unpacked" / "nukerat.exe").is_file():
-            print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] Client executable not found: {client_root / 'dist' / 'win-unpacked' / 'nukerat.exe'}", file=sys.stderr)
+            print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] 未找到客户端可执行文件：{client_root / 'dist' / 'win-unpacked' / 'nukerat.exe'}", file=sys.stderr)
             sys.exit(1)
         os.execv(str(client_root / "dist" / "win-unpacked" / "nukerat.exe"), [str(client_root / "dist" / "win-unpacked" / "nukerat.exe")])
 
@@ -83,7 +83,7 @@ def client():
         if not app.is_file():
             app = client_root / "dist" / "mac-arm64" / "nukerat.app" / "Contents" / "MacOS" / "nukerat"
         if not app.is_file():
-            print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] Client app not found: {client_root / 'dist' / 'mac' / 'nukerat.app'}", file=sys.stderr)
+            print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] 未找到客户端应用：{client_root / 'dist' / 'mac' / 'nukerat.app'}", file=sys.stderr)
             sys.exit(1)
         os.execv(str(app), [str(app)])
 
@@ -92,7 +92,7 @@ def client():
         os.execv(gui, [str(gui)])
 
     if not os.access(client_root / "dist" / "nukerat.AppImage", os.X_OK):
-        print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] Client AppImage not found: {client_root / 'dist' / 'nukerat.AppImage'}", file=sys.stderr)
+        print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] 未找到客户端 AppImage：{client_root / 'dist' / 'nukerat.AppImage'}", file=sys.stderr)
         sys.exit(1)
 
     # Fix display for root user
@@ -113,13 +113,13 @@ def client():
 def server(argv):
     # Validations
     if not server_root.is_dir():
-        print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] Server dir not found: {server_root}", file=sys.stderr)
+        print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] 未找到服务端目录：{server_root}", file=sys.stderr)
         sys.exit(1)
 
     venv_python = server_root / "venv" / "bin" / "python3"
 
     if not os.access(venv_python, os.X_OK):
-        print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] Venv python not found: {venv_python}", file=sys.stderr)
+        print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] 未找到虚拟环境 Python：{venv_python}", file=sys.stderr)
         sys.exit(1)
 
     env = os.environ.copy()
@@ -170,13 +170,13 @@ if len(args) == 0 or " help " in args_spaced:
 
 if len(args) >= 2 and args[0] == "client" and args[1] == "start":
     if is_root():
-        print("[ \x1b[38;2;255;48;48mERROR\x1b[0m ] The client must not be executed with sudo", file=sys.stderr)
+        print("[ \x1b[38;2;255;48;48mERROR\x1b[0m ] 客户端不应以 sudo 运行", file=sys.stderr)
         sys.exit(1)
     client()
 
 if len(args) >= 1 and args[0] == "server":
     if is_root():
-        print("[ \x1b[38;2;255;48;48mERROR\x1b[0m ] The server must not be executed with sudo", file=sys.stderr)
+        print("[ \x1b[38;2;255;48;48mERROR\x1b[0m ] 服务端不应以 sudo 运行", file=sys.stderr)
         sys.exit(1)
     server(args[1:])
 

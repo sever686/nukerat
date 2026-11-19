@@ -15,7 +15,7 @@ export function copyTerminalContext() {
   void navigator.clipboard.writeText(
     JSON.stringify({ terminal: ["terminal", ...rt.getOutput()] }),
   );
-  toast.success("Terminal context copied");
+  toast.success("终端上下文已复制");
 }
 
 export function buildTerminalStyleMenuItems(): PanelCustomMenuItem[] {
@@ -25,11 +25,11 @@ export function buildTerminalStyleMenuItems(): PanelCustomMenuItem[] {
   return [
     {
       kind: "action",
-      label: "Style",
+      label: "样式",
       items: [
         {
           kind: "action",
-          label: "Font",
+          label: "字体",
           items: [
             {
               kind: "header",
@@ -38,14 +38,14 @@ export function buildTerminalStyleMenuItems(): PanelCustomMenuItem[] {
             { kind: "separator" },
             {
               kind: "action",
-              label: "Increase",
+              label: "增大",
               shortcutId: "terminal_font_increase",
               onClick: () => rt.increaseFont(),
               disabled: () => !rt.canIncreaseFont(),
             },
             {
               kind: "action",
-              label: "Decrease",
+              label: "减小",
               shortcutId: "terminal_font_decrease",
               onClick: () => rt.decreaseFont(),
               disabled: () => !rt.canDecreaseFont(),
@@ -53,7 +53,7 @@ export function buildTerminalStyleMenuItems(): PanelCustomMenuItem[] {
             { kind: "separator" },
             {
               kind: "action",
-              label: "Reset",
+              label: "重置",
               shortcutId: "terminal_font_reset",
               onClick: () => rt.resetFont(),
               disabled: () => !rt.canResetFont(),

@@ -52,7 +52,7 @@ const AgentsPanel = () => {
                   onClick={handleCancelLoading}
                   className="mt-2 text-[13.5px] text-[#3a3a3a] cursor-pointer select-none hover:text-[#4a4a4a]"
                 >
-                  Cancel
+                  取消
                 </span>
               </div>
             ) : (
@@ -101,7 +101,7 @@ const AgentsPanel = () => {
                     </tbody>
                   )}
                 </table>
-                {agents.length === 0 && <PanelEmptyState>No agents configured</PanelEmptyState>}
+                {agents.length === 0 && <PanelEmptyState>尚未配置智能体</PanelEmptyState>}
               </>
             )}
           </div>
@@ -113,7 +113,7 @@ const AgentsPanel = () => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer"
             >
               <Plus size={11} />
-              New
+              新建
             </button>
             <button
               type="button"
@@ -122,7 +122,7 @@ const AgentsPanel = () => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
             >
               <Edit size={11} />
-              Edit
+              编辑
             </button>
             <button
               type="button"
@@ -131,7 +131,7 @@ const AgentsPanel = () => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#c97070] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
             >
               <Trash2 size={11} />
-              Delete
+              删除
             </button>
             <div className="min-w-2 flex-1 shrink" aria-hidden />
             <button
@@ -140,7 +140,7 @@ const AgentsPanel = () => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer"
             >
               <RefreshCw size={11} />
-              Update
+              更新
             </button>
           </div>
         </div>
@@ -181,17 +181,17 @@ const AgentsPanel = () => {
           <div style={{ borderRadius: "8px" }} className="bg-[#191919] border border-[#2f2f2f] p-5 max-w-sm w-[90%] shadow-2xl">
             <div className="flex items-center gap-2 mb-3">
               <Trash2 size={13} className="text-[#c97070]" />
-              <span className="text-[13.5px] font-semibold text-[#d4d4d4]">Delete agent</span>
+              <span className="text-[13.5px] font-semibold text-[#d4d4d4]">删除智能体</span>
             </div>
             <p className="text-[13.5px] text-[#9b9b9b] mb-5 leading-relaxed">
-              Remove <span className="text-[#d4d4d4] font-semibold">"{selected?.name}"</span>? This cannot be undone.
+              移除 <span className="text-[#d4d4d4] font-semibold">"{selected?.name}"</span>? This cannot be undone.
             </p>
             <div className="flex items-center justify-end gap-2">
               <button
                 onClick={() => setShowRemoveConfirm(false)}
                 className="button-default px-3 py-1 rounded text-[13px] text-[#9b9b9b] hover:text-[#d4d4d4] hover:bg-[#252525] transition-colors border border-[#333] cursor-pointer"
               >
-                Cancel
+                取消
               </button>
               <button
                 onClick={handleConfirmRemove}
@@ -199,7 +199,7 @@ const AgentsPanel = () => {
                 className="button-default flex items-center gap-1.5 px-3 py-1 rounded text-[13px] text-white bg-[#852b2b] hover:bg-[#a83232] transition-colors disabled:opacity-50 cursor-pointer"
               >
                 {submitting && <RefreshCw size={10} className="animate-spin" />}
-                Delete
+                删除
               </button>
             </div>
           </div>

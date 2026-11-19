@@ -1,18 +1,18 @@
-ABOUT
+关于
     Binary file used for compile vbs code. LOLBAS documents compile
     attacker code on system. Bypass defensive counter measures.
 
-USAGE:
+用法：
     vbc.exe /target:exe {PATH_ABSOLUTE:.vb}
     vbc -reference:Microsoft.VisualBasic.dll {PATH_ABSOLUTE:.vb}
 
-EXAMPLES:
+示例：
     vbc.exe /target:exe {PATH_ABSOLUTE:.vb}
     vbc -reference:Microsoft.VisualBasic.dll {PATH_ABSOLUTE:.vb}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     vbc.exe /target:exe {PATH_ABSOLUTE:.vb}

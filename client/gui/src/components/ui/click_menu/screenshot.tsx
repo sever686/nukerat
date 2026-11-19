@@ -18,7 +18,7 @@ export function createScreenshotBridge(): PanelEditMenuBridge {
   return {
     ...readOnlyInputBridge(),
     getFooterMenuItems: () => [
-      menuAction("Save", Download, () => screenshotSave(), () => !screenshotCanSave()),
+      menuAction("保存", Download, () => screenshotSave(), () => !screenshotCanSave()),
     ],
   };
 }

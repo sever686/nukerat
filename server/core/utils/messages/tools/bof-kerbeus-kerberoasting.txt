@@ -1,15 +1,15 @@
-ABOUT
+关于
     Request a Kerberos service ticket for offline cracking.
-USAGE:
+用法：
     bof-kerbeus-kerberoasting --- /spn:SPN [/nopreauth:USER] [/dc:DC] [/domain:DOMAIN]
     bof-kerbeus-kerberoasting --- /spn:SPN /ticket:BASE64 [/dc:DC]
 
-EXAMPLES:
+示例：
     bof-kerbeus-kerberoasting --- /spn:mssqlsvc/dc.corp.local
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-kerbeus-kerberoasting -w 60 --- /spn:mssqlsvc/dc.corp.local

@@ -47,9 +47,9 @@ async def load_data(host_tags: list) -> dict:
 def list_block(label: str, values: list[str]) -> str:
     # Builds an html block for one ioc list
     if not values:
-        return f"<h2>{label}</h2><p>None identified</p>"
+        return f"<h2>{label}</h2><p>未发现</p>"
     items = "".join(f"<span class='badge'>{esc(value)}</span>" for value in values)
-    return f"<h2>{label} ({len(values)})</h2><div>{items}</div>"
+    return f"<h2>{label}（{len(values)}）</h2><div>{items}</div>"
 
 
 def build_html(name: str, description: str, hosts: list, data: dict) -> str:
@@ -57,26 +57,26 @@ def build_html(name: str, description: str, hosts: list, data: dict) -> str:
     host_data = [host_row(host) for host in hosts]
     grouped = data["grouped"]
     host_table = render_table(
-        ["Hostname", "User", "OS", "Internal IP", "External IP"],
+        ["主机名", "用户", "操作系统", "内网 IP", "外部 IP"],
         [[h["hostname"], h["user"], h["os"], h["ip"], h["external_ip"]] for h in host_data],
         5,
     )
     hashes = grouped.get("hashes", [])
     if hashes:
-        hashes_block = f"<h2>Hashes ({len(hashes)})</h2>{render_table(['Type', 'Hash'], hashes, 2)}"
+        hashes_block = f"<h2>哈希（{len(hashes)}）</h2>{render_table(['类型', '哈希'], hashes, 2)}"
     else:
-        hashes_block = "<h2>Hashes</h2><p>None identified</p>"
+        hashes_block = "<h2>哈希</h2><p>未发现</p>"
 
     generated = esc(datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"))
-    body = f"""<h2>Target Scope ({len(host_data)})</h2>
+    body = f"""<h2>目标范围（{len(host_data)}）</h2>
 {host_table}
-{list_block("IP Addresses", grouped.get("ips", []))}
-{list_block("Domains", grouped.get("domains", []))}
-{list_block("Files", grouped.get("files", []))}
+{list_block("IP 地址", grouped.get("ips", []))}
+{list_block("域名", grouped.get("domains", []))}
+{list_block("文件", grouped.get("files", []))}
 {hashes_block}"""
     return format_report_html(
         esc(name),
-        f"Indicators of Compromise · Generated {generated}",
+        f"入侵指标 · 生成时间 {generated}",
         esc(description),
         body,
     )

@@ -52,9 +52,9 @@ async def remove_ioc(tag: str):
         )
     if not await sqlite_db.read(Ioc, tag=tag):
         return await conclude_request(
-            {"status": "failure", "message": "Not found"},
+            {"status": "failure", "message": "未找到"},
             status_code=404,
             type="iocs",
         )
     await sqlite_db.delete(Ioc, tag=tag)
-    return await conclude_request({"status": "success", "message": "Removed"}, type="iocs")
+    return await conclude_request({"status": "success", "message": "已移除"}, type="iocs")

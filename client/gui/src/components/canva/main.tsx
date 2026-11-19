@@ -52,7 +52,7 @@ export default function Canva() {
           setFloatType(null);
           openTerminalForNotify(n);
         };
-        toast.info("New session", {
+        toast.info("新会话", {
           className: "!h-auto !py-2 select-none cursor-pointer relative overflow-hidden",
           style: {
             background: "#1515154a",
@@ -97,7 +97,7 @@ export default function Canva() {
         });
       } else {
         const kind = n.type || "info";
-        (kind === "error" ? toast.error : kind === "success" ? toast.success : toast.info)(truncate(n.title || "Notification", 25), {
+        (kind === "error" ? toast.error : kind === "success" ? toast.success : toast.info)(truncate(n.title || "通知", 25), {
           className: "!h-auto !py-2 min-w-[100px]",
           style: {
             background: "#1515154a",

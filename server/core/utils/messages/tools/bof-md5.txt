@@ -1,15 +1,15 @@
-ABOUT
+关于
     Hash filename using md5
 
-USAGE:
+用法：
     bof-md5 --- <filename>
 
-EXAMPLES:
+示例：
     bof-md5 --- C:\Windows\System32\ntdll.dll
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-md5 -w 60 --- C:\Windows\System32\ntdll.dll

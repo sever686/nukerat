@@ -90,7 +90,7 @@ export const scriptsFetch = async (
         const res = JSON.parse(text);
         return { ...res, server: `${ip}:${port}` };
       } catch (error) {
-        if (error instanceof Error && error.name === "AbortError") return { status: "error", message: "Cancelled", type };
+        if (error instanceof Error && error.name === "AbortError") return { status: "error", message: "已取消", type };
         return { status: "ERR_conn", message: `${server.name}: Unreachable host`, type };
       } finally {
         clearTimeout(timer);
@@ -120,27 +120,27 @@ export const scriptsFetch = async (
     const tag = data.tag !== undefined ? String(data.tag) : "";
     if (type === "add") {
       const { tag: _tag, ...payload } = data;
-      return (await request(server, { method: "POST", body: payload })) ?? { status: "failure", type, message: "Request failed" };
+      return (await request(server, { method: "POST", body: payload })) ?? { status: "failure", type, message: "请求失败" };
     }
     if (type === "edit") {
       const { tag: _tag, ...payload } = data;
       return (
         (await request(server, { method: "PATCH", path: tag, body: payload })) ??
-        { status: "failure", type, message: "Request failed" }
+        { status: "failure", type, message: "请求失败" }
       );
     }
     if (type === "delete") {
       const { tag: _tag, content, ...rest } = data;
       return (
         (await request(server, { method: "DELETE", path: tag, body: { content, ...rest } })) ??
-        { status: "failure", type, message: "Request failed" }
+        { status: "failure", type, message: "请求失败" }
       );
     }
     if (type === "change_status") {
       const { tag: _tag, status } = data;
       return (
         (await request(server, { method: "PATCH", path: tag, body: { status } })) ??
-        { status: "failure", type, message: "Request failed" }
+        { status: "failure", type, message: "请求失败" }
       );
     }
 

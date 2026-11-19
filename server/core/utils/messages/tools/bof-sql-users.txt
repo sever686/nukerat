@@ -1,9 +1,9 @@
-ABOUT
+关于
     Enumerates users with database access on a SQL server.
 
-USAGE:
+用法：
     bof-sql-users --- <server> [database] [linkedserver] [impersonate]
 
-EXAMPLES:
+示例：
     bof-sql-users --- SQL01
     bof-sql-users --- SQL01 master

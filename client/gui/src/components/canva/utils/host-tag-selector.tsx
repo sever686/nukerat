@@ -16,7 +16,7 @@ export default function HostTagSelector({
 }) {
   return (
     <>
-      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest mb-2">Hosts</label>
+      <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest mb-2">主机</label>
 
       <div className="max-h-[200px] overflow-hidden rounded-lg border border-[#292929] bg-[#141414]">
         {hosts.length > 0 ? (
@@ -42,7 +42,7 @@ export default function HostTagSelector({
             })}
           </div>
         ) : (
-          <span className="block px-3 py-6 text-center text-[13px] text-[#555]">No hosts found</span>
+          <span className="block px-3 py-6 text-center text-[13px] text-[#555]">未找到主机</span>
         )}
       </div>
 
@@ -53,7 +53,7 @@ export default function HostTagSelector({
           disabled={hosts.length === 0}
           className="button-default flex items-center gap-1.5 px-3 py-1 rounded bg-[#232323] text-[#cecece] text-[13px] transition-colors border border-[#333] cursor-pointer hover:bg-[#2b2b2b] hover:text-[#d4d4d4] disabled:opacity-25 disabled:cursor-not-allowed"
         >
-          All
+          全部
         </button>
         <button
           type="button"
@@ -61,7 +61,7 @@ export default function HostTagSelector({
           disabled={selectedTags.length === 0}
           className="button-default flex items-center gap-1.5 px-3 py-1 rounded bg-[#232323] text-[#cecece] text-[13px] transition-colors border border-[#333] cursor-pointer hover:bg-[#2b2b2b] hover:text-[#d4d4d4] disabled:opacity-25 disabled:cursor-not-allowed"
         >
-          Clear
+          清除
         </button>
       </div>
     </>

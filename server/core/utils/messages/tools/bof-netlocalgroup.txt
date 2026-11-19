@@ -1,16 +1,16 @@
-ABOUT
+关于
     List local groups or local group members on the local or specified computer.
 
-USAGE:
+用法：
     bof-netlocalgroup --- [opt:server]
         bof-netlocalgroup --- <groupname> [opt:server]
 
-EXAMPLES:
+示例：
     bof-netlocalgroup    bof-netlocalgroup --- Administrators
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-netlocalgroup -w 60 --- Administrators

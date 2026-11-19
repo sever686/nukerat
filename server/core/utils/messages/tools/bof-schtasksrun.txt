@@ -1,22 +1,22 @@
-ABOUT
+关于
     Starts a scheduled task immediately.
 
-USAGE:
+用法：
     bof-schtasksrun --- [HOSTNAME] <TASKNAME>
 
-ARGUMENTS:
+参数：
 
     HOSTNAME   Optional remote host
 
     TASKNAME   Full scheduled task path
 
-EXAMPLES:
+示例：
 
     bof-schtasksrun --- \MyTask
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-schtasksrun -w 60 --- \MyTask

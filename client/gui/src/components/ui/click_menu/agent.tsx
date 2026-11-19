@@ -13,8 +13,8 @@ export function createAgentBridge(): PanelEditMenuBridge | null {
     writeValue: (_, v) => rt.setInput(v),
     canEdit: () => rt.canEditInput(),
     getCustomMenuItems: () => [
-      menuAction("Copy history", Copy, () => rt.copyHistory(), () => !rt.hasHistory()),
-      menuAction("Clear history", Trash2, () => rt.clearHistory(), () => !rt.hasHistory()),
+      menuAction("复制历史", Copy, () => rt.copyHistory(), () => !rt.hasHistory()),
+      menuAction("清除历史", Trash2, () => rt.clearHistory(), () => !rt.hasHistory()),
     ],
   };
 }

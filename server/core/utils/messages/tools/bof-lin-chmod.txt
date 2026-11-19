@@ -1,21 +1,21 @@
-ABOUT
+关于
     (linux) Change file permissions.
 
-USAGE:
+用法：
     bof-lin-chmod --- <mode> <target>
 
-ARGUMENTS:
+参数：
     mode                Octal permissions (e.g. 755)
     target              File path(s)
 
 Supports pipe chaining with other BusyBOF tools.
 
-EXAMPLES:
+示例：
     bof-lin-chmod --- <mode> <target>
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-lin-chmod -w 60 --- <mode> <target>

@@ -1,17 +1,17 @@
-ABOUT
+关于
     Gets user idle time since last input and GUI resource usage (GDI/USER handles) in the
     current process for timing intelligence.
 
-USAGE:
+用法：
     bof-user-idle
 
-EXAMPLES:
+示例：
     bof-user-idle
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-user-idle -w 60
     bof-user-idle -bg

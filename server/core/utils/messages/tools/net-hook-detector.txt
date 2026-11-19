@@ -1,8 +1,8 @@
-ABOUT
+关于
     Detects hooked Native API functions in the current process, indicating EDR presence. x64 only.
 
-USAGE:
+用法：
     net-hook-detector --- (no arguments)
 
-EXAMPLES:
+示例：
     net-hook-detector

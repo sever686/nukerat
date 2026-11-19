@@ -55,9 +55,9 @@ class BodyContent(BaseModel):
         # Requires request and response bodies when the body type is on
         if self.type != "off":
             if not (self.request_body or "").strip():
-                raise ValueError("request_body is required when body type is not off")
+                raise ValueError("body 类型不为 off 时必须填写 request_body")
             if not (self.response_body or "").strip():
-                raise ValueError("response_body is required when body type is not off")
+                raise ValueError("body 类型不为 off 时必须填写 response_body")
         return self
 
 
@@ -114,14 +114,14 @@ class ImplantConfigBase(BaseModel):
                 f"format '{self.format}' is not supported for {self.operational_system}"
             )
         if self.operational_system == "windows" and self.cpu != "amd":
-            raise ValueError("cpu must be amd for windows")
+            raise ValueError("Windows 的 CPU 必须为 amd")
         if self.operational_system == "windows" and self.arch != "x64":
-            raise ValueError("arch must be x64 for windows")
+            raise ValueError("Windows 的架构必须为 x64")
 
     def _validate_optional_fields(self) -> None:
         # Checks icon, pe, donut, encoder and preface options
         if self.exe_icon is not None and self.format != "exe":
-            raise ValueError("exe_icon is only supported for exe format")
+            raise ValueError("exe_icon 仅支持 exe 格式")
 
         pe_fields = (
             self.pe_timestamp,
@@ -136,7 +136,7 @@ class ImplantConfigBase(BaseModel):
             self.create_pe_strings,
         )
         if any(pe_fields) and self.format not in _PE_FORMATS:
-            raise ValueError("pe header fields are only supported for exe, dll, and shellcode")
+            raise ValueError("PE 头字段仅支持 exe、dll 和 shellcode 格式")
 
         donut_fields = (
             self.donut_entropy,
@@ -146,21 +146,21 @@ class ImplantConfigBase(BaseModel):
             self.donut_thread,
         )
         if any(value is not None for value in donut_fields) and self.format != "shellcode":
-            raise ValueError("donut fields are only supported for shellcode format")
+            raise ValueError("donut 字段仅支持 shellcode 格式")
 
         enc = self.shellcode_encoder
         if enc is not None and enc != "off":
             if self.operational_system != "windows":
-                raise ValueError("shellcode_encoder is only supported on windows")
+                raise ValueError("shellcode_encoder 仅在 Windows 上受支持")
 
         if self.preface is not None and self.format not in _NIM_FORMATS:
-            raise ValueError("preface is not supported for this format")
+            raise ValueError("该格式不支持前言代码")
 
         if self.show_conhost == "on":
             if self.operational_system != "windows":
-                raise ValueError("show_conhost is only supported on windows")
+                raise ValueError("show_conhost 仅在 Windows 上受支持")
             if self.format != "exe":
-                raise ValueError("show_conhost is only supported for exe format")
+                raise ValueError("show_conhost 仅支持 exe 格式")
 
 
 class StagelessImplantConfig(ImplantConfigBase):
@@ -174,24 +174,24 @@ class StagelessImplantConfig(ImplantConfigBase):
 
         if self.protocol == "smb":
             if self.operational_system != "windows":
-                raise ValueError("smb protocol is only supported on windows")
+                raise ValueError("SMB 协议仅在 Windows 上受支持")
             if not (self.smb_pipe or "").strip():
-                raise ValueError("smb_pipe is required when protocol is smb")
+                raise ValueError("protocol 为 smb 时必须填写 smb_pipe")
         elif self.protocol == "custom":
             if not (self.custom_channel or "").strip():
-                raise ValueError("custom_channel is required when protocol is custom")
+                raise ValueError("protocol 为 custom 时必须填写 custom_channel")
         elif not self._filled_servers(self.servers):
-            raise ValueError("servers must include at least one endpoint")
+            raise ValueError("服务器列表必须至少包含一个端点")
 
         if self.protocol not in _HTTP_PROTOCOLS and self.body_content is not None:
-            raise ValueError("body_content is only supported for http and https protocols")
+            raise ValueError("body_content 仅支持 http 和 https 协议")
 
         if self.protocol != "smb" and self.smb_pipe is not None:
-            raise ValueError("smb_pipe is only supported when protocol is smb")
+            raise ValueError("仅在 protocol 为 smb 时才支持 smb_pipe")
         if self.protocol != "custom" and self.custom_channel is not None:
-            raise ValueError("custom_channel is only supported when protocol is custom")
+            raise ValueError("仅在 protocol 为 custom 时才支持 custom_channel")
         if self.custom_http_relay is not None and self.protocol != "custom":
-            raise ValueError("custom_http_relay is only supported when protocol is custom")
+            raise ValueError("仅在 protocol 为 custom 时才支持 custom_http_relay")
 
         return self
 
@@ -207,18 +207,18 @@ class LoaderImplantConfig(ImplantConfigBase):
 
         if self.protocol == "custom":
             if not (self.custom_channel or "").strip():
-                raise ValueError("custom_channel is required when protocol is custom")
+                raise ValueError("protocol 为 custom 时必须填写 custom_channel")
         elif not self._filled_servers(self.servers):
-            raise ValueError("servers must include at least one stage url")
+            raise ValueError("服务器列表必须至少包含一个 stage URL")
 
         if self.body_content is not None:
-            raise ValueError("body_content is not supported for loader implants")
+            raise ValueError("loader 植入体不支持 body_content")
         if self.smb_pipe is not None:
-            raise ValueError("smb_pipe is not supported for loader implants")
+            raise ValueError("loader 植入体不支持 smb_pipe")
         if self.protocol != "custom" and self.custom_channel is not None:
-            raise ValueError("custom_channel is only supported when protocol is custom")
+            raise ValueError("仅在 protocol 为 custom 时才支持 custom_channel")
         if self.custom_http_relay is not None:
-            raise ValueError("custom_http_relay is not supported for loader implants")
+            raise ValueError("loader 植入体不支持 custom_http_relay")
 
         return self
 

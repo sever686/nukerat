@@ -56,10 +56,10 @@ class ExplorerRequest(BaseModel):
             return self
 
         if not (self.fileName or "").strip():
-            raise ValueError("fileName is required when getContent is true")
+            raise ValueError("getContent 为 true 时 fileName 为必填项")
 
         path = (self.path or "").strip()
         if not path or path == "/":
-            raise ValueError("path is required when getContent is true")
+            raise ValueError("getContent 为 true 时 path 为必填项")
 
         return self

@@ -1,20 +1,20 @@
-ABOUT
+关于
     (linux) Octal dump.
 
-USAGE:
+用法：
     bof-lin-od --- [file] [address_format] [type_format] [max_bytes]
 
-ARGUMENTS:
+参数：
     file                Input file
     address_format      Address format (default: o) (choices: x|o|d|n) (default: o)
     type_format         Output type (default: o) (choices: x|o|c) (default: o)
     max_bytes           Maximum bytes to read
 
-EXAMPLES:
+示例：
     bof-lin-od
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-lin-od -w 60 --- [file] [address_format] [type_format] [max_bytes]

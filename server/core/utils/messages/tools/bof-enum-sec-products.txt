@@ -1,12 +1,12 @@
-ABOUT
+关于
     Get a list of security products like AV/EDR that are running on the current- or remote host. This is done by comparing running processes against a hardcoded list of 130 security products.
 
-USAGE:
+用法：
     bof-enum-sec-products --- [remotehost]
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-enum-sec-products -w 60 --- [remotehost]

@@ -1,21 +1,21 @@
-ABOUT
+关于
     Visual Studio Code editor and CLI.
     code tunnel opens a reverse tunnel over Microsoft infrastructure for
     remote shell access.
 
-USAGE:
+用法：
     code.exe tunnel --accept-server-license-terms --name "tunnel-name"
 
-ARGUMENTS:
+参数：
     --accept-server-license-terms Accept tunnel license prompt
     --name                       Tunnel display name
 
-EXAMPLES:
+示例：
     code.exe tunnel --accept-server-license-terms --name "tunnel-name"
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     code.exe tunnel --accept-server-license-terms --name "tunnel-name"

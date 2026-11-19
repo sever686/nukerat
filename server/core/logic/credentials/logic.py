@@ -29,7 +29,7 @@ async def create_credentials(data):
     content = (data.get("content") or "").strip()
     desc = (data.get("desc") or data.get("description") or "").strip() or None
     if not name or not server or not host or not content:
-        return {"status": "failure", "message": "Missing fields"}
+        return {"status": "failure", "message": "缺少字段"}
     tag = generate_tag()
     row = Credentials(
         tag=tag,
@@ -40,37 +40,37 @@ async def create_credentials(data):
         description=desc,
     )
     await sqlite_db.write(row)
-    return {"status": "success", "message": "Credential created", "tag": tag}
+    return {"status": "success", "message": "凭据已创建", "tag": tag}
 
 
 async def edit_credentials(tag: str, data):
     # Updates a credential
     tag = (tag or "").strip()
     if not tag:
-        return {"status": "failure", "message": "Tag required"}
+        return {"status": "failure", "message": "需要标签"}
     if not await sqlite_db.read(Credentials, tag=tag):
-        return {"status": "failure", "message": "Credential not found"}
+        return {"status": "failure", "message": "未找到凭据"}
     name = (data.get("name") or "").strip()
     server = (data.get("server") or "").strip()
     host = (data.get("host") or "").strip()
     content = (data.get("content") or "").strip()
     desc = (data.get("desc") or data.get("description") or "").strip() or None
     if not name or not server or not host or not content:
-        return {"status": "failure", "message": "Missing fields"}
+        return {"status": "failure", "message": "缺少字段"}
     await sqlite_db.modify(
         Credentials,
         {"tag": tag},
         {"name": name, "server": server, "host": host, "content": content, "description": desc},
     )
-    return {"status": "success", "message": "Credential updated"}
+    return {"status": "success", "message": "凭据已更新"}
 
 
 async def delete_credentials(tag: str):
     # Deletes a credential
     tag = (tag or "").strip()
     if not tag:
-        return {"status": "failure", "message": "Tag required"}
+        return {"status": "failure", "message": "需要标签"}
     if not await sqlite_db.read(Credentials, tag=tag):
-        return {"status": "failure", "message": "Credential not found"}
+        return {"status": "failure", "message": "未找到凭据"}
     await sqlite_db.delete(Credentials, tag=tag)
-    return {"status": "success", "message": "Credential removed"}
+    return {"status": "success", "message": "凭据已移除"}

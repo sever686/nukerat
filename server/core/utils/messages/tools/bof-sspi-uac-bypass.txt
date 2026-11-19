@@ -1,12 +1,12 @@
-ABOUT
+关于
     UAC bypass via forged SSPI datagram context token impersonation and SYSTEM
     service creation using CreateSvcRpc.
 
-USAGE:
+用法：
     bof-sspi-uac-bypass --- <file_path>
 
-ARGUMENTS:
+参数：
     file_path    Path to executable to run as SYSTEM
 
-EXAMPLES:
+示例：
     bof-sspi-uac-bypass --- C:\\Windows\\Temp\\payload.exe

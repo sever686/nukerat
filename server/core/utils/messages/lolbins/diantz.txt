@@ -1,24 +1,24 @@
-ABOUT
+关于
     Cabinet packaging tool (makecab).
     Compresses into CAB files including ADS targets, remote SMB sources,
     or .ddf-driven batches.
 
-USAGE:
+用法：
     diantz.exe {PATH_ABSOLUTE:.exe} {PATH_ABSOLUTE}:targetFile.cab
     diantz.exe {PATH_SMB:.exe} {PATH_ABSOLUTE:.cab}
     diantz /f {PATH:.ddf}
 
-ARGUMENTS:
+参数：
     /f                           Run directives from Diamond definition file
 
-EXAMPLES:
+示例：
     diantz.exe {PATH_ABSOLUTE:.exe} {PATH_ABSOLUTE}:targetFile.cab
     diantz.exe {PATH_SMB:.exe} {PATH_ABSOLUTE:.cab}
     diantz /f {PATH:.ddf}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     diantz.exe {PATH_ABSOLUTE:.exe} {PATH_ABSOLUTE}:targetFile.cab

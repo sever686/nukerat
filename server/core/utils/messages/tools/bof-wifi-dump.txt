@@ -1,20 +1,20 @@
-ABOUT
+关于
     Enumerates WiFi interfaces and dumps clear text WiFi profile credentials. Uses
     WlanGetProfile with WLAN_PROFILE_GET_PLAINTEXT_KEY to retrieve profile XML including
     stored passwords.
 
-USAGE:
+用法：
     bof-wifi-dump --- <profile_name>
 
-ARGUMENTS:
+参数：
     profile_name        WiFi profile name to dump credentials for
 
-EXAMPLES:
+示例：
     bof-wifi-dump --- Wifi_Profile_Name
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-wifi-dump -w 60 --- Wifi_Profile_Name

@@ -1,13 +1,13 @@
-ABOUT
+关于
     MSSQL trust abuse tool for command execution and lateral movement. Supports domain
     SPN discovery, linked server enumeration, impersonation, xp_cmdshell, OLE automation,
     CLR assembly abuse, and OPENQUERY execution. Type net-cheese-sql <command> /help for
     per command argument details.
 
-USAGE:
+用法：
     net-cheese-sql --- <command> [options]
 
-EXAMPLES:
+示例：
     net-cheese-sql --- findspn
     net-cheese-sql --- listdb /server:SQL01
     net-cheese-sql --- getlogin /server:SQL01
@@ -22,7 +22,7 @@ EXAMPLES:
     net-cheese-sql --- xpoquery /server:SQL01 /target:LINKED01 /command:<B64-PWSH>
     net-cheese-sql --- openquery /server:SQL01 /target:LINKED01 /query:"SELECT 1"
 
-COMMANDS:
+命令：
     findspn             Find MSSQL instances using domain SPNs
     listdb              List available databases on the server
     gethash             Send service account Net NTLM hash to an arbitrary IP
@@ -37,9 +37,9 @@ COMMANDS:
     xpoquery            Execute encoded PowerShell on linked server via OPENQUERY
     openquery           Execute an arbitrary query using OPENQUERY
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     net-cheese-sql -w 60 --- findspn

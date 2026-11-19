@@ -1,16 +1,16 @@
-ABOUT
+关于
     Dump tool part Visual Studio 2022. LOLBAS documents create memory
     dump and parse it offline.
 
-USAGE:
+用法：
     DumpMinitool.exe --file {PATH_ABSOLUTE} --processId 1132 --dumpType Full
 
-EXAMPLES:
+示例：
     DumpMinitool.exe --file {PATH_ABSOLUTE} --processId 1132 --dumpType Full
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     DumpMinitool.exe --file {PATH_ABSOLUTE} --processId 1132 --dumpType Full

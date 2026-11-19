@@ -195,7 +195,7 @@ export const deleteQueue = async (
 
   let lastError: QueueDeleteResponse = {
     status: "failure",
-    message: "Request failed",
+    message: "请求失败",
   };
 
   for (const entry of servers) {

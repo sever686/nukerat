@@ -28,7 +28,7 @@ async def jwt_middleware(request: Request, call_next):
     except InvalidTokenError:
         return JSONResponse(
             status_code=401,
-            content={"status": "failure", "message": "Expired session"},
+            content={"status": "failure", "message": "会话已过期"},
             headers={"WWW-Authenticate": "Bearer"},
         )
 

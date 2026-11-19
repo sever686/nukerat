@@ -1,19 +1,19 @@
-ABOUT
+关于
     iSCSI Initiator control panel. LOLBAS achieves UAC bypass via
     DLL hijack under WindowsApps or by breaking out of the GUI to
     launch high-integrity commands.
 
-USAGE:
+用法：
     c:\windows\syswow64\iscsicpl.exe
     iscsicpl.exe
 
-EXAMPLES:
+示例：
     c:\windows\syswow64\iscsicpl.exe
     iscsicpl.exe
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     c:\windows\syswow64\iscsicpl.exe

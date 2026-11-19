@@ -1,25 +1,25 @@
-ABOUT
-    Search file contents under a specific path.
+关于
+    在指定路径下搜索文件内容。
 
-USAGE:
+用法：
     search --path <fileordirectory> --content <text> [--recursive] [--thread <n>] [--size-limit <mb>] [--case-sensitive]
 
-ARGUMENTS:
-    --path              File or directory to scan.
-    --content           Text to find.
-    --recursive         Search subdirectories.
-    --thread            Worker thread count (default 4, max 32).
-    --size-limit        Max file size in megabytes (default 200).
-    --case-sensitive    Exact letter case match.
+参数：
+    --path              要扫描的文件或目录。
+    --content           要查找的文本。
+    --recursive         搜索子目录。
+    --thread            工作线程数（默认 4，最大 32）。
+    --size-limit        最大文件大小（兆字节，默认 200）。
+    --case-sensitive    精确匹配字母大小写。
 
-EXAMPLES:
+示例：
     search --path C:\Users\Public --content password
     search --path C:\Temp\logs --content error --recursive --thread 8
     search --path C:\notes.txt --content secret
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     search -w 120 --path C:\ --content token --recursive

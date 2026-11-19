@@ -1,21 +1,21 @@
-ABOUT
-    Download, update, or remove NukeRat armory tools.
+关于
+    下载、更新或移除 NukeRat 军械库工具。
 
-USAGE:
+用法：
     armory [install|remove|update] [<tool>]
 
-ARGUMENTS:
-    <tool>              Armory command name from the list (positional after install or
-                        remove).
+参数：
+    <tool>              列表中的军械库命令名称（位于 install 或
+                        remove 之后的位置参数）。
 
-MODES:
-    armory              List tools and short descriptions.
-    install             Download payload files to the server armory directory.
-    install all         Download all armory tools from the release bundle.
-    remove              Delete downloaded files for that tool.
-    update              Update the armory index file.
+模式：
+armory              列出工具及简短说明。
+install             将载荷文件下载到服务器军械库目录。
+install all         从发行包下载所有军械库工具。
+remove              删除该工具已下载的文件。
+update              更新军械库索引文件。
 
-EXAMPLES:
+示例：
     armory
     armory install all
     armory install <tool>

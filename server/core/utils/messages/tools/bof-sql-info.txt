@@ -1,9 +1,9 @@
-ABOUT
+关于
     Gathers information about a remote SQL server.
 
-USAGE:
+用法：
     bof-sql-info --- <server> [database]
 
-EXAMPLES:
+示例：
     bof-sql-info --- SQL01
     bof-sql-info --- SQL01 master

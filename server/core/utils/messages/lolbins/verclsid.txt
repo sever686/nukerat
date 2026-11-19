@@ -1,17 +1,17 @@
-ABOUT
+关于
     Used to verify a COM object before it is instantiated by Windows
     Explorer. LOLBAS documents run a COM object created in registry
     to evade defensive counter measures.
 
-USAGE:
+用法：
     verclsid.exe /S /C {CLSID}
 
-EXAMPLES:
+示例：
     verclsid.exe /S /C {CLSID}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     verclsid.exe /S /C {CLSID}

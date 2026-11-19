@@ -48,7 +48,7 @@ const ViewNetworkPanel = ({ connection, handleClosePanel }: ViewNetworkPanelProp
       <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a] shrink-0">
         <div className="flex items-center gap-2">
           <span className="text-[13.5px] font-semibold text-[#cecece] tracking-wide">
-            View - {getViewTitle(connection)}
+            查看 - {getViewTitle(connection)}
           </span>
         </div>
         <button
@@ -60,26 +60,26 @@ const ViewNetworkPanel = ({ connection, handleClosePanel }: ViewNetworkPanelProp
       </div>
 
       <div className="flex-1 min-h-0 min-w-0 overflow-y-auto px-4 py-4">
-        <ViewField label="Tag" value={connection?.tag ?? connection?.id} />
-        <ViewField label="Type" value={typeLabel(connection?.networkType)} />
-        <ViewField label="Server" value={connection?.server} />
-        <ViewField label="Bind Host" value={connection?.host} />
-        <ViewField label="Port" value={connection?.targetPort} />
-        <ViewField label="Protocol" value={connection ? formatProtocol(connection) : ""} />
-        <ViewField label="Implant Tag" value={connection?.hostTag} />
+        <ViewField label="标签" value={connection?.tag ?? connection?.id} />
+        <ViewField label="类型" value={typeLabel(connection?.networkType)} />
+        <ViewField label="服务器" value={connection?.server} />
+        <ViewField label="绑定主机" value={connection?.host} />
+        <ViewField label="端口" value={connection?.targetPort} />
+        <ViewField label="协议" value={connection ? formatProtocol(connection) : ""} />
+        <ViewField label="植入体标签" value={connection?.hostTag} />
 
         {isSocks && (
           <>
-            <ViewField label="Auth User" value={connection?.authUser} />
-            <ViewField label="Auth Password" value={connection?.authPass} />
+            <ViewField label="认证用户" value={connection?.authUser} />
+            <ViewField label="认证密码" value={connection?.authPass} />
           </>
         )}
 
         {isPortForward && (
           <>
-            <ViewField label="Forward" value={connection ? formatForward(connection) : ""} />
-            <ViewField label="Forward Host" value={connection?.forwardHost} />
-            <ViewField label="Forward Port" value={connection?.forwardPort} />
+            <ViewField label="转发" value={connection ? formatForward(connection) : ""} />
+            <ViewField label="转发主机" value={connection?.forwardHost} />
+            <ViewField label="转发端口" value={connection?.forwardPort} />
           </>
         )}
       </div>
@@ -90,7 +90,7 @@ const ViewNetworkPanel = ({ connection, handleClosePanel }: ViewNetworkPanelProp
           onClick={handleClosePanel}
           className="button-default z-10 flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
         >
-          Close
+          关闭
         </button>
       </div>
     </div>

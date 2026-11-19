@@ -17,7 +17,7 @@ async def main_auth(body):
 
     if not username or not password or not secret:
         return await conclude_request(
-            {"status": "failure", "message": "user, pass and secret are required"},
+            {"status": "failure", "message": "user、pass 和 secret 均为必填项"},
             body=body,
             type="auth",
         )
@@ -25,7 +25,7 @@ async def main_auth(body):
     users = await sqlite_db.read(User, user=username)
     if not users or users[0].secret != secret:
         return await conclude_request(
-            {"status": "failure", "message": "Invalid credentials"},
+            {"status": "failure", "message": "凭据无效"},
             body=body,
             type="auth",
         )
@@ -40,7 +40,7 @@ async def main_auth(body):
 
     if not valid:
         return await conclude_request(
-            {"status": "failure", "message": "Invalid credentials"},
+            {"status": "failure", "message": "凭据无效"},
             body=body,
             type="auth",
         )

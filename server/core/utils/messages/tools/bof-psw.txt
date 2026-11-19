@@ -1,13 +1,13 @@
-ABOUT
+关于
     Shows window titles from processes with active Windows.
-USAGE:
+用法：
     bof-psw
-EXAMPLES:
+示例：
     bof-psw
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-psw -w 60
     bof-psw -bg

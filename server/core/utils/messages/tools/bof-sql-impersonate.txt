@@ -1,9 +1,9 @@
-ABOUT
+关于
     Enumerates SQL logins that can be impersonated on a server.
 
-USAGE:
+用法：
     bof-sql-impersonate --- <server> [database]
 
-EXAMPLES:
+示例：
     bof-sql-impersonate --- SQL01
     bof-sql-impersonate --- SQL01 master

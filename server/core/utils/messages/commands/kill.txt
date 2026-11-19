@@ -1,11 +1,11 @@
-ABOUT
-    End this process (Windows TerminateProcess, Linux/macOS exit).
+关于
+    结束当前进程（Windows 使用 TerminateProcess，Linux/macOS 直接退出）。
 
-USAGE:
+用法：
     kill
 
-ARGUMENTS:
-    (none)
+参数：
+    （无）
 
-EXAMPLES:
+示例：
     kill

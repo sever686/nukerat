@@ -1,22 +1,22 @@
-ABOUT
+关于
     .NET Framework C# compiler.
     Builds attacker .cs into EXE or DLL on-host to evade controls.
 
-USAGE:
+用法：
     csc.exe -out:{PATH:.exe} {PATH:.cs}
     csc -target:library {PATH:.cs}
 
-ARGUMENTS:
+参数：
     -out:                        Output executable path
     -target:library              Emit DLL instead of EXE
 
-EXAMPLES:
+示例：
     csc.exe -out:{PATH:.exe} {PATH:.cs}
     csc -target:library {PATH:.cs}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     csc.exe -out:{PATH:.exe} {PATH:.cs}

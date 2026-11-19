@@ -1,12 +1,12 @@
-ABOUT
+关于
     C# tool to enumerate and abuse misconfigurations in Active Directory Certificate
     Services (AD CS). Supports CA enumeration, certificate template discovery,
     vulnerability assessment, certificate requests, and downloads.
 
-USAGE:
+用法：
     net-certify --- <command> [options]
 
-EXAMPLES:
+示例：
     net-certify --- cas
     net-certify --- cas /domain:domain.local /showAllPermissions
     net-certify --- find
@@ -25,14 +25,14 @@ EXAMPLES:
     net-certify --- request /ca:SERVER\ca-name /template:Y /onbehalfof:DOMAIN\USER /enrollcert:C:\Temp\enroll.pfx
     net-certify --- download /ca:SERVER\ca-name /id:X /install
 
-COMMANDS:
+命令：
     cas                 List information about registered CAs
     find                Find enabled certificate templates
     pkiobjects          Enumerate access control information for PKI objects
     request             Request a new certificate
     download            Download an already requested certificate
 
-FIND OPTIONS:
+FIND 选项：
     /vulnerable         Find vulnerable or abusable templates (default low priv groups)
     /currentuser        Find vulnerable templates using all groups of current user
     /enrolleeSuppliesSubject   Templates with ENROLLEE_SUPPLIES_SUBJECT enabled
@@ -41,7 +41,7 @@ FIND OPTIONS:
     /hideAdmins         Hide admin entries (cas command)
     /skipWebServiceChecks   Skip web service checks (cas command)
 
-COMMON OPTIONS:
+COMMON 选项：
     /ca:SERVER\ca-name  Target CA name
     /domain:domain.local   Target domain
     /path:LDAP_PATH     LDAP search base path
@@ -49,7 +49,7 @@ COMMON OPTIONS:
     /json               JSON output
     /outfile:PATH       Write output to file
 
-REQUEST OPTIONS:
+REQUEST 选项：
     /template:NAME      Certificate template name
     /subject:X          Certificate subject
     /altname:USER       Alternate name (if supported)
@@ -61,14 +61,14 @@ REQUEST OPTIONS:
     /enrollcert:PATH    Enrollment agent certificate path
     /enrollcertpw:PASS  Enrollment agent certificate password
 
-DOWNLOAD OPTIONS:
+DOWNLOAD 选项：
     /id:X               Request ID of certificate to download
     /install            Install certificate to store
     /machine            Use machine context
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     net-certify -w 60 --- cas

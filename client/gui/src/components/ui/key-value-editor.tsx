@@ -34,7 +34,7 @@ export function KeyValueEditor({
           className="h-[25px] w-[90px] gap-1.5 rounded border-[#333] bg-[#232323] p-0 text-[12px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#cecece]"
         >
           <Plus size={11} />
-          Add row
+          添加行
         </Button>
       </div>
 
@@ -64,7 +64,7 @@ export function KeyValueEditor({
                   scope="col"
                   className="w-0 border-b border-[#292929] p-0 font-normal"
                 >
-                  <span className="sr-only">Remove</span>
+                  <span className="sr-only">移除</span>
                 </th>
               </tr>
             </thead>
@@ -116,7 +116,7 @@ export function KeyValueEditor({
             </tbody>
           </table>
         ) : (
-          <span className="block px-3 py-6 text-center text-[13px] text-[#555]">Empty</span>
+          <span className="block px-3 py-6 text-center text-[13px] text-[#555]">空白</span>
         )}
       </div>
     </div>

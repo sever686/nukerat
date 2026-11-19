@@ -1,5 +1,5 @@
-Armory utilities:
-=================
+军械库工具：
+============
 
 bof-aadjoininfo                 Display Azure AD or Entra ID join information
                                 for the device.

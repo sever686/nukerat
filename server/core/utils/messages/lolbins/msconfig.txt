@@ -1,17 +1,17 @@
-ABOUT
+关于
     System configuration troubleshooting UI. LOLBAS runs commands
     embedded in a crafted system32\mscfgtlc.xml when started with
     the -5 switch under administrator context.
 
-USAGE:
+用法：
     Msconfig.exe -5
 
-EXAMPLES:
+示例：
     Msconfig.exe -5
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     Msconfig.exe -5

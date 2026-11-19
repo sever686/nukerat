@@ -1,23 +1,23 @@
-ABOUT
+关于
     Ssh.exe is the OpenSSH compatible client can be used to connect
     to Windows 10 (build 1809 and later) and Windows Server 2019
     devices. LOLBAS covers execute specified command, can be used
     for defense evasion, performs execution of specified file, can
     be used as a defensive evasion, and related techniques.
 
-USAGE:
+用法：
     ssh localhost "{CMD}"
     ssh -o ProxyCommand="{CMD}" .
     ssh -o PKCS11Provider="\\\\127.0.0.1\\Temp\\example.dll" win@github.com
 
-EXAMPLES:
+示例：
     ssh localhost "{CMD}"
     ssh -o ProxyCommand="{CMD}" .
     ssh -o PKCS11Provider="\\\\127.0.0.1\\Temp\\example.dll" win@github.com
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     ssh localhost "{CMD}"

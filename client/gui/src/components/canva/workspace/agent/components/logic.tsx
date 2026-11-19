@@ -203,14 +203,14 @@ export function useAgentPanel() {
     const message = input.trim();
     if ((!message && !pastedContexts.length) || submitting) return;
     if (!serverId || !model) {
-      toast.error(!serverId ? "Select a model" : "Select a model");
+      toast.error(!serverId ? "请选择模型" : "请选择模型");
       return;
     }
     const server = servers.find((s) => s.id === serverId);
     const ip = server?.ip?.trim().replace(/\/$/, "");
     const port = server?.port?.trim();
     if (!ip || !port) {
-      toast.error("Select a model");
+      toast.error("选择模型");
       return;
     }
     const outgoingMessage = buildOutgoingMessage(message, pastedContexts);
@@ -302,7 +302,7 @@ export function useAgentPanel() {
       content: m.text,
     }));
     navigator.clipboard.writeText(`"context": ${JSON.stringify(context, null, 2)}`);
-    toast.success("History copied");
+    toast.success("历史已复制");
   };
 
   const onModelChange = (name: string) => {
@@ -381,7 +381,7 @@ export function useAgentPanel() {
       try {
         setCustomContext(JSON.stringify(JSON.parse(customContext), null, 4));
       } catch {
-        toast.error("Invalid JSON");
+        toast.error("无效的 JSON");
       }
     },
     setSystemPrompt,

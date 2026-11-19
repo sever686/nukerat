@@ -31,7 +31,7 @@ const hostNotify = (s: {
 export function buildSessionsMenuHeader(): PanelCustomMenuItem[] {
   const s = sessionsMenuRuntimeRef.current?.getMenuSession?.();
   if (!s) return [];
-  const tag = s.tag?.trim() || "Untagged";
+  const tag = s.tag?.trim() || "未标记";
   const ip = (s.internal ?? s.ip)?.trim();
   const sub = [ip, s.hostname?.trim(), s.os?.trim()].filter(Boolean).join(" · ");
   return [{ kind: "header", label: tag, description: sub || undefined }];
@@ -42,7 +42,7 @@ export function buildSessionsOpenMenu(): PanelCustomMenuItem[] {
   return [
     {
       kind: "action",
-      label: "Open",
+      label: "打开",
       icon: ExternalLink,
       items: hostOpenPanels.map((p) => ({
         kind: "action" as const,
@@ -64,7 +64,7 @@ export function buildSessionsKillMenu(): PanelCustomMenuItem[] {
   return [
     {
       kind: "action",
-      label: "Kill session",
+      label: "终止会话",
       icon: CircleX,
       onClick: () => {
         const rt = sessionsMenuRuntimeRef.current;

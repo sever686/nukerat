@@ -1,23 +1,23 @@
-ABOUT
+关于
     ASP.NET compilation tool.
     With the right folder layout and build provider, compiles and runs
     attacker C# through a Microsoft-signed binary for AWL bypass.
 
-USAGE:
+用法：
     C:\Windows\Microsoft.NET\Framework64\v4.0.30319\aspnet_compiler.exe -v none -p C:\users\cpl.internal\desktop\asptest\ -f C:\users\cpl.internal\desktop\asptest\none -u
 
-ARGUMENTS:
+参数：
     -v                           Virtual path (none in documented compile)
     -p                           Physical path to source folder
     -f                           Output folder
     -u                           Unattended update compile
 
-EXAMPLES:
+示例：
     C:\Windows\Microsoft.NET\Framework64\v4.0.30319\aspnet_compiler.exe -v none -p C:\users\cpl.internal\desktop\asptest\ -f C:\users\cpl.internal\desktop\asptest\none -u
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     C:\Windows\Microsoft.NET\Framework64\v4.0.30319\aspnet_compiler.exe -v none -p C:\users\cpl.internal\desktop\asptest\ -f C:\users\cpl.internal\desktop\asptest\none -u

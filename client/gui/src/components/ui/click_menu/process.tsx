@@ -14,20 +14,20 @@ export function createProcessBridge(): PanelEditMenuBridge | null {
     writeValue: (_, v) => rt.setSearch(v),
     canEdit: () => !off(),
     getCustomMenuItems: () => [
-      menuAction("Refresh", RefreshCw, () => rt.refresh(), off),
+      menuAction("刷新", RefreshCw, () => rt.refresh(), off),
       {
         kind: "action",
-        label: "View mode",
+        label: "视图模式",
         icon: LayoutGrid,
         disabled: off,
         items: [
-          { kind: "action", label: "Tree", onClick: () => rt.setTreeView() },
-          { kind: "action", label: "Flat", onClick: () => rt.setFlatView() },
+          { kind: "action", label: "树形", onClick: () => rt.setTreeView() },
+          { kind: "action", label: "平铺", onClick: () => rt.setFlatView() },
         ],
       },
     ],
     getFooterMenuItems: () => [
-      menuAction("Copy context", Bot, () => rt.copyContext(), () => off() || !rt.canCopyContext()),
+      menuAction("复制上下文", Bot, () => rt.copyContext(), () => off() || !rt.canCopyContext()),
     ],
   };
 }

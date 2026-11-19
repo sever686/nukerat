@@ -1,21 +1,21 @@
-ABOUT
+关于
     CAB extraction utility. LOLBAS covers hiding cabinet data in
     alternate data streams, copying from UNC or WebDAV, and local file
     copy or overwrite.
 
-USAGE:
+用法：
     extrac32 {PATH_ABSOLUTE:.cab} {PATH_ABSOLUTE}:file.exe
     extrac32 /Y /C {PATH_SMB} {PATH_ABSOLUTE}
     extrac32.exe /C {PATH_ABSOLUTE:.source.exe} {PATH_ABSOLUTE:.dest.exe}
 
-EXAMPLES:
+示例：
     extrac32 {PATH_ABSOLUTE:.cab} {PATH_ABSOLUTE}:file.exe
     extrac32 /Y /C {PATH_SMB} {PATH_ABSOLUTE}
     extrac32.exe /C {PATH_ABSOLUTE:.source.exe} {PATH_ABSOLUTE:.dest.exe}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     extrac32 {PATH_ABSOLUTE:.cab} {PATH_ABSOLUTE}:file.exe

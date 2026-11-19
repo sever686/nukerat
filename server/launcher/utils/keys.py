@@ -10,12 +10,12 @@ def key_add(name):
     base = name.strip()
 
     if not base:
-        print("Username is required")
+        print("用户名为必填项")
 
         return
 
     if "/" in base or "\\" in base or base in (".", ".."):
-        print("Invalid name")
+        print("名称无效")
 
         return
 
@@ -26,7 +26,7 @@ def key_add(name):
         username = base if index == 0 else f"{base}({index})"
 
         if len(username) > 150:
-            print("Name must be less than 150 characters")
+            print("名称必须少于 150 个字符")
 
             return
 
@@ -48,7 +48,7 @@ def key_add(name):
     path = folder / f"{username}.key"
     path.write_text(f"{username}:{password}:{secret}\n", encoding="utf-8")
     print(f"{username}:{password}:{secret}")
-    print(f"\nOperator created successfully: {username}")
+    print(f"\n操作员创建成功：{username}")
     print(f"Saved: {path}")
 
 def key_list():
@@ -56,7 +56,7 @@ def key_list():
     rows = sqlite_db.read(User)
 
     if not rows:
-        print("No operators")
+        print("没有操作员")
 
         return
 
@@ -68,8 +68,8 @@ def key_rem(name):
     username = name.strip()
 
     if sqlite_db.delete(User, user=username) == 0:
-        print(f"User not found: {username}")
+        print(f"未找到用户：{username}")
 
         return
 
-    print(f"Operator revoked: {username}")
+    print(f"操作员已撤销：{username}")

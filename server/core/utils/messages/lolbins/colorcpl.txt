@@ -1,17 +1,17 @@
-ABOUT
+关于
     Windows color management control panel.
     Copies a chosen file into System32\spool\drivers\color for blending
     into trusted paths.
 
-USAGE:
+用法：
     colorcpl {PATH}
 
-EXAMPLES:
+示例：
     colorcpl {PATH}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     colorcpl {PATH}

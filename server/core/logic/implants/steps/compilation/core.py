@@ -28,4 +28,4 @@ async def main(body, tag):
     if fmt == "app":
         return await app_main(body, tag)
 
-    return {"status": "failure", "message": f"Build not implemented for format '{fmt}'"}
+    return {"status": "failure", "message": f"未支持格式 '{fmt}' 的构建"}

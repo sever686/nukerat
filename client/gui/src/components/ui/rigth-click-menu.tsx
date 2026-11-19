@@ -361,8 +361,8 @@ function PanelEditContextMenu({ kind, children }: { kind: WorkspacePanelMenuKind
       <ContextMenuContent className={panelMenuContentClass}>
         {showEdit && docMode && (
           <ContextMenuGroup>
-            <Row label="Copy" hotkey={modKey("C")} disabled={!caps.copy} onClick={() => void runCopy()} />
-            <Row label="Select All" hotkey={modKey("A")} disabled={!caps.all} onClick={runSelectAll} />
+            <Row label="复制" hotkey={modKey("C")} disabled={!caps.copy} onClick={() => void runCopy()} />
+            <Row label="全选" hotkey={modKey("A")} disabled={!caps.all} onClick={runSelectAll} />
           </ContextMenuGroup>
         )}
         {showTerminalOutputActions && (
@@ -378,7 +378,7 @@ function PanelEditContextMenu({ kind, children }: { kind: WorkspacePanelMenuKind
                   <ContextMenuItemIcon>
                     <Bot />
                   </ContextMenuItemIcon>
-                  Copy context
+                  复制上下文
                 </span>
               </ContextMenuItem>
             </ContextMenuGroup>
@@ -387,19 +387,19 @@ function PanelEditContextMenu({ kind, children }: { kind: WorkspacePanelMenuKind
         {showEdit && !docMode && (
           <>
             <ContextMenuGroup>
-              <Row label="Undo" hotkey={modKey("Z")} disabled={!caps.undo} onClick={runUndo} />
-              <Row label="Redo" hotkey={modKey("Y")} disabled={!caps.redo} onClick={runRedo} />
+              <Row label="撤销" hotkey={modKey("Z")} disabled={!caps.undo} onClick={runUndo} />
+              <Row label="重做" hotkey={modKey("Y")} disabled={!caps.redo} onClick={runRedo} />
             </ContextMenuGroup>
             <ContextMenuSeparator />
             <ContextMenuGroup>
-              <Row label="Cut" hotkey={modKey("X")} disabled={!caps.cut} onClick={() => void runCut()} />
-              <Row label="Copy" hotkey={modKey("C")} disabled={!caps.copy} onClick={() => void runCopy()} />
-              <Row label="Paste" hotkey={modKey("V")} disabled={!caps.paste} onClick={() => void runPaste()} />
-              <Row label="Delete" disabled={!caps.del} onClick={runDelete} />
+              <Row label="剪切" hotkey={modKey("X")} disabled={!caps.cut} onClick={() => void runCut()} />
+              <Row label="复制" hotkey={modKey("C")} disabled={!caps.copy} onClick={() => void runCopy()} />
+              <Row label="粘贴" hotkey={modKey("V")} disabled={!caps.paste} onClick={() => void runPaste()} />
+              <Row label="删除" disabled={!caps.del} onClick={runDelete} />
             </ContextMenuGroup>
             <ContextMenuSeparator />
             <ContextMenuGroup>
-              <Row label="Select All" hotkey={modKey("A")} disabled={!caps.all} onClick={runSelectAll} />
+              <Row label="全选" hotkey={modKey("A")} disabled={!caps.all} onClick={runSelectAll} />
             </ContextMenuGroup>
           </>
         )}
@@ -425,7 +425,7 @@ function PanelEditContextMenu({ kind, children }: { kind: WorkspacePanelMenuKind
                   <ContextMenuItemIcon>
                     <X />
                   </ContextMenuItemIcon>
-                  Close tab
+                  关闭标签页
                 </span>
               </ContextMenuItem>
             </ContextMenuGroup>

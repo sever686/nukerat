@@ -1,20 +1,20 @@
-ABOUT
+关于
     Collects Office JWT access tokens from memory of the specified Office process.
 
-USAGE:
+用法：
     bof-office-tokens --- <pid>
 
-ARGUMENTS:
+参数：
 
     pid    Target Office process ID
 
-EXAMPLES:
+示例：
 
     bof-office-tokens --- 4321
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-office-tokens -w 60 --- 4321

@@ -1,20 +1,20 @@
-ABOUT
+关于
     Copy a file to a new path. Overwrites the destination if it exists.
 
-USAGE:
+用法：
     cp <source> <destination>
 
-ARGUMENTS:
+参数：
     <source>            Source file (positional).
     <destination>       Destination path (positional).
 
-EXAMPLES:
+示例：
     cp /tmp/a.txt /tmp/b.txt
     cp C:\Temp\a.txt C:\Temp\b.txt
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    EXAMPLE:
+    示例：
     cp -w 60 C:\Temp\a.txt C:\Temp\b.txt

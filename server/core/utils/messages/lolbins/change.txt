@@ -1,17 +1,17 @@
-ABOUT
+关于
     Remote Desktop Services change utility.
     Invokes chgusr.exe from its directory; co-located renamed chgusr.exe
     runs when using user, port, or logon subcommands.
 
-USAGE:
+用法：
     change.exe user
 
-EXAMPLES:
+示例：
     change.exe user
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     change.exe user

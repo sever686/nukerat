@@ -1,20 +1,19 @@
-ABOUT
-    Show discretionary access control for a path: owner, group, and DACL entries with
-    allow or deny labels and access masks.
+关于
+    显示路径的自主访问控制（DACL）：所有者、组，以及带允许/拒绝标记和访问掩码的 DACL 条目。
 
-USAGE:
+用法：
     acl <path>
 
-ARGUMENTS:
-    <path>              File or directory.
+参数：
+    <path>              文件或目录。
 
-EXAMPLES:
+示例：
     acl C:\Users\Public
     acl /some/path
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     acl -w 60 C:\Users\Public

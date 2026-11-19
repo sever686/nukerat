@@ -1,9 +1,9 @@
-ABOUT
+关于
     Enumerates COM servers registered in LocalServer32 and InProcServer32 keys using WMI.
 
-USAGE:
+用法：
     net-com-hunter --- [-inproc | -localserver]
 
-EXAMPLES:
+示例：
     net-com-hunter    net-com-hunter --- -inproc
     net-com-hunter --- -localserver

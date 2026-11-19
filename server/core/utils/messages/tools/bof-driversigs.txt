@@ -1,14 +1,14 @@
-ABOUT
+关于
     Enumerate installed services Imagepaths to check the signing cert against known AV/EDR vendors
 
-USAGE:
+用法：
     bof-driversigs
-EXAMPLES:
+示例：
     bof-driversigs
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-driversigs -w 60
     bof-driversigs -bg

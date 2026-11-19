@@ -1,17 +1,17 @@
-ABOUT
+关于
     Used to reset Windows Store settings according to its manifest
     file. LOLBAS documents execute a binary or script as a high-
     integrity process without a UAC prompt.
 
-USAGE:
+用法：
     wsreset.exe
 
-EXAMPLES:
+示例：
     wsreset.exe
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     wsreset.exe

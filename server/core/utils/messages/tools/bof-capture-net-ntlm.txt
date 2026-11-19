@@ -1,12 +1,12 @@
-ABOUT
+关于
     Capture the NetNTLMv2 hash of the current user. This is done by simulating a NTLM authentication exchange between a client and server to capture the NetNTLMv2 hash.
 
-USAGE:
+用法：
     bof-capture-net-ntlm --- (no arguments)
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-capture-net-ntlm -w 60 --- (no arguments)

@@ -42,7 +42,7 @@ const LogTopBar = ({
         <div className="flex w-max min-w-full flex-nowrap items-center gap-2">
           <Select value={serverId || undefined} onValueChange={setServer}>
             <SelectTrigger className={`w-[10rem] px-2.5 ${selectTriggerClass}`}>
-              <SelectValue placeholder="Server" />
+              <SelectValue placeholder="服务器" />
             </SelectTrigger>
             <SelectContent className="text-[13.5px]">
               {servers.map((s) => (
@@ -57,7 +57,7 @@ const LogTopBar = ({
               className="box-border h-[29px] w-full rounded border border-[#363636] bg-[#212121] py-0 pl-3 pr-8 text-[13.5px] text-[#cecece] outline-none transition-colors placeholder:text-[#444] focus:border-[#555]"
               value={filters.search}
               onChange={(e) => setFilter("search", e.target.value)}
-              placeholder="Search logs..."
+              placeholder="搜索日志..."
               autoComplete="off"
               spellCheck={false}
             />
@@ -79,7 +79,7 @@ const LogTopBar = ({
               <SelectValue />
             </SelectTrigger>
             <SelectContent className="text-[13.5px]">
-              <SelectItem value="all">All</SelectItem>
+              <SelectItem value="all">全部</SelectItem>
               {logTypes.map((t) => (
                 <SelectItem key={t} value={t}>
                   {t}
@@ -95,7 +95,7 @@ const LogTopBar = ({
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All</SelectItem>
+              <SelectItem value="all">全部</SelectItem>
               {logCategories.map((c) => (
                 <SelectItem key={c} value={c} className="capitalize">
                   {c}
@@ -107,8 +107,8 @@ const LogTopBar = ({
         <div className="flex min-h-[18px] items-center justify-between">
           <span className="text-[13px] tabular-nums text-[#555]">
             {total === 0
-              ? "0 entries"
-              : `${total} ${total === 1 ? "entry" : "entries"}`}
+              ? "0 条"
+              : `${total} 条`}
           </span>
           {hasActiveFilters && (
             <button
@@ -116,7 +116,7 @@ const LogTopBar = ({
               onClick={clearFilters}
               className="button-default cursor-pointer text-[13px] text-[#6e6e6e] transition-colors hover:text-[#d4d4d4]"
             >
-              Reset filters
+              重置筛选
             </button>
           )}
         </div>

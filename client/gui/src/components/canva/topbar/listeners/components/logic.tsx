@@ -143,7 +143,7 @@ export const CERT_SUBJECT_FIELDS = [
   { key: "organization", label: "O", placeholder: "Cisco Systems Inc" },
   { key: "orgUnit", label: "OU", placeholder: "IT" },
   { key: "commonName", label: "CN", placeholder: "update.cisco-cloud.com" },
-  { key: "sanDns", label: "san dns", placeholder: "update.cisco-cloud.com" },
+  { key: "sanDns", label: "SAN DNS", placeholder: "update.cisco-cloud.com" },
 ] as const;
 
 export const EMPTY_CERT: ListenerCert = {
@@ -180,12 +180,12 @@ export const EMPTY_FORM: ListenerFormData = {
 // index.tsx --------------------------------
 
 export const TABLE_COLUMNS = [
-  "Name",
-  "Type",
-  "Protocol",
-  "Address",
-  "Server",
-  "Cert",
+  "名称",
+  "类型",
+  "协议",
+  "地址",
+  "服务器",
+  "证书",
 ] as const;
 
 export const LEGACY_LABELS: Record<string, string> = {
@@ -334,11 +334,11 @@ export function useListenersPanel() {
     );
     if (res?.status !== "success") {
       setSubmitting(false);
-      toast.error(res?.message ?? "Failed to restart listener");
+      toast.error(res?.message ?? "重启监听器失败");
       return;
     }
     setSubmitting(false);
-    toast.success(res?.message ?? "Listener restarted");
+    toast.success(res?.message ?? "监听器已重启");
     await refreshListeners();
   };
 
@@ -374,10 +374,10 @@ export function useListenersPanel() {
     );
     setSubmitting(false);
     if (res?.status !== "success") {
-      toast.error(res?.message ?? "Failed to create listener");
+      toast.error(res?.message ?? "创建监听器失败");
       return;
     }
-    toast.success(res?.message ?? "Listener created");
+    toast.success(res?.message ?? "监听器已创建");
     await refreshListeners();
     setPanelMode(null);
   };
@@ -392,7 +392,7 @@ export function useListenersPanel() {
     );
     if (res?.status !== "success") {
       setSubmitting(false);
-      toast.error(res?.message ?? "Failed to remove listener");
+      toast.error(res?.message ?? "移除监听器失败");
       return;
     }
     setListeners((prev) =>
@@ -401,7 +401,7 @@ export function useListenersPanel() {
     setSelectedRowId(null);
     setSubmitting(false);
     setShowRemoveConfirm(false);
-    toast.success(res?.message ?? "Listener removed");
+    toast.success(res?.message ?? "监听器已移除");
     await refreshListeners();
   };
   confirmRemoveRef.current = () => {
@@ -557,8 +557,8 @@ export const getViewFlags = (listener: Listener | null) => ({
 });
 
 export const getViewTypeLabel = (listener: Listener | null): string => {
-  if (listener?.listenerType === "file_server") return "File server";
-  return "Channel";
+  if (listener?.listenerType === "file_server") return "文件服务器";
+  return "通道";
 };
 
 export const getViewProtocolLabel = (listener: Listener | null): string => {

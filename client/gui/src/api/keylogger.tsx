@@ -171,7 +171,7 @@ export const deleteKeylogger = async (
 
   let lastError: KeyloggerDeleteResponse = {
     status: "failure",
-    message: "Request failed",
+    message: "请求失败",
   };
 
   for (const entry of servers) {

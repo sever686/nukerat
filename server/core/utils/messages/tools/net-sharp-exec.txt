@@ -1,8 +1,8 @@
-ABOUT
+关于
     Offensive C# lateral movement tool. Supports PSExec, WMI, WMIExec, and SMBExec
     modules for remote command execution and semi interactive shells.
 
-USAGE:
+用法：
     net-sharp-exec --- -m=<module> -i=<target> [options]
 
 MODULES (-m):
@@ -11,7 +11,7 @@ MODULES (-m):
     wmiexec    Semi interactive shell as authenticated user
     smbexec    Semi interactive shell as NT AUTHORITY\SYSTEM
 
-OPTIONS:
+选项：
     -i    Target IP or hostname (required)
     -u    Username
     -p    Password
@@ -26,11 +26,11 @@ SHELL COMMANDS (wmiexec/smbexec):
     help    Show help menu
     exit    Exit shell
 
-EXAMPLES:
+示例：
     net-sharp-exec --- -m=psexec -i=192.168.1.10 -u=User -p=Pass -d=DOMAIN -e=C:\Windows\System32\cmd.exe -c="whoami"
     net-sharp-exec --- -m=wmiexec -i=192.168.1.10 -u=User -p=Pass -d=DOMAIN
     net-sharp-exec --- -m=smbexec -i=192.168.1.10 -u=User -p=Pass -d=DOMAIN
     net-sharp-exec --- -m=wmi -i=192.168.1.10 -f=C:\local\tool.exe -e=C:\tool.exe
 
-NOTES:
+备注：
     All modules require administrative rights on the target system.

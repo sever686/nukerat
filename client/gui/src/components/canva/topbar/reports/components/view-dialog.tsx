@@ -68,7 +68,7 @@ const ReportViewDialog = ({ open, loading, title, html, onOpenChange }: ReportVi
         <div style={{ padding: "18px" }} className="relative flex items-center px-4 py-2.5 !border-b-0">
           <DialogClose className="absolute top-1.5 right-2 rounded p-0.5 text-[#6b6b6b] transition-colors hover:text-[#d4d4d4]">
             <X size={20} />
-            <span className="sr-only">Close</span>
+            <span className="sr-only">关闭</span>
           </DialogClose>
         </div>
 
@@ -76,18 +76,18 @@ const ReportViewDialog = ({ open, loading, title, html, onOpenChange }: ReportVi
           {loading ? (
             <div className="flex h-[70vh] items-center justify-center text-[#666]">
               <RefreshCw size={16} className="mr-2 animate-spin" />
-              Loading report...
+              正在加载报告...
             </div>
           ) : html ? (
             <iframe
               ref={iframeRef}
               srcDoc={html}
-              title={title || "Report preview"}
+              title={title || "报告预览"}
               className="h-[70vh] w-full border-0"
               sandbox=""
             />
           ) : (
-            <div className="flex h-[70vh] items-center justify-center text-[#666]">No preview available</div>
+            <div className="flex h-[70vh] items-center justify-center text-[#666]">暂无预览</div>
           )}
         </div>
       </DialogContent>

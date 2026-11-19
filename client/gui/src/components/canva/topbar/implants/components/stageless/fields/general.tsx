@@ -39,7 +39,7 @@ export default ({
   return (
     <>
       <div className="space-y-1.5">
-        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Compile server</label>
+        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">编译服务器</label>
         <ServerDropdown
           hideLabel
           host={formData.teamHost}
@@ -54,7 +54,7 @@ export default ({
       <Separator className="bg-[#252525] mb-4 mt-2" />
 
       <div className="mb-3 space-y-1.5">
-        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Operational system</label>
+        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">操作系统</label>
         <Select value={formData.os} onValueChange={(v) => handleFormChange("os", v as ImplantFormData["os"])}>
           <SelectTrigger className="w-auto bg-[#212121] border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 h-auto focus:border-[#555] focus-visible:ring-0">
             <SelectValue />
@@ -68,7 +68,7 @@ export default ({
       </div>
 
       <div className="mb-4 space-y-1.5">
-        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Architecture</label>
+        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">架构</label>
         <div className="flex gap-2">
           <Select
             value={formData.cpu}
@@ -102,7 +102,7 @@ export default ({
       </div>
 
       <div className="mb-3 space-y-1.5">
-        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Format</label>
+        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">格式</label>
         <Select
           value={formData.os === "macos" ? "app" : formData.format}
           disabled={formData.os === "macos"}
@@ -135,16 +135,16 @@ export default ({
       {formData.os === "windows" ? (
         <div className="mt-2 mb-5.5 space-y-1.5">
           <div className="flex items-center gap-2">
-            <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Shellcode encoder</label>
+            <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Shellcode 编码器</label>
             <Tooltip delayDuration={200}>
               <TooltipTrigger asChild>
-                <span className="inline-flex items-center text-[#666] cursor-default select-none" aria-label="Shellcode encoder help">
+                <span className="inline-flex items-center text-[#666] cursor-default select-none" aria-label="Shellcode 编码器说明">
                   <CircleHelp size={13} />
                 </span>
               </TooltipTrigger>
               <TooltipContent side="bottom" className="bg-[#3A3A3A] max-w-xs rounded-[6px]">
                 <div className="text-xs">
-                  For shellcode format builds and migration payloads injected into another process.
+                  用于 shellcode 格式构建以及注入到其他进程的迁移载荷。
                 </div>
               </TooltipContent>
             </Tooltip>
@@ -157,7 +157,7 @@ export default ({
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="off">off</SelectItem>
+              <SelectItem value="off">关闭</SelectItem>
               <SelectItem value="sgn">sgn</SelectItem>
             </SelectContent>
           </Select>
@@ -173,7 +173,7 @@ export default ({
               checked={formData.showConhost}
               onCheckedChange={(v) => handleFormChange("showConhost", v === true)}
             />
-            <span className="text-[13px] text-[#cecece]">Show conhost window</span>
+            <span className="text-[13px] text-[#cecece]">显示 conhost 窗口</span>
           </label>
         </>
       ) : null}
@@ -187,57 +187,57 @@ export default ({
             className="button-default flex items-center gap-1.5 w-full mb-3 cursor-pointer"
           >
             <ChevronRight size={11} className={`text-[#454545] transition-transform ${advancedOpen ? "rotate-90" : ""}`} />
-            <span className="text-[12px] text-[#6e6e6e] uppercase tracking-widest">Advanced</span>
+            <span className="text-[12px] text-[#6e6e6e] uppercase tracking-widest">高级</span>
           </button>
           {advancedOpen ? (
             <div className="pl-3 border-l border-[#252525]">
               <div className="mb-3 space-y-1.5">
-                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Entropy</label>
+                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">熵</label>
                 <Select value={formData.donutEntropy} onValueChange={(v) => handleFormChange("donutEntropy", v as ImplantFormData["donutEntropy"])}>
                   <SelectTrigger className="w-full bg-[#212121] border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 h-auto focus:border-[#555] focus-visible:ring-0">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="none">none</SelectItem>
-                    <SelectItem value="random">random names</SelectItem>
-                    <SelectItem value="encrypt">random + encrypt</SelectItem>
+                    <SelectItem value="none">无</SelectItem>
+                    <SelectItem value="random">随机名称</SelectItem>
+                    <SelectItem value="encrypt">随机 + 加密</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
               <div className="mb-3 space-y-1.5">
-                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Compression</label>
+                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">压缩</label>
                 <Select value={formData.donutCompress} onValueChange={(v) => handleFormChange("donutCompress", v as ImplantFormData["donutCompress"])}>
                   <SelectTrigger className="w-full bg-[#212121] border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 h-auto focus:border-[#555] focus-visible:ring-0">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="none">none</SelectItem>
+                    <SelectItem value="none">无</SelectItem>
                     <SelectItem value="aplib">aPLib</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
               <div className="mb-3 space-y-1.5">
-                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">PE headers</label>
+                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">PE 头</label>
                 <Select value={formData.donutHeaders} onValueChange={(v) => handleFormChange("donutHeaders", v as ImplantFormData["donutHeaders"])}>
                   <SelectTrigger className="w-full bg-[#212121] border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 h-auto focus:border-[#555] focus-visible:ring-0">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="overwrite">overwrite</SelectItem>
-                    <SelectItem value="keep">keep all</SelectItem>
+                    <SelectItem value="overwrite">覆盖</SelectItem>
+                    <SelectItem value="keep">全部保留</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
               <div className="mb-3 space-y-1.5">
-                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Exit behavior</label>
+                <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">退出行为</label>
                 <Select value={formData.donutExit} onValueChange={(v) => handleFormChange("donutExit", v as ImplantFormData["donutExit"])}>
                   <SelectTrigger className="w-full bg-[#212121] border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 h-auto focus:border-[#555] focus-visible:ring-0">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="thread">exit thread</SelectItem>
-                    <SelectItem value="process">exit process</SelectItem>
-                    <SelectItem value="block">block indefinitely</SelectItem>
+                    <SelectItem value="thread">退出线程</SelectItem>
+                    <SelectItem value="process">退出进程</SelectItem>
+                    <SelectItem value="block">无限期阻塞</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -247,7 +247,7 @@ export default ({
                   checked={formData.donutThread}
                   onCheckedChange={(v) => handleFormChange("donutThread", v === true)}
                 />
-                <span className="text-[13px] text-[#cecece]">Run entry as thread</span>
+                <span className="text-[13px] text-[#cecece]">以线程方式运行入口</span>
               </label>
             </div>
           ) : null}

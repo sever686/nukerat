@@ -1,8 +1,8 @@
-ABOUT
-    Show the current configuration.
+关于
+    显示当前配置。
     
-USAGE:
+用法：
     config
 
-EXAMPLES:
+示例：
     config

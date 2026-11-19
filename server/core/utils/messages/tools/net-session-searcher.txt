@@ -1,8 +1,8 @@
-ABOUT
+关于
     Searches all connected drives for PuTTY private keys (.ppk) and RDP connection files, parsing for credentials.
 
-USAGE:
+用法：
     net-session-searcher --- (no arguments)
 
-EXAMPLES:
+示例：
     net-session-searcher

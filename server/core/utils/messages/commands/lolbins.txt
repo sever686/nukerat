@@ -1,23 +1,23 @@
-ABOUT
-    List, run, or check Windows LOLBins on the host. To pass binary
-    flags or values, put them after '---' (example: lol-powershell --- whoami).
+关于
+    列出、运行或检查主机上的 Windows LOLBins。如需传入二进制参数或值，请放在 '---' 之后（例如：lol-p
+    owershell --- whoami）。
 
-USAGE:
+用法：
     lolbins [<category>]
 
-ARGUMENTS:
-    <category>          execute, download, dll, proxy, dump, compile, compress,
-                        copy, credentials, upload, inject, evasion, recon,
-                        tamper, uac, ads
-    --type              Same as <category> after lolbins check.
-    --path              Override default path for lol-<name>.
+参数：
+    <category>          execute、download、dll、proxy、dump、compile、compress、
+                        copy、credentials、upload、inject、evasion、recon、
+                        tamper、uac、ads
+    --type              等同于 lolbins check 之后的 <category>。
+    --path              覆盖 lol-<name> 的默认路径。
 
-MODES:
-    lolbins             Full index or one category.
-    check               Check catalog paths on the host (lolbins check <category>).
-    lol-<name>          Run a catalog binary with optional arguments.
+模式：
+lolbins             完整索引或单个类别。
+check               在主机上检查目录中的路径（lolbins check <category>）。
+lol-<name>          运行目录中的二进制，可带可选参数。
 
-EXAMPLES:
+示例：
     lolbins
     lolbins check execute
     lol-powershell --- whoami

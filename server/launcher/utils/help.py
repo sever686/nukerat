@@ -1,24 +1,24 @@
-usage = """USAGE:
-    server <command> ...
+usage = """用法：
+    server <命令> ...
 
-COMMANDS
-    start                       Start server
+命令
+    start                       启动服务端
 
-    config list                 List server config
-    config set <key> <value>    Set server config
-    config reset <key>          Reset server config to default
-    config load <file>          Load server config from file
-    config create-tls           Create a self signed cert and enable TLS
+    config list                 列出服务端配置
+    config set <key> <value>    设置服务端配置
+    config reset <key>          将配置项重置为默认值
+    config load <file>          从文件加载服务端配置
+    config create-tls           创建自签名证书并启用 TLS
 
-    key list                    List operators keys
-    key add <name>              Create operator key
-    key rem <name>              Remove operator key
+    key list                    列出操作员密钥
+    key add <name>              创建操作员密钥
+    key rem <name>              移除操作员密钥
 
-    venv list                   List installed python packages
-    venv install <package>      Install a python package
-    venv uninstall <package>    Uninstall a python package
+    venv list                   列出已安装的 Python 包
+    venv install <package>      安装 Python 包
+    venv uninstall <package>    卸载 Python 包
 
-    db usage                    Show database information
-    db export <path>            Export database to a file
-    db import <file>            Import database from a file
+    db usage                    显示数据库信息
+    db export <path>            将数据库导出到文件
+    db import <file>            从文件导入数据库
 """

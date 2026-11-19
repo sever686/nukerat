@@ -1,12 +1,12 @@
-ABOUT
+关于
     Creates or deletes a scheduled task via registry only, without triggering Windows events 4698 and 106. Requires NT AUTHORITY\SYSTEM.
 
-USAGE:
+用法：
     bof-ghost-task --- <ARGC> <HOSTNAME> <OPERATION> [args...]
 
     ARGC is the total argument count passed to the BOF (including hostname and operation).
 
-ARGUMENTS:
+参数：
 
     HOSTNAME      localhost or remote computer name
 
@@ -26,15 +26,15 @@ ARGUMENTS:
 
     DAY           Days for weekly trigger (add only)
 
-EXAMPLES:
+示例：
 
     bof-ghost-task --- 8 localhost add demo cmd.exe "/c notepad.exe" LAB\Administrator daily 20:37
 
     bof-ghost-task --- 4 localhost delete demo
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-ghost-task -w 60 --- localhost add demo cmd.exe "/c notepad.exe" LAB\Administrator daily 20:37

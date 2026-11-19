@@ -41,7 +41,7 @@ export default function LoaderBuildBar({
           className="button-default flex items-center gap-1.5 px-3 py-1 rounded bg-[#232323] text-[#cecece] text-[13px] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] transition-colors border border-[#333] disabled:opacity-25 disabled:cursor-not-allowed cursor-pointer"
         >
           {submitting ? <RefreshCw size={13} className="animate-spin" /> : null}
-          Build
+          构建
         </button>
       </div>
       {error ? (
@@ -51,7 +51,7 @@ export default function LoaderBuildBar({
             onMouseDown={(e) => resizeLog(e, logHeight, setLogHeight)}
           />
           <div className="flex items-center justify-between px-3 border-b border-[#252525]">
-            <span className="text-[13px] text-[#b65959]">Build failed</span>
+            <span className="text-[13px] text-[#b65959]">构建失败</span>
             <button
               type="button"
               onClick={onClear}

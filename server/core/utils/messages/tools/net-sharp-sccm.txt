@@ -1,12 +1,12 @@
-ABOUT
+关于
     Post exploitation tool for Microsoft Endpoint Configuration Manager (SCCM).
     Supports lateral movement, credential gathering, and abuse of client push
     installation for NTLM coercion.
 
-USAGE:
+用法：
     net-sharp-sccm --- <command> [subcommand] [options]
 
-COMMANDS:
+命令：
     deob            Deobfuscate a policy secret hex string
     exec            Execute command/binary on client or coerce NTLM auth
     get             Fetch objects from SMS Provider, management point, or DC
@@ -15,24 +15,24 @@ COMMANDS:
     new             Create SCCM objects (applications, collections, deployments)
     remove          Delete SCCM objects
 
-GET SUBCOMMANDS:
+GET SUB命令：
     admins, applications, classes, class-instances, class-properties
     collections, collection-members, collection-rules, deployments
     devices, primary-users, resource-id, secrets, site-info
     site-push-settings, software, users
 
-INVOKE SUBCOMMANDS:
+INVOKE SUB命令：
     admin-service   CMPivot query against clients
     client-push     Coerce NTLM auth from site server
     query           Execute WQL query on SMS Provider
     update          Force clients to check for updates
 
-LOCAL SUBCOMMANDS:
+LOCAL SUB命令：
     classes, class-instances, class-properties, client-info
     create-ccr, grep, push-logs, query, secrets, site-info
     triage, user-sid
 
-EXEC OPTIONS:
+EXEC 选项：
     --device, -d          Target device ResourceName
     --collection-id, -i   Target collection ID
     --collection-name, -n Target collection name
@@ -43,7 +43,7 @@ EXEC OPTIONS:
     --sms-provider, -sms  SMS Provider hostname
     --relay-server, -r    NTLM relay/capture server
 
-EXAMPLES:
+示例：
     net-sharp-sccm --- local client-info
     net-sharp-sccm --- get devices --sms-provider sms01.corp.local
     net-sharp-sccm --- get secrets

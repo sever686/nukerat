@@ -8,7 +8,7 @@ def db_usage():
     db_path = sqlite_db.database_path()
 
     if not db_path.is_file():
-        print(f"Database not found: {db_path}")
+        print(f"未找到数据库：{db_path}")
 
         return 1
 
@@ -25,7 +25,7 @@ def db_usage():
     try:
         table_sizes = sqlite_db.table_sizes()
     except Exception as exc:
-        print(f"Error reading database: {exc}")
+        print(f"读取数据库出错：{exc}")
 
         return 1
     table_sizes.sort(key=lambda row: (-row[1], row[0]))
@@ -57,12 +57,12 @@ def db_export(dest):
     db_path = sqlite_db.database_path()
 
     if not db_path.is_file():
-        print(f"Database not found: {db_path}")
+        print(f"未找到数据库：{db_path}")
 
         return 1
 
     if not dest or not str(dest).strip():
-        print("Error: export path is required")
+        print("错误：需要提供导出路径")
 
         return 1
 
@@ -82,34 +82,34 @@ def db_export(dest):
             try:
                 parent.mkdir(parents=True, exist_ok=True)
             except OSError as exc:
-                print(f"Error: cannot create directory ({parent}): {exc}")
+                print(f"错误：无法创建目录（{parent}）：{exc}")
 
                 return 1
     elif out.is_dir():
-        print(f"Error: export path is a directory ({out})")
+        print(f"错误：导出路径是目录（{out}）")
 
         return 1
 
     try:
         out = out.resolve()
     except OSError as exc:
-        print(f"Error: invalid export path ({exc})")
+        print(f"错误：导出路径无效（{exc}）")
 
         return 1
     parent = out.parent
 
     if not parent.is_dir():
-        print(f"Error: export directory not found ({parent})")
+        print(f"错误：未找到导出目录（{parent}）")
 
         return 1
 
     if not os.access(parent, os.W_OK):
-        print(f"Error: export directory is not writable ({parent})")
+        print(f"错误：导出目录不可写（{parent}）")
 
         return 1
 
     if out.is_file() and not os.access(out, os.W_OK):
-        print(f"Error: export file is not writable ({out})")
+        print(f"错误：导出文件不可写（{out}）")
 
         return 1
 
@@ -118,10 +118,10 @@ def db_export(dest):
     try:
         sqlite_db.export_to(out)
     except Exception as exc:
-        print(f"Error exporting database: {exc}")
+        print(f"导出数据库出错：{exc}")
 
         return 1
-    print(f"Database exported to {out}")
+    print(f"数据库已导出到 {out}")
 
     return 0
 
@@ -130,7 +130,7 @@ def db_import(src):
     db_path = sqlite_db.database_path()
 
     if not src or not str(src).strip():
-        print("Error: import file path is required")
+        print("错误：需要提供导入文件路径")
 
         return 1
 
@@ -144,51 +144,51 @@ def db_import(src):
     incoming = Path(src_path).expanduser()
 
     if not incoming.exists():
-        print(f"Error: path not found ({incoming})")
+        print(f"错误：未找到路径（{incoming}）")
 
         return 1
 
     if incoming.is_dir():
-        print(f"Error: path is a directory ({incoming})")
+        print(f"错误：路径是目录（{incoming}）")
 
         return 1
 
     if not incoming.is_file():
-        print(f"Error: not a file ({incoming})")
+        print(f"错误：不是文件（{incoming}）")
 
         return 1
 
     try:
         incoming = incoming.resolve()
     except OSError as exc:
-        print(f"Error: invalid import path ({exc})")
+        print(f"错误：导入路径无效（{exc}）")
 
         return 1
 
     if not os.access(incoming, os.R_OK):
-        print(f"Error: file is not readable ({incoming})")
+        print(f"错误：文件不可读（{incoming}）")
 
         return 1
 
     err = sqlite_db.check_sqlite_file(incoming)
 
     if err:
-        print(f"Error: not a valid SQLite database ({err})")
+        print(f"错误：不是有效的 SQLite 数据库（{err}）")
 
         return 1
 
     dest_parent = db_path.expanduser().parent
 
     if dest_parent.exists() and not os.access(dest_parent, os.W_OK):
-        print(f"Error: database directory is not writable ({dest_parent})")
+        print(f"错误：数据库目录不可写（{dest_parent}）")
 
         return 1
 
-    print(f"This will replace the current database at {db_path}")
+    print(f"这会替换位于 {db_path} 的当前数据库")
     answer = input(f"Import from {incoming}? [y/N]: ").strip().lower()
 
     if answer not in ("y", "yes"):
-        print("Cancelled.")
+        print("已取消。")
 
         return 0
 
@@ -198,9 +198,9 @@ def db_import(src):
     try:
         sqlite_db.import_from(incoming)
     except Exception as exc:
-        print(f"Error importing database: {exc}")
+        print(f"导入数据库出错：{exc}")
 
         return 1
-    print(f"Database imported from {incoming}")
+    print(f"数据库已从 {incoming} 导入")
 
     return 0

@@ -42,34 +42,34 @@ export type WorkspaceHandle = {
 };
 
 const hostless_titles = new Set([
-  "Docs",
-  "Graphs",
-  "Sessions",
-  "File Server",
-  "AI Agent",
-  "Keylogger",
-  "Queue",
-  "NukeScripts",
-  "Credentials",
-  "NS Debugger",
-  "Listeners",
-  "Network",
-  "Servers",
-  "Implants",
-  "Logs",
-  "Agents",
-  "IOCs",
-  "Reports",
-  "About",
+  "文档",
+  "攻击图谱",
+  "会话",
+  "文件服务器",
+  "AI 智能体",
+  "键盘记录",
+  "队列",
+  "NukeScript",
+  "凭据",
+  "NS 调试器",
+  "监听器",
+  "网络",
+  "服务器",
+  "植入体",
+  "事件日志",
+  "智能体",
+  "IOC",
+  "报告",
+  "关于",
 ]);
 
 export function getPanelTitle(windowType: string): string {
-  if (windowType === "agent") return "AI Agent";
-  if (windowType === "explorer") return "File Browser";
-  if (windowType === "fileServer") return "File Server";
-  if (windowType === "nukescripts_output") return "NS Debugger";
-  if (windowType === "nukescripts") return "NukeScripts";
-  if (windowType === "iocs") return "IOCs";
+  if (windowType === "agent") return "AI 智能体";
+  if (windowType === "explorer") return "文件浏览器";
+  if (windowType === "fileServer") return "文件服务器";
+  if (windowType === "nukescripts_output") return "NS 调试器";
+  if (windowType === "nukescripts") return "NukeScript";
+  if (windowType === "iocs") return "IOC";
   return windowType.charAt(0).toUpperCase() + windowType.slice(1);
 }
 

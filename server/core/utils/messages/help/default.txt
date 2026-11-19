@@ -1,156 +1,156 @@
 -------------------------------------------------------------------------------------------------------------------------
-GENERAL
+通用
 -------------------------------------------------------------------------------------------------------------------------
 
-    (Command)     (Usage)                                                  (Description)
+    (命令)        (用法)                                                   （描述）
     
-    help          help                                                     Show this help message
-                  help arp                                                 Show command details and examples
-                  help -os [linux|mac]                                     Show OS compatible commands
+    help          help                                                     显示此帮助信息
+                  help arp                                                 显示命令详情与示例
+                  help -os [linux|mac]                                     显示当前操作系统兼容的命令
 
-    config        config                                                   View implant configuration
-    delay         delay 4                                                  Set implant delay in seconds
+    config        config                                                   查看植入体配置
+    delay         delay 4                                                  设置植入体延迟（秒）
 
-    kill          kill                                                     Terminate implant process (ExitProcess)
+    kill          kill                                                     终止植入体进程（ExitProcess）
 
-    tasks         tasks                                                    Show running tasks IDs
-                  tasks kill 3912                                          Kill a running task by ID
-
--------------------------------------------------------------------------------------------------------------------------
-FILESYSTEM
--------------------------------------------------------------------------------------------------------------------------
-
-    pwd           pwd                                                      Show current directory
-    cd            cd /home/user                                            Change directory
-    ls            ls /etc                                                  List files and directories
-    cat           cat /etc/hosts                                           Display file contents
-    preview       preview file.txt --size-limit 4096                       Read first bytes of a file
-    fileinfo      fileinfo file.exe                                        File metadata (size, times, attributes)
-    acl           acl /some/path                                           DACL and owner for path
-
-    echo          echo hello world                                         Print text to output
-                  echo $PATH                                               View environment variable
-
-    cp            cp /tmp/a.txt /tmp/b.txt                                 Copy file
-    mv            mv /tmp/a /tmp/b                                         Move or rename file
-    rm            rm /tmp/a.txt                                             Delete file
-    ren           ren C:\Temp\old.txt C:\Temp\new.txt                      Rename file
-    mkdir         mkdir /tmp/newfolder                                     Create directory
-    rmdir         rmdir /tmp/newfolder                                     Remove directory
-    upload        upload -f file.exe -o C:/file.exe                        Upload a file to the target
-    download      download -f C:/file.exe -o file.exe                      Download a file from the target
-    reg           reg <mode> [..args]                                      Native Windows registry operations
-    search        search --path C:\Users --content password                Search file contents
+    tasks         tasks                                                    显示运行中的任务 ID
+                  tasks kill 3912                                          按 ID 终止运行中的任务
 
 -------------------------------------------------------------------------------------------------------------------------
-RECOGNITION
+文件系统
 -------------------------------------------------------------------------------------------------------------------------
 
-    whoami        whoami                                                   Current user info
-    systeminfo    systeminfo                                               Detailed OS and hardware info
-    env           env                                                      List all environment variables
-    tasklist      tasklist ROOT\CIMV2                                      Running processes via WMI
-    enumdrives    enumdrives                                               List available drive letters
-    ifconfig      ifconfig                                                 Network adapter configuration
-    route         route                                                    Network routing table
-    arp           arp                                                      ARP cache table
-    netstat       netstat TCP                                              Active connections
-    hooks         hooks                                                    Compare export prologues (mem vs disk)
+    pwd           pwd                                                      显示当前目录
+    cd            cd /home/user                                            切换目录
+    ls            ls /etc                                                  列出文件和目录
+    cat           cat /etc/hosts                                           显示文件内容
+    preview       preview file.txt --size-limit 4096                       读取文件开头字节
+    fileinfo      fileinfo file.exe                                        文件元数据（大小、时间、属性）
+    acl           acl /some/path                                           路径的 DACL 与所有者
+
+    echo          echo hello world                                         输出文本
+                  echo $PATH                                               查看环境变量
+
+    cp            cp /tmp/a.txt /tmp/b.txt                                 复制文件
+    mv            mv /tmp/a /tmp/b                                         移动或重命名文件
+    rm            rm /tmp/a.txt                                             删除文件
+    ren           ren C:\Temp\old.txt C:\Temp\new.txt                      重命名文件
+    mkdir         mkdir /tmp/newfolder                                     创建目录
+    rmdir         rmdir /tmp/newfolder                                     删除目录
+    upload        upload -f file.exe -o C:/file.exe                        向目标上传文件
+    download      download -f C:/file.exe -o file.exe                      从目标下载文件
+    reg           reg <mode> [..args]                                      Windows 注册表原生操作
+    search        search --path C:\Users --content password                搜索文件内容
 
 -------------------------------------------------------------------------------------------------------------------------
-EXECUTION
+信息收集
 -------------------------------------------------------------------------------------------------------------------------
 
-    shell         shell whoami                                             Execute shell command
-    powershell    powershell ps aux                                        Execute PowerShell script
-    shellcode     shellcode -f file.bin                                    Execute raw shellcode
-    bof           bof -f file.o --- <args>                                 Execute built-in BOF
-    dotnet        dotnet -f file.exe --- <args>                            Execute .NET assembly
-    load-dll      load-dll -f file.dll                                     Load DLL into memory
-    load-so       load-so -f file.so                                       Load SO into memory
-    load-dylib    dylib -f file.dylib                                      Load DYLIB into memory
+    whoami        whoami                                                   当前用户信息
+    systeminfo    systeminfo                                               详细的操作系统与硬件信息
+    env           env                                                      列出所有环境变量
+    tasklist      tasklist ROOT\CIMV2                                      通过 WMI 获取运行中的进程
+    enumdrives    enumdrives                                               列出可用驱动器盘符
+    ifconfig      ifconfig                                                 网络适配器配置
+    route         route                                                    网络路由表
+    arp           arp                                                      ARP 缓存表
+    netstat       netstat TCP                                              活动连接
+    hooks         hooks                                                    比较导出函数序言（内存与磁盘）
 
 -------------------------------------------------------------------------------------------------------------------------
-INJECTION
+执行
 -------------------------------------------------------------------------------------------------------------------------
 
-    migrate       migrate 4919 [--alloc <mode>]                        Inject implant shellcode into a process
-
-    spawn         spawn -t cmd.exe --- <args>                          Spawn process and capture output
-                  spawn suspend -t C:\Windows\System32\notepad.exe     Create suspended process (no resume)
-
-    inj           inj shellcode -f file.bin -p 2300 --- <args>         Inject shellcode into a process
-                  inj dll-reflective -f file.dll -p 2300               Inject reflective DLL into a process
-                  inj donut -f file -p 2300 --- <args>                 Inject multiple payloads types via donut
-
-    --alloc       --alloc section                                      Use section allocation
-                  --alloc stomping [--stomp-dll "name.dll"]            Use stomping allocation
-                  [!] Avaliable in inj and migrate 
-
-    --encoder     --encoder sgn                                        Use sgn encoder
-                  [!] inj donut/shellcode only
+    shell         shell whoami                                             执行 shell 命令
+    powershell    powershell ps aux                                        执行 PowerShell 脚本
+    shellcode     shellcode -f file.bin                                    执行原始 shellcode
+    bof           bof -f file.o --- <args>                                 执行内置 BOF
+    dotnet        dotnet -f file.exe --- <args>                            执行 .NET 程序集
+    load-dll      load-dll -f file.dll                                     将 DLL 加载到内存
+    load-so       load-so -f file.so                                       将 SO 加载到内存
+    load-dylib    dylib -f file.dylib                                      将 DYLIB 加载到内存
 
 -------------------------------------------------------------------------------------------------------------------------
-PROCESS
+注入
 -------------------------------------------------------------------------------------------------------------------------
 
-    proc          proc info                                                       Current process summary
-                  proc info [modules|privileges|full]                             Show specific process information
-                  proc info --pid <pid> privileges                                Privilege list for PID
-                  proc info --pid <pid>                                           Process summary for PID
-                  proc privileges --name SeDebugPrivilege -st [on|off]            Enable or disable a privilege
-                  proc [kill|suspend|resume] --pid <pid>                          Change process state by PID
+    migrate       migrate 4919 [--alloc <mode>]                        将植入体 shellcode 注入进程
 
-    tokens        tokens                                                          Current token
-                  tokens grab --pid 1000                                          Grab token from a process into vault
-                  tokens list                                                     List saved vault tokens
-                  tokens impersonate --id 0                                       Impersonate a vault token
-                  tokens remove --id 0 [--all]                                    Remove vault token
-                  tokens forge --domain name --user jhon --pass 123456            Create a forged logon session
-                  tokens revert                                                   Stop impersonating (RevertToSelf)
+    spawn         spawn -t cmd.exe --- <args>                          派生进程并捕获输出
+                  spawn suspend -t C:\Windows\System32\notepad.exe     创建挂起进程（不恢复）
 
-    runas         runas --domain name -u jhon -p 123 --path cmd.exe --- <args>    Execute a command as a different user
+    inj           inj shellcode -f file.bin -p 2300 --- <args>         将 shellcode 注入进程
+                  inj dll-reflective -f file.dll -p 2300               将反射 DLL 注入进程
+                  inj donut -f file -p 2300 --- <args>                 通过 donut 注入多种类型的载荷
 
--------------------------------------------------------------------------------------------------------------------------
-PIVOTING
--------------------------------------------------------------------------------------------------------------------------
+    --alloc       --alloc section                                      使用 section 分配
+                  --alloc stomping [--stomp-dll "name.dll"]            使用模块践踏分配
+                  [!] 可用于 inj 与 migrate
 
-    relay         relay                                                                                Show relays
-                  relay create -c tcp -l 8888 -t [implant|server]://10.1.1.5:9090  [--tls]             Create TCP relay
-                  relay create -c smb -l 445 -t [implant|server]://10.1.1.5:9090 --pipe test [--tls]   Create SMB relay
-                  relay delete --id 445                                                                Remove relay by id
-
-    [!] The SOCKS5 and port forwarding options are available in the menu option: NukeRat > Network.
+    --encoder     --encoder sgn                                        使用 sgn 编码器
+                  [!] inj 仅支持 donut/shellcode
 
 -------------------------------------------------------------------------------------------------------------------------
-UTILITIES
+进程
 -------------------------------------------------------------------------------------------------------------------------
 
-    getsystem     getsystem --method [inject|token|com]                    Try to elevate to SYSTEM
-                  getsystem --method token --sacrifice C:\some\file.exe    Spawn host for token/COM inject
+    proc          proc info                                                       当前进程摘要
+                  proc info [modules|privileges|full]                             显示指定进程信息
+                  proc info --pid <pid> privileges                                进程的权限列表
+                  proc info --pid <pid>                                           按 PID 查看进程摘要
+                  proc privileges --name SeDebugPrivilege -st [on|off]            启用或禁用权限
+                  proc [kill|suspend|resume] --pid <pid>                          按 PID 修改进程状态
 
-    keylogger     keylogger [start|stop] --method [keystate|boardstate]    Start/Stop keylogger in background
+    tokens        tokens                                                          当前令牌
+                  tokens grab --pid 1000                                          从进程抓取令牌到保险库
+                  tokens list                                                     列出已保存的保险库令牌
+                  tokens impersonate --id 0                                       模拟保险库中的令牌
+                  tokens remove --id 0 [--all]                                    移除保险库令牌
+                  tokens forge --domain name --user jhon --pass 123456            创建伪造的登录会话
+                  tokens revert                                                   停止模拟（RevertToSelf）
 
-    screenshot    screenshot                                               Take a single screenshot
-                  screenshot [start|stop] --delay 15 (seconds)             Start/Stop screenshot loop
-
--------------------------------------------------------------------------------------------------------------------------
-ARMORY & LOLBINS
--------------------------------------------------------------------------------------------------------------------------
-
-    armory        armory                                                   Show all available armory tools
-                  armory [install|remove] seatbelt                         Install/Remove armory tools
-                  armory update                                            Update armory tools
-
-    lolbins       lolbins [<category>]                                     Show lolbins by category
-                  lolbins check <category>                                 Check if category binaries exist on the host
+    runas         runas --domain name -u jhon -p 123 --path cmd.exe --- <args>    以其他用户身份执行命令
 
 -------------------------------------------------------------------------------------------------------------------------
-MODIFIERS 
+横向移动
 -------------------------------------------------------------------------------------------------------------------------
 
-    -bg           shell -bg dir                                            Run in background without waiting for output
-    -w / --wait   shell -w 30 ping 127.0.0.1 -n 10                         Set a custom maximum wait time (seconds)
-    prefix        prefix                                                   Show current command prefix
-                  prefix powershell                                        Set a sticky prefix prepended to every command
-                  prefix clear                                             Clear active prefix
+    relay         relay                                                                                显示中继
+                  relay create -c tcp -l 8888 -t [implant|server]://10.1.1.5:9090  [--tls]             创建 TCP 中继
+                  relay create -c smb -l 445 -t [implant|server]://10.1.1.5:9090 --pipe test [--tls]   创建 SMB 中继
+                  relay delete --id 445                                                                按 ID 移除中继
+
+    [!] SOCKS5 与端口转发选项位于菜单：NukeRat > Network。
+
+-------------------------------------------------------------------------------------------------------------------------
+实用工具
+-------------------------------------------------------------------------------------------------------------------------
+
+    getsystem     getsystem --method [inject|token|com]                    尝试提升到 SYSTEM
+                  getsystem --method token --sacrifice C:\some\file.exe    为令牌/COM 注入派生宿主机
+
+    keylogger     keylogger [start|stop] --method [keystate|boardstate]    后台启动/停止键盘记录
+
+    screenshot    screenshot                                               截取单张截图
+                  screenshot [start|stop] --delay 15 (seconds)             启动/停止截图循环
+
+-------------------------------------------------------------------------------------------------------------------------
+军械库与 LOLBINS
+-------------------------------------------------------------------------------------------------------------------------
+
+    armory        armory                                                   显示所有可用的军械库工具
+                  armory [install|remove] seatbelt                         安装/移除军械库工具
+                  armory update                                            更新军械库工具
+
+    lolbins       lolbins [<category>]                                     按类别显示 lolbins
+                  lolbins check <category>                                 检查主机上是否存在该分类的二进制
+
+-------------------------------------------------------------------------------------------------------------------------
+修饰符 
+-------------------------------------------------------------------------------------------------------------------------
+
+    -bg           shell -bg dir                                            后台运行，不等待输出
+    -w / --wait   shell -w 30 ping 127.0.0.1 -n 10                         设置自定义最大等待时间（秒）
+    prefix        prefix                                                   显示当前命令前缀
+                  prefix powershell                                        设置附加到每条命令前的固定前缀
+                  prefix clear                                             清除当前前缀

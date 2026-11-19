@@ -1,20 +1,19 @@
-ABOUT
-    Load a shared object from uploaded bytes in the current process using inline
-    execution (memfd and dlopen). Linux only.
+关于
+    在当前进程中使用内联执行（memfd 与 dlopen）加载来自已上传字节的共享对象。仅限 Linux。
 
-USAGE:
+用法：
     load-so -f <file>
 
-ARGUMENTS:
-    -f                  Local .so file (--file).
+参数：
+    -f                  本地 .so 文件（--file）。
 
-EXAMPLES:
+示例：
     load-so -f file.so
     load-so -f libcustom.so
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     load-so -w 60 -f module.so

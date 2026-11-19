@@ -186,7 +186,7 @@ export function useAgentsPanel() {
     if (res?.status === "success") {
       setAgents(Array.isArray(res.agents) ? res.agents : []);
     } else if (res?.message !== "Cancelled") {
-      toast.error(res?.message ?? "Failed to load agents");
+      toast.error(res?.message ?? "加载智能体失败");
     }
     setLoading(false);
   }, []);
@@ -278,11 +278,11 @@ export function useAgentsPanel() {
     );
     if (res?.status !== "success") {
       setSubmitting(false);
-      toast.error(res?.message ?? (panelMode === "edit" ? "Failed to update agent" : "Failed to create agent"));
+      toast.error(res?.message ?? (panelMode === "edit" ? "更新智能体失败" : "创建智能体失败"));
       return;
     }
     setSubmitting(false);
-    toast.success(res?.message ?? (panelMode === "edit" ? "Agent updated" : "Agent created"));
+    toast.success(res?.message ?? (panelMode === "edit" ? "智能体已更新" : "智能体已创建"));
     setPanelMode(null);
     await loadAgents();
   };
@@ -296,13 +296,13 @@ export function useAgentsPanel() {
     );
     if (res?.status !== "success") {
       setSubmitting(false);
-      toast.error(res?.message ?? "Failed to remove agent");
+      toast.error(res?.message ?? "移除智能体失败");
       return;
     }
     setShowRemoveConfirm(false);
     setSelectedId(null);
     setSubmitting(false);
-    toast.success(res?.message ?? "Agent removed");
+    toast.success(res?.message ?? "智能体已移除");
     await loadAgents();
   };
   confirmRemoveRef.current = () => {

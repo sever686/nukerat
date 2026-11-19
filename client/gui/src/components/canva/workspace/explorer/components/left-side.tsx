@@ -149,7 +149,7 @@ const LeftSide = ({
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search..."
+            placeholder="搜索..."
             disabled={disabled}
             className="box-border h-[29px] w-full select-none rounded border border-[#363636] bg-[#212121] px-3 py-0 text-[13.5px] text-[#cecece] outline-none transition-colors placeholder:text-[#444] focus:border-[#555] disabled:opacity-50"
           />

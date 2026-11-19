@@ -35,7 +35,7 @@ export default function ScriptErrorBar({
         onMouseDown={(e) => resizeLog(e, logHeight, setLogHeight)}
       />
       <div className="flex items-center justify-between px-3 border-b border-[#252525]">
-        <span className="text-[13px] text-[#b65959]">Exception</span>
+        <span className="text-[13px] text-[#b65959]">异常</span>
         <button
           type="button"
           onClick={onClear}

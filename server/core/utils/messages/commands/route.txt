@@ -1,19 +1,18 @@
-ABOUT
-    Print the IPv4 routing table: destination, netmask, gateway, and metric.
-    Windows only.
+关于
+    打印 IPv4 路由表：目标、子网掩码、网关和跃点。仅限 Windows。
 
-USAGE:
+用法：
     route
 
-ARGUMENTS:
-    (none)
+参数：
+    （无）
 
-EXAMPLES:
+示例：
     route
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     route -w 30

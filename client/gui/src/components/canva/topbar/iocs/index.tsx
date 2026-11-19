@@ -18,7 +18,7 @@ export default function IocPanel() {
             type="button"
             onClick={p.applyFilter}
             disabled={p.loading}
-            title="Search"
+            title="搜索"
             className="button-default h-[29px] shrink-0 rounded-[5px] border border-[#ffffff26] px-2 text-[#cecece] cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
           >
             <Search size={14} />
@@ -31,7 +31,7 @@ export default function IocPanel() {
               onKeyDown={(e) => {
                 if (e.key === "Enter") p.applyFilter();
               }}
-              placeholder="Search..."
+              placeholder="搜索..."
               autoComplete="off"
               spellCheck={false}
             />
@@ -75,7 +75,7 @@ export default function IocPanel() {
               onClick={() => p.setPanelOpen(true)}
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
             >
-              <Eye size={11} /> View
+              <Eye size={11} /> 查看
             </button>
             <button
               type="button"
@@ -83,12 +83,12 @@ export default function IocPanel() {
               onClick={p.handleOpenRemoveConfirm}
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#c97070] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
             >
-              <Trash2 size={11} /> Remove
+              <Trash2 size={11} /> 移除
             </button>
             <div className="ml-auto flex shrink-0 items-center gap-2">
               {p.total > 0 && !p.loading && (
                 <span className="text-nowrap text-[13px] tabular-nums text-[#444]">
-                  Page {p.page} / {p.pageCount}
+                  页码 {p.page} / {p.pageCount}
                 </span>
               )}
               <button
@@ -114,7 +114,7 @@ export default function IocPanel() {
                 className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
               >
                 <RefreshCw size={11} className={p.loading ? "animate-spin" : ""} />
-                Update
+                更新
               </button>
             </div>
           </div>
@@ -148,10 +148,10 @@ export default function IocPanel() {
             >
               <div className="flex items-center gap-2 mb-3">
                 <Trash2 size={14} className="text-[#c97070] mb-0.5" />
-                <span className="text-[13.5px] font-semibold text-[#cecece]">Remove IOC</span>
+                <span className="text-[13.5px] font-semibold text-[#cecece]">移除 IOC</span>
               </div>
               <p className="text-[13px] text-[#9b9b9b] mb-5 leading-relaxed">
-                Remove{" "}
+                移除{" "}
                 <span className="text-[#d4d4d4] text-[13px] font-semibold">
                   "{p.selected?.tag || p.selected?.value}"
                 </span>
@@ -163,7 +163,7 @@ export default function IocPanel() {
                   onClick={() => p.setShowRemoveConfirm(false)}
                   className="button-default px-3 py-1 rounded text-[12px] text-[#9b9b9b] hover:text-[#d4d4d4] hover:bg-[#252525] transition-colors border border-[#333] cursor-pointer"
                 >
-                  Cancel
+                  取消
                 </button>
                 <button
                   type="button"
@@ -172,7 +172,7 @@ export default function IocPanel() {
                   className="button-default flex items-center gap-1.5 px-3 py-1 rounded text-[12px] text-white bg-[#8b2020] hover:bg-[#a83232] transition-colors disabled:opacity-50 cursor-pointer"
                 >
                   {p.deleting && <RefreshCw size={10} className="animate-spin" />}
-                  Remove
+                  移除
                 </button>
               </div>
             </div>

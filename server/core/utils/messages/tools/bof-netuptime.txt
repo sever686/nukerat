@@ -1,15 +1,15 @@
-ABOUT
+关于
     Return information about the boot time on the local or remote computer
 
-USAGE:
+用法：
     bof-netuptime --- <hostname>
 
-EXAMPLES:
+示例：
     bof-netuptime --- dc01.corp.local
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-netuptime -w 60 --- dc01.corp.local

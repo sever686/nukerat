@@ -1,20 +1,20 @@
-ABOUT
-    Read the first bytes of a file without returning the full contents.
+关于
+    读取文件开头字节，不返回完整内容。
 
-USAGE:
+用法：
     preview <path> [--size-limit <bytes>]
 
-ARGUMENTS:
-    <path>              File to open.
-    --size-limit        Max bytes to read. Default 4096.
+参数：
+    <path>              要打开的文件。
+    --size-limit        最大读取字节数。默认 4096。
 
-EXAMPLES:
+示例：
     preview file.txt
     preview C:\Temp\app.log --size-limit 4096
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     preview -w 30 C:\Temp\app.log

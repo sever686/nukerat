@@ -78,7 +78,7 @@ async def armory_install_all(source_terminal):
     await asyncio.to_thread(shutil.rmtree, extract_dir, ignore_errors=True)
     await asyncio.to_thread(zip_path.unlink, missing_ok=True)
 
-    msg = f"Successfully installed {installed} file(s)."
+    msg = f"已成功安装 {installed} 个文件。"
     if skipped:
         msg = f"{msg} Skipped {skipped} existing file(s)."
     return reply("success", msg, source_terminal)
@@ -129,10 +129,10 @@ async def armory_install(tool_name, source_terminal):
     async with armory_fs_lock:
         if await asyncio.to_thread(dest.is_file):
             await asyncio.to_thread(staging.unlink, missing_ok=True)
-            return reply("failure", "Tool already downloaded.", source_terminal)
+            return reply("failure", "工具已下载。", source_terminal)
         await asyncio.to_thread(shutil.move, str(staging), str(dest))
 
-    return reply("success", "Successfully installed.", source_terminal)
+    return reply("success", "安装成功。", source_terminal)
 
 
 async def armory_update(tool_name, source_terminal):
@@ -164,7 +164,7 @@ async def armory_update(tool_name, source_terminal):
         await asyncio.to_thread(os.replace, tmp_path, json_path)
 
     if not tool_name:
-        return reply("success", "Successfully updated.", source_terminal)
+        return reply("success", "更新成功。", source_terminal)
 
     cmd = commands["complete_list"].get(tool_name)
     bin_name = cmd.get("armory_bin") if cmd and cmd.get("is_armory") else None
@@ -205,7 +205,7 @@ async def armory_update(tool_name, source_terminal):
             await asyncio.to_thread(dest.unlink)
         await asyncio.to_thread(shutil.move, str(staging), str(dest))
 
-    return reply("success", "Successfully updated.", source_terminal)
+    return reply("success", "更新成功。", source_terminal)
 
 
 async def armory_remove(tool_name, source_terminal):
@@ -227,7 +227,7 @@ async def armory_remove(tool_name, source_terminal):
             await asyncio.to_thread(dest.unlink)
             removed.append(dest.name)
 
-    msg = "Successfully removed." if removed else f"No downloaded files found for tool '{tool_name}'."
+    msg = "移除成功。" if removed else f"未找到工具 '{tool_name}' 的已下载文件。"
     return reply("success", msg, source_terminal)
 
 
@@ -237,7 +237,7 @@ async def main_armory(verb, input, source_terminal):
     parts = normalized.split()
     tool_name = " ".join(parts[2:]).strip() if len(parts) >= 3 else ""
     if not tool_name and verb != "armory update":
-        return reply("failure", "Missing required parameters. Use help <command> for usage.", source_terminal)
+        return reply("failure", "缺少必需参数。使用 help <command> 查看用法。", source_terminal)
 
     install_all = verb == "armory install all" or (verb == "armory install" and tool_name == "all")
     needs_index = verb != "armory update" and not install_all
@@ -276,4 +276,4 @@ async def main_armory(verb, input, source_terminal):
             return await armory_update(tool_name, source_terminal)
         if verb == "armory remove":
             return await armory_remove(tool_name, source_terminal)
-    return reply("failure", "Unknown armory command.", source_terminal)
+    return reply("failure", "未知的军械库命令。", source_terminal)

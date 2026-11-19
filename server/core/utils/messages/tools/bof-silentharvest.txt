@@ -1,11 +1,11 @@
-ABOUT
+关于
     Registry only credential dumper extracting SAM hashes and secrets from
     HKLM\\SECURITY\\Policy\\Secrets. Requires SeBackupPrivilege only (no SYSTEM).
 
-USAGE:
+用法：
     bof-silentharvest
-EXAMPLES:
+示例：
     bof-silentharvest
-NOTES:
+备注：
     Enable SeBackupPrivilege before running (getprivs or equivalent).
     Supports Win 10/2016+ with AES encryption. Does not support legacy RC4.

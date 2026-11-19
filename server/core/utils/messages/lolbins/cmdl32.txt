@@ -1,21 +1,21 @@
-ABOUT
+关于
     Connection Manager auto-download client.
     Pulls files from URLs defined in a local VPN config into %TMP% as
     VPN*.tmp.
 
-USAGE:
+用法：
     cmdl32 /vpn /lan %cd%\config
 
-ARGUMENTS:
+参数：
     /vpn                         VPN profile mode
     /lan                         LAN config directory for download
 
-EXAMPLES:
+示例：
     cmdl32 /vpn /lan %cd%\config
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     cmdl32 /vpn /lan %cd%\config

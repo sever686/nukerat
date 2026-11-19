@@ -1,14 +1,14 @@
-ABOUT
+关于
     List system locale language, locale ID, date, time, and country
 
-USAGE:
+用法：
     bof-locale
-EXAMPLES:
+示例：
     bof-locale
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-locale -w 60
     bof-locale -bg

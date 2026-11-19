@@ -14,17 +14,17 @@ export interface ParsedKey {
 
 export function parseKey(raw: string): ParsedKey {
   const line = raw.trim();
-  if (!line) throw new KeyError("Key is empty");
+  if (!line) throw new KeyError("密钥为空");
 
   const parts = line.split(":");
-  if (parts.length !== 3) throw new KeyError("Bad authentication key");
+  if (parts.length !== 3) throw new KeyError("认证密钥无效");
 
   const [name, pass, secret] = parts;
   if (!name || !pass || !secret) {
-    throw new KeyError(`${name || "Key"}: Bad authentication key`);
+    throw new KeyError(`${name || "Key"}: 认证密钥无效`);
   }
   if (secret.length !== 256) {
-    throw new KeyError(`${name}: Bad authentication key`);
+    throw new KeyError(`${name}: 认证密钥无效`);
   }
 
   return { name, user: name, pass, secret };

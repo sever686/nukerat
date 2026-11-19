@@ -1,21 +1,21 @@
-ABOUT
+关于
     Searches a target process memory for a specific string pattern and
     returns all matching occurrences to the Beacon output.
-USAGE:
+用法：
     bof-memreader --- <pid> <pattern> <size>
 
-ARGUMENTS:
+参数：
     pid         Target process ID to search
     pattern     String pattern to search for in process memory
     size        Maximum number of bytes to read per memory region
 
-EXAMPLES:
+示例：
     bof-memreader --- 1234 password 4096
     bof-memreader --- 5678 admin 8192
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-memreader -w 60 --- 1234 password 4096

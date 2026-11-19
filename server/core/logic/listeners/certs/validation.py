@@ -2,7 +2,7 @@ def sanitize_cert(cert: dict, required: bool = False) -> dict:
     # Checks the certificate fields and strips them
     if not cert:
         if required:
-            raise ValueError("certificate is required")
+            raise ValueError("证书为必填项")
         return {}
 
     if not cert.get("enabled", True) and not required:
@@ -13,24 +13,24 @@ def sanitize_cert(cert: dict, required: bool = False) -> dict:
         cert_pem = str(cert.get("certPem") or "").strip()
         key_pem = str(cert.get("keyPem") or "").strip()
         if "BEGIN CERTIFICATE" not in cert_pem or "PRIVATE KEY" not in key_pem:
-            raise ValueError("invalid certificate or key")
+            raise ValueError("证书或密钥无效")
         return {"enabled": True, "source": "manual", "certPem": cert_pem, "keyPem": key_pem}
 
     def subj(value, default):
         # Strips a subject field and rejects it when it is empty
         text = str(value or default).strip().replace("/", "")[:64]
         if not text:
-            raise ValueError("invalid subject field")
+            raise ValueError("subject 字段无效")
         return text
 
     country = str(cert.get("country") or "US").strip().upper()
     if len(country) != 2 or not country.isalpha():
-        raise ValueError("country must be 2 letters")
+        raise ValueError("country 必须为 2 个字母")
 
     cn = subj(cert.get("commonName"), "localhost")
     san = str(cert.get("sanDns") or cn).strip()[:253]
     if not san:
-        raise ValueError("invalid DNS name")
+        raise ValueError("DNS 名称无效")
 
     key_type = str(cert.get("keyType") or "ecdsa").lower()
     if key_type not in ("rsa", "ecdsa"):
@@ -39,7 +39,7 @@ def sanitize_cert(cert: dict, required: bool = False) -> dict:
     try:
         days = int(cert.get("days") or 397)
     except (TypeError, ValueError):
-        raise ValueError("invalid days")
+        raise ValueError("days 无效")
     return {
         "enabled": True,
         "source": "self_signed",

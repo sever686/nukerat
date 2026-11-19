@@ -1,17 +1,17 @@
-ABOUT
+关于
     Extracts and returns plain text directly from open Notepad windows by reading memory,
     allowing operators to recover unsaved or in memory notes.
 
-USAGE:
+用法：
     bof-notepad-grab
 
-EXAMPLES:
+示例：
     bof-notepad-grab
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-notepad-grab -w 60
     bof-notepad-grab -bg

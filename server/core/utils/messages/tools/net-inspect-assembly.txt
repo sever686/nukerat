@@ -1,11 +1,11 @@
-ABOUT
+关于
     Inspects a .NET assembly's CIL for deserializer calls and .NET remoting usage for privilege escalation triage.
 
-USAGE:
+用法：
     net-inspect-assembly --- [path="<PATH>"] [pid=<PID|PID,...|all>] [outfile="<PATH>"]
     net-inspect-assembly --- [-r|--recurse] [--third-party] [-v|--verbose] [-vv|--very-verbose]
 
-EXAMPLES:
+示例：
     net-inspect-assembly --- path="C:\Windows\System32\powershell.exe"
     net-inspect-assembly --- -r path="C:\Program Files\" --third-party -v
     net-inspect-assembly --- pid=12044

@@ -1,10 +1,10 @@
-ABOUT
+关于
     (linux) Translate/delete characters.
 
-USAGE:
+用法：
     bof-lin-tr --- <set1> [set2] [file] [options]
 
-ARGUMENTS:
+参数：
     set1                Source character set
     set2                Replacement character set
     file                Input file
@@ -12,12 +12,12 @@ ARGUMENTS:
 
 Supports pipe chaining with other BusyBOF tools.
 
-EXAMPLES:
+示例：
     bof-lin-tr --- <set1>
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-lin-tr -w 60 --- <set1>

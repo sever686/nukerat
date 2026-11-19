@@ -1,21 +1,20 @@
-ABOUT
-    Run a COFF object file (.o) in the current process using inline
-    execution. Pass BOF arguments after --- on the command line.
+关于
+    在当前进程中使用内联执行运行 COFF 目标文件（.o）。在命令行中用 --- 之后的部分传入 BOF 参数。
 
-USAGE:
+用法：
     bof -f <file> --- <bofargs>
 
-ARGUMENTS:
-    -f                  Local .o file (--file).
-    ---                 Optional BOF argument string.
+参数：
+    -f                  本地 .o 文件（--file）。
+    ---                 可选的 BOF 参数字符串。
 
-EXAMPLES:
+示例：
     bof -f whoami.x64.o
     bof -f ldap.x64.o --- dc01.corp.local
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     bof -w 120 -f tool.x64.o --- /help

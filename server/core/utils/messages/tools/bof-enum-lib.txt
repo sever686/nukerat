@@ -1,12 +1,12 @@
-ABOUT
+关于
     Find a specific loaded module in all processes or list all loaded modules in a specific process.
 
-USAGE:
+用法：
     bof-enum-lib --- <option> <target> [pid]
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-enum-lib -w 60 --- <option> <target> [pid]

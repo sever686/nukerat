@@ -1,18 +1,18 @@
-ABOUT
-    Show the identity of the current user.
+关于
+    显示当前用户的身份。
 
-USAGE:
+用法：
     whoami [<args>]
 
-ARGUMENTS:
-    <args>              Optional on Linux and macOS. Ignored on Windows.
+参数：
+    <args>              在 Linux 和 macOS 上可选。Windows 上忽略。
 
-EXAMPLES:
+示例：
     whoami
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     whoami -w 30

@@ -1,19 +1,19 @@
-ABOUT
+关于
     .NET JScript compiler. LOLBAS turns attacker JavaScript in a .js
     file into a standalone EXE or DLL for on-host compile-and-run
     bypasses.
 
-USAGE:
+用法：
     jsc.exe {PATH:.js}
     jsc.exe /t:library {PATH:.js}
 
-EXAMPLES:
+示例：
     jsc.exe {PATH:.js}
     jsc.exe /t:library {PATH:.js}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     jsc.exe {PATH:.js}

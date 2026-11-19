@@ -1,12 +1,12 @@
-ABOUT
+关于
     Add a (self signed) certificate to a specific local computer certificate store. For example, add a self signed certificate -that you also used to sign your malicious binary with- to the \"Trusted Root Certification Authorities\" (ROOT) folder on the target local computer.
 
-USAGE:
+用法：
     bof-add-local-cert --- <certfile> <store> <name>
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-add-local-cert -w 60 --- <certfile> <store> <name>

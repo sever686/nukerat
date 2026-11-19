@@ -83,9 +83,9 @@ export const PortToOpenField = ({
   onChange: (v: string) => void;
 }) => (
   <div className="mb-3 space-y-1.5">
-    <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Port to Open</label>
+    <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">开放端口</label>
     <input
-      aria-label="Port to open"
+      aria-label="开放端口"
       className="w-full text-[13.5px] bg-[#212121] border border-[#363636] text-[#cecece] rounded px-3 py-1.5 outline-none focus:border-[#555] placeholder:text-[#444] tabular-nums"
       value={value}
       onChange={(e) => onChange(sanitizeNumericInput(e.target.value))}
@@ -126,7 +126,7 @@ export const ServerDropdown = ({
       ) : null}
       <Select value={selectedId || undefined} onValueChange={handleChange}>
         <SelectTrigger className="w-full text-[13.5px] bg-[#212121] border-[#363636] text-[#cecece] rounded px-3 py-1.5 h-auto focus:border-[#555] focus-visible:ring-0">
-          <SelectValue placeholder="Select a server..." />
+          <SelectValue placeholder="选择服务器..." />
         </SelectTrigger>
         <SelectContent className="text-[13.5px]">
           {servers.map((s) => (
@@ -172,13 +172,13 @@ export const AdvancedSection = ({
           className={`text-[#454545] transition-transform duration-150 ${expanded ? "rotate-90" : ""
             }`}
         />
-        <span className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Advanced</span>
+        <span className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">高级</span>
       </button>
 
       {expanded && (
         <div className="pl-3 border-l border-[#252525]">
           <div className="mb-3 space-y-1.5">
-            <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Endpoint Path</label>
+            <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">端点路径</label>
             <input
               className="w-full text-[13.5px] bg-[#212121] border border-[#363636] text-[#cecece] rounded px-3 py-1.5 outline-none focus:border-[#555] placeholder:text-[#444]"
               value={formData.endpointPath}
@@ -192,7 +192,7 @@ export const AdvancedSection = ({
           <div className="h-px bg-[#252525] mb-4 mt-4" />
 
           <div className="mb-3 space-y-1.5">
-            <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">Custom body</label>
+            <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">自定义正文</label>
             <Select
               value={formData.implantBodyType}
               onValueChange={(v) =>
@@ -203,10 +203,10 @@ export const AdvancedSection = ({
                 <SelectValue />
               </SelectTrigger>
               <SelectContent className="text-[13.5px]">
-                <SelectItem value="off" className="text-[13.5px]">off</SelectItem>
-                <SelectItem value="custom" className="text-[13.5px]">custom</SelectItem>
+                <SelectItem value="off" className="text-[13.5px]">关闭</SelectItem>
+                <SelectItem value="custom" className="text-[13.5px]">自定义</SelectItem>
                 <SelectGroup>
-                  <SelectLabel className="text-[11px] text-[#6e6e6e] uppercase">Examples</SelectLabel>
+                  <SelectLabel className="text-[11px] text-[#6e6e6e] uppercase">示例</SelectLabel>
                   <SelectItem value="json" className="text-[13.5px]">json</SelectItem>
                   <SelectItem value="xml" className="text-[13.5px]">xml</SelectItem>
                 </SelectGroup>
@@ -214,14 +214,14 @@ export const AdvancedSection = ({
             </Select>
             {formData.implantBodyType !== "off" && (
               <>
-                <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">Listener response</label>
+                <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">监听器响应</label>
                 <textarea
                   className="w-full bg-[#212121] border border-[#363636] h-[12rem] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] transition-colors placeholder:text-[#444] resize-w leading-relaxed"
                   value={formData.listenerResponse}
                   onChange={(e) => handleFormChange("listenerResponse", e.target.value)}
                   spellCheck={false}
                 />
-                <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">Implant request</label>
+                <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">植入体请求</label>
                 <textarea
                   ref={bodyRef}
                   className="w-full bg-[#212121] border border-[#363636] h-[12rem] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] transition-colors placeholder:text-[#444] resize-w leading-relaxed"
@@ -235,14 +235,14 @@ export const AdvancedSection = ({
                     onClick={addImplantMarker}
                     className="button-default flex items-center gap-1.5 px-3 py-1 rounded bg-[#232323] text-[#cecece] text-[13px] transition-colors border border-[#333] cursor-pointer hover:bg-[#2b2b2b] hover:text-[#d4d4d4]"
                   >
-                    Add §
+                    添加 §
                   </button>
                   <button
                     type="button"
                     onClick={clearImplantMarkers}
                     className="button-default flex items-center gap-1.5 px-3 py-1 rounded bg-[#232323] text-[#cecece] text-[13px] transition-colors border border-[#333] cursor-pointer hover:bg-[#2b2b2b] hover:text-[#d4d4d4]"
                   >
-                    Clear §
+                    清除 §
                   </button>
                 </div>
               </>
@@ -253,7 +253,7 @@ export const AdvancedSection = ({
           <div className="h-px bg-[#252525] mb-4 mt-4" />
 
           <div className="flex items-center justify-between mb-2">
-            <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Response Headers</label>
+            <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">响应头</label>
             <button
               type="button"
               onClick={addHeader}
@@ -313,10 +313,10 @@ export const CertSection = ({
 
   return (
     <>
-      <div className="text-[12px] text-[#6e6e6e] uppercase tracking-widest mb-3">Certificate</div>
+      <div className="text-[12px] text-[#6e6e6e] uppercase tracking-widest mb-3">证书</div>
       <div className="pl-3 border-l border-[#252525] mb-4 space-y-3">
         <div>
-          <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">Source</label>
+          <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">来源</label>
           <div className="flex flex-wrap gap-1.5">
             {(
               [
@@ -342,7 +342,7 @@ export const CertSection = ({
         {cert.source === "self_signed" && showSubject && (
           <div className="space-y-3">
             <div>
-              <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">Key</label>
+              <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">密钥</label>
               <SegmentedButtons
                 options={["ecdsa", "rsa"] as CertKeyType[]}
                 value={cert.keyType}
@@ -350,7 +350,7 @@ export const CertSection = ({
               />
             </div>
             <div>
-              <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">Days</label>
+              <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">天数</label>
               <input
                 className="w-full text-[13.5px] bg-[#212121] border border-[#363636] text-[#cecece] rounded px-3 py-1.5 outline-none focus:border-[#555] placeholder:text-[#444] tabular-nums"
                 value={cert.days}
@@ -408,7 +408,7 @@ export const CertSection = ({
               className="button-default flex items-center gap-1.5 px-3 py-1 rounded bg-[#232323] text-[#cecece] text-[13px] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] transition-colors border border-[#333] cursor-pointer"
             >
               <Upload size={11} />
-              Upload cert.pem
+              上传 cert.pem
             </button>
 
             <div className="mb-3 space-y-1.5">
@@ -439,7 +439,7 @@ export const CertSection = ({
               className="button-default flex items-center gap-1.5 px-3 py-1 rounded bg-[#232323] text-[#cecece] text-[13px] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] transition-colors border border-[#333] cursor-pointer"
             >
               <Upload size={11} />
-              Upload key.pem
+              上传 key.pem
             </button>
           </>
         )}

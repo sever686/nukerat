@@ -1,20 +1,20 @@
-ABOUT
+关于
     Enumerates the titles of all visible windows on the current user's desktop, optionally
     including Process IDs (PIDs).
 
-USAGE:
+用法：
     bof-window-list --- [/pid]
 
-ARGUMENTS:
+参数：
     /pid                Optional. List titles with associated PID and process name
 
-EXAMPLES:
+示例：
     bof-window-list
     bof-window-list --- /pid
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-window-list -w 60 --- /pid

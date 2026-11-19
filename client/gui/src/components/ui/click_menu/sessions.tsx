@@ -58,24 +58,24 @@ export function createSessionsBridge(): PanelEditMenuBridge {
     getCustomMenuItems: () => [
       ...buildSessionsMenuHeader(),
       ...buildSessionsOpenMenu(),
-      menuAction("Update", RefreshCw, () => sessionsRefresh(), () => !sessionsCanRefresh()),
+      menuAction("更新", RefreshCw, () => sessionsRefresh(), () => !sessionsCanRefresh()),
       { kind: "separator" },
       ...buildSessionsKillMenu(),
       {
         kind: "action",
-        label: "Remove",
+        label: "移除",
         icon: Trash2,
         disabled: () => !sessionsCanRemoveSelected() && !sessionsCanRemoveAll(),
         items: [
           {
             kind: "action",
-            label: "Selected",
+            label: "所选",
             onClick: () => sessionsRemoveSelected(),
             disabled: () => !sessionsCanRemoveSelected(),
           },
           {
             kind: "action",
-            label: "All",
+            label: "全部",
             onClick: () => sessionsRemoveAll(),
             disabled: () => !sessionsCanRemoveAll(),
           },
@@ -83,7 +83,7 @@ export function createSessionsBridge(): PanelEditMenuBridge {
       },
     ],
     getFooterMenuItems: () => [
-      menuAction("Copy context", Bot, () => sessionsCopyContext(), () => !sessionsCanCopyContext()),
+      menuAction("复制上下文", Bot, () => sessionsCopyContext(), () => !sessionsCanCopyContext()),
     ],
   };
 }

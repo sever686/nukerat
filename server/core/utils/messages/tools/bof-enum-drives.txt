@@ -1,12 +1,12 @@
-ABOUT
+关于
     Enumerate drive letters and type.
 
-USAGE:
+用法：
     bof-enum-drives --- (no arguments)
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-enum-drives -w 60 --- (no arguments)

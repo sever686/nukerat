@@ -1,19 +1,19 @@
-ABOUT
-    Remove an empty directory.
+关于
+    删除空目录。
 
-USAGE:
+用法：
     rmdir <path>
 
-ARGUMENTS:
-    <path>              Directory to remove.
+参数：
+    <path>              要删除的目录。
 
-EXAMPLES:
+示例：
     rmdir /tmp/newfolder
     rmdir C:\Temp\newfolder
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     rmdir -w 15 C:\Temp\newfolder

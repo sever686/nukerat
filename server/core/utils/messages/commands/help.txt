@@ -1,13 +1,13 @@
-ABOUT
-    Shows help for the available commands.
+关于
+    显示可用命令的帮助信息。
 
-USAGE:
+用法：
     help [<command>] [-os windows|linux|mac]
 
-ARGUMENTS:
-    -os                 linux or mac to filter command list.
+参数：
+    -os                 linux 或 mac，用于筛选命令列表。
 
-EXAMPLES:
+示例：
     help
     help portscan
     help -os linux

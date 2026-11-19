@@ -15,13 +15,13 @@ export function createFileServerBridge(): PanelEditMenuBridge | null {
     canEdit: () => !off(),
     prepareMenu: (t) => rt.prepareFromTarget(t),
     getCustomMenuItems: (): PanelCustomMenuItem[] => [
-      menuAction("Copy link", Link, () => rt.copyLink(), () => !rt.canCopyLink() || off()),
-      menuAction("Rename", Pencil, () => rt.rename(), () => !rt.canUseSelection() || off()),
-      menuAction("Download", Download, () => rt.download(), () => !rt.canUseSelection() || off()),
-      menuAction("Delete", Trash2, () => rt.deleteFile(), () => !rt.canUseSelection() || off()),
+      menuAction("复制链接", Link, () => rt.copyLink(), () => !rt.canCopyLink() || off()),
+      menuAction("重命名", Pencil, () => rt.rename(), () => !rt.canUseSelection() || off()),
+      menuAction("下载", Download, () => rt.download(), () => !rt.canUseSelection() || off()),
+      menuAction("删除", Trash2, () => rt.deleteFile(), () => !rt.canUseSelection() || off()),
       { kind: "separator" },
-      menuAction("Upload", Upload, () => rt.upload(), () => !rt.canUpload() || off()),
-      menuAction("Update", RefreshCw, () => rt.refresh()),
+      menuAction("上传", Upload, () => rt.upload(), () => !rt.canUpload() || off()),
+      menuAction("更新", RefreshCw, () => rt.refresh()),
     ],
   };
 }

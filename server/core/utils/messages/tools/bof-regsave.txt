@@ -1,11 +1,11 @@
-ABOUT
+关于
     Acquires the necessary privileges and dumps SAM, SYSTEM, and SECURITY
     registry keys for offline parsing and hash extraction. Requires
     administrator privileges.
-USAGE:
+用法：
     bof-regsave --- <output_directory>
 
-ARGUMENTS:
+参数：
     output_directory    Directory path where registry hives will be saved
 
 OUTPUT FILES:
@@ -13,12 +13,12 @@ OUTPUT FILES:
     systemic.txt        SYSTEM hive
     security.txt        SECURITY hive
 
-EXAMPLES:
+示例：
     bof-regsave --- c:\temp\
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-regsave -w 60 --- c:\temp\

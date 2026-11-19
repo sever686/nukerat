@@ -1,8 +1,8 @@
-ABOUT
+关于
     Lists unquoted service paths outside System32/SysWow64 suitable for PE planting (T1034).
 
-USAGE:
+用法：
     net-unquoted-path --- (no arguments)
 
-EXAMPLES:
+示例：
     net-unquoted-path

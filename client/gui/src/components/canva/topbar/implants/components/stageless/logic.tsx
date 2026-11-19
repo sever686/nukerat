@@ -34,7 +34,7 @@ export const archOptions = (cpu: Cpu, _os: Os): Arch[] => {
 };
 
 export const sleepMaskOptions: { value: SleepMaskMode; label: string }[] = [
-  { value: "off", label: "Off" },
+  { value: "off", label: "关闭" },
   { value: "timer", label: "Ekko" },
   { value: "zilean", label: "Zilean" },
 ];
@@ -117,7 +117,7 @@ export const buildStagelessCustomHttpRelay = (os: Os) => stagelessCustomHttpRela
 export const sectionLabels: Record<Section, string> = {
   general: "General",
   c2: "C2",
-  preface: "Preface",
+  preface: "前言",
   artifact: "PE Artifacts",
   runtime: "Runtime",
 };
@@ -324,15 +324,15 @@ export const peTimestampDayRange = (date: string) => {
 };
 
 export const requiredFields: { label: string; ok: (d: ImplantFormData) => boolean }[] = [
-  { label: "compile server", ok: (d) => !!(d.teamHost.trim() && d.teamPort.trim()) },
+  { label: "编译服务器", ok: (d) => !!(d.teamHost.trim() && d.teamPort.trim()) },
   {
-    label: "server",
+    label: "服务器",
     ok: (d) =>
       d.protocol === "smb" ||
       d.protocol === "custom" ||
       d.servers.some((s) => s.host.trim() && s.port.trim()),
   },
-  { label: "pipeline", ok: (d) => d.protocol !== "smb" || !!(d.smbHost.trim() && d.smbPipeName.trim()) },
+  { label: "流水线", ok: (d) => d.protocol !== "smb" || !!(d.smbHost.trim() && d.smbPipeName.trim()) },
 ];
 
 export const fileToBase64 = (file: File): Promise<string> =>

@@ -25,14 +25,14 @@ export default function AddSocks({
   return (
     <>
       <div className="mb-3 space-y-1.5">
-        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Host tag</label>
+        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">主机标签</label>
         <Select value={formData.hostTag} onValueChange={(v) => handleFormChange("hostTag", v)} disabled={hostsLoading}>
           <SelectTrigger className="w-full bg-[#212121] border-[#363636] text-[#cecece] text-[13.5px] rounded h-auto focus:border-[#555] focus-visible:ring-0">
-            <SelectValue placeholder={hostsLoading ? "Loading hosts..." : "Select host"} />
+            <SelectValue placeholder={hostsLoading ? "正在加载主机..." : "选择主机"} />
           </SelectTrigger>
           <SelectContent>
             {!hostsLoading && Object.keys(hostGroups).length === 0 && (
-              <SelectItem value="__empty" disabled>No hosts found</SelectItem>
+              <SelectItem value="__empty" disabled>未找到主机</SelectItem>
             )}
             {Object.entries(hostGroups).map(([server, serverHosts]) => (
               <SelectGroup key={server}>
@@ -48,7 +48,7 @@ export default function AddSocks({
         </Select>
       </div>
       <div className="mb-3 space-y-1.5">
-        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Port target</label>
+        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">端口目标</label>
         <input
           className="w-[10rem] bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] transition-colors placeholder:text-[#444] tabular-nums"
           value={formData.targetPort}
@@ -61,23 +61,23 @@ export default function AddSocks({
       </div>
       <div className="flex gap-2">
         <div className="mb-3 space-y-1.5 flex-1">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">User</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">用户</label>
           <input
             className="w-full bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] transition-colors placeholder:text-[#444]"
             value={formData.authUser}
             onChange={(e) => handleFormChange("authUser", e.target.value)}
-            placeholder="optional"
+            placeholder="可选"
             autoComplete="off"
             spellCheck={false}
           />
         </div>
         <div className="mb-3 space-y-1.5 flex-1">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Password</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">密码</label>
           <input
             className="w-full bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] transition-colors placeholder:text-[#444]"
             value={formData.authPass}
             onChange={(e) => handleFormChange("authPass", e.target.value)}
-            placeholder="optional"
+            placeholder="可选"
             type="password"
             autoComplete="off"
             spellCheck={false}

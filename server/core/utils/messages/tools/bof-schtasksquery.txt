@@ -1,15 +1,15 @@
-ABOUT
+关于
     Query the given task on the local or remote computer
 
-USAGE:
+用法：
     bof-schtasksquery --- [opt:server] <taskpath>
 
-EXAMPLES:
+示例：
     bof-schtasksquery --- \\Microsoft\\Windows\\Defrag\\ScheduledDefrag
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-schtasksquery -w 60 --- \\Microsoft\\Windows\\Defrag\\ScheduledDefrag

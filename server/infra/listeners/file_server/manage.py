@@ -101,7 +101,7 @@ class FileServerListenerManager:
                     config_data=cfg,
                 )
             except Exception as e:
-                print(f"\n[ \x1b[38;2;255;48;48mERROR\x1b[0m ] Unable to start file server listener {row.tag}")
+                print(f"\n[ \x1b[38;2;255;48;48mERROR\x1b[0m ] 无法启动文件服务器监听器 {row.tag}")
                 print(f"[ \x1b[38;2;255;48;48mERROR\x1b[0m ] {e}")
                 write_log(logger, "error", f"Unhandled exception | file_server sync {row.tag} | {e}")
 
@@ -220,7 +220,7 @@ class FileServerListenerManager:
             }
 
         scheme = "https" if ssl else "file"
-        print(f"[ \x1b[38;2;0;238;0mOK\x1b[0m ] Started file server listener {name} ({scheme}://{host}:{port})")
+        print(f"[ \x1b[38;2;0;238;0mOK\x1b[0m ] 已启动文件服务器监听器 {name} ({scheme}://{host}:{port})")
         return session_id
 
     def all(self) -> list[dict]:

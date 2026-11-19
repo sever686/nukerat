@@ -14,7 +14,7 @@ export default function ViewPanel({ credential, onClose }: { credential: Credent
     <div className="flex flex-col h-full min-h-0 min-w-[22rem]">
       <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a] shrink-0">
         <span className="text-[13.5px] font-semibold text-[#cecece] tracking-wide min-w-0">
-          View - <span className="inline-block max-w-[180px] truncate align-bottom">{credential?.name ?? "Credential"}</span>
+          查看 - <span className="inline-block max-w-[180px] truncate align-bottom">{credential?.name ?? "Credential"}</span>
         </span>
         <button
           type="button"
@@ -26,7 +26,7 @@ export default function ViewPanel({ credential, onClose }: { credential: Credent
       </div>
       <div className="flex-1 min-h-0 min-w-0 overflow-y-auto px-4 py-4" data-credentials-input>
         <div className="mb-3 space-y-1.5">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Credentials</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">凭据</label>
           <textarea
             data-credential-field="content"
             readOnly
@@ -39,7 +39,7 @@ export default function ViewPanel({ credential, onClose }: { credential: Credent
       </div>
       <div className="flex shrink-0 flex-nowrap items-center justify-end gap-2 border-t border-[#2a2a2a] p-2">
         <button type="button" onClick={onClose} className={panelActionClass}>
-          Close
+          关闭
         </button>
       </div>
     </div>

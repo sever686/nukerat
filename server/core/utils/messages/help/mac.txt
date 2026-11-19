@@ -1,81 +1,81 @@
 -------------------------------------------------------------------------------------------------------------------------
-GENERAL
+通用
 -------------------------------------------------------------------------------------------------------------------------
 
-    (Command)     (Usage)                                                  (Description)
+    (命令)        (用法)                                                   （描述）
 
-    help          help                                                     Show this help message
-                  help arp                                                 Show command details and examples
-                  help -os [linux|mac]                                     Show OS compatible commands
+    help          help                                                     显示此帮助信息
+                  help arp                                                 显示命令详情与示例
+                  help -os [linux|mac]                                     显示当前操作系统兼容的命令
 
-    config        config                                                   View implant configuration
-    delay         delay 4                                                  Set implant delay in seconds
+    config        config                                                   查看植入体配置
+    delay         delay 4                                                  设置植入体延迟（秒）
 
-    kill          kill                                                     Kill implant process
+    kill          kill                                                     终止植入体进程
 
-    tasks         tasks                                                    Show running tasks IDs
-                  tasks kill 3912                                          Kill a running task by ID
-
--------------------------------------------------------------------------------------------------------------------------
-FILESYSTEM
--------------------------------------------------------------------------------------------------------------------------
-
-    pwd           pwd                                                      Show current directory
-    cd            cd /home/user                                            Change directory
-    ls            ls /etc                                                  List files and directories
-    cat           cat /etc/hosts                                           Display file contents
-    preview       preview /etc/hosts --size-limit 4096                       Read first bytes of a file
-    fileinfo      fileinfo /etc/hosts                                        File metadata (size, times, attributes)
-    acl           acl /etc/hosts                                           Owner, group, and ACL entries for path
-
-    echo          echo hello world                                         Print text to output
-
-    cp            cp /tmp/a.txt /tmp/b.txt                                 Copy file
-    mv            mv /tmp/a /tmp/b                                         Move file
-    rm            rm /tmp/a.txt                                             Delete file
-    ren           ren /tmp/a /tmp/b                                        Rename file
-    mkdir         mkdir /tmp/newfolder                                     Create directory
-    rmdir         rmdir /tmp/newfolder                                     Remove directory
-    attrib        attrib /tmp/a.txt                                        View or change file attributes
-    set           set                                                      View or set environment variables
-    download      download -f C:/file.exe -o file.exe                      Download a file from the target
-    search        search --path /Users --content password                  Search file contents
+    tasks         tasks                                                    显示运行中的任务 ID
+                  tasks kill 3912                                          按 ID 终止运行中的任务
 
 -------------------------------------------------------------------------------------------------------------------------
-RECOGNITION
+文件系统
 -------------------------------------------------------------------------------------------------------------------------
 
-    whoami        whoami                                                   Current user info
-    env           env                                                      List all environment variables
-    tasklist      tasklist ROOT\CIMV2                                      Running processes via WMI
-    ifconfig      ifconfig                                                 Network adapter configuration
-    netstat       netstat TCP                                              Active connections
-    portscan      portscan --target 192.168.1.100                          Port scan on the implant
+    pwd           pwd                                                      显示当前目录
+    cd            cd /home/user                                            切换目录
+    ls            ls /etc                                                  列出文件和目录
+    cat           cat /etc/hosts                                           显示文件内容
+    preview       preview /etc/hosts --size-limit 4096                       读取文件开头字节
+    fileinfo      fileinfo /etc/hosts                                        文件元数据（大小、时间、属性）
+    acl           acl /etc/hosts                                           路径的所有者、组与 ACL 条目
+
+    echo          echo hello world                                         输出文本
+
+    cp            cp /tmp/a.txt /tmp/b.txt                                 复制文件
+    mv            mv /tmp/a /tmp/b                                         移动文件
+    rm            rm /tmp/a.txt                                             删除文件
+    ren           ren /tmp/a /tmp/b                                        重命名文件
+    mkdir         mkdir /tmp/newfolder                                     创建目录
+    rmdir         rmdir /tmp/newfolder                                     删除目录
+    attrib        attrib /tmp/a.txt                                        查看或修改文件属性
+    set           set                                                      查看或设置环境变量
+    download      download -f C:/file.exe -o file.exe                      从目标下载文件
+    search        search --path /Users --content password                  搜索文件内容
 
 -------------------------------------------------------------------------------------------------------------------------
-EXECUTION
+信息收集
 -------------------------------------------------------------------------------------------------------------------------
 
-    shell         shell whoami                                             Execute shell command
-    spawn         spawn -t /bin/sh --- -c whoami                           Spawn new process
-    load-dylib    load-dylib -f file.dylib                                 Load dynamic library into memory
+    whoami        whoami                                                   当前用户信息
+    env           env                                                      列出所有环境变量
+    tasklist      tasklist ROOT\CIMV2                                      通过 WMI 获取运行中的进程
+    ifconfig      ifconfig                                                 网络适配器配置
+    netstat       netstat TCP                                              活动连接
+    portscan      portscan --target 192.168.1.100                          在植入体上执行端口扫描
 
 -------------------------------------------------------------------------------------------------------------------------
-PIVOTING
+执行
 -------------------------------------------------------------------------------------------------------------------------
 
-    relay         relay                                                                         Show relays
-                  relay create -c tcp -l 8888 -t [implant|server]://10.1.1.5:9090  [--tls]      Create TCP relay
-                  relay delete --id 445                                                         Remove relay by id
-
-    [!] The SOCKS5 and port forwarding options are available in the menu option: NukeRat > Network.
+    shell         shell whoami                                             执行 shell 命令
+    spawn         spawn -t /bin/sh --- -c whoami                           派生新进程
+    load-dylib    load-dylib -f file.dylib                                 将动态库加载到内存
 
 -------------------------------------------------------------------------------------------------------------------------
-MODIFIERS
+横向移动
 -------------------------------------------------------------------------------------------------------------------------
 
-    -bg           shell -bg dir                                            Run in background without waiting for output
-    -w / --wait   shell -w 30 ping 127.0.0.1 -n 10                         Set a custom maximum wait time (seconds)
-    prefix        prefix                                                   Show current command prefix
-                  prefix powershell                                        Set a sticky prefix prepended to every command
-                  prefix clear                                             Clear active prefix
+    relay         relay                                                                         显示中继
+                  relay create -c tcp -l 8888 -t [implant|server]://10.1.1.5:9090  [--tls]      创建 TCP 中继
+                  relay delete --id 445                                                         按 ID 移除中继
+
+    [!] SOCKS5 与端口转发选项位于菜单：NukeRat > Network。
+
+-------------------------------------------------------------------------------------------------------------------------
+修饰符
+-------------------------------------------------------------------------------------------------------------------------
+
+    -bg           shell -bg dir                                            后台运行，不等待输出
+    -w / --wait   shell -w 30 ping 127.0.0.1 -n 10                         设置自定义最大等待时间（秒）
+    prefix        prefix                                                   显示当前命令前缀
+                  prefix powershell                                        设置附加到每条命令前的固定前缀
+                  prefix clear                                             清除当前前缀

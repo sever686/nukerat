@@ -1,14 +1,14 @@
-ABOUT
+关于
     List system boot time and how long it has been running.
 
-USAGE:
+用法：
     bof-uptime
-EXAMPLES:
+示例：
     bof-uptime
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-uptime -w 60
     bof-uptime -bg

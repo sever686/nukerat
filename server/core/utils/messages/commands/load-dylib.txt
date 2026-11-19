@@ -1,20 +1,19 @@
-ABOUT
-    Load a dynamic library from uploaded bytes in the current process
-    using inline execution. macOS only.
+关于
+    在当前进程中使用内联执行加载来自已上传字节的动态库。仅限 macOS。
 
-USAGE:
+用法：
     load-dylib -f <file>
 
-ARGUMENTS:
-    -f                  Local .dylib file (--file).
+参数：
+    -f                  本地 .dylib 文件（--file）。
 
-EXAMPLES:
+示例：
     load-dylib -f file.dylib
     load-dylib -f libcustom.dylib
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     load-dylib -w 60 -f module.dylib

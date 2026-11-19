@@ -51,7 +51,7 @@ const ImplantsPanel = () => {
           />
         ) : (
           <div className="flex flex-1 items-center justify-center text-[13px] text-[#555]">
-            Select an implant base to configure build options.
+            选择一个植入体基础以配置构建选项。
           </div>
         )}
       </div>

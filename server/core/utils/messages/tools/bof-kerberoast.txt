@@ -1,19 +1,19 @@
-ABOUT
+关于
     Requests a Kerberos service ticket (AP REQ) for a given Service
     Principal Name and outputs a base64 encoded ticket for offline cracking.
     Convert output with apreq2hashcat.py.
-USAGE:
+用法：
     bof-kerberoast --- <target_spn>
 
-ARGUMENTS:
+参数：
     target_spn          Service Principal Name to kerberoast
 
-EXAMPLES:
+示例：
     bof-kerberoast --- <target_spn>
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-kerberoast -w 60 --- <target_spn>

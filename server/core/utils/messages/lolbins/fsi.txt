@@ -1,19 +1,19 @@
-ABOUT
+关于
     64-bit FSharp (F#) Interpreter included with Visual Studio and
     DotNet Core SDK. LOLBAS documents executing payload with
     Microsoft-signed binary to bypass WDAC policies.
 
-USAGE:
+用法：
     fsi.exe {PATH:.fsscript}
     fsi.exe
 
-EXAMPLES:
+示例：
     fsi.exe {PATH:.fsscript}
     fsi.exe
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     fsi.exe {PATH:.fsscript}

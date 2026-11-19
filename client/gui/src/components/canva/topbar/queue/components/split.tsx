@@ -17,7 +17,7 @@ export default function SplitPanel({ entry, onClose }: { entry: QueueEntry; onCl
   return (
     <div className="flex flex-col h-full min-h-0 min-w-[32rem]">
       <div className="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a] shrink-0">
-        <span className="text-[13.5px] font-semibold text-[#cecece] tracking-wide">Queue</span>
+        <span className="text-[13.5px] font-semibold text-[#cecece] tracking-wide">队列</span>
         <button type="button" onClick={onClose} className="p-1 rounded text-[#6b6b6b] hover:text-[#d4d4d4] hover:bg-[#2a2a2a] transition-colors cursor-pointer">
           <X size={13} />
         </button>
@@ -25,13 +25,13 @@ export default function SplitPanel({ entry, onClose }: { entry: QueueEntry; onCl
       <div className="flex-1 min-h-0 min-w-0 overflow-y-auto px-4 py-4">
           {(
             [
-              ["time", entry.time],
-              ["server", entry.server],
-              ["host", entry.host],
-              ["tag", entry.tag],
-              ["type", entry.type],
-              ["completed", yn(entry.isCompleted)],
-              ["captured", yn(entry.captured)],
+              ["时间", entry.time],
+              ["服务器", entry.server],
+              ["主机", entry.host],
+              ["标签", entry.tag],
+              ["类型", entry.type],
+              ["已完成", yn(entry.isCompleted)],
+              ["已捕获", yn(entry.captured)],
             ] as const
           ).map(([label, value]) => (
             <div key={label} className="mb-3">
@@ -45,7 +45,7 @@ export default function SplitPanel({ entry, onClose }: { entry: QueueEntry; onCl
             </div>
           ))}
           <div className="mb-3">
-            <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">input</label>
+            <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">输入</label>
             <input
               readOnly
               tabIndex={-1}
@@ -54,7 +54,7 @@ export default function SplitPanel({ entry, onClose }: { entry: QueueEntry; onCl
             />
           </div>
           <div className="mb-3">
-            <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">parameters</label>
+            <label className="block text-[12px] text-[#6e6e6e] mb-1.5 uppercase tracking-widest">参数</label>
             <textarea
               readOnly
               tabIndex={-1}

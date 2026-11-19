@@ -1,16 +1,16 @@
-ABOUT
+关于
     Trace log generation tool for Media Foundation Tools. LOLBAS
     documents local execution of cmd.exe as a subprocess of Mftrace.exe.
 
-USAGE:
+用法：
     Mftrace.exe {PATH:.exe}
 
-EXAMPLES:
+示例：
     Mftrace.exe {PATH:.exe}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     Mftrace.exe {PATH:.exe}

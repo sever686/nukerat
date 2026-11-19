@@ -1,19 +1,19 @@
-ABOUT
+关于
     (linux) List processes.
 
-USAGE:
+用法：
     bof-lin-ps [flags]
 
-ARGUMENTS:
+参数：
     flags               Optional process listing flags: a, u, x, f, w
 
-EXAMPLES:
+示例：
     bof-lin-ps
     bof-lin-ps --- aux
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-lin-ps -w 60
     bof-lin-ps -bg

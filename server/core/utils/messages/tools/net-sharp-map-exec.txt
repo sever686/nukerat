@@ -1,9 +1,9 @@
-ABOUT
+关于
     Windows native CrackMapExec alternative. Network penetration testing swiss army
     knife supporting Kerberos and NTLM authentication over CIM, Reg32, SMB, WinRM,
     LDAP, and domain spraying.
 
-USAGE:
+用法：
     net-sharp-map-exec --- <auth> <protocol> [options]
 
 AUTHENTICATION:
@@ -20,7 +20,7 @@ PROTOCOLS:
     ldap              LDAP domain queries
     domain            Domain level operations
 
-COMMON OPTIONS:
+COMMON 选项：
     /user:USER        Username
     /password:PASS    Password
     /ntlm:HASH        NTLM hash
@@ -30,14 +30,14 @@ COMMON OPTIONS:
     /ticket:FILE      Kerberos ticket (.kirbi)
     /impersonate      Use current token impersonation
 
-CIM MODULES:
+CIM 模块：
     /m:enable_winrm, /m:disable_winrm, /m:disable_pslockdown, /m:disable_pslogging
     /m:check_pslockdown, /m:check_pslogging
 
-SMB MODULES:
+SMB 模块：
     /m:shares         Scan for accessible SMB shares
 
-WINRM MODULES:
+WINRM 模块：
     /m:exec /a:COMMAND          Remote command execution
     /m:exec /a:FILE /system      Execute as SYSTEM
     /m:comsvcs                    Dump and parse LSASS
@@ -46,10 +46,10 @@ WINRM MODULES:
     /m:download /path:SRC /destination:DST
     /m:upload /path:SRC /destination:DST
 
-LDAP MODULES:
+LDAP 模块：
     /m:spraydata      Download user and password policy for spraying
 
-EXAMPLES:
+示例：
     net-sharp-map-exec --- ntlm smb /user:admin /ntlm:HASH /domain:CORP /computername:192.168.1.10 /m:shares
     net-sharp-map-exec --- kerberos winrm /user:admin /password:Pass /domain:CORP /dc:dc01 /computername:host /m:exec /a:whoami
     net-sharp-map-exec --- kerbspray /users:users.txt /passwords:pass.txt /domain:CORP /dc:dc01

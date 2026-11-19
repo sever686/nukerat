@@ -58,7 +58,7 @@ function ActiveDownloadRow({ item }: { item: DownloadItem }) {
         </div>
         <button
           type="button"
-          aria-label="Cancel download"
+          aria-label="取消下载"
           className="button-default shrink-0 p-1 rounded text-[#888888] opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 cursor-pointer"
           onClick={() => {
             void cancelUserDownload(item.id);
@@ -95,8 +95,8 @@ function HistoryDownloadRow({ item }: { item: DownloadItem }) {
           </p>
           <p className="mt-0.5 text-[12px] text-[#8a8a8a]">
             {formatBytesCompact(size)}
-            {item.status === "cancelled" ? " • Cancelled" : ""}
-            {item.status === "failed" ? " • Failed" : ""}
+            {item.status === "cancelled" ? " • 已取消" : ""}
+            {item.status === "failed" ? " • 失败" : ""}
           </p>
         </div>
         {(completed || showDelete) && (
@@ -104,7 +104,7 @@ function HistoryDownloadRow({ item }: { item: DownloadItem }) {
             {completed && (
               <button
                 type="button"
-                aria-label="Show in folder"
+                aria-label="在文件夹中显示"
                 className={historyActionBtn}
                 onClick={() => showDownloadInFolder(item.dest)}
               >
@@ -114,7 +114,7 @@ function HistoryDownloadRow({ item }: { item: DownloadItem }) {
             {showDelete && (
               <button
                 type="button"
-                aria-label="Remove from list"
+                aria-label="从列表中移除"
                 className={historyActionBtn}
                 onClick={() => deleteDownloadEntry(item.id)}
               >
@@ -154,8 +154,8 @@ export default function DownloadsMain(panel: PanelState) {
           className="bg-[#3A3A3A] flex flex-col items-start gap-1 text-left"
           style={{ borderRadius: "7px" }}
         >
-          <div className="font-semibold text-xs text-left w-full">Downloads</div>
-          <div className="text-xs opacity-90 text-left w-full">Recent download history</div>
+          <div className="font-semibold text-xs text-left w-full">下载</div>
+          <div className="text-xs opacity-90 text-left w-full">最近的下载记录</div>
         </TooltipContent>
       </Tooltip>
       <PopoverContent
@@ -165,10 +165,10 @@ export default function DownloadsMain(panel: PanelState) {
         className="downloads-popover text-[#d4d4d4] w-[13rem] overflow-hidden p-0 !ring-0"
       >
         <div className="flex items-center justify-between gap-2 px-3 py-1.5 select-none">
-          <span className="cursor-default text-[13px] font-medium text-[#cecece]">Downloads</span>
+          <span className="cursor-default text-[13px] font-medium text-[#cecece]">下载</span>
           <button
             type="button"
-            aria-label="Close downloads"
+            aria-label="关闭下载面板"
             className="button-default shrink-0 p-1 rounded text-[#888888] hover:text-[#d4d4d4] hover:bg-[#2a2a2a] transition-colors cursor-pointer outline-none focus:outline-none focus-visible:ring-0"
             onClick={() => setOpen(false)}
           >
@@ -177,7 +177,7 @@ export default function DownloadsMain(panel: PanelState) {
         </div>
         <div className="downloads-popover-list max-h-[13rem] overflow-y-auto overflow-x-hidden select-none cursor-default">
           {items.length === 0 ? (
-            <p className="px-3 py-8 text-center text-[12px] text-[#8a8a8a]">No downloads</p>
+            <p className="px-3 py-8 text-center text-[12px] text-[#8a8a8a]">暂无下载</p>
           ) : (
             <>
               {visibleRunning.map((item) => <ActiveDownloadRow key={item.id} item={item} />)}

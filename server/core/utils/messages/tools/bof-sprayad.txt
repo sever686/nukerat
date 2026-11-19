@@ -1,25 +1,25 @@
-ABOUT
+关于
     Performs LDAP based or Kerberos based password spray against Active
     Directory using LogonUserSSPI. Skips disabled accounts, locked accounts,
     and users with large BadPwdCount when specified.
 
-USAGE:
+用法：
     bof-sprayad --- <password> [filter] [ldap]
 
-ARGUMENTS:
+参数：
     password            Password to test against matching accounts
     filter              Optional sAMAccountName filter (default: *)
     ldap                Optional. Pass ldap as third arg for LDAP spray (default: Kerberos)
 
-EXAMPLES:
+示例：
     bof-sprayad --- wrongpass
     bof-sprayad --- wrongpass adm*
     bof-sprayad --- wrongpass * ldap
     bof-sprayad --- wrongpass hodor ldap
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-sprayad -w 60 --- wrongpass hodor ldap

@@ -30,7 +30,7 @@ export default function KeyloggerPanel(props: IDockviewPanelProps) {
               className="box-border h-[29px] w-full rounded border border-[#363636] bg-[#212121] py-0 pl-3 pr-8 text-[13.5px] text-[#cecece] outline-none transition-colors placeholder:text-[#444] focus:border-[#555]"
               value={p.search}
               onChange={(e) => p.setSearch(e.target.value)}
-              placeholder="Search..."
+              placeholder="搜索..."
               autoComplete="off"
               spellCheck={false}
             />
@@ -75,7 +75,7 @@ export default function KeyloggerPanel(props: IDockviewPanelProps) {
               onClick={p.view}
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
             >
-              <Eye size={11} /> View
+              <Eye size={11} /> 查看
             </button>
             <button
               type="button"
@@ -83,12 +83,12 @@ export default function KeyloggerPanel(props: IDockviewPanelProps) {
               onClick={p.remove}
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#c97070] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
             >
-              <Trash2 size={11} /> Delete
+              <Trash2 size={11} /> 删除
             </button>
             <div className="ml-auto flex shrink-0 items-center gap-2">
               {p.total > 0 && !p.loading && (
                 <span className="text-nowrap text-[13px] tabular-nums text-[#444]">
-                  Page {p.page} / {p.pageCount}
+                  页码 {p.page} / {p.pageCount}
                 </span>
               )}
               <button
@@ -138,20 +138,19 @@ export default function KeyloggerPanel(props: IDockviewPanelProps) {
           >
             <div className="flex text-[13.5px] items-center gap-2 mb-3">
               <Trash2 size={14} className="text-[#c97070] mb-0.5" />
-              <span className="text-[13.5px] font-semibold text-[#cecece]">Delete keylogger</span>
+              <span className="text-[13.5px] font-semibold text-[#cecece]">删除键盘记录</span>
             </div>
             <p className="text-[13px] text-[#9b9b9b] mb-5 leading-relaxed">
               {p.deleteConfirmMode === "all" ? (
                 <>
-                  Remove all{" "}
+                  移除全部{" "}
                   <span className="text-[#d4d4d4] font-semibold">{p.entryCount}</span>{" "}
-                  entr{p.entryCount === 1 ? "y" : "ies"}? This cannot be undone.
+                  条键盘记录？此操作无法撤销。
                 </>
               ) : (
                 <>
-                  Remove this keylogger entry for{" "}
-                  <span className="text-[#d4d4d4] font-semibold">"{p.selected?.hostTag || p.selected?.host}"</span>? This
-                  cannot be undone.
+                  确定要移除此键盘记录条目：{" "}
+                  <span className="text-[#d4d4d4] font-semibold">"{p.selected?.hostTag || p.selected?.host}"</span>？此操作无法撤销。
                 </>
               )}
             </p>
@@ -161,7 +160,7 @@ export default function KeyloggerPanel(props: IDockviewPanelProps) {
                 onClick={() => p.setShowDeleteConfirm(false)}
                 className="button-default px-3 py-1 rounded text-[12px] text-[#9b9b9b] hover:text-[#cecece] hover:bg-[#252525] transition-colors border border-[#333] cursor-pointer"
               >
-                Cancel
+                取消
               </button>
               <button
                 type="button"
@@ -170,7 +169,7 @@ export default function KeyloggerPanel(props: IDockviewPanelProps) {
                 className="button-default flex items-center gap-1.5 px-3 py-1 rounded text-[12px] text-white bg-[#8b2020] hover:bg-[#a83232] transition-colors disabled:opacity-50 cursor-pointer"
               >
                 {p.deleting && <RefreshCw size={10} className="animate-spin" />}
-                Remove
+                移除
               </button>
             </div>
           </div>

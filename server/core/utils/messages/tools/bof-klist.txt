@@ -1,20 +1,20 @@
-ABOUT
+关于
     Displays currently cached Kerberos tickets. Supports listing, purging,
     and requesting service tickets for a given SPN.
-USAGE:
+用法：
     bof-klist --- [purge|get SPN]
 
-ARGUMENTS:
+参数：
     purge               Display and purge cached tickets
     get SPN             Request a service ticket for the given SPN
 
-EXAMPLES:
+示例：
     bof-klist    bof-klist --- purge
     bof-klist --- get HOST/FLAPDROL
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-klist -w 60 --- purge

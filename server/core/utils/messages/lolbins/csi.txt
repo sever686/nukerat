@@ -1,16 +1,16 @@
-ABOUT
+关于
     Command line interface included with Visual Studio. LOLBAS documents
     local execution of unsigned C# code.
 
-USAGE:
+用法：
     csi.exe {PATH:.cs}
 
-EXAMPLES:
+示例：
     csi.exe {PATH:.cs}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     csi.exe {PATH:.cs}

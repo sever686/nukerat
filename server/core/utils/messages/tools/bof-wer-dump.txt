@@ -1,12 +1,12 @@
-ABOUT
+关于
     Dumps protected LSASS using WerFaultSecure.exe. Writes WerFaultSecure to temp
     with random filename and saves dump as .dll in the same directory.
 
-USAGE:
+用法：
     bof-wer-dump
-EXAMPLES:
+示例：
     bof-wer-dump
-NOTES:
+备注：
     Run bof-wer-resume from a different beacon process BEFORE bof-wer-dump within
     one second to prevent system unresponsiveness. WerDump cannot resume lsass itself
     due to process protection policy.

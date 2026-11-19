@@ -1,18 +1,18 @@
-ABOUT
-    Print the ARP cache.
+关于
+    打印 ARP 缓存。
 
-USAGE:
+用法：
     arp
 
-ARGUMENTS:
-    (none)
+参数：
+    （无）
 
-EXAMPLES:
+示例：
     arp
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     arp -w 30

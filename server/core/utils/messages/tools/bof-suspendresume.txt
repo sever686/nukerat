@@ -1,24 +1,24 @@
-ABOUT
+关于
     Suspends or resumes a process by PID. Use 1 to suspend, 0 to resume.
 
-USAGE:
+用法：
     bof-suspendresume --- <0|1> <PID>
 
-ARGUMENTS:
+参数：
 
     0|1    1=suspend, 0=resume
 
     PID    Target process ID
 
-EXAMPLES:
+示例：
 
     bof-suspendresume --- 1 1234
 
     bof-suspendresume --- 0 1234
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-suspendresume -w 60 --- 1 1234

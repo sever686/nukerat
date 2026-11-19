@@ -24,7 +24,7 @@ const ScreenshotWindow = (props: IDockviewPanelProps<ScreenshotPanelParams>) => 
             <img src={src} alt="" className="relative max-w-full max-h-full object-contain z-10" />
           </>
         ) : (
-          <PanelEmptyState>No screenshot to display</PanelEmptyState>
+          <PanelEmptyState>暂无截图可显示</PanelEmptyState>
         )}
       </div>
     </ScreenshotDockviewShell>

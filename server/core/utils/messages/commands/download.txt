@@ -1,30 +1,28 @@
-ABOUT
-    Download a file from the target machine to the operator station. Downloads
-    use chunks to avoid issues with large files. Compatible with relay
-    communication.
+关于
+    将文件从目标机器下载到操作员工作站。下载采用分块方式，避免大文件出现问题。兼容中继通信。
 
-USAGE:
+用法：
     download [-f <remotepath> -o <localfile> | list | delete --id <id>]
 
-ARGUMENTS:
-    -f                  File on the implant (--file).
-    -o                  Save path on the operator station (--output).
-    --id                Download queue id for download delete.
+参数：
+    -f                  植入体上的文件（--file）。
+    -o                  操作员工作站上的保存路径（--output）。
+    --id                用于 download delete 的下载队列 id。
 
-MODES:
-    download            Pull a remote file to the operator station (-f and -o).
-    list                Show active downloads (id, file name, status, progress).
-    delete              Remove a queued download by id and clean up server state.
+模式：
+download            将远程文件拉取到操作员工作站（-f 与 -o）。
+list                显示活动下载（id、文件名、状态、进度）。
+delete              按 id 移除排队中的下载并清理服务器状态。
 
-EXAMPLES:
+示例：
     download -f C:/file.exe -o file.exe
     download -f C:\large.bin -o large.bin
     download list
     download delete --id 7f3a2b1c
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     download -w 300 -f C:\data.zip -o data.zip

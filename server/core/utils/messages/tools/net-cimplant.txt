@@ -1,12 +1,12 @@
-ABOUT
+关于
     Supports file operations, registry, services, process management,
     lateral movement facilitation, and system enumeration. Requires local
     administrator permissions on the target system.
 
-USAGE:
+用法：
     net-cimplant --- -s <IP> -c <command> [options]
 
-EXAMPLES:
+示例：
     net-cimplant --- -s 10.0.0.5 -c cat -f C:\Users\user\desktop\file.txt
     net-cimplant --- -s 10.0.0.5 -u user -d DOMAIN -p password -c cat -f C:\Users\test\desktop\file.txt
     net-cimplant --- -s 10.0.0.5 -u user -d DOMAIN -p password -c command_exec --execute "dir c:\\"
@@ -17,7 +17,7 @@ EXAMPLES:
     net-cimplant --- --show-commands
     net-cimplant --- --show-examples
 
-CONNECTION OPTIONS:
+CONNECTION 选项：
     -s, --system        Remote system IP or hostname (required)
     -u, --username      Username for alternate credentials
     -p, --password      Password for alternate credentials
@@ -26,7 +26,7 @@ CONNECTION OPTIONS:
     --wmi               Use WMI (DCOM) instead of CIM (WSMan)
     --nops              Disable PowerShell execution
 
-COMMAND OPTIONS:
+COMMAND 选项：
     -c, --command       Command to execute (required unless show-commands)
     -e, --execute       Command line for command_exec
     -f, --file          Remote or local file path
@@ -41,7 +41,7 @@ COMMAND OPTIONS:
     --process           Process name or PID
     -r, --reset         Reset DebugFilePath property on error
 
-COMMANDS:
+命令：
     cat                 Read file contents
     copy                Copy a file
     download            Download a file from target
@@ -73,9 +73,9 @@ COMMANDS:
     edr_query           Query for EDR vendors
     logon_events        Identify users that logged on
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     net-cimplant -w 60 --- -s 10.0.0.5 -c cat -f C:\Users\user\desktop\file.txt

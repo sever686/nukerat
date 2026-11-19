@@ -1,19 +1,19 @@
-ABOUT
+关于
     This tool can be used to force a Windows-authenticated HTTP request from the current user context to a (ntlmrelayx) server for an authenticated (LDAP) relay attack.
 
-USAGE:
+用法：
     bof-authenticate-http --- <host> <port>
 
-ARGUMENTS:
+参数：
     host    Target hostname or localhost (IP addresses are not supported)
     port    Target TCP port (HTTP server must return 404 on authenticated request)
 
-EXAMPLES:
+示例：
     bof-authenticate-http --- localhost 80
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-authenticate-http -w 60 --- <host> <port>

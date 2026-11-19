@@ -78,7 +78,7 @@ export const executeCommand = async (
     downloadExtras = prepared.downloadExtras;
     uploadPath = prepared.uploadPath;
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Failed to read file';
+    const message = error instanceof Error ? error.message : '读取文件失败';
     return { output: message, newHistory: trimmedCmd ? [...history, trimmedCmd] : history };
   }
 

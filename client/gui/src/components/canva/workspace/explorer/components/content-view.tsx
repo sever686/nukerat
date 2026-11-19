@@ -19,10 +19,10 @@ const ContentView = ({ content, fileKey, oversizedOnly, onDismissOversized }: Co
       <div className="flex-1 overflow-y-auto p-3">
         <div className="h-full flex flex-col items-center justify-center text-center gap-4">
           <p className="text-[13px] text-[#cecece] max-w-[560px]">
-            This file is over 25 MB.<br />Download it from the terminal instead.
+            此文件超过 25 MB。<br />请改用终端下载。
           </p>
           <button type="button" onClick={onDismissOversized} className={implantActionButtonClass}>
-            Close
+            关闭
           </button>
         </div>
       </div>

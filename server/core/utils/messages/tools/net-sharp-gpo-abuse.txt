@@ -1,8 +1,8 @@
-ABOUT
+关于
     .NET tool to abuse GPO edit rights. Modifies Group Policy Objects to add user rights,
     local admins, logon scripts, startup scripts, and immediate scheduled tasks.
 
-USAGE:
+用法：
     net-sharp-gpo-abuse --- <AttackType> <AttackOptions>
 
 ATTACK TYPES:
@@ -13,7 +13,7 @@ ATTACK TYPES:
     --AddComputerTask    Add computer immediate scheduled task
     --AddUserTask        Add user immediate scheduled task
 
-ATTACK OPTIONS:
+ATTACK 选项：
     --GPOName            Name of the vulnerable GPO (required)
     --UserAccount        Target user account
     --UserRights         Comma separated rights list (case sensitive)
@@ -28,12 +28,12 @@ ATTACK OPTIONS:
     --TargetUserSID      Target user SID
     --TargetDnsName      Target computer DNS name for computer tasks
 
-ADDITIONAL OPTIONS:
+ADDITIONAL 选项：
     --DomainController   Target domain controller
     --Domain             Target domain
     --Force              Overwrite existing files
 
-EXAMPLES:
+示例：
     net-sharp-gpo-abuse --- --AddLocalAdmin --UserAccount bob.smith --GPOName "Vulnerable GPO"
     net-sharp-gpo-abuse --- --AddUserScript --ScriptName Startup.bat --ScriptContents "cmd /c whoami" --GPOName "Vulnerable GPO"
     net-sharp-gpo-abuse --- --AddComputerTask --TaskName Update --Author DOMAIN\Admin --Command cmd.exe --Arguments "/c whoami" --GPOName "Vulnerable GPO"

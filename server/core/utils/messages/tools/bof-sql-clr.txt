@@ -1,12 +1,12 @@
-ABOUT
+关于
     Loads and executes a .NET assembly in a SQL stored procedure via CLR integration.
 
-USAGE:
+用法：
     bof-sql-clr --- <server> <dll_path> <function> [database] [linkedserver] [impersonate]
 
-EXAMPLES:
+示例：
     bof-sql-clr --- SQL01 C:\\tools\\assembly.dll MyNamespace.MyClass.MyMethod
     bof-sql-clr --- SQL01 payload.dll Execute master LINKED01 dbo
 
-NOTES:
+备注：
     DLL is read locally and SHA512 hash is calculated before upload to SQL server.

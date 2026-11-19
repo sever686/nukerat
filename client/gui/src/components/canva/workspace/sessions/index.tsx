@@ -52,7 +52,7 @@ const SessionsPanel = (props: IDockviewPanelProps) => {
               {loading ? (
                 <div className="flex items-center justify-center h-16 text-[#444] text-[13.5px]">
                   <RefreshCw size={14} className="animate-spin mr-2" />
-                  Loading...
+                  加载中...
                 </div>
               ) : (
                 <>
@@ -143,7 +143,7 @@ const SessionsPanel = (props: IDockviewPanelProps) => {
                       </tbody>
                     )}
                   </table>
-                  {filteredSessions.length === 0 && <PanelEmptyState>No sessions found</PanelEmptyState>}
+                  {filteredSessions.length === 0 && <PanelEmptyState>未找到会话</PanelEmptyState>}
                 </>
               )}
             </div>
@@ -156,7 +156,7 @@ const SessionsPanel = (props: IDockviewPanelProps) => {
                 className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
               >
                 <RefreshCw size={11} className={loading ? "animate-spin" : ""} />
-                Update
+                更新
               </button>
               <button
                 type="button"
@@ -165,7 +165,7 @@ const SessionsPanel = (props: IDockviewPanelProps) => {
                 className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#c97070] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
               >
                 <Trash2 size={11} />
-                Remove
+                移除
               </button>
             </div>
           </div>
@@ -200,24 +200,24 @@ const SessionsPanel = (props: IDockviewPanelProps) => {
             >
               <div className="flex text-[13.5px] items-center gap-2 mb-3">
                 <CircleX size={14} className="text-[#c97070] mb-0.5" />
-                <span className="text-[13.5px] font-semibold text-[#cecece]">Kill session</span>
+                <span className="text-[13.5px] font-semibold text-[#cecece]">终止会话</span>
               </div>
               <p className="text-[13px] text-[#9b9b9b] mb-5 leading-relaxed">
-                Kill{" "}
-                <span className="text-[#d4d4d4] font-semibold">"{killTarget.tag}"</span>? The implant will exit.
+                终止{" "}
+                <span className="text-[#d4d4d4] font-semibold">"{killTarget.tag}"</span>？植入体将退出。
               </p>
               <div className="flex items-center justify-end gap-2">
                 <button
                   onClick={handleCancelKill}
                   className="button-default px-3 py-1 rounded text-[12px] text-[#9b9b9b] hover:text-[#cecece] hover:bg-[#252525] transition-colors border border-[#333] cursor-pointer"
                 >
-                  Cancel
+                  取消
                 </button>
                 <button
                   onClick={handleConfirmKill}
                   className="button-default flex items-center gap-1.5 px-3 py-1 rounded text-[12px] text-white bg-[#8b2020] hover:bg-[#a83232] transition-colors cursor-pointer"
                 >
-                  Kill
+                  终止
                 </button>
               </div>
             </div>
@@ -232,19 +232,19 @@ const SessionsPanel = (props: IDockviewPanelProps) => {
             >
               <div className="flex text-[13.5px] items-center gap-2 mb-3">
                 <Trash2 size={14} className="text-[#c97070] mb-0.5" />
-                <span className="text-[13.5px] font-semibold text-[#cecece]">Delete Session</span>
+                <span className="text-[13.5px] font-semibold text-[#cecece]">删除会话</span>
               </div>
               <p className="text-[13px] text-[#9b9b9b] mb-5 leading-relaxed">
                 {deleteConfirmMode === "all" ? (
                   <>
-                    Remove all{" "}
+                    移除全部{" "}
                     <span className="text-[#d4d4d4] font-semibold">{sessionCount}</span>{" "}
-                    session{sessionCount === 1 ? "" : "s"}? This cannot be undone.
+                    个会话？此操作无法撤销。
                   </>
                 ) : (
                   <>
-                    Remove{" "}
-                    <span className="text-[#d4d4d4] font-semibold">"{selected?.tag}"</span>? This cannot be undone.
+                    移除{" "}
+                    <span className="text-[#d4d4d4] font-semibold">"{selected?.tag}"</span>？此操作无法撤销。
                   </>
                 )}
               </p>
@@ -253,7 +253,7 @@ const SessionsPanel = (props: IDockviewPanelProps) => {
                   onClick={() => setShowDeleteConfirm(false)}
                   className="button-default px-3 py-1 rounded text-[12px] text-[#9b9b9b] hover:text-[#cecece] hover:bg-[#252525] transition-colors border border-[#333] cursor-pointer"
                 >
-                  Cancel
+                  取消
                 </button>
                 <button
                   disabled={submitting}
@@ -261,7 +261,7 @@ const SessionsPanel = (props: IDockviewPanelProps) => {
                   className="button-default flex items-center gap-1.5 px-3 py-1 rounded text-[12px] text-white bg-[#8b2020] hover:bg-[#a83232] transition-colors disabled:opacity-50 cursor-pointer"
                 >
                   {submitting && <RefreshCw size={10} className="animate-spin" />}
-                  Remove
+                  移除
                 </button>
               </div>
             </div>

@@ -69,7 +69,7 @@ const Toolbar = ({
             data-process-search-field="search"
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="Filter processes..."
+            placeholder="筛选进程..."
             className="h-[29px] w-full rounded border border-[#363636] bg-[#212121] px-3 py-0 text-[13.5px] text-[#cecece] outline-none transition-colors placeholder:text-[#444] focus:border-[#555]"
           />
         </div>
@@ -143,14 +143,14 @@ const Toolbar = ({
           onClick={() => onTreeModeChange(true)}
           className={`button-default h-[29px] shrink-0 rounded-[5px] border px-2 text-[13.5px] cursor-pointer ${treeMode ? "border-[#ffffff26] text-[#cecece]" : "border-transparent text-[#555]"}`}
         >
-          Tree
+          树形
         </button>
         <button
           type="button"
           onClick={() => onTreeModeChange(false)}
           className={`button-default h-[29px] shrink-0 rounded-[5px] border px-2 text-[13.5px] cursor-pointer ${!treeMode ? "border-[#ffffff26] text-[#cecece]" : "border-transparent text-[#555]"}`}
         >
-          Flat
+          平铺
         </button>
       </div>
     </div>

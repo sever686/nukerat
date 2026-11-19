@@ -1,19 +1,19 @@
-ABOUT
+关于
     Credential Manager command-line tool.
     Lists cached credentials with cmdkey /list for host reconnaissance.
 
-USAGE:
+用法：
     cmdkey /list
 
-ARGUMENTS:
+参数：
     /list                        List stored credentials on host
 
-EXAMPLES:
+示例：
     cmdkey /list
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     cmdkey /list

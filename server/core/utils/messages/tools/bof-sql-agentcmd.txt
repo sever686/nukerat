@@ -1,12 +1,12 @@
-ABOUT
+关于
     Executes a system command using SQL Server agent jobs.
 
-USAGE:
+用法：
     bof-sql-agentcmd --- <server> <command> [database] [linkedserver] [impersonate]
 
-EXAMPLES:
+示例：
     bof-sql-agentcmd --- SQL01 whoami
     bof-sql-agentcmd --- SQL01 cmd.exe /c whoami master
 
-NOTES:
+备注：
     Output is not returned. Requires SQL agent and appropriate privileges.

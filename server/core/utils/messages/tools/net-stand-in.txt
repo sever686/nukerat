@@ -1,9 +1,9 @@
-ABOUT
+关于
     Small Active Directory post exploitation toolkit. Supports LDAP queries, ACL
     manipulation, Kerberoasting, ASREP roasting, delegation abuse, GPO abuse, ADCS
     attacks, and machine account operations.
 
-USAGE:
+用法：
     net-stand-in --- [flags]
 
 LDAP:
@@ -35,7 +35,7 @@ COMMON FLAGS:
     --type                      ACL type: GenericAll, GenericWrite, DCSync, etc.
     --limit                     Result limit (default: 50)
 
-EXAMPLES:
+示例：
     net-stand-in --- --ldap "(&(samAccountType=805306368)(servicePrincipalName=*))"
     net-stand-in --- --spn
     net-stand-in --- --object samaccountname=DC01$ --access

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-export const UTC_TABLE_COLUMN_SUFFIX = " (UTC)";
+export const UTC_TABLE_COLUMN_SUFFIX = "（UTC）";
 
 export function utcTableColumnTitle(base: string) {
   return `${base}${UTC_TABLE_COLUMN_SUFFIX}`;

@@ -60,17 +60,17 @@ export default function QueueHostFilter({
             >
               <RotateCw className={`h-3.5 w-3.5 ${loading ? "animate-spin" : ""}`} />
             </Button>
-            <CommandInputNoIcon className="w-[9.7rem] placeholder:text-[#ffffff0b]" placeholder="Search host..." />
+            <CommandInputNoIcon className="w-[9.7rem] placeholder:text-[#ffffff0b]" placeholder="搜索主机..." />
           </div>
           <CommandList>
             {loading ? (
               <div className="flex items-center justify-center h-10 text-[#666] text-[13.5px]">
                 <RefreshCw size={14} className="animate-spin mr-2" />
-                Loading...
+                加载中...
               </div>
             ) : (
               <>
-                <CommandEmpty>No host found.</CommandEmpty>
+                <CommandEmpty>未找到主机。</CommandEmpty>
                 {Object.entries(groups).map(([server, list]) => (
                   <CommandGroup key={server} heading={server}>
                     {list.map((host) => (

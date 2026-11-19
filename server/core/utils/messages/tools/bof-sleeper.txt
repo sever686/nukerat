@@ -1,22 +1,22 @@
-ABOUT
+关于
     Calls SetThreadExecutionState to prevent the host from sleeping.
-USAGE:
+用法：
     bof-sleeper --- <mode>
 
-ARGUMENTS:
+参数：
     off                 Set ES_CONTINUOUS flag and return to default state
     on                  Set ES_SYSTEM_REQUIRED flag to prevent sleep
     force               Set ES_SYSTEM_REQUIRED and ES_AWAYMODE_REQUIRED to prevent sleep
                         even if the sleep button is pressed
 
-EXAMPLES:
+示例：
     bof-sleeper --- on
     bof-sleeper --- off
     bof-sleeper --- force
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-sleeper -w 60 --- on

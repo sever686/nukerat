@@ -1,11 +1,11 @@
-ABOUT
+关于
     Executes commands on a remote target via SMB using NTLM hash
     authentication (pass-the-hash over SMB).
 
-USAGE:
+用法：
     net-sharp-smb-exec --- username:<user> hash:<ntlm> target:<host> [options]
 
-OPTIONS:
+选项：
     username        Username for authentication (required)
     hash            NTLM hash in LM:NTLM or NTLM format (required)
     domain          Domain for authentication
@@ -17,6 +17,6 @@ OPTIONS:
     -ForceSMB1      Force SMB1 instead of negotiating SMB2
     -ComSpec        Prepend %COMSPEC% /C to command
 
-EXAMPLES:
+示例：
     net-sharp-smb-exec --- username:admin hash:NTLM target:192.168.1.10 command:whoami
     net-sharp-smb-exec --- username:admin hash:NTLM domain:CORP target:dc01 -CheckAdmin

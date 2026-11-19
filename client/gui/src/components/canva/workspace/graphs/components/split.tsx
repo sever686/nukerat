@@ -13,30 +13,30 @@ export default function SplitPanel({ host, onClose }: { host: GraphSession | nul
   } catch {}
 
   const fields = [
-    ["Last Check", host?.last_activity || "-"],
-    ["Tag", host?.tag],
-    ["Hostname", host?.hostname],
-    ["User", host?.user],
-    ["Privilege", host?.privilege || "user"],
-    ["Internal", host?.internal ?? host?.ip],
-    ["External", host?.external_ip],
-    ["Listener", host?.listener],
-    ["Host Server", host?.host_server],
-    ["Host Port", host?.host_port],
-    ["Arch", host?.arch],
+    ["最后检查", host?.last_activity || "-"],
+    ["标签", host?.tag],
+    ["主机名", host?.hostname],
+    ["用户", host?.user],
+    ["权限", host?.privilege || "user"],
+    ["内网", host?.internal ?? host?.ip],
+    ["外部", host?.external_ip],
+    ["监听器", host?.listener],
+    ["主机服务器", host?.host_server],
+    ["主机端口", host?.host_port],
+    ["架构", host?.arch],
     ["PID", host?.pid],
-    ["Process", host?.process],
-    ["OS", host?.os],
-    ["First Seen", formatDate(host?.first_seen)],
-    ["Last Seen", formatDate(host?.last_seen)],
-    ["delay", host?.delay],
-    ["Server", host?._server],
+    ["进程", host?.process],
+    ["操作系统", host?.os],
+    ["首次发现", formatDate(host?.first_seen)],
+    ["最近发现", formatDate(host?.last_seen)],
+    ["延迟", host?.delay],
+    ["服务器", host?._server],
   ] as const;
 
   return (
     <>
       <div className={classes.splitHeader}>
-        <span className={classes.splitTitle}>View - {host?.tag ?? "Host"}</span>
+        <span className={classes.splitTitle}>查看 - {host?.tag ?? "主机"}</span>
         <button type="button" onClick={onClose} className={classes.splitClose}>
           <X size={13} />
         </button>
@@ -51,12 +51,12 @@ export default function SplitPanel({ host, onClose }: { host: GraphSession | nul
                 readOnly
                 tabIndex={-1}
                 value={formatValue(value)}
-                className={`${classes.splitValue} outline-none cursor-text${label === "Listener" ? " uppercase" : ""}`}
+                className={`${classes.splitValue} outline-none cursor-text${label === "监听器" ? " uppercase" : ""}`}
               />
             </div>
           ))}
           <div className={classes.splitField}>
-            <label className={classes.splitLabel}>Implant Config</label>
+            <label className={classes.splitLabel}>植入体配置</label>
             {implant && typeof implant === "object" ? (
               <div className={classes.splitImplantBox}>
                 {Object.entries(implant).map(([key, val], i, arr) => (

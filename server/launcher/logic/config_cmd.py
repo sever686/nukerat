@@ -11,21 +11,21 @@ def main_config(option):
     # Receives the config command and calls list, set, reset, load or create tls
     parts = option.split()
     if len(parts) < 2 or parts[0] != "config":
-        print("Invalid option")
+        print("选项无效")
         return
 
     cmd = parts[1]
 
     if cmd == "list":
         if len(parts) != 2:
-            print('Invalid syntax. Use "config list".')
+            print('语法无效。请使用 "config list"。')
             return
         config_list()
         return
 
     if cmd == "set":
         if len(parts) < 4:
-            print('Invalid syntax. Use "config set <key> <value>".')
+            print('语法无效。请使用 "config set <key> <value>"。')
             return
         key = parts[2]
         value = " ".join(parts[3:])
@@ -34,14 +34,14 @@ def main_config(option):
 
     if cmd == "reset":
         if len(parts) != 3:
-            print('Invalid syntax. Use "config reset <key>".')
+            print('语法无效。请使用 "config reset <key>"。')
             return
         config_reset(parts[2])
         return
 
     if cmd == "load":
         if len(parts) != 3:
-            print('Invalid syntax. Use "config load <file>".')
+            print('语法无效。请使用 "config load <file>"。')
             return
         exit_code = config_load(parts[2])
         if exit_code:
@@ -50,11 +50,11 @@ def main_config(option):
 
     if cmd == "create-tls":
         if len(parts) != 2:
-            print('Invalid syntax. Use "config create-tls".')
+            print('语法无效。请使用 "config create-tls"。')
             return
         exit_code = config_create_tls()
         if exit_code:
             raise SystemExit(exit_code)
         return
 
-    print("Invalid option")
+    print("选项无效")

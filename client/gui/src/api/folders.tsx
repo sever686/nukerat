@@ -170,7 +170,7 @@ export const DataFetch = async (
       lastError ?? {
         status: "failure",
         request: FOLDERS_REQUEST,
-        message: "Request failed",
+        message: "请求失败",
       }
     );
   } catch (error) {

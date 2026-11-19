@@ -1,17 +1,17 @@
-ABOUT
+关于
     Default apps settings executable.
     UAC bypass when ms-settings Shell\open\command is hijacked to run
     elevated code without a prompt.
 
-USAGE:
+用法：
     ComputerDefaults.exe
 
-EXAMPLES:
+示例：
     ComputerDefaults.exe
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     ComputerDefaults.exe

@@ -31,10 +31,10 @@ export default function AddFileServer({ formData, handleFormChange, onServerSele
   return (
     <>
       <div className="mb-3 space-y-1.5">
-        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Server</label>
+        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">服务器</label>
         <Select value={selectedId || undefined} onValueChange={handleChange}>
           <SelectTrigger className="w-full text-[13.5px] bg-[#212121] border-[#363636] text-[#cecece] rounded px-3 py-1.5 h-auto focus:border-[#555] focus-visible:ring-0">
-            <SelectValue placeholder="Select a server..." />
+            <SelectValue placeholder="选择服务器..." />
           </SelectTrigger>
           <SelectContent className="text-[13.5px]">
             {servers.map((s) => (
@@ -51,9 +51,9 @@ export default function AddFileServer({ formData, handleFormChange, onServerSele
       </div>
 
       <div className="mb-3 space-y-1.5">
-        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Port to Open</label>
+        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">开放端口</label>
         <input
-          aria-label="Port to open"
+          aria-label="开放端口"
           className="w-full text-[13.5px] bg-[#212121] border border-[#363636] text-[#cecece] rounded px-3 py-1.5 outline-none focus:border-[#555] placeholder:text-[#444] tabular-nums"
           value={formData.portToOpen}
           onChange={(e) => handleFormChange("portToOpen", sanitizeNumericInput(e.target.value))}
@@ -89,12 +89,12 @@ export default function AddFileServer({ formData, handleFormChange, onServerSele
           size={11}
           className={`text-[#454545] transition-transform duration-150 ${adv.expanded ? "rotate-90" : ""}`}
         />
-        <span className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Advanced</span>
+        <span className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">高级</span>
       </button>
       {adv.expanded && (
         <div className="pl-3 border-l border-[#252525]">
           <div className="flex items-center justify-between mb-2">
-            <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Response Headers</label>
+            <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">响应头</label>
             <button
               type="button"
               onClick={adv.addHeader}

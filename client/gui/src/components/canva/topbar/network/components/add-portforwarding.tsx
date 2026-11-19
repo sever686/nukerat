@@ -25,14 +25,14 @@ export default function AddPortForwarding({
   return (
     <>
       <div className="mb-3 space-y-1.5">
-        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Host tag</label>
+        <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">主机标签</label>
         <Select value={formData.hostTag} onValueChange={(v) => handleFormChange("hostTag", v)} disabled={hostsLoading}>
           <SelectTrigger className="w-full bg-[#212121] border-[#363636] text-[#cecece] text-[13.5px] rounded h-auto focus:border-[#555] focus-visible:ring-0">
-            <SelectValue placeholder={hostsLoading ? "Loading hosts..." : "Select host"} />
+            <SelectValue placeholder={hostsLoading ? "正在加载主机..." : "选择主机"} />
           </SelectTrigger>
           <SelectContent>
             {!hostsLoading && Object.keys(hostGroups).length === 0 && (
-              <SelectItem value="__empty" disabled>No hosts found</SelectItem>
+              <SelectItem value="__empty" disabled>未找到主机</SelectItem>
             )}
             {Object.entries(hostGroups).map(([server, serverHosts]) => (
               <SelectGroup key={server}>
@@ -49,7 +49,7 @@ export default function AddPortForwarding({
       </div>
       <div className="flex gap-2">
         <div className="mb-3 space-y-1.5 flex-1">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Listen port</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">监听端口</label>
           <input
             className="w-full bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] transition-colors placeholder:text-[#444] tabular-nums"
             value={formData.targetPort}
@@ -61,7 +61,7 @@ export default function AddPortForwarding({
           />
         </div>
         <div className="w-28 mb-3 space-y-1.5">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Protocol</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">协议</label>
           <Select value={formData.protocol} onValueChange={(v) => handleFormChange("protocol", v as NetworkFormData["protocol"])}>
             <SelectTrigger className="w-full bg-[#212121] border-[#363636] text-[#cecece] text-[13.5px] rounded h-auto focus:border-[#555] focus-visible:ring-0">
               <SelectValue />
@@ -75,7 +75,7 @@ export default function AddPortForwarding({
       </div>
       <div className="flex gap-2">
         <div className="mb-3 space-y-1.5 flex-1">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Forward host</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">转发主机</label>
           <input
             className="w-full bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] transition-colors placeholder:text-[#444]"
             value={formData.forwardHost}
@@ -86,7 +86,7 @@ export default function AddPortForwarding({
           />
         </div>
         <div className="mb-3 space-y-1.5 w-[10rem]">
-          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">Forward port</label>
+          <label className="block text-[12px] text-[#6e6e6e] uppercase tracking-widest">转发端口</label>
           <input
             className="w-full bg-[#212121] border border-[#363636] text-[#cecece] text-[13.5px] rounded px-3 py-1.5 outline-none focus:border-[#555] transition-colors placeholder:text-[#444] tabular-nums"
             value={formData.forwardPort}

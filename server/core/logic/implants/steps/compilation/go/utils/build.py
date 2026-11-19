@@ -135,7 +135,7 @@ def target_from_config(config):
     if os_name in ("linux", "macos"):
         key = (cpu, arch)
         if key not in linux_mac_arch:
-            raise ValueError(f"unsupported target: {os_name} cpu={cpu} arch={arch}")
+            raise ValueError(f"不支持的目标：{os_name} cpu={cpu} arch={arch}")
         return target_os, linux_mac_arch[key]
 
     return target_os, go_arch.get((cpu, arch), "amd64")

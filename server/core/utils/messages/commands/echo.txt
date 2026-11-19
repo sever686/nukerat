@@ -1,19 +1,19 @@
-ABOUT
-    Print text or an environment variable.
+关于
+    输出文本或环境变量。
 
-USAGE:
+用法：
     echo <text|$variable>
 
-ARGUMENTS:
-    <text>              Literal text or $<var> for environment variable.
+参数：
+    <text>              字面文本，或用于环境变量的 $<变量>。
 
-EXAMPLES:
+示例：
     echo hello world
     echo $PATH
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     echo -w 15 hello world

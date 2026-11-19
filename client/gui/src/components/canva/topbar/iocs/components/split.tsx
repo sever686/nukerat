@@ -65,16 +65,16 @@ export default function SplitPanel({ entry, onClose }: { entry: IocEntry; onClos
         <ViewField
           label={
             <>
-              Date<span className="text-[#4a4a4a]"> (UTC)</span>
+              日期<span className="text-[#4a4a4a]"> (UTC)</span>
             </>
           }
           value={entry.time}
         />
-        <ViewField label="Server" value={entry.server} />
-        <ViewField label="Tag" value={entry.tag} />
-        <ViewField label="Host" value={entry.hostTag} />
-        <ViewField label="Type" value={entry.type} />
-        <ViewTextField label="Value" value={entry.value} />
+        <ViewField label="服务器" value={entry.server} />
+        <ViewField label="标签" value={entry.tag} />
+        <ViewField label="主机" value={entry.hostTag} />
+        <ViewField label="类型" value={entry.type} />
+        <ViewTextField label="值" value={entry.value} />
       </div>
     </div>
   );

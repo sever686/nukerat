@@ -1,12 +1,12 @@
-ABOUT
+关于
     .NET tool for authenticating to LDAP/LDAPS via Schannel using a client certificate when
     PKINIT is not supported. Supports privilege escalation, RBCD, SPN manipulation, and
     domain computer account creation over certificate-based LDAP binds.
 
-USAGE:
+用法：
     net-pass-the-cert --- --server <DC> [--start-tls] --cert-path <PFX> [--cert-password <pass>] <attack> [options]
 
-GENERAL OPTIONS:
+GENERAL 选项：
     --server DOMAIN_CONTROLLER    Domain controller hostname (LDAPS TCP/636 by default)
     --start-tls                   Use LDAP TCP/389 with StartTLS instead of LDAPS
     --cert-path CERT_PATH         Path to client certificate (PFX)
@@ -24,7 +24,7 @@ ATTACKS:
     --add-account-to-group        Add account to a group
     --remove-account-from-group   Remove account from a group
 
-EXAMPLES:
+示例：
     net-pass-the-cert --- --server dc01.corp.local --cert-path C:\certs\user.pfx --whoami
     net-pass-the-cert --- --server dc01.corp.local --cert-path user.pfx --elevate --target DC=corp,DC=local --sid S-1-5-21-...
     net-pass-the-cert --- --server dc01.corp.local --cert-path user.pfx --rbcd --target CN=TARGET --sid S-1-5-21-...

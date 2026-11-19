@@ -1,20 +1,20 @@
-ABOUT
+关于
     Unhooks NtReadVirtualMemory and creates a process memory dump using
     MiniDumpWriteDump. x64 only.
-USAGE:
+用法：
     bof-static-syscalls-dump --- <pid> [output_file]
 
-ARGUMENTS:
+参数：
     pid                 Target process ID to dump
     output_file         Optional output path (default: C:\Windows\Temp\PID-<pid>.dmp)
 
-EXAMPLES:
+示例：
     bof-static-syscalls-dump --- 4337 C:\Users\user\Desktop\lsass.dmp
     bof-static-syscalls-dump --- 4337
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-static-syscalls-dump -w 60 --- 4337 C:\Users\user\Desktop\lsass.dmp

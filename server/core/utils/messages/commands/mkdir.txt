@@ -1,19 +1,19 @@
-ABOUT
-    Create a directory.
+关于
+    创建目录。
 
-USAGE:
+用法：
     mkdir <path>
 
-ARGUMENTS:
-    <path>              Directory to create.
+参数：
+    <path>              要创建的目录。
 
-EXAMPLES:
+示例：
     mkdir /tmp/newfolder
     mkdir C:\Temp\newfolder
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     mkdir -w 15 C:\Temp\newfolder

@@ -84,7 +84,7 @@ const EntrypointNode = ({ data }: { data: EntrypointNodeData }) => {
       <img src={data.icon} style={styles.entrypointIconImg} />
     </div>
     <div style={styles.nodeLabel}>
-      <div style={styles.entrypointRole}>SERVER</div>
+      <div style={styles.entrypointRole}>服务器</div>
       <div style={styles.nodeMetaBold}>{data.label}</div>
     </div>
   </div>

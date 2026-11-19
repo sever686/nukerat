@@ -1,11 +1,11 @@
-ABOUT
+关于
     Active Directory file share crawler that finds credentials and sensitive files
     across domain computers using configurable rules and regex patterns.
 
-USAGE:
+用法：
     net-snaffler --- -s -o <logfile> [options]
 
-OPTIONS:
+选项：
     -o            Output results to file
     -s            Output results to stdout
     -v            Verbosity: Trace, Debug, Info (default), Data
@@ -26,7 +26,7 @@ OPTIONS:
     -t            Output type: plain or JSON
     -x            Max thread count (minimum 4)
 
-EXAMPLES:
+示例：
     net-snaffler --- -s -o snaffler.log
     net-snaffler --- -s -v debug -d corp.local
     net-snaffler --- -s -f -a -n hosts.txt

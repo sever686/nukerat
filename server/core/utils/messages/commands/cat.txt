@@ -1,20 +1,19 @@
-ABOUT
-    Read the contents of a file. Output is truncated if it exceeds
-    25 megabytes.
+关于
+    读取文件内容。超过 25 兆字节时输出会被截断。
 
-USAGE:
+用法：
     cat <path>
 
-ARGUMENTS:
-    <path>              File to read.
+参数：
+    <path>              要读取的文件。
 
-EXAMPLES:
+示例：
     cat /etc/hosts
     cat C:\Windows\System32\drivers\etc\hosts
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+-w <秒数>       等待超时的最大时间
+-bg             后台运行，不等待输出
 
-    EXAMPLE:
+示例：
     cat -w 120 C:\Temp\large.log

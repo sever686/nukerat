@@ -1,10 +1,10 @@
-ABOUT
+关于
     Retrieves WiFi passwords in clear text from all WLAN profiles saved on the
     workstation. Situational awareness tool using native Win32 WLAN APIs.
 
-USAGE:
+用法：
     net-sharp-wifi-grabber
-EXAMPLES:
+示例：
     net-sharp-wifi-grabber
-NOTES:
+备注：
     Dumps credentials for all saved wireless network profiles on the host.

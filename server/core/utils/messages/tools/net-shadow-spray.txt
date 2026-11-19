@@ -1,12 +1,12 @@
-ABOUT
+关于
     .NET tool that sprays Shadow Credentials across all domain users and computers,
     attempting GenericWrite/GenericAll abuse to add KeyCredentials and obtain NT hashes
     via PKINIT and UnPACTheHash.
 
-USAGE:
+用法：
     net-shadow-spray --- [options]
 
-OPTIONS:
+选项：
     -r, --RestoreShadowCred       Remove added KeyCredential after attack (cleanup)
     -re, --Recursive              Recursively spray using owned accounts
     -cp, --CertificatePassword    Certificate password (default: random)
@@ -17,6 +17,6 @@ OPTIONS:
     -ssl                           Use LDAP over SSL
     -y, --AutoY                    Skip confirmation prompt
 
-EXAMPLES:
+示例：
     net-shadow-spray    net-shadow-spray --- -d corp.local -dc dc01.corp.local -u user -p P@ss -r
     net-shadow-spray --- -re -y

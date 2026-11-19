@@ -401,11 +401,11 @@ export function useRightSidePath(currentPath: string[], onPathSubmit: (path: str
   return { inputValue, setInputValue, handlePathSubmit };
 }
 
-export const EXPLORER_MODIFIED_COLUMN = utcTableColumnTitle("Modified");
+export const EXPLORER_MODIFIED_COLUMN = utcTableColumnTitle("修改时间");
 
-export const explorerTableColumns = ["Name", "Type", "Size", EXPLORER_MODIFIED_COLUMN];
+export const explorerTableColumns = ["名称", "类型", "大小", EXPLORER_MODIFIED_COLUMN];
 
-export type ExplorerColumn = "Name" | "Type" | "Size" | typeof EXPLORER_MODIFIED_COLUMN;
+export type ExplorerColumn = "名称" | "类型" | "大小" | typeof EXPLORER_MODIFIED_COLUMN;
 export type ExplorerListItem = [string, unknown];
 
 /** Natural name order (Explorer uses StrCmpLogicalW). */
@@ -457,17 +457,17 @@ function compareExplorerItems(
 
   let cmp = 0;
   switch (column) {
-    case "Name":
+    case "名称":
       cmp = compareExplorerNames(a[0], b[0]);
       break;
-    case "Type": {
+    case "类型": {
       const extA = fileExtensionSortKey(a[0]);
       const extB = fileExtensionSortKey(b[0]);
       cmp = compareExplorerNames(extA, extB);
       if (cmp === 0) cmp = compareExplorerNames(a[0], b[0]);
       break;
     }
-    case "Size": {
+    case "大小": {
       const sx = folderA ? folderSizeSortValue(a[1]) : fileSizeSortValue(a[1]);
       const sy = folderB ? folderSizeSortValue(b[1]) : fileSizeSortValue(b[1]);
       if (sx !== sy) cmp = sx - sy;

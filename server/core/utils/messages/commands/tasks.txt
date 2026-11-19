@@ -1,14 +1,13 @@
-ABOUT
-    Manage running background work. Each command runs on its own background
-    thread, list them or kill by task ID. Keylogger and screenshot use separate
-    workers and are not listed here.
+关于
+    管理运行中的后台任务。每条命令运行在各自的后台线程上，可列出它们或按任务 ID 终止。键盘记录和截图
+    使用独立工作线程，不在此列出。
 
-USAGE:
+用法：
     tasks [kill <task_id>]
 
-ARGUMENTS:
-    <id>                Task ID for tasks kill (positional).
+参数：
+    <id>                用于 tasks kill 的任务 ID（位置参数）。
 
-EXAMPLES:
+示例：
     tasks
     tasks kill 3912

@@ -14,7 +14,7 @@ const dismissCta = () => {
 };
 
 const showCtaToast = () => {
-  toast("Enjoying NukeRat?", {
+  toast("喜欢 NukeRat 吗？", {
     id: ctaToastId,
     className: "!h-auto !min-h-0 !w-[20rem] !py-3 !overflow-visible select-none",
     style: {
@@ -36,7 +36,7 @@ const showCtaToast = () => {
     description: (
       <div className="flex flex-col gap-2 select-none">
         <p className="m-0 font-[13px] mb-2 mt-1">
-          Star us on GitHub. It takes seconds and motivates us to keep improving the project.
+          在 GitHub 上给我们点个 Star。只需几秒钟，却能激励我们持续改进项目。
         </p>
         <div className="flex flex-wrap items-center gap-2 pt-0.5">
           <Button
@@ -51,7 +51,7 @@ const showCtaToast = () => {
               dismissCta();
             }}
           >
-            Open Repo
+            打开仓库
           </Button>
           <Button
             type="button"
@@ -64,7 +64,7 @@ const showCtaToast = () => {
               dismissCta();
             }}
           >
-            Maybe Later
+            以后再说
           </Button>
         </div>
       </div>

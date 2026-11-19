@@ -76,11 +76,11 @@ async def create_report(body):
     if not name:
         return {"status": "failure", "message": "Name required"}
     if report_type not in report_types:
-        return {"status": "failure", "message": "Invalid report type"}
+        return {"status": "failure", "message": "报告类型无效"}
 
     file_type = (body.get("fileType") or "pdf").strip().lower()
     if file_type not in {"pdf", "html", "json"}:
-        return {"status": "failure", "message": "Invalid file type"}
+        return {"status": "failure", "message": "文件类型无效"}
 
     hosts = await resolve_hosts(body.get("hostTags"))
     host_tags = [host.tag for host in hosts]
@@ -131,7 +131,7 @@ async def create_report(body):
 
     return {
         "status": "success",
-        "message": "Report created",
+        "message": "报告已创建",
         "tag": tag,
         "report": {
             "tag": tag,
@@ -168,11 +168,11 @@ async def remove_report(tag: str):
     deleted = await asyncio.to_thread(delete_report_file, tag)
     if not deleted:
         return await conclude_request(
-            {"status": "failure", "message": "Report not found"},
+            {"status": "failure", "message": "未找到报告"},
             status_code=404,
             type="reports",
         )
-    return await conclude_request({"status": "success", "message": "Report removed"}, type="reports")
+    return await conclude_request({"status": "success", "message": "报告已移除"}, type="reports")
 
 
 async def get_report_download(tag: str):
@@ -187,7 +187,7 @@ async def get_report_download(tag: str):
     payload = await asyncio.to_thread(read_report_file, tag)
     if not payload:
         return await conclude_request(
-            {"status": "failure", "message": "Report not found"},
+            {"status": "failure", "message": "未找到报告"},
             status_code=404,
             type="reports",
         )
@@ -206,7 +206,7 @@ async def get_report_view(tag: str):
     payload = await asyncio.to_thread(read_report_html, tag)
     if not payload:
         return await conclude_request(
-            {"status": "failure", "message": "Report preview not available"},
+            {"status": "failure", "message": "报告预览不可用"},
             status_code=404,
             type="reports",
         )

@@ -55,7 +55,7 @@ const NetworkPanel = () => {
             {loading ? (
               <div className="flex items-center justify-center h-16 text-[#444] text-[13.5px]">
                 <RefreshCw size={14} className="animate-spin mr-2" />
-                Loading...
+                加载中...
               </div>
             ) : (
               <>
@@ -128,7 +128,7 @@ const NetworkPanel = () => {
                     </tbody>
                   )}
                 </table>
-                {items.length === 0 && <PanelEmptyState>No connections configured</PanelEmptyState>}
+                {items.length === 0 && <PanelEmptyState>尚未配置连接</PanelEmptyState>}
               </>
             )}
           </div>
@@ -140,7 +140,7 @@ const NetworkPanel = () => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer"
             >
               <Plus size={11} />
-              Add
+              添加
             </button>
             <button
               type="button"
@@ -149,7 +149,7 @@ const NetworkPanel = () => {
               className="button-default z-10 flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
             >
               <Eye size={11} />
-              View
+              查看
             </button>
             <button
               type="button"
@@ -158,7 +158,7 @@ const NetworkPanel = () => {
               className="button-default z-10 flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#c97070] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
             >
               <Trash2 size={11} />
-              Remove
+              移除
             </button>
             <div className="min-w-2 flex-1 shrink" aria-hidden />
             <button
@@ -167,7 +167,7 @@ const NetworkPanel = () => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer"
             >
               <RefreshCw size={11} />
-              Update
+              更新
             </button>
           </div>
         </div>
@@ -221,11 +221,11 @@ const NetworkPanel = () => {
             <div className="flex items-center gap-2 mb-3">
               <Trash2 size={14} className="text-[#c97070] mb-0.5" />
               <span className="text-[13.5px] font-semibold text-[#cecece]">
-                Remove Connection
+                移除连接
               </span>
             </div>
             <p className="text-[13px] text-[#9b9b9b] mb-5 leading-relaxed">
-              Remove{" "}
+              移除{" "}
               <span className="text-[#d4d4d4] text-[13px] font-semibold">
                 "{typeLabel(selected?.networkType)}"
               </span>
@@ -236,7 +236,7 @@ const NetworkPanel = () => {
                 onClick={() => setShowRemoveConfirm(false)}
                 className="button-default px-3 py-1 rounded text-[12px] text-[#9b9b9b] hover:text-[#d4d4d4] hover:bg-[#252525] transition-colors border border-[#333] cursor-pointer"
               >
-                Cancel
+                取消
               </button>
               <button
                 onClick={handleConfirmRemove}
@@ -244,7 +244,7 @@ const NetworkPanel = () => {
                 className="button-default flex items-center gap-1.5 px-3 py-1 rounded text-[12px] text-white bg-[#8b2020] hover:bg-[#a83232] transition-colors disabled:opacity-50 cursor-pointer"
               >
                 {submitting && <RefreshCw size={10} className="animate-spin" />}
-                Remove
+                移除
               </button>
             </div>
           </div>

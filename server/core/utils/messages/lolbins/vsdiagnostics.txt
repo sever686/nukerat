@@ -1,19 +1,19 @@
-ABOUT
+关于
     Command-line tool used for performing diagnostics. LOLBAS covers
     proxy execution of binary and proxy execution of binary with
     arguments.
 
-USAGE:
+用法：
     VSDiagnostics.exe start 1 /launch:{PATH:.exe}
     VSDiagnostics.exe start 2 /launch:{PATH:.exe} /launchArgs:"{CMD:args}"
 
-EXAMPLES:
+示例：
     VSDiagnostics.exe start 1 /launch:{PATH:.exe}
     VSDiagnostics.exe start 2 /launch:{PATH:.exe} /launchArgs:"{CMD:args}"
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     VSDiagnostics.exe start 1 /launch:{PATH:.exe}

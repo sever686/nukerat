@@ -29,21 +29,21 @@ const icons = {
   unknown: { n: unknownHostSvg, r: unknownHostRootSvg },
 };
 
-export const tableColumns = ["Platform", utcTableColumnTitle("Last Check"), "Tag", "Hostname", "User", "Privilege", "Internal", "External", "Listener", "PID", "Process", "Note"];
+export const tableColumns = ["平台", utcTableColumnTitle("最后检查"), "标签", "主机名", "用户", "权限", "内网", "外部", "监听器", "PID", "进程", "备注"];
 
 function valorDaColuna(h: Session, coluna: string): string {
-  if (coluna === "Platform") return String(h.os ?? "");
-  if (coluna === utcTableColumnTitle("Last Check")) return formatUtcDateOnly(h.last_activity);
-  if (coluna === "Tag") return String(h.tag ?? "");
-  if (coluna === "Hostname") return String(h.hostname ?? "");
-  if (coluna === "User") return String(h.user ?? "");
-  if (coluna === "Privilege") return String(h.privilege ?? "user");
-  if (coluna === "Internal") return String(h.internal ?? h.ip ?? "");
-  if (coluna === "External") return String(h.external_ip ?? "");
-  if (coluna === "Listener") return String(h.listener ?? "");
+  if (coluna === "平台") return String(h.os ?? "");
+  if (coluna === utcTableColumnTitle("最后检查")) return formatUtcDateOnly(h.last_activity);
+  if (coluna === "标签") return String(h.tag ?? "");
+  if (coluna === "主机名") return String(h.hostname ?? "");
+  if (coluna === "用户") return String(h.user ?? "");
+  if (coluna === "权限") return String(h.privilege ?? "user");
+  if (coluna === "内网") return String(h.internal ?? h.ip ?? "");
+  if (coluna === "外部") return String(h.external_ip ?? "");
+  if (coluna === "监听器") return String(h.listener ?? "");
   if (coluna === "PID") return String(h.pid ?? "");
-  if (coluna === "Process") return formatProcess(h.process);
-  if (coluna === "Note") return String(h.notes ?? "");
+  if (coluna === "进程") return formatProcess(h.process);
+  if (coluna === "备注") return String(h.notes ?? "");
   return "";
 }
 
@@ -176,7 +176,7 @@ export function useSessionsPanel() {
 
   const copyContext = useCallback(() => {
     void navigator.clipboard.writeText(JSON.stringify({ sessions: filteredSessions }));
-    toast.success("Sessions context copied");
+    toast.success("会话上下文已复制");
   }, [filteredSessions]);
 
   const searchRef = useRef(search);

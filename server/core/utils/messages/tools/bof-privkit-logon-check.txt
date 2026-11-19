@@ -1,13 +1,13 @@
-ABOUT
+关于
     Checks for AutoLogon credentials in the registry.
-USAGE:
+用法：
     bof-privkit-logon-check --- (no arguments)
 
-EXAMPLES:
+示例：
     bof-privkit-logon-check
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-privkit-logon-check -w 60 --- (no arguments)

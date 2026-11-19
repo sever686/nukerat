@@ -1,20 +1,20 @@
-ABOUT
+关于
     Displays a fake Microsoft Authenticator approval dialog with the specified number. Dialog auto closes after 30 seconds.
 
-USAGE:
+用法：
     bof-ask-mfa --- <number>
 
-ARGUMENTS:
+参数：
 
     number    MFA approval number to display (0 to 99)
 
-EXAMPLES:
+示例：
 
     bof-ask-mfa --- 42
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-ask-mfa -w 60 --- 42

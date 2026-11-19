@@ -50,15 +50,15 @@ const AboutPanel = () => {
           <dl className="mt-2.5 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-[13px] text-[#cecece] leading-[1.65] w-full">
             {(
               [
-                ["Version", info.version],
-                ["Platform", info.platform],
+                ["版本", info.version],
+                ["平台", info.platform],
                 ["Electron", info.electron],
                 ...(info.electronBuildId
                   ? [["ElectronBuildId", info.electronBuildId] as const]
                   : []),
                 ["Chromium", info.chromium],
                 ["Node", info.node],
-                ["Author", "Gustavo Henrique T."],
+                ["作者", "Gustavo Henrique T."],
               ] as const
             ).map(([label, value]) => (
               <Fragment key={label}>

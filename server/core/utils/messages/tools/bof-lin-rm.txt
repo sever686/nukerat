@@ -1,21 +1,21 @@
-ABOUT
+关于
     (linux) Remove files/directories.
 
-USAGE:
+用法：
     bof-lin-rm --- <path> [options]
 
-ARGUMENTS:
+参数：
     path                Path to remove
     options             Flags: r (recursive), f (force) (choices: r|f|rf)
 
 Supports pipe chaining with other BusyBOF tools.
 
-EXAMPLES:
+示例：
     bof-lin-rm --- <path>
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     bof-lin-rm -w 60 --- <path>

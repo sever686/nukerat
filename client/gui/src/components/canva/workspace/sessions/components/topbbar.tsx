@@ -16,7 +16,7 @@ const TopBar = ({ search, onSearchChange }: TopBarProps) => (
           data-sessions-search-field="search"
           value={search}
           onChange={(e) => onSearchChange(e.target.value)}
-          placeholder="Filter sessions..."
+          placeholder="筛选会话..."
           className="box-border h-[29px] w-full rounded border border-[#363636] bg-[#212121] py-0 px-3 text-[13.5px] text-[#cecece] outline-none transition-colors placeholder:text-[#444] focus:border-[#555]"
         />
       </div>

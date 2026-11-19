@@ -11,9 +11,19 @@ import {
   type ConnectionStatus,
 } from "./components/logic";
 
+const STATUS_LABELS: Record<ConnectionStatus, string> = {
+  idle: "空闲",
+  checking: "检查中...",
+  online: "在线",
+  unauthorized: "未授权",
+  offline: "离线",
+};
+
+const statusLabel = (status: ConnectionStatus) => STATUS_LABELS[status] ?? status;
+
 const StatusDot = ({ status }: { status: ConnectionStatus }) => (
   <span
-    title={status === "checking" ? "Checking..." : status.charAt(0).toUpperCase() + status.slice(1)}
+    title={statusLabel(status)}
     className="inline-flex items-center justify-center w-4 h-4"
   >
     {status === "checking" ? (
@@ -75,14 +85,14 @@ const ServerPanel = () => {
             {loading ? (
               <div className="flex items-center justify-center h-16 text-[#444] text-[13.5px]">
                 <RefreshCw size={14} className="animate-spin mr-2" />
-                Loading...
+                加载中...
               </div>
             ) : (
               <>
                 <table className="w-full border-separate border-spacing-0 shrink-0">
                   <thead>
                     <tr>
-                      {["Status", "Name", "Protocol", "IP", "Port"].map((col) => (
+                      {["状态", "名称", "协议", "IP", "端口"].map((col) => (
                         <th
                           key={col}
                           className="sticky top-0 z-10 bg-[#171717] text-left px-4 py-2 text-[12px] text-[#888888] font-medium uppercase tracking-widest whitespace-nowrap border-b border-[#252525]"
@@ -133,7 +143,7 @@ const ServerPanel = () => {
                     </tbody>
                   )}
                 </table>
-                {servers.length === 0 && <PanelEmptyState>No servers configured</PanelEmptyState>}
+                {servers.length === 0 && <PanelEmptyState>尚未配置服务器</PanelEmptyState>}
               </>
             )}
           </div>
@@ -145,7 +155,7 @@ const ServerPanel = () => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer"
             >
               <Plus size={11} />
-              Add
+              添加
             </button>
             <button
               type="button"
@@ -154,7 +164,7 @@ const ServerPanel = () => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
             >
               <Edit size={11} />
-              Edit
+              编辑
             </button>
             <button
               type="button"
@@ -163,7 +173,7 @@ const ServerPanel = () => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] font-medium text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#c97070] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
             >
               <Trash2 size={11} />
-              Remove
+              移除
             </button>
             <div className="min-w-2 flex-1 shrink" aria-hidden />
             <button
@@ -172,7 +182,7 @@ const ServerPanel = () => {
               className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer"
             >
               <RefreshCw size={11} />
-              Update
+              更新
             </button>
           </div>
         </div>
@@ -221,11 +231,11 @@ const ServerPanel = () => {
             <div className="flex items-center gap-2 mb-3">
               <Trash2 size={13} className="text-[#c97070]" />
               <span className="text-[13.5px] font-semibold text-[#d4d4d4]">
-                Remove server
+                移除服务器
               </span>
             </div>
             <p className="text-[13.5px] text-[#9b9b9b] mb-5 leading-relaxed">
-              Remove{" "}
+              移除{" "}
               <span className="inline-block max-w-[180px] align-bottom overflow-hidden text-ellipsis whitespace-nowrap text-[#d4d4d4] font-semibold">
                 "{selected?.name}"
               </span>
@@ -236,7 +246,7 @@ const ServerPanel = () => {
                 onClick={() => setShowRemoveConfirm(false)}
                 className="button-default px-3 py-1 rounded text-[13px] text-[#9b9b9b] hover:text-[#d4d4d4] hover:bg-[#252525] transition-colors border border-[#333] cursor-pointer"
               >
-                Cancel
+                取消
               </button>
               <button
                 onClick={handleConfirmRemove}
@@ -246,7 +256,7 @@ const ServerPanel = () => {
                 {submitting && (
                   <RefreshCw size={10} className="animate-spin" />
                 )}
-                Remove
+                移除
               </button>
             </div>
           </div>

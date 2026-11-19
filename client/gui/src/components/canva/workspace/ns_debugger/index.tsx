@@ -54,7 +54,7 @@ export default function NsDebuggerPanel(props: IDockviewPanelProps) {
               onRefresh={refreshServers}
               onSelectItem={(option, s) => selectNsDebuggerTarget(s.id, option.id)}
               onClear={clearServerFilter}
-              placeholder="Select a server"
+              placeholder="选择服务器"
               searchPlaceholder="Search server..."
               emptyLabel="No server found."
               clearAriaLabel="Clear server"
@@ -65,7 +65,7 @@ export default function NsDebuggerPanel(props: IDockviewPanelProps) {
                 className="box-border h-[29px] w-full rounded border border-[#363636] bg-[#212121] py-0 pl-3 pr-8 text-[13.5px] text-[#cecece] outline-none transition-colors placeholder:text-[#444] focus:border-[#555]"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search output..."
+                placeholder="搜索输出..."
                 autoComplete="off"
                 spellCheck={false}
               />
@@ -85,15 +85,15 @@ export default function NsDebuggerPanel(props: IDockviewPanelProps) {
         <div className="mK2vP flex min-h-0 flex-1 flex-col overflow-hidden !py-2 !px-3">
           {!hasServer ? (
             <PanelEmptyState className="h-full px-6 text-center">
-              Select a server to view output
+              选择服务器以查看输出
             </PanelEmptyState>
           ) : lines.length === 0 ? (
             <PanelEmptyState className="h-full px-6 text-center">
-              No content found
+              未找到内容
             </PanelEmptyState>
           ) : displayLines.length === 0 ? (
             <PanelEmptyState className="h-full px-6 text-center">
-              No matching output
+              没有匹配的输出
             </PanelEmptyState>
           ) : (
             <div data-ns-debugger-output className="flex min-h-0 flex-1 flex-col overflow-hidden">
@@ -113,7 +113,7 @@ export default function NsDebuggerPanel(props: IDockviewPanelProps) {
             className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#d4d4d4] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
           >
             <RefreshCw size={11} />
-            Update
+            更新
           </button>
           <div className="min-w-2 flex-1 shrink" aria-hidden />
           <button
@@ -123,7 +123,7 @@ export default function NsDebuggerPanel(props: IDockviewPanelProps) {
             className="button-default flex h-[29px] shrink-0 items-center gap-1.5 rounded border border-[#333] bg-[#232323] px-3 text-[13px] text-[#cecece] hover:bg-[#2b2b2b] hover:text-[#c97070] cursor-pointer disabled:cursor-not-allowed disabled:opacity-25"
           >
             <Trash2 size={11} />
-            Clear
+            清除
           </button>
         </div>
       </div>

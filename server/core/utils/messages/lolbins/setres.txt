@@ -1,16 +1,16 @@
-ABOUT
+关于
     Configures display settings. LOLBAS documents executes arbitrary
     code.
 
-USAGE:
+用法：
     setres.exe -w 800 -h 600
 
-EXAMPLES:
+示例：
     setres.exe -w 800 -h 600
 
-NUKERAT FLAGS:
-    -w <seconds>    Maximum wait time until timeout
-    -bg             Fork and run without waiting for output
+NUKERAT 选项：
+    -w <秒数>       等待超时的最大时间
+    -bg             后台运行，不等待输出
 
-    Example:
+    示例：
     setres.exe -w 800 -h 600
