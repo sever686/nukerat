@@ -160,6 +160,8 @@ def client():
         if Path(xauthority).is_file():
             args.extend(["-v", f"{xauthority}:/home/nukerat/.Xauthority:ro"])
             args.extend(["-e", "XAUTHORITY=/home/nukerat/.Xauthority"])
+        home = Path(f"/home/{os.environ['SUDO_USER']}") if os.environ.get("SUDO_USER") else Path.home()
+        args.extend(["-v", f"{home}:/home/nukerat"])
     args.append(client_image)
     named = subprocess.run(
         [bin_name, "inspect", "-f", "{{.State.Running}}", client_container],
